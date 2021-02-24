@@ -1,4 +1,4 @@
-function fBlah() {
+function fSailingStuff() {
     // Inputs
         // Sailing shifts: 1, 2, or 3
         // Ship speed
