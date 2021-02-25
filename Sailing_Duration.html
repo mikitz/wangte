@@ -104,10 +104,10 @@
             <a href="">Donate</a>
         </nav>
         <main>
-            <script src="Calculators/Poop.js"></script>
-            <h1>Sailing Duration and Cargo Transportation Revenue</h1>
-            <label for="duration">Number of 8-hour Sailing Shifts:</label>
-                <select name="duration" id="duration">
+            <script src="Calculators/SailingDuration.js"></script>
+            <h1>Sailing shifts and Cargo Transportation Revenue</h1>
+            <label for="shifts">Number of 8-hour Sailing Shifts:</label>
+                <select name="shifts" id="shifts">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -153,13 +153,15 @@
                     <option value="18">18</option>
             </select>
             <p></p>
-            <form action="/action_page.php">
-                <label for="distance">Distance to Destination (Miles):</label>
-                    <input type="text" id="distance" name="distance"><br><br>
-                <label for="weight">Cargo Weight (Pounds):</label>
-                    <input type="text" id="weight" name="weight"><br><br>
+            <label for="distance">Distance to Destination (Miles):</label>
+                <input type="number" id="distance" name="distance"><br><br>
+            <label for="weight">Cargo Weight (Pounds):</label>
+                <input type="number" id="weight" name="weight"><br><br>
             </form>
-            <button onclick="">Calculate</button>
-        </main> 
+            <button onclick="calculate_sail_duration_and_cargo_revenue()">Calculate</button>
+            <button onclick="clear_output()">Clear Output</button>
+            <p id = "output"></p>
+            
+    </main> 
     </body>  
 </html>

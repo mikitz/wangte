@@ -102,6 +102,9 @@ let dropdownInitial = `<form action="/action_page.php">
             </form>`
 // Retreiving the input
 let game = html.find('#game').val()
+// Retreiving the input
+var e = document.getElementById("game");
+var strUser = e.options[e.selectedIndex].text;
 
 // TEXT INPUT
 let contentGambling = `
