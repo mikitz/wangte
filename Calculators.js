@@ -1,3 +1,5 @@
+// Calculates the duration of the sailing 
+// as well as revenue earned from the conveyance of cargo
 function calculate_sail_duration_and_cargo_revenue() {
     // Define some global variables
     let vHours = ''
@@ -53,9 +55,67 @@ function calculate_sail_duration_and_cargo_revenue() {
     // Print the message
     var p = document.createElement('p')
     p.innerHTML = vMessage
-    document.getElementById('output').appendChild(p)
+    document.getElementById('output').appendChild(`<B>${p}</B>`)
 }
-
-function clear_output() {
+// Clears "output"
+function clear_sail() {
     document.getElementById('output').innerHTML = ""
+}
+// Calculates the probability of obtaining a single specific outcome across n rolls of a d-sided die
+function probability_one() {
+    // Get number of dice
+    var n = document.getElementById("n1").value
+    // Get sides on each die
+    var d = document.getElementById("d1").value
+    // Calculate
+    var prob = 1 - ((d - 1) / d)**n
+    prob = parseFloat(prob*100).toFixed(2)+"%"
+    prob = `<B>${prob}</B>`
+    // Print the probability
+    var p = document.createElement('p')
+    p.innerHTML = prob
+    document.getElementById("output1").appendChild(p)
+}
+// Clears probability1 output
+function clear_prob1() {
+    document.getElementById('output1').innerHTML = ""
+}
+// Calculates the probability of obtaining an outcome of o or greater, on at least one of n d-sided dice
+function probability_two() {
+    // Get number of dice
+    var n = document.getElementById("n2").value
+    // Get sides on each die
+    var d = document.getElementById("d2").value
+    // Get the specific outcome
+    var o = document.getElementById("o2").value
+    // Calculate
+    var prob = 1 - ((d - (d - o + 1)) / d)**n
+    prob = parseFloat(prob*100).toFixed(2)+"%"
+    prob = `<B>${prob}</B>`
+    // Print the probability
+    var p = document.createElement('p')
+    p.innerHTML = prob
+    document.getElementById("output2").appendChild(p)
+}
+// Clears probability2 output
+function clear_prob2() {
+    document.getElementById('output2').innerHTML = ""
+}
+// Calculate the time to get to a destination on foot
+function calcuate_travel_duration () {
+
+}
+// Calculate the distance to the horizon
+function calculate_horizon () {
+    // Get height
+    var h = document.getElementById("height").value
+    // Get radius
+    var r = document.getElementById("radius").value
+    // Compute
+    var l = Math.round(Math.sqrt(2 * r * h))
+    // Print the probability
+    var p = document.createElement('p')
+    p.innerHTML = `${l} feet <br>
+                    ${(l/5280).toFixed(2)} miles`
+    document.getElementById("output").appendChild(p)	
 }

@@ -1,3 +1,0 @@
-function fBlah() {
-    alert("hello")
-}

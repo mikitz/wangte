@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>   
+        <nav>
+            <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png" alt="Logo">
+            <a href="Nav_Homepage.html">Home</a>
+            <a href="Nav_Calculators.html">Calculators</a>
+            <a href="Nav_Homebrew.html">Homebrew</a>
+            <a href="Nav_Tools.html">Tools</a>
+            <a href="">Donate</a>
+        </nav>
+        <main>
+            <script src="Calculators.js"></script>
+            <h1>Travel Duration</h1>
+            <label for="medium">Select Traveling Medium:</label>
+                <select name="medium" id="medium">
+                    <option value="air">Air</option>
+                    <option value="creature">Creature</option>
+                    <option value="land">Land</option>
+                    <option value="magic">Magic</option>
+                    <option value="water">Water</option>
+            </select>
+            <br><br>
+            <!--Air Elements-->
+            <label for="shifts">Number of 8-hour Sailing Shifts:</label>
+                <select name="shifts" id="shifts">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+            </select>
+            <p></p>
+            <label for="distance">Distance to Destination (Miles):</label>
+                <input type="number" id="distance" name="distance"><br><br>
+            <label for="weight">Cargo Weight (Pounds):</label>
+                <input type="number" id="weight" name="weight"><br><br>
+            </form>
+            <button onclick="calcuate_travel_duration()">Calculate</button>
+            <button onclick="clear_sail()">Clear Output</button>
+            <!--Creature Elements-->
+
+            <!--Land Elements-->
+
+            <!--Magic Elements-->
+
+            <!--Water Elements-->
+            <p id = "output"></p>
+            
+    </main> 
+    </body>  
+</html>

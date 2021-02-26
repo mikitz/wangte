@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>   
+        <nav>
+            <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png" alt="Logo">
+            <a href="Nav_Homepage.html">Home</a>
+            <a href="Nav_Calculators.html">Calculators</a>
+            <a href="Nav_Homebrew.html">Homebrew</a>
+            <a href="Nav_Tools.html">Tools</a>
+            <a href="">Donate</a>
+        </nav>
+        <main>
+            <script src="Calculators.js"></script>
+            <h1>Dice Probability Calculators</h1>
+            <p></p>
+            <h2>P(d, n) = 1 - (d - 1 / d)^n</h2>
+            <p>This calculates the probability of obtaining a single specific outcome across n rolls of a d-sided die.</p>
+            <p><i>For example, I want to find out the probability of rolling one 20 in 2d20. I input n as 2 because we are rolling 2 20-sided dice and then I input d as 20 because each die as 20 sides. The result is a probablity of 9.75%.</i></p>
+            <label for="n1">Number of Dice (n):</label>
+                <input type="number" id="n1" name="n1"><br><br>
+            <label for="d1">Number of Sides on each Die (d):</label>
+                <input type="number" id="d1" name="d1"><br><br>
+            </form>
+            <button onclick="probability_one()">Calculate</button>
+            <button onclick="clear_prob1()">Clear Output</button>
+            <p id = "output1"></p>
+
+            <h2>P(d, n, o) = 1 - (d - (d - o + 1) / d)^n</h2>
+            <p>This calculates the probability of obtaining an outcome of o or greater, on at least one of n d-sided dice.</p>
+            <p><i>For example, I want to find the probability of rolling a 15 or higher on 2d20. I input n as 2 because  I'm rolling 2 dice.Then,  I input d as 20 because each die has 20 sides. Finally, I input o as15 because I want to roll a 15 or higher. This gives us a probability of 51%.</i></p>
+            <label for="n2">Number of Dice (n):</label>
+                <input type="number" id="n2" name="n2"><br><br>
+            <label for="d2">Number of Sides on each Die (d):</label>
+                <input type="number" id="d2" name="d2"><br><br>
+            <label for="o2">Outcome or Greater Desired (o):</label>
+                <input type="number" id="o2" name="o2"><br><br>
+            </form>
+            <button onclick="probability_two()">Calculate</button>
+            <button onclick="clear_prob2()">Clear Output</button>
+            <p id = "output2"></p>
+    </main> 
+    </body>  
+</html>
