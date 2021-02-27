@@ -30,7 +30,7 @@
 * [x] Negotiating a Price
 * [x] Ship Navigation
 * [x] Sprint
-* Street Drugs
+* [x] Street Drugs
 * [x] Tavern Games
 * [x] The Economy
 * [x] Training a Skill
@@ -50,6 +50,7 @@
 
 ## style.css
 * Tables
+    * Borders
 * Dropdown selectors
 * Text inputs
 * Buttons
