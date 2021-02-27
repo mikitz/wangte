@@ -3,7 +3,9 @@
 * [x] Sailing Duration and Cargo Tranport Revenue
 * Foot Travel Duration
 * [x] Horizon Calculator
-* [x] How Special Are You?
+* How Special Are You?
+    * [x] Single level
+    * All levels
 * [x] Crafting Duration
 * [x] Bounty Reward
 

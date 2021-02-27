@@ -1,3 +1,7 @@
+// Define a function to format number with commas
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 // Calculates the duration of the sailing 
 // as well as revenue earned from the conveyance of cargo
 function calculate_sail_duration_and_cargo_revenue() {
@@ -161,5 +165,51 @@ function calculate_bounty(){
     // Print the output
     var p = document.createElement('p')
     p.innerHTML = `Bounty Reward: ${br} gp`
+    document.getElementById("output").appendChild(p)
+}
+// Calculate level demographics
+function calculate_level_demographics(){
+    // Define the object array to store the data
+    let oaData = [
+        {"lvl":0,"perc_of_pop":0.009677909091},
+        {"lvl":1,"perc_of_pop":0.0005962575758},
+        {"lvl":2,"perc_of_pop":0.0005184545455},
+        {"lvl":3,"perc_of_pop":0.0004351969697},
+        {"lvl":4,"perc_of_pop":0.0003466818182},
+        {"lvl":5,"perc_of_pop":0.0002679545455},
+        {"lvl":6,"perc_of_pop":0.000201530303},
+        {"lvl":7,"perc_of_pop":0.0001477878788},
+        {"lvl":8,"perc_of_pop":0.0001061666667},
+        {"lvl":9,"perc_of_pop":0.00007290909091},
+        {"lvl":10,"perc_of_pop":0.00005051515152},
+        {"lvl":11,"perc_of_pop":0.0000321969697},
+        {"lvl":12,"perc_of_pop":0.00002001515152},
+        {"lvl":13,"perc_of_pop":0.00001178787879},
+        {"lvl":14,"perc_of_pop":0.000007257575758},
+        {"lvl":15,"perc_of_pop":0.000003636363636},
+        {"lvl":16,"perc_of_pop":0.000001954545455},
+        {"lvl":17,"perc_of_pop":0.00000103030303},
+        {"lvl":18,"perc_of_pop":0.0000004848484848},
+        {"lvl":19,"perc_of_pop":0.0000001818181818},
+        {"lvl":20,"perc_of_pop":0.0000000303030303}
+    ];
+    // Get the level
+    var a = document.getElementById("lvl")
+    var level = a.options[a.selectedIndex].text
+    // Turn level into an int if it's not "All"
+    if (level != "All") {level = parseInt(level)}
+    // Get the population
+    var pop = document.getElementById("population").value
+    // Calculate the demographics
+    if (level === "All") {
+
+    } else {
+        // Get the respective percentage
+        var perc = oaData.find(i => i.lvl == level).perc_of_pop
+        var demographics = Math.round(pop * perc)
+    }
+    // Print the output
+    var p = document.createElement('p')
+    p.innerHTML = `Level ${level} Individuals in a Location with a Population of ${numberWithCommas(pop)}: ${numberWithCommas(demographics)} person(s)`
     document.getElementById("output").appendChild(p)
 }
