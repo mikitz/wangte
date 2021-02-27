@@ -103,7 +103,7 @@ function clear_prob2() {
 }
 // Calculate the time to get to a destination on foot
 function calcuate_travel_duration () {
-
+    
 }
 // Calculate the distance to the horizon
 function calculate_horizon () {

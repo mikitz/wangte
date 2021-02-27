@@ -31,11 +31,12 @@ nav a {
     display: inline-block;
     text-decoration: none;
     padding: 5px 15px;
-    font-size: 0.9em;
+    font-size: 1.4em;
     color: red;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 nav a:hover {
     color: purple;
@@ -46,25 +47,29 @@ select {
 input {
     background-color: orange;
 }
+body h1{
+    background-color: rgb(29, 29, 29);
+    color: red;
+    text-transform: uppercase;
+}
 body {
     background-color: rgb(29, 29, 29);
-    color:  rgb(126, 126, 126);
+    color: rgb(138, 138, 138);
 }
 main a {
     display: inline-block;
     text-decoration: none;
     padding: 5px 15px;
-    font-size: 0.9em;
-    color: rgb(255, 91, 91);
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 1.1em;
+    color: skyblue;
     letter-spacing: 0.05em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 main a:hover {
-    color: rgb(231, 54, 231);
+    color: rgb(221, 48, 48);
 }
 main li:hover {
-    color: yellowgreen;
+    color: skyblue;
 }
 /* Dropdown Button */
 .dropbtn {

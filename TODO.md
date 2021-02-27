@@ -9,32 +9,32 @@
 * Bounty Reward
 
 ## Homebrew
-* The Economy
-* Ship Navigation
-* Casting Spells of a Higher Level
-* Adjusting Races
-* Intelligence
-* Foraging/Harvesting
-* Identifying a Spell Being Cast
-* Medidcine Check for Determining Health
-* Enlarge/Reduce Spell
-* Sprint
-* Flanking
-* Improving Ability Scores
-* Negotiating a Price
-* [x] Item Prices
-* [x] Gemstones
-* Training a Skill
-* [x] Fall Damage
-* Crafting
-* Street Drugs
-* Ship Speeds
-* Beer Brewing
-* Kibble's Crafting
-* Tavern Games
-* Divine Ranks and Powers
-* [x] Arrows
+* [x] Adjusting Races
 * Animal Husbandry
+* [x] Arrows
+* Beer Brewing
+* [x] Casting Spells of a Higher Level
+* Crafting
+* [x] Divine Ranks and Powers
+* [x] Enlarge/Reduce Spell
+* [x] Fall Damage
+* [x] Flanking
+* [x] Foraging/Harvesting
+* [x] Gemstones
+* [x] Identifying a Spell Being Cast
+* [x] Improving Ability Scores
+* [x] Intelligence
+* [x] Item Prices
+* Kibble's Crafting
+* [x] Medidcine Check for Determining Health
+* [x] Negotiating a Price
+* [x] Ship Navigation
+* [x] Sprint
+* Street Drugs
+* [x] Tavern Games
+* [x] The Economy
+* [x] Training a Skill
+* [x] Traveling
 
 ## Tools
 * Bounty Board
