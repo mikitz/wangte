@@ -14,7 +14,7 @@
 * [x] Arrows
 * [x] Beer Brewing
 * [x] Casting Spells of a Higher Level
-* Crafting
+* [x] Crafting
 * [x] Divine Ranks and Powers
 * [x] Enlarge/Reduce Spell
 * [x] Fall Damage
