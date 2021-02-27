@@ -45,6 +45,15 @@
     * Enemy Stealth Roll
     * Random PC Picker
     * Random Encounter Generator
+        * [x] Level Range
+        * [x] Biome
+        * [x] Time of Day
+        * [x] DC Adjustments
+        * [x] Encounter Distance
+        * Copy over tables and fix them up with *Tools.ipynb*
+            * [Google Sheet](https://docs.google.com/spreadsheets/d/11_Wox0l097kjaF8PBYPHxaxhnggTo6S8MUDWhWQ7VS0/edit#gid=618220308)
+            * [5e Tools](https://5e.tools/encountergen.html#desert_xge_1-4)
+        * Implement 5etools.net link generation for the monsters 
 * Spell Helper
 * Downtime Activities
 * Ship Expenses
