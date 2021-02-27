@@ -47,3 +47,9 @@
 * Spell Helper
 * Downtime Activities
 * Ship Expenses
+
+## style.css
+* Tables
+* Dropdown selectors
+* Text inputs
+* Buttons
