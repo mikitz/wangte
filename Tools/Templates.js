@@ -67,7 +67,11 @@ function fRound5(x) {
 function fRound10(x) { 
     return Math.ceil(x / 10) * 10 
 } 
-
+// Function to get a random integer
+// Source: https://www.w3schools.com/js/js_random.asp
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
 // DIALOG
 let dCrownAnchor = new Dialog ({
     title: "",
