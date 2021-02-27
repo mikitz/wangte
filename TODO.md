@@ -10,9 +10,9 @@
 
 ## Homebrew
 * [x] Adjusting Races
-* Animal Husbandry
+* [x] Animal Husbandry
 * [x] Arrows
-* Beer Brewing
+* [x] Beer Brewing
 * [x] Casting Spells of a Higher Level
 * Crafting
 * [x] Divine Ranks and Powers
