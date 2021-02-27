@@ -59,7 +59,7 @@ function calculate_sail_duration_and_cargo_revenue() {
     // Print the message
     var p = document.createElement('p')
     p.innerHTML = vMessage
-    document.getElementById('output').appendChild(`<B>${p}</B>`)
+    document.getElementById('output').appendChild(p)
 }
 // Clears "output"
 function clear_sail() {
