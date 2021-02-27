@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GameMaster Website</title>  
     <link rel="stylesheet" href="style.css"/>
+    <script src="Database_Tool.js"></script>
 </head>  
   
 <body>
@@ -33,14 +34,19 @@
                 <option value="arctic">Arctic</option>
                 <option value="coastal">Coastal</option>
                 <option value="desert">Desert</option>
+                <option value="farmland">Farmland</option>
                 <option value="forest">Forest</option>
                 <option value="grassland">Grassland</option>
                 <option value="hill">Hill</option>
+                <option value="jungle">Jungle</option>
                 <option value="mountain">Mountain</option>
+                <option value="openwater">Open Water</option>
                 <option value="swamp">Swamp</option>
                 <option value="underdark">Underdark</option>
                 <option value="underwater">Underwater</option>
                 <option value="urban">Urban</option>
+                <option value="wasteland">Wasteland</option>
+                <option value="woodland">Woodland</option>
             </select>
         <p></p>
         <label for="time_of_day">Time of Day:</label>
@@ -108,21 +114,26 @@
             <br><i>Set this if you want to override the default threshold for triggering a combat encounter on 1d20.</i>
         <h2>Defaults</h2>
         <table class="tableizer-table">
-            <thead><tr class="tableizer-firstrow"><th></th>
-            <th colspan="5">Night</th><th colspan="5">Day</th></tr></thead><tbody>
-                <tr><td>&nbsp;</td><td colspan="2">Non-combat</td><td colspan="2">Combat</td><td></td><td colspan="2">Non-combat</td><td colspan="2">Combat</td><td></td></tr>
-                <tr><td>Biome</td><td>DC</td><td>Prob.</td><td>DC</td><td>Prob.</td><td>Total Prob.</td><td>DC</td><td>Prob.</td><td>DC</td><td>Prob.</td><td>Total Prob.</td></tr>
-                <tr><td>Arctic</td><td>15</td><td>5%</td><td>16</td><td>20%</td><td>25%</td><td>16</td><td>10%</td><td>18</td><td>10%</td><td>20%</td></tr>
-                <tr><td>Coastal</td><td>16</td><td>5%</td><td>17</td><td>15%</td><td>20%</td><td>17</td><td>10%</td><td>19</td><td>5%</td><td>15%</td></tr>
-                <tr><td>Desert</td><td>16</td><td>5%</td><td>17</td><td>15%</td><td>20%</td><td>17</td><td>10%</td><td>19</td><td>5%</td><td>15%</td></tr>
-                <tr><td>Forest</td><td>15</td><td>5%</td><td>16</td><td>20%</td><td>25%</td><td>16</td><td>10%</td><td>18</td><td>10%</td><td>20%</td></tr>
-                <tr><td>Grassland</td><td>16</td><td>5%</td><td>17</td><td>15%</td><td>20%</td><td>17</td><td>10%</td><td>19</td><td>5%</td><td>15%</td></tr>
-                <tr><td>Hill</td><td>16</td><td>5%</td><td>17</td><td>15%</td><td>20%</td><td>17</td><td>10%</td><td>19</td><td>5%</td><td>15%</td></tr>
-                <tr><td>Mountain</td><td>14</td><td>5%</td><td>15</td><td>25%</td><td>30%</td><td>15</td><td>10%</td><td>17</td><td>15%</td><td>25%</td></tr>
-                <tr><td>Swamp</td><td>14</td><td>5%</td><td>15</td><td>25%</td><td>30%</td><td>15</td><td>10%</td><td>17</td><td>15%</td><td>25%</td></tr>
-                <tr><td>Underdark</td><td>15</td><td>5%</td><td>16</td><td>20%</td><td>25%</td><td>16</td><td>10%</td><td>18</td><td>10%</td><td>20%</td></tr>
-                <tr><td>Underwater</td><td>16</td><td>5%</td><td>17</td><td>15%</td><td>20%</td><td>17</td><td>10%</td><td>19</td><td>5%</td><td>15%</td></tr>
-                <tr><td>Urban</td><td>17</td><td>5%</td><td>18</td><td>10%</td><td>15%</td><td>18</td><td>10%</td><td>20</td><td>0%</td><td>10%</td></tr>
+            <thead><tr class="tableizer-firstrow">
+                <th></th><th colspan="5">Night</th><th colspan="5">Day</th></tr></thead><tbody>
+                <tr><td>&nbsp;</td><td colspan="2">Non-combat</td><td colspan="2">Combat</td><td>Total Prob.</td><td colspan="2">Non-combat</td><td colspan="2">Combat</td><td>Total Prob.</td></tr>
+                <tr><td>Biome</td><td>DC</td><td>Probability</td><td>DC</td><td>Probability</td><td>&nbsp;</td><td>DC</td><td>Probability</td><td>DC</td><td>Probability</td><td>&nbsp;</td></tr>
+                <tr><td>Arctic</td><td>15</td><td>5%</td><td>16</td><td>25%</td><td>30%</td><td>16</td><td>10%</td><td>18</td><td>15%</td><td>25%</td></tr>
+                <tr><td>Coastal</td><td>16</td><td>5%</td><td>17</td><td>20%</td><td>25%</td><td>17</td><td>10%</td><td>19</td><td>10%</td><td>20%</td></tr>
+                <tr><td>Desert</td><td>16</td><td>5%</td><td>17</td><td>20%</td><td>25%</td><td>17</td><td>10%</td><td>19</td><td>10%</td><td>20%</td></tr>
+                <tr><td>Farmland</td><td>17</td><td>10%</td><td>19</td><td>10%</td><td>20%</td><td>17</td><td>15%</td><td>20</td><td>5%</td><td>20%</td></tr>
+                <tr><td>Forest</td><td>15</td><td>5%</td><td>16</td><td>25%</td><td>30%</td><td>16</td><td>10%</td><td>18</td><td>15%</td><td>25%</td></tr>
+                <tr><td>Grassland</td><td>16</td><td>5%</td><td>17</td><td>20%</td><td>25%</td><td>17</td><td>10%</td><td>19</td><td>10%</td><td>20%</td></tr>
+                <tr><td>Hill</td><td>16</td><td>5%</td><td>17</td><td>20%</td><td>25%</td><td>17</td><td>10%</td><td>19</td><td>10%</td><td>20%</td></tr>
+                <tr><td>Jungle</td><td>15</td><td>0%</td><td>15</td><td>30%</td><td>30%</td><td>16</td><td>5%</td><td>17</td><td>20%</td><td>25%</td></tr>
+                <tr><td>Mountain</td><td>14</td><td>5%</td><td>15</td><td>30%</td><td>35%</td><td>15</td><td>10%</td><td>17</td><td>20%</td><td>30%</td></tr>
+                <tr><td>Open Water</td><td>16</td><td>5%</td><td>17</td><td>20%</td><td>25%</td><td>16</td><td>10%</td><td>18</td><td>15%</td><td>25%</td></tr>
+                <tr><td>Swamp</td><td>14</td><td>5%</td><td>15</td><td>30%</td><td>35%</td><td>15</td><td>10%</td><td>17</td><td>20%</td><td>30%</td></tr>
+                <tr><td>Underdark</td><td>15</td><td>5%</td><td>16</td><td>25%</td><td>30%</td><td>16</td><td>10%</td><td>18</td><td>15%</td><td>25%</td></tr>
+                <tr><td>Underwater</td><td>16</td><td>5%</td><td>17</td><td>20%</td><td>25%</td><td>17</td><td>10%</td><td>19</td><td>10%</td><td>20%</td></tr>
+                <tr><td>Urban</td><td>17</td><td>5%</td><td>18</td><td>15%</td><td>20%</td><td>18</td><td>10%</td><td>20</td><td>5%</td><td>15%</td></tr>
+                <tr><td>Wasteland</td><td>14</td><td>5%</td><td>15</td><td>30%</td><td>35%</td><td>15</td><td>10%</td><td>17</td><td>20%</td><td>30%</td></tr>
+                <tr><td>Woodland</td><td>16</td><td>5%</td><td>17</td><td>20%</td><td>25%</td><td>17</td><td>10%</td><td>19</td><td>10%</td><td>20%</td></tr>
             </tbody></table>
         <h2>Combat Encounter Data</h2>
         <a href="https://5e.tools/encountergen.html#arctic_xge_1-4">5e Tools (Thank you!)</a>

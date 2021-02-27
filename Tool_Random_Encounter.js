@@ -13,24 +13,23 @@ function getRndInteger(min, max) {
 function clear_sail() {
     document.getElementById('output').innerHTML = ""
 }
+// Define a dice function to roll multiple dice
+function fMultiRoll(number_of_dice, dice_sides, multiplier) {
+    // Define an empty array to store the rolls
+    aRolls = []
+    // Loop through all the dice and return random integers
+    for (i = 1; i < number_of_dice; i++) {
+        a = getRndInteger(1, dice_sides)
+        aRolls.push(a)
+    }
+    // Get the sum of the array
+    var total = aRolls.reduce((a, b) => a + b, 0) * multiplier
+    return total
+}
 // Define the function to generate a random encounter
 function tool_random_encounter(){
     // Log a seperator
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    // Define the data dictionary
-    let oaData = [
-        {"Biome":"Arctic","Night_NC_DC":15,"Night_NC_Probability":"5%","Night_C_DC":16,"Night_C_Probability":"20%","Night_Total_Prob.":"25%","Day_NC_DC":16,"Day_NC_Probability":"10%","Day_C_DC":18,"Day_C_Probability":"10%","Day_Total_Prob.":"20%"},
-        {"Biome":"Coastal","Night_NC_DC":16,"Night_NC_Probability":"5%","Night_C_DC":17,"Night_C_Probability":"15%","Night_Total_Prob.":"20%","Day_NC_DC":17,"Day_NC_Probability":"10%","Day_C_DC":19,"Day_C_Probability":"5%","Day_Total_Prob.":"15%"},
-        {"Biome":"Desert","Night_NC_DC":16,"Night_NC_Probability":"5%","Night_C_DC":17,"Night_C_Probability":"15%","Night_Total_Prob.":"20%","Day_NC_DC":17,"Day_NC_Probability":"10%","Day_C_DC":19,"Day_C_Probability":"5%","Day_Total_Prob.":"15%"},
-        {"Biome":"Forest","Night_NC_DC":15,"Night_NC_Probability":"5%","Night_C_DC":16,"Night_C_Probability":"20%","Night_Total_Prob.":"25%","Day_NC_DC":16,"Day_NC_Probability":"10%","Day_C_DC":18,"Day_C_Probability":"10%","Day_Total_Prob.":"20%"},
-        {"Biome":"Grassland","Night_NC_DC":16,"Night_NC_Probability":"5%","Night_C_DC":17,"Night_C_Probability":"15%","Night_Total_Prob.":"20%","Day_NC_DC":17,"Day_NC_Probability":"10%","Day_C_DC":19,"Day_C_Probability":"5%","Day_Total_Prob.":"15%"},
-        {"Biome":"Hill","Night_NC_DC":16,"Night_NC_Probability":"5%","Night_C_DC":17,"Night_C_Probability":"15%","Night_Total_Prob.":"20%","Day_NC_DC":17,"Day_NC_Probability":"10%","Day_C_DC":19,"Day_C_Probability":"5%","Day_Total_Prob.":"15%"},
-        {"Biome":"Mountain","Night_NC_DC":14,"Night_NC_Probability":"5%","Night_C_DC":15,"Night_C_Probability":"25%","Night_Total_Prob.":"30%","Day_NC_DC":15,"Day_NC_Probability":"10%","Day_C_DC":17,"Day_C_Probability":"15%","Day_Total_Prob.":"25%"},
-        {"Biome":"Swamp","Night_NC_DC":14,"Night_NC_Probability":"5%","Night_C_DC":15,"Night_C_Probability":"25%","Night_Total_Prob.":"30%","Day_NC_DC":15,"Day_NC_Probability":"10%","Day_C_DC":17,"Day_C_Probability":"15%","Day_Total_Prob.":"25%"},
-        {"Biome":"Underdark","Night_NC_DC":15,"Night_NC_Probability":"5%","Night_C_DC":16,"Night_C_Probability":"20%","Night_Total_Prob.":"25%","Day_NC_DC":16,"Day_NC_Probability":"10%","Day_C_DC":18,"Day_C_Probability":"10%","Day_Total_Prob.":"20%"},
-        {"Biome":"Underwater","Night_NC_DC":16,"Night_NC_Probability":"5%","Night_C_DC":17,"Night_C_Probability":"15%","Night_Total_Prob.":"20%","Day_NC_DC":17,"Day_NC_Probability":"10%","Day_C_DC":19,"Day_C_Probability":"5%","Day_Total_Prob.":"15%"},
-        {"Biome":"Urban","Night_NC_DC":17,"Night_NC_Probability":"5%","Night_C_DC":18,"Night_C_Probability":"10%","Night_Total_Prob.":"15%","Day_NC_DC":18,"Day_NC_Probability":"10%","Day_C_DC":20,"Day_C_Probability":"0%","Day_Total_Prob.":"10%"}
-    ];
     // Get default adjustments
     var a = document.getElementById("combat_threshold")
     var nct = a.options[a.selectedIndex].text
@@ -105,16 +104,37 @@ function tool_random_encounter(){
     } else {
         var CE = false
     }
-    // Get some random encounters
-    if (CE === true) {
-
-    }
-    if (NCE === true) {
-        
-    }
+    // Roll 1d100
+    var d100 = getRndInteger(1, 100)
     // Log the Checked vars
     console.log(`CHECKED VARIABLES
+                1d100: ${d100}
                 Roll: ${roll}
                 Combat: ${CE}
                 Non-combat: ${NCE}`)
+    // Get some random encounters
+    if (CE === true) {
+        var first_filter = eval(biome.toLowerCase()).filter(i => i.Level == lvl)
+        console.log(first_filter)
+        var second_filter = first_filter.find(i => i.d100 = d100).Encounter
+        console.log(second_filter)
+    }
+    if (NCE === true) {
+
+    }
+    // Determine Encounter Distance
+    // Pull number of dice from the database
+    var dice = oaEncounterDistance.find(i => i.biome == biome).number_of_dice
+    // Pull the number of sides from the database
+    var sides = oaEncounterDistance.find(i => i.biome == biome).number_of_sides
+    // Pull the multiplier from the database
+    var mult = oaEncounterDistance.find(i => i.biome == biome).multiplier
+    // Roll the distance
+    var ED = fMultiRoll(dice, sides, mult)
+    // Log the Encounter Distnace Variables
+    console.log(`ENCOUNTER DISTANCE
+                Dice #: ${dice}
+                Sides: ${sides}
+                Multiplier: ${mult}
+                Distance: ${ED} ft.`)
 }
