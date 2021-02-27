@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>   
+        <nav>
+            <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png" alt="Logo">
+            <a href="Nav_Homepage.html">Home</a>
+            <a href="Nav_Calculators.html">Calculators</a>
+            <a href="Nav_Homebrew.html">Homebrew</a>
+            <a href="Nav_Tools.html">Tools</a>
+            <a href="">Donate</a>
+        </nav>
+        <main>
+            <script src="Calculators.js"></script>
+            <h1>Horizon Distance</h1>
+            <label for="shifts">Number of 8-hour Sailing Shifts:</label>
+                <select name="shifts" id="shifts">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+            </select>
+            <p></p>
+            <label for="height">Height of the Observer (h) (Feet):</label>
+                <input type="number" id="height" name="height"><br><br>
+            <label for="radius">Radius of the Planet (r) (Miles):</label>
+                <input type="number" id="radius" name="radius" value="3959"><br><br>
+            </form>
+            *<i>Earth's radius is 3959.</i>
+            <br><br>
+            <button onclick="calculate_horizon()">Calculate</button>
+            <button onclick="clear_sail()">Clear Output</button>
+            <p id = "output"></p>
+            <h2>Some Examples (Year 1500)</h2>
+            <table class="tableizer-table">
+                <thead><tr class="tableizer-firstrow"><th>City</th><th>Toril</th><th>Tianfrit</th><th>Waterdeep</th><th>Westgate</th><th>Calimport</th><th>Gheldaneth</th><th>Unthalass</th><th>Suldolphor</th><th>Bezantur</th><th>Eltabbar</th><th>Athkatla</th><th>Zazesspur</th><th>Cimbar</th><th>Baldur's Gate</th><th>Neverwinter</th><th>Lyrabar</th></tr></thead><tbody>
+                    <tr><td>Region</td><td>The whole planet</td><td>The Trackless Sea</td><td>Sword Coast</td><td>Sea of Fallen Stars</td><td>Calimshan</td><td>Mulhorand</td><td>Unther</td><td>Calimshan</td><td>Thay</td><td>Thay</td><td>Amn</td><td>Tethyr</td><td>Chessenta</td><td>Sword Coast</td><td>Sword Coast</td><td>Sea of Fallen Stars</td></tr>
+                    <tr><td>Population</td><td>430,000,000</td><td>1,750</td><td>348,000</td><td>114,000</td><td>193,000</td><td>172,000</td><td>165,000</td><td>144,000</td><td>137,000</td><td>123,000</td><td>118,000</td><td>116,000</td><td>111,000</td><td>42,000</td><td>23,200</td><td>50,000</td></tr>
+                    <tr><td>0</td><td>4,161,500</td><td>16</td><td>3,367</td><td>1,103</td><td>1,867</td><td>1,664</td><td>1,596</td><td>1,393</td><td>1,325</td><td>1,190</td><td>1,141</td><td>1,122</td><td>1,074</td><td>406</td><td>224</td><td>483</td></tr>
+                    <tr><td>1</td><td>256,390</td><td>1</td><td>207</td><td>67</td><td>115</td><td>102</td><td>98</td><td>85</td><td>81</td><td>73</td><td>70</td><td>69</td><td>66</td><td>25</td><td>13</td><td>29</td></tr>
+                    <tr><td>2</td><td>222,935</td><td>0</td><td>180</td><td>59</td><td>100</td><td>89</td><td>85</td><td>74</td><td>71</td><td>63</td><td>61</td><td>60</td><td>57</td><td>21</td><td>12</td><td>25</td></tr>
+                    <tr><td>3</td><td>187,134</td><td>0</td><td>151</td><td>49</td><td>83</td><td>74</td><td>71</td><td>62</td><td>59</td><td>53</td><td>51</td><td>50</td><td>48</td><td>18</td><td>10</td><td>21</td></tr>
+                    <tr><td>4</td><td>149,073</td><td>0</td><td>120</td><td>39</td><td>66</td><td>59</td><td>57</td><td>49</td><td>47</td><td>42</td><td>40</td><td>40</td><td>38</td><td>14</td><td>8</td><td>17</td></tr>
+                    <tr><td>5</td><td>115,220</td><td>0</td><td>93</td><td>30</td><td>51</td><td>46</td><td>44</td><td>38</td><td>36</td><td>32</td><td>31</td><td>31</td><td>29</td><td>11</td><td>6</td><td>13</td></tr>
+                    <tr><td>6</td><td>86,658</td><td>0</td><td>70</td><td>22</td><td>38</td><td>34</td><td>33</td><td>29</td><td>27</td><td>24</td><td>23</td><td>23</td><td>22</td><td>8</td><td>4</td><td>10</td></tr>
+                    <tr><td>7</td><td>63,548</td><td>0</td><td>51</td><td>16</td><td>28</td><td>25</td><td>24</td><td>21</td><td>20</td><td>18</td><td>17</td><td>17</td><td>16</td><td>6</td><td>3</td><td>7</td></tr>
+                    <tr><td>8</td><td>45,651</td><td>0</td><td>36</td><td>12</td><td>20</td><td>18</td><td>17</td><td>15</td><td>14</td><td>13</td><td>12</td><td>12</td><td>11</td><td>4</td><td>2</td><td>5</td></tr>
+                    <tr><td>9</td><td>31,350</td><td>0</td><td>25</td><td>8</td><td>14</td><td>12</td><td>12</td><td>10</td><td>9</td><td>8</td><td>8</td><td>8</td><td>8</td><td>3</td><td>1</td><td>3</td></tr>
+                    <tr><td>10</td><td>21,721</td><td>0</td><td>17</td><td>5</td><td>9</td><td>8</td><td>8</td><td>7</td><td>6</td><td>6</td><td>5</td><td>5</td><td>5</td><td>2</td><td>1</td><td>2</td></tr>
+                    <tr><td>11</td><td>13,844</td><td>0</td><td>11</td><td>3</td><td>6</td><td>5</td><td>5</td><td>4</td><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>12</td><td>8,606</td><td>0</td><td>6</td><td>2</td><td>3</td><td>3</td><td>3</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>0</td><td>0</td><td>1</td></tr>
+                    <tr><td>13</td><td>5,068</td><td>0</td><td>4</td><td>1</td><td>2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>14</td><td>3,120</td><td>0</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>15</td><td>1,563</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>16</td><td>840</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>17</td><td>443</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>18</td><td>208</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>19</td><td>78</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>20</td><td>13</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                </tbody></table>
+            <h2>The Data</h2>
+            <table class="tableizer-table">
+                <thead><tr class="tableizer-firstrow"><th>Level</th><th>Spell Slot Level</th><th>Percentage of Population</th></tr></thead><tbody>
+                    <tr><td>0</td><td>&nbsp;</td><td>0.009677909091</td></tr>
+                    <tr><td>1</td><td>1</td><td>0.0005962575758</td></tr>
+                    <tr><td>2</td><td>&nbsp;</td><td>0.0005184545455</td></tr>
+                    <tr><td>3</td><td>2</td><td>0.0004351969697</td></tr>
+                    <tr><td>4</td><td>&nbsp;</td><td>0.0003466818182</td></tr>
+                    <tr><td>5</td><td>3</td><td>0.0002679545455</td></tr>
+                    <tr><td>6</td><td>&nbsp;</td><td>0.000201530303</td></tr>
+                    <tr><td>7</td><td>4</td><td>0.0001477878788</td></tr>
+                    <tr><td>8</td><td>&nbsp;</td><td>0.0001061666667</td></tr>
+                    <tr><td>9</td><td>5</td><td>0.00007290909091</td></tr>
+                    <tr><td>10</td><td>&nbsp;</td><td>0.00005051515152</td></tr>
+                    <tr><td>11</td><td>6</td><td>0.0000321969697</td></tr>
+                    <tr><td>12</td><td>&nbsp;</td><td>0.00002001515152</td></tr>
+                    <tr><td>13</td><td>7</td><td>0.00001178787879</td></tr>
+                    <tr><td>14</td><td>&nbsp;</td><td>0.000007257575758</td></tr>
+                    <tr><td>15</td><td>8</td><td>0.000003636363636</td></tr>
+                    <tr><td>16</td><td>&nbsp;</td><td>0.000001954545455</td></tr>
+                    <tr><td>17</td><td>9</td><td>0.00000103030303</td></tr>
+                    <tr><td>18</td><td>&nbsp;</td><td>0.0000004848484848</td></tr>
+                    <tr><td>19</td><td>&nbsp;</td><td>0.0000001818181818</td></tr>
+                    <tr><td>20</td><td>&nbsp;</td><td>0.0000000303030303</td></tr>
+                </tbody></table>
+    </main> 
+    </body>  
+</html>

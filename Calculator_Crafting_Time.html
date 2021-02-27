@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>   
+        <nav>
+            <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png" alt="Logo">
+            <a href="Nav_Homepage.html">Home</a>
+            <a href="Nav_Calculators.html">Calculators</a>
+            <a href="Nav_Homebrew.html">Homebrew</a>
+            <a href="Nav_Tools.html">Tools</a>
+            <a href="">Donate</a>
+        </nav>
+        <main>
+            <script src="Calculators.js"></script>
+            <h1>Crafting Duration</h1>
+            <label for="gold">Item's Gold value:</label>
+                <input type="number" id="gold" name="gold"><br><br>
+            <label for="prof">Proficiency Bonus:</label>
+                <input type="number" id="prof" name="prof"><br><br>
+            <label for="int">Intelligence Modifier:</label>
+                <input type="number" id="int" name="int"><br><br>
+            </form>
+            <button onclick="calculate_crafting_time()">Calculate</button>
+            <button onclick="clear_sail()">Clear Output</button>
+            <p id = "output"></p>
+            
+    </main> 
+    </body>  
+</html>

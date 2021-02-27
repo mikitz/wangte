@@ -103,7 +103,7 @@ function clear_prob2() {
 }
 // Calculate the time to get to a destination on foot
 function calcuate_travel_duration () {
-    
+    // TODO
 }
 // Calculate the distance to the horizon
 function calculate_horizon () {
@@ -118,4 +118,48 @@ function calculate_horizon () {
     p.innerHTML = `${l} feet <br>
                     ${(l/5280).toFixed(2)} miles`
     document.getElementById("output").appendChild(p)	
+}
+// Calculates how long it will take to craft a certain item
+function calculate_crafting_time(){
+    // Get gold
+    var g = document.getElementById("gold").value
+    // Get prof. bonus
+    var p = document.getElementById("prof").value
+    // Get int. mod.
+    var i = document.getElementById("int").value
+    // Calculate amount of gold per 8 hours of work (1 workday)
+    var wd = (p + i)*10
+    // Calculate the amount of gold per 1 hour (1 workhour)
+    var wh = Math.round(wd/8)
+    // Calculate the # of hours for this specific item
+    var whi = Math.round(g / wh)
+    // Calcualte the workdays for this specific item
+    var wdi = (whi / 8).toFixed(2)
+    // Print the output
+    var p = document.createElement('p')
+    p.innerHTML = `Gold per Workday: ${wd} gp <br>
+                    Gold per Workhour: ${wh} gp <br>
+                    Workhours for this Item: ${whi} hours <br>
+                    Workdays for this Item: ${wdi} days`
+    document.getElementById("output").appendChild(p)
+}
+// Calculate the reward for a bounty
+function calculate_bounty(){
+    // Get the most wanted status
+    var a = document.getElementById("most-wanted")
+    var mws = a.options[a.selectedIndex].text
+    // Turn mws into an int if it's not "N/A"
+    if (mws != "N/A") {mws = parseInt(mws)}
+    // Get the target's CR
+    var cr = document.getElementById("cr").value
+    // Calculate the bounty reward
+    if (mws != "N/A") {
+        var br = (mws * 1000) * cr
+    } else {
+        var br = cr * 100
+    }
+    // Print the output
+    var p = document.createElement('p')
+    p.innerHTML = `Bounty Reward: ${br} gp`
+    document.getElementById("output").appendChild(p)
 }

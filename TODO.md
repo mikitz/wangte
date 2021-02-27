@@ -3,10 +3,9 @@
 * [x] Sailing Duration and Cargo Tranport Revenue
 * Foot Travel Duration
 * [x] Horizon Calculator
-* How Special Are You?
-* Crafting Duration
-* Training Successes
-* Bounty Reward
+* [x] How Special Are You?
+* [x] Crafting Duration
+* [x] Bounty Reward
 
 ## Homebrew
 * [x] Adjusting Races
