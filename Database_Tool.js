@@ -843,3 +843,4 @@ let coastal = [
     {"Encounter":"1 marid","roll":99,"Level":"5-10"},
     {"Encounter":"1 storm giant","roll":100,"Level":"5-10"}
 ]
+let desert = 
