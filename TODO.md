@@ -50,6 +50,8 @@
         * [x] Time of Day
         * [x] DC Adjustments
         * [x] Encounter Distance
+            * [x] Compute
+            * [x] Add to message
         * [x] Copy over Combat tables and fix them up with *Tools.ipynb*
         * Implement 5etools.net link generation for the monsters 
         * Handle dice inside the *Encounter* column

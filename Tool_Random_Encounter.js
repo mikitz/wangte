@@ -113,6 +113,22 @@ function tool_random_encounter(){
     console.log(`CHECKED VARIABLES
                 Combat: ${CE}
                 Non-combat: ${NCE}`)
+    // Determine Encounter Distance
+    // Pull number of dice from the database
+    var dice = oaEncounterDistance.find(i => i.biome == biome).number_of_dice
+    // Pull the number of sides from the database
+    var sides = oaEncounterDistance.find(i => i.biome == biome).number_of_sides
+    // Pull the multiplier from the database
+    var mult = oaEncounterDistance.find(i => i.biome == biome).multiplier
+    // Roll the distance
+    var ED = fMultiRoll(dice, sides, mult)
+    // Log the Encounter Distnace Variables
+    console.log(`ENCOUNTER DISTANCE
+                Dice #: ${dice}
+                Sides: ${sides}
+                Multiplier: ${mult}
+                Distance: ${ED} ft.`)
+    
     // Roll 1d100
     var ad100 = getRndInteger(1, 100)
     // Get some random encounters
@@ -140,7 +156,7 @@ function tool_random_encounter(){
             var roll = fMultiRoll(num_dice, num_of_sides, 1)
             total = parseInt(roll + modifier)
             // Set up the Encounter message
-            encounterFinal = encounter.replace(ndxyDice, total)
+            encounterFinal = encounter.replace(ndxyDice, total) + ` ${ED} ft. away.`
             // Log It
             console.log(`nDx+y STUFF
                         Encounter: ${encounter}
@@ -162,7 +178,7 @@ function tool_random_encounter(){
             // Roll the dice
             var total = fMultiRoll(num_dice, num_of_sides, 1)
             // Set up the Encounter message
-            encounterFinal = encounter.replace(ndxDice, total)
+            encounterFinal = encounter.replace(ndxDice, total) + ` ${ED} ft. away.`
             // Log It
             console.log(`nDx STUFF
                         Encounter: ${encounter}
@@ -185,22 +201,6 @@ function tool_random_encounter(){
                 Encounter: ${encounterFinal}
                 nDx+y: ${ndxyDice}
                 nDx: ${ndxDice}`)
-    // Determine Encounter Distance
-    // Pull number of dice from the database
-    var dice = oaEncounterDistance.find(i => i.biome == biome).number_of_dice
-    // Pull the number of sides from the database
-    var sides = oaEncounterDistance.find(i => i.biome == biome).number_of_sides
-    // Pull the multiplier from the database
-    var mult = oaEncounterDistance.find(i => i.biome == biome).multiplier
-    // Roll the distance
-    var ED = fMultiRoll(dice, sides, mult)
-    // Log the Encounter Distnace Variables
-    console.log(`ENCOUNTER DISTANCE
-                Dice #: ${dice}
-                Sides: ${sides}
-                Multiplier: ${mult}
-                Distance: ${ED} ft.`)
-    
     // Build the message
     let vMessage = `${encounterFinal}`
     // Print the output
