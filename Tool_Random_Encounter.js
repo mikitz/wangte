@@ -32,6 +32,7 @@ function fMultiRoll(number_of_dice, dice_sides, multiplier) {
 }
 // Define the function to generate a random encounter
 function tool_random_encounter(){
+    clear_sail()
     // Log a seperator
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     // Get default adjustments
@@ -48,6 +49,9 @@ function tool_random_encounter(){
     // Get time of day
     var e = document.getElementById("time_of_day")
     var time_of_day = e.options[e.selectedIndex].text
+    // Get the season
+    var f = document.getElementById("season")
+    var season = f.options[f.selectedIndex].text
     // Check to see if nct is lower than ct
     if (parseInt(nct) >= parseInt(ct)) {
         alert("Non-combat Encounter DC MUST be lower than Combat Encounter DC")
@@ -56,7 +60,8 @@ function tool_random_encounter(){
     console.log(`INITIAL VARIABLES
                 Lvl: ${lvl}
                 Biome: ${biome}
-                Time of Day: ${time_of_day}`)
+                Time of Day: ${time_of_day}
+                Season: ${season}`)
     // If statement to check whether defaults persist
     if (nct === "N/A" && ct === "N/A") {
         // Pull both DCs from the database based on time of day
@@ -94,25 +99,6 @@ function tool_random_encounter(){
     console.log(`PULLED DATA
                 Non-combat DC: ${ncdc}
                 Combat DC: ${cdc}`)
-    // Roll the dice and see if it produces a random encounter or not
-    var roll = getRndInteger(1, 20)
-    // Check the roll against the non-combat DC
-    if (roll >= ncdc && roll < cdc) {
-        var NCE = true
-    } else {
-        var NCE = false
-    } 
-    // Check the roll against the combat DC
-    if (roll >= cdc) {
-        var CE = true 
-    } else {
-        var CE = false
-        var encounterFinal = 'No Random Encounter'
-    }
-    // Log the Checked vars
-    console.log(`CHECKED VARIABLES
-                Combat: ${CE}
-                Non-combat: ${NCE}`)
     // Determine Encounter Distance
     // Pull number of dice from the database
     var dice = oaEncounterDistance.find(i => i.biome == biome).number_of_dice
@@ -128,18 +114,30 @@ function tool_random_encounter(){
                 Sides: ${sides}
                 Multiplier: ${mult}
                 Distance: ${ED} ft.`)
-    
-    // Roll 1d100
-    var ad100 = getRndInteger(1, 100)
-    // Get some random encounters
-    if (CE === true) {
-        var encounter = eval(biome.toLowerCase()).filter(i => i.Level == lvl)
-        encounter = encounter.find(i => i.d100 === ad100).Encounter
+    // Roll the dice and see if it produces a random encounter or not
+    var roll = getRndInteger(1, 20)
+    // Non-combat Encounter
+    if (roll >= ncdc && roll < cdc) {
+        var len = eval(`${biome.toLowerCase()}_nc`).length
+        // Roll 1dx
+        var ad100 = getRndInteger(1, len)
+        var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
+        console.log(encounter)
+        var encounterFinal = `<h3>NON-COMBAT ENCOUNTER</h3>`
+        encounterFinal += encounter + ` ${ED} ft. away.`
+    }
+    // Combat Encounter
+    if (roll >= cdc) {
+        // Roll 1d100
+        var ad100 = getRndInteger(1, 100)
+        // Get the data from the DB
+        var encounter = eval(biome.toLowerCase()).filter(n => n.Level == lvl)
+        encounter = encounter.find(x => x.d100 === ad100).Encounter
         const NewRegEx = /(?:\d+d\d*\+?\d*)/gm // Find all dice groups
         var aDice = encounter.match(NewRegEx)
         // Check to see if aDice is not empty
         if (aDice) {
-            var encounterFinal = encounter
+            var encounterF = encounter
             // Log for debugging
             console.log("aDice")
             console.log(aDice)
@@ -163,16 +161,18 @@ function tool_random_encounter(){
                 // Log for debugging
                 console.log(`${aDice[i]}'s total is ${total}`)
                 // Set up the Encounter message
-                console.log(`${i}: ${encounterFinal}`)
-                encounterFinal = encounterFinal.replace(aDice[i], total)
+                console.log(`${i}: ${encounterF}`)
+                encounterF = encounterF.replace(aDice[i], total)
             }
-            encounterFinal += ` ${ED} ft. away.`
+            encounterF += ` ${ED} ft. away.`
+            var encounterFinal = `<h3>COMBAT ENCOUNTER</h3><br>${encounterF}`
         } else {
-            encounterFinal = encounter + ` ${ED} ft. away.`
+            var encounterFinal = `<h3>COMBAT ENCOUNTER</h3><br>${encounter} ${ED} ft. away.`
         }
     }
-    if (NCE === true) {
-        
+    // No Random Encounter
+    if (roll < ncdc && roll < cdc) {
+        encounterFinal = `No Random Encounter`
     }
     // Logged Rolled Vars
     console.log(`ROLLED VARIABLES
