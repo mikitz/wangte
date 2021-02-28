@@ -41,26 +41,31 @@
 * Bounty Board
 * Calendar
 * Procedural Battle Maps
+    * Tie this in with Random Encounter?
 * Combat Tracker
     * Enemy Stealth Roll
     * Random PC Picker
-    * Random Encounter Generator
-        * [x] Level Range
-        * [x] Biome
-        * [x] Time of Day
-        * [x] DC Adjustments
-        * [x] Encounter Distance
-            * [x] Compute
-            * [x] Add to message
-        * [x] Copy over Combat tables and fix them up with *Tools.ipynb*
-        * Implement 5etools.net link generation for the monsters 
-        * Handle dice inside the *Encounter* column
-            * [x] 1 die
-            * 2 dice
-        * Copy over Non-combat Tables
+* Random Encounter Generator
+    * [x] Level Range
+    * [x] Biome
+    * [x] Time of Day
+    * [x] DC Adjustments
+    * [x] Encounter Distance
+        * [x] Compute
+        * [x] Add to message
+    * [x] Copy over Combat tables and fix them up with *Tools.ipynb*
+    * Implement 5etools.net link generation for the monsters 
+    * Handle dice inside the *Encounter* column
+        * [x] 1 die
+        * 2 dice
+    * Copy over Non-combat Tables
+    * Weather as part of the encounter?
+    * And a map that auto generate?
 * Spell Helper
 * Downtime Activities
 * Ship Expenses
+* Weather Geneartor
+    * Tie this in with Random Encounters?
 
 ## style.css
 * Tables
