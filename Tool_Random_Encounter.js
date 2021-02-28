@@ -104,24 +104,26 @@ function tool_random_encounter(){
     } else {
         var CE = false
     }
-    // Roll 1d100
-    var d100 = getRndInteger(1, 100)
     // Log the Checked vars
     console.log(`CHECKED VARIABLES
-                1d100: ${d100}
-                Roll: ${roll}
                 Combat: ${CE}
                 Non-combat: ${NCE}`)
+    // Roll 1d100
+    var ad100 = getRndInteger(1, 100)
     // Get some random encounters
     if (CE === true) {
-        var first_filter = eval(biome.toLowerCase()).filter(i => i.Level == lvl)
-        console.log(first_filter)
-        var second_filter = first_filter.find(i => i.d100 = d100).Encounter
-        console.log(second_filter)
+        var encounter = eval(biome.toLowerCase()).filter(i => i.Level == lvl).find(i => i.roll === ad100).Encounter
+    } else {
+        var encounter = 'No Random Encounter'
     }
     if (NCE === true) {
-
+        var encounter = 'No Random Encounter'
     }
+    // Logged Rolled Vars
+    console.log(`ROLLED VARIABLES
+                d100: ${ad100}
+                d20: ${roll}
+                Encounter: ${encounter}`)
     // Determine Encounter Distance
     // Pull number of dice from the database
     var dice = oaEncounterDistance.find(i => i.biome == biome).number_of_dice
