@@ -40,6 +40,8 @@
 ## Tools
 * Bounty Board
 * Calendar
+    * Generate Weather every hour that is advanced?
+        * Option to change to every day
 * Procedural Battle Maps
     * Tie this in with Random Encounter?
 * Combat Tracker
@@ -58,6 +60,9 @@
     * [x] Handle dice inside the *Encounter* column
         * [x] Handle as many dice groups as show up
     * Copy over Non-combat Tables
+        * Arctic text needs to be cleaned up
+            * Some entries were split by \n
+            * Remove numbers as well
     * Weather as part of the encounter?
     * And a map that auto generate?
 * Spell Helper
@@ -65,6 +70,8 @@
 * Ship Expenses
 * Weather Geneartor
     * Tie this in with Random Encounters?
+    * See [Homebrew Tables](https://docs.google.com/spreadsheets/d/1N_znTY_gMZDlYvmaiF9HaiwbhZWio8tnhm4WrBQ9evc/edit#gid=1038137305)
+        * Need to add in more data into the **Climate** table on the *Weather (Not HB)* sheet
 
 ## style.css
 * Tables

@@ -168,7 +168,7 @@ function tool_random_encounter(){
             }
             encounterFinal += ` ${ED} ft. away.`
         } else {
-            encounterFinal = encounter
+            encounterFinal = encounter + ` ${ED} ft. away.`
         }
     }
     if (NCE === true) {
