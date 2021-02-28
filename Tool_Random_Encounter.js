@@ -19,7 +19,7 @@ function fMultiRoll(number_of_dice, dice_sides, multiplier) {
     aRolls = []
     // Loop through all the dice and return random integers
     if (number_of_dice > 1) {
-        for (i = 1; i < number_of_dice; i++) {
+        for (x = 0; x < number_of_dice; x++) {
             a = getRndInteger(1, dice_sides)
             aRolls.push(a)
         }
@@ -135,72 +135,50 @@ function tool_random_encounter(){
     if (CE === true) {
         var encounter = eval(biome.toLowerCase()).filter(i => i.Level == lvl)
         encounter = encounter.find(i => i.d100 === ad100).Encounter
-        const NewRegEx = /(\d+d\d+(\+)?)\w+/g // Find ndx+y (E.G. 1d4+3)
-        var ndxyDice = NewRegEx.exec(encounter)
-        const NewRegEx2 = /(\d+d\d)/g // Find xdx (E.G. 1d6)
-        var ndxDice = NewRegEx2.exec(encounter)
-        if (ndxyDice) {
-            ndxyDice = ndxyDice[0]
-            // Extract number of dice
-            const RegEx = /\d+(?=d)/g
-            var num_dice = RegEx.exec(ndxyDice)
-            // Extrect Dice Sides
-            const MoreRegEx = /(?<=d)(\d*)/g
-            var num_of_sides = MoreRegEx.exec(ndxyDice)
-            num_of_sides = num_of_sides[0]
-            // Extract Modifier
-            const EvenMoreRegEx = /(?<=\+)(\d*)/g
-            var modifier = EvenMoreRegEx.exec(ndxyDice)
-            modifier = parseInt(modifier[0])
-            // Roll the dice
-            var roll = fMultiRoll(num_dice, num_of_sides, 1)
-            total = parseInt(roll + modifier)
-            // Set up the Encounter message
-            encounterFinal = encounter.replace(ndxyDice, total) + ` ${ED} ft. away.`
-            // Log It
-            console.log(`nDx+y STUFF
-                        Encounter: ${encounter}
-                        nDxy Dice: ${ndxyDice}
-                        Dice #: ${num_dice}
-                        Sides: ${num_of_sides}
-                        Mod.: ${modifier}
-                        Roll: ${roll}
-                        Total: ${total}`)
-        } else if (ndxDice) {
-            ndxDice = ndxDice[0]
-            // Extract number of dice
-            const RegEx = /\d+(?=d)/g
-            var num_dice = RegEx.exec(ndxDice)
-            // Extrect Dice Sides
-            const MoreRegEx = /(?<=d)(\d*)/g
-            var num_of_sides = MoreRegEx.exec(ndxDice)
-            num_of_sides = num_of_sides[0]
-            // Roll the dice
-            var total = fMultiRoll(num_dice, num_of_sides, 1)
-            // Set up the Encounter message
-            encounterFinal = encounter.replace(ndxDice, total) + ` ${ED} ft. away.`
-            // Log It
-            console.log(`nDx STUFF
-                        Encounter: ${encounter}
-                        nDx Dice: ${ndxDice}
-                        Dice #: ${num_dice}
-                        Sides: ${num_of_sides}
-                        Total: ${total}`)
+        const NewRegEx = /(?:\d+d\d*\+?\d*)/gm // Find all dice groups
+        var aDice = encounter.match(NewRegEx)
+        // Check to see if aDice is not empty
+        if (aDice) {
+            var encounterFinal = encounter
+            // Log for debugging
+            console.log("aDice")
+            console.log(aDice)
+            // Loop through aDice and calculate totals for each element
+            for (i = 0; i < aDice.length; i++) {
+                // Extract number of dice
+                const RegEx = /\d+(?=d)/g
+                var num_dice = RegEx.exec(aDice[i])
+                // Extrect Dice Sides
+                const MoreRegEx = /(?<=d)(\d*)/g
+                var num_of_sides = MoreRegEx.exec(aDice[i])
+                num_of_sides = num_of_sides[0]
+                // Extract Modifier
+                const EvenMoreRegEx = /(?<=\+)(\d*)/g
+                var modifier = EvenMoreRegEx.exec(aDice[i])
+                if (modifier) {modifier = parseInt(modifier[0])}
+                else {modifier = 0}
+                // Total
+                var total = fMultiRoll(num_dice, num_of_sides, 1)
+                total = total + modifier
+                // Log for debugging
+                console.log(`${aDice[i]}'s total is ${total}`)
+                // Set up the Encounter message
+                console.log(`${i}: ${encounterFinal}`)
+                encounterFinal = encounterFinal.replace(aDice[i], total)
+            }
+            encounterFinal += ` ${ED} ft. away.`
         } else {
             encounterFinal = encounter
         }
-
     }
     if (NCE === true) {
         
-    } 
+    }
     // Logged Rolled Vars
     console.log(`ROLLED VARIABLES
                 d100: ${ad100}
                 d20: ${roll}
-                Encounter: ${encounterFinal}
-                nDx+y: ${ndxyDice}
-                nDx: ${ndxDice}`)
+                Encounter: ${encounterFinal}`)
     // Build the message
     let vMessage = `${encounterFinal}`
     // Print the output

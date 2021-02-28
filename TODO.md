@@ -55,9 +55,8 @@
         * [x] Add to message
     * [x] Copy over Combat tables and fix them up with *Tools.ipynb*
     * Implement 5etools.net link generation for the monsters 
-    * Handle dice inside the *Encounter* column
-        * [x] 1 die
-        * 2 dice
+    * [x] Handle dice inside the *Encounter* column
+        * [x] Handle as many dice groups as show up
     * Copy over Non-combat Tables
     * Weather as part of the encounter?
     * And a map that auto generate?
