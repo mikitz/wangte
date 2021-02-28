@@ -7,7 +7,7 @@ var randomProperty = function (obj) {
 // Function to get a random integer
 // Source: https://www.w3schools.com/js/js_random.asp
 function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min) ) + min;
+    return parseInt((Math.floor(Math.random() * (max - min)) + min))
 }
 // Clears "output"
 function clear_sail() {
@@ -18,13 +18,17 @@ function fMultiRoll(number_of_dice, dice_sides, multiplier) {
     // Define an empty array to store the rolls
     aRolls = []
     // Loop through all the dice and return random integers
-    for (i = 1; i < number_of_dice; i++) {
-        a = getRndInteger(1, dice_sides)
-        aRolls.push(a)
+    if (number_of_dice > 1) {
+        for (i = 1; i < number_of_dice; i++) {
+            a = getRndInteger(1, dice_sides)
+            aRolls.push(a)
+        }
+        // Get the sum of the array
+        var total = aRolls.reduce((a, b) => a + b, 0) * multiplier
+    } else {
+        var total = getRndInteger(1, dice_sides)
     }
-    // Get the sum of the array
-    var total = aRolls.reduce((a, b) => a + b, 0) * multiplier
-    return total
+    return parseInt(total)
 }
 // Define the function to generate a random encounter
 function tool_random_encounter(){
@@ -103,6 +107,7 @@ function tool_random_encounter(){
         var CE = true 
     } else {
         var CE = false
+        var encounterFinal = 'No Random Encounter'
     }
     // Log the Checked vars
     console.log(`CHECKED VARIABLES
@@ -114,21 +119,72 @@ function tool_random_encounter(){
     if (CE === true) {
         var encounter = eval(biome.toLowerCase()).filter(i => i.Level == lvl)
         encounter = encounter.find(i => i.d100 === ad100).Encounter
-        encounter = String(encounter)
-        var regex = new RegExp("\\dd\d\gm")
-        var alldice = encounter.match(regex)
-    } else {
-        var encounter = 'No Random Encounter'
+        const NewRegEx = /(\d+d\d+(\+)?)\w+/g // Find ndx+y (E.G. 1d4+3)
+        var ndxyDice = NewRegEx.exec(encounter)
+        const NewRegEx2 = /(\d+d\d)/g // Find xdx (E.G. 1d6)
+        var ndxDice = NewRegEx2.exec(encounter)
+        if (ndxyDice) {
+            ndxyDice = ndxyDice[0]
+            // Extract number of dice
+            const RegEx = /\d+(?=d)/g
+            var num_dice = RegEx.exec(ndxyDice)
+            // Extrect Dice Sides
+            const MoreRegEx = /(?<=d)(\d*)/g
+            var num_of_sides = MoreRegEx.exec(ndxyDice)
+            num_of_sides = num_of_sides[0]
+            // Extract Modifier
+            const EvenMoreRegEx = /(?<=\+)(\d*)/g
+            var modifier = EvenMoreRegEx.exec(ndxyDice)
+            modifier = parseInt(modifier[0])
+            // Roll the dice
+            var roll = fMultiRoll(num_dice, num_of_sides, 1)
+            total = parseInt(roll + modifier)
+            // Set up the Encounter message
+            encounterFinal = encounter.replace(ndxyDice, total)
+            // Log It
+            console.log(`nDx+y STUFF
+                        Encounter: ${encounter}
+                        nDxy Dice: ${ndxyDice}
+                        Dice #: ${num_dice}
+                        Sides: ${num_of_sides}
+                        Mod.: ${modifier}
+                        Roll: ${roll}
+                        Total: ${total}`)
+        } else if (ndxDice) {
+            ndxDice = ndxDice[0]
+            // Extract number of dice
+            const RegEx = /\d+(?=d)/g
+            var num_dice = RegEx.exec(ndxDice)
+            // Extrect Dice Sides
+            const MoreRegEx = /(?<=d)(\d*)/g
+            var num_of_sides = MoreRegEx.exec(ndxDice)
+            num_of_sides = num_of_sides[0]
+            // Roll the dice
+            var total = fMultiRoll(num_dice, num_of_sides, 1)
+            // Set up the Encounter message
+            encounterFinal = encounter.replace(ndxDice, total)
+            // Log It
+            console.log(`nDx STUFF
+                        Encounter: ${encounter}
+                        nDx Dice: ${ndxDice}
+                        Dice #: ${num_dice}
+                        Sides: ${num_of_sides}
+                        Total: ${total}`)
+        } else {
+            encounterFinal = encounter
+        }
+
     }
     if (NCE === true) {
         
-    }
+    } 
     // Logged Rolled Vars
     console.log(`ROLLED VARIABLES
                 d100: ${ad100}
                 d20: ${roll}
-                Encounter: ${encounter}
-                forwardslash: ${alldice}`)
+                Encounter: ${encounterFinal}
+                nDx+y: ${ndxyDice}
+                nDx: ${ndxDice}`)
     // Determine Encounter Distance
     // Pull number of dice from the database
     var dice = oaEncounterDistance.find(i => i.biome == biome).number_of_dice
@@ -144,4 +200,11 @@ function tool_random_encounter(){
                 Sides: ${sides}
                 Multiplier: ${mult}
                 Distance: ${ED} ft.`)
+    
+    // Build the message
+    let vMessage = `${encounterFinal}`
+    // Print the output
+    var p = document.createElement('p')
+    p.innerHTML = vMessage
+    document.getElementById("output").appendChild(p)
 }
