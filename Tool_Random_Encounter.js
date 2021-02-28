@@ -50,7 +50,7 @@ function tool_random_encounter(){
     }
     // Log initial vars
     console.log(`INITIAL VARIABLES
-                Level Range: ${lvl}
+                Lvl: ${lvl}
                 Biome: ${biome}
                 Time of Day: ${time_of_day}`)
     // If statement to check whether defaults persist
@@ -112,18 +112,23 @@ function tool_random_encounter(){
     var ad100 = getRndInteger(1, 100)
     // Get some random encounters
     if (CE === true) {
-        var encounter = eval(biome.toLowerCase()).filter(i => i.Level == lvl).find(i => i.roll === ad100).Encounter
+        var encounter = eval(biome.toLowerCase()).filter(i => i.Level == lvl)
+        encounter = encounter.find(i => i.d100 === ad100).Encounter
+        encounter = String(encounter)
+        var regex = new RegExp("\\dd\d\gm")
+        var alldice = encounter.match(regex)
     } else {
         var encounter = 'No Random Encounter'
     }
     if (NCE === true) {
-        var encounter = 'No Random Encounter'
+        
     }
     // Logged Rolled Vars
     console.log(`ROLLED VARIABLES
                 d100: ${ad100}
                 d20: ${roll}
-                Encounter: ${encounter}`)
+                Encounter: ${encounter}
+                forwardslash: ${alldice}`)
     // Determine Encounter Distance
     // Pull number of dice from the database
     var dice = oaEncounterDistance.find(i => i.biome == biome).number_of_dice
