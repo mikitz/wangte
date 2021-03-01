@@ -59,10 +59,13 @@
     * Implement 5etools.net link generation for the monsters 
     * [x] Handle dice inside the *Encounter* column
         * [x] Handle as many dice groups as show up
-    * Copy over Non-combat Tables
-        * Arctic text needs to be cleaned up
-            * Some entries were split by \n
-            * Remove numbers as well
+    * [x] Copy over Non-combat Tables that line up with Combat tables
+    * Incoporate into the site the extra Non-combat tables
+        * Dungeon
+        * Festivals
+        * Red Light District
+        * Road
+        * Tavern
     * Weather as part of the encounter?
     * And a map that auto generate?
 * Spell Helper
