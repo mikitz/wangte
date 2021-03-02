@@ -40,36 +40,12 @@ function generate_weather() {
     // Get season
     var b = document.getElementById("season")
     var season = b.options[b.selectedIndex].text
-    // Handle the different season to get the right data
-    if (season == 'Spring') {
-        // Pull average temperature
-        var avgTemp = weather.find(i => i.Type == climate).Spring_Average_Temp_F
-        // Pull precipitation probability
-        var precProb = weather.find(i => i.Type == climate).Spring_Precipitation_Prob
-        // Pull heavy precipitaion probability
-        var precProbHeavy = weather.find(i => i.Type == climate).Spring_Heavy_Precipitation_Prob
-    } else if (season == 'Winter') {
-        // Pull average temperature
-        var avgTemp = weather.find(i => i.Type == climate).Winter_Average_Temp_F
-        // Pull precipitation probability
-        var precProb = weather.find(i => i.Type == climate).Winter_Precipitation_Prob
-        // Pull heavy precipitaion probability
-        var precProbHeavy = weather.find(i => i.Type == climate).Winter_Heavy_Precipitation_Prob
-    } else if (season == 'Summer') {
-        // Pull average temperature
-        var avgTemp = weather.find(i => i.Type == climate).Summer_Average_Temp_F
-        // Pull precipitation probability
-        var precProb = weather.find(i => i.Type == climate).Summer_Precipitation_Prob
-        // Pull heavy precipitaion probability
-        var precProbHeavy = weather.find(i => i.Type == climate).Summer_Heavy_Precipitation_Prob
-    } else if (season == 'Fall') {
-        // Pull average temperature
-        var avgTemp = weather.find(i => i.Type == climate).Fall_Average_Temp_F
-        // Pull precipitation probability
-        var precProb = weather.find(i => i.Type == climate).Fall_Precipitation_Prob
-        // Pull heavy precipitaion probability
-        var precProbHeavy = weather.find(i => i.Type == climate).Fall_Heavy_Precipitation_Prob
-    }
+    // Pull average temperature
+    var avgTemp = weather.find(i => i.Type == climate)[`${season}_Average_Temp_F`]
+    // Pull precipitation probability
+    var precProb = weather.find(i => i.Type == climate)[`${season}_Precipitation_Prob`]
+    // Pull heavy precipitaion probability
+    var precProbHeavy = weather.find(i => i.Type == climate)[`${season}_Heavy_Precipitation_Prob`]
     // Log to Console
     console.log(`VARIABLES
         Climate: ${climate}
@@ -203,7 +179,7 @@ function generate_weather() {
                 var windDir = direction.find(i => i.roll == rWindDir).result
             }
             // Wind Effect
-            if (precClass == 'heavy wind') {
+            if (windSpeed == 'heavy wind') {
                 var mWindEffect = "A strong wind imposes disadvantage on ranged weapon attack rolls and Wisdom (Perception) checks that rely on hearing. A strong wind also extinguishes open flames, disperses fog, and makes flying by nonmagical means nearly impossible. A flying creature in a strong wind must land at the end of its turn or fall. <br>A medium wind in a desert can create a sandstorm that imposes disadvantage on Wisdom (Perception) checks that rely on sight."
             } else {
                 var mWindEffect = 'N/A'

@@ -33,13 +33,14 @@ function fMultiRoll(number_of_dice, dice_sides, multiplier) {
 // Define the function to generate a random encounter
 function tool_random_encounter(){
     clear_output()
+    clear_weather()
     // Log a seperator
     console.log("~~~~~~~~~~~~~~~~RANDOM ENCOUNTER~~~~~~~~~~~~~~~~~~~~~~")
     // Get default adjustments
     var a = document.getElementById("combat_threshold")
-    var nct = a.options[a.selectedIndex].text
+    var ct = a.options[a.selectedIndex].text
     var b = document.getElementById("non-combat_threshold")
-    var ct = b.options[b.selectedIndex].text
+    var nct = b.options[b.selectedIndex].text
     // Get level range
     var c = document.getElementById("lvl-range")
     var lvl = c.options[c.selectedIndex].text
@@ -72,7 +73,7 @@ function tool_random_encounter(){
             var ncdc = oaData.find(i => i.Biome == biome).Night_NC_DC
             var cdc = oaData.find(i => i.Biome == biome).Night_C_DC
         }
-    } else if (nct === "N/A") {
+    } else if (ct === "N/A") {
         // Set Non-combat DC as the user's input
         var ncdc = parseInt(nct)
         // Pull Combat DC from database based on time of day
@@ -81,7 +82,7 @@ function tool_random_encounter(){
         } else {
             var cdc = oaData.find(i => i.Biome == biome).Night_C_DC
         }
-    } else if (ct === "N/A") {
+    } else if (nct === "N/A") {
         // Set Combat DC as user's input
         var cdc = parseInt(ct)
         // Pull both DCs from the database based on time of day
@@ -124,8 +125,43 @@ function tool_random_encounter(){
         var ad100 = getRndInteger(1, len)
         var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
         console.log(encounter)
-        var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>`
-        encounterFinal += encounter + ` ${ED} ft. away.`
+        const NewRegEx = /(?:\d+d\d*\+?\d*)/gm // Find all dice groups
+        var aDice = encounter.match(NewRegEx)
+        console.log(aDice)
+        // Check to see if aDice is not empty
+        if (aDice) {
+            var encounterF = encounter
+            // Log for debugging
+            console.log("aDice")
+            console.log(aDice)
+            // Loop through aDice and calculate totals for each element
+            for (i = 0; i < aDice.length; i++) {
+                // Extract number of dice
+                const RegEx = /\d+(?=d)/g
+                var num_dice = RegEx.exec(aDice[i])
+                // Extrect Dice Sides
+                const MoreRegEx = /(?<=d)(\d*)/g
+                var num_of_sides = MoreRegEx.exec(aDice[i])
+                num_of_sides = num_of_sides[0]
+                // Extract Modifier
+                const EvenMoreRegEx = /(?<=\+)(\d*)/g
+                var modifier = EvenMoreRegEx.exec(aDice[i])
+                if (modifier) {modifier = parseInt(modifier[0])}
+                else {modifier = 0}
+                // Total
+                var total = fMultiRoll(num_dice, num_of_sides, 1)
+                total = total + modifier
+                // Log for debugging
+                console.log(`${aDice[i]}'s total is ${total}`)
+                // Set up the Encounter message
+                console.log(`${i}: ${encounterF}`)
+                encounterF = encounterF.replace(aDice[i], total)
+            }
+            encounterF += ` ${ED} ft. away.`
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounterF}`
+        } else {
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
+        }
     }
     // Combat Encounter
     if (roll >= cdc) {
