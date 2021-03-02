@@ -9,6 +9,7 @@
     <script src="Database_Combat_Encounters.js"></script>
     <script src="Database_Non_combat_Encounters.js"></script>
     <script src="Database_Weather.js"></script>
+    <script src="Database_Bestiary_Basic.js"></script>
 </head>  
   
 <body>
@@ -34,7 +35,7 @@
             </select>
         <p></p>
         <label for="biome">Biome:</label>
-            <select name="biome" id="biome">
+            <select name="biome" id="biome" onchange="select_climate()">
                 <option value="arctic">Arctic</option>
                 <option value="coastal">Coastal</option>
                 <option value="desert">Desert</option>
@@ -52,6 +53,7 @@
                 <option value="wasteland">Wasteland</option>
                 <option value="woodland">Woodland</option>
             </select>
+        <br><i>A climate will be suggested based on your biome selection in order to avoid an accidental "arctic jungle" encounter.</i>
         <p></p>
         <label for="climate">Climate:</label>
             <select name="climate" id="climate">
@@ -59,7 +61,7 @@
                 <option value="arid/dry">Arid/Dry</option>
                 <option value="temperate">Temperate</option>
                 <option value="continental">Continental</option>
-                <option value="polar">Polar</option>
+                <option value="polar" selected>Polar</option>
             </select>
         <p></p>
         <label for="season">Season:</label>
@@ -75,7 +77,7 @@
                 <option value="day">Day</option>
                 <option value="night">Night</option>
             </select>
-            <br><i>Encounters are more likely to occur at night.</i>
+            <br><i>Combat Encounters are more likely to occur at night.</i>
         <p></p>
         <button onclick="tool_random_encounter()">Generate</button>
         <button onclick="clear_output();clear_weather()">Clear Output</button>

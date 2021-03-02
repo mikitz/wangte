@@ -46,11 +46,15 @@
     * Enemy Stealth Roll
     * Random PC Picker
 * Random Encounter Generator
-    * [x] Copy over Combat tables and fix them up with *Tools.ipynb*
-    * Implement 5etools.net link generation for the monsters 
-    * [x] Handle dice inside the *Encounter* column
-    * [x] Copy over Non-combat Tables that line up with Combat tables
-    * Incoporate into the site the extra Non-combat tables
+    * [x] Combat Encounters
+    * [x] Non-combat Encounters
+    * Implement 5etools.net link generation for the monsters
+        * Need to scrape a DB for the name if it matches what's in the encounter
+        * Scrape from the Site:
+            * All bestiary entry's names and book
+            * URL: https://5e.tools/bestiary.html#NAME_BOOK
+                * Spaces are filled with %20
+    * Incoporate extra non-combat tables
         * Dungeon
         * Festivals
         * Red Light District

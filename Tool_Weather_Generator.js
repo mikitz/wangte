@@ -198,3 +198,67 @@ function generate_weather() {
     p.innerHTML = mResult
     document.getElementById("weather").appendChild(p)
 }
+// Function to set to a selection
+// Source: https://stackoverflow.com/questions/78932/how-do-i-programmatically-set-the-value-of-a-select-box-element-using-javascript
+function selectElement(id, valueToSelect) {    
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+}
+// Function to suggest climate type based on the selected biome
+function select_climate() {
+    // Get Biome
+    var d = document.getElementById("biome")
+    var biome = d.options[d.selectedIndex].text
+    console.log(`Biome: ${biome}`)
+    // Switch to handle all the biomes
+    switch(biome) {
+        case 'Arctic':
+            selectElement('climate', 'polar')
+            break
+        case 'Coastal':
+            selectElement('climate', 'tropical')
+            break
+        case 'Desert':
+            selectElement('climate', 'arid/dry')
+            break
+        case 'Farmland':
+            selectElement('climate', 'temperate')
+            break
+        case 'Forest':
+            selectElement('climate', 'temperate')
+            break
+        case 'Grassland':
+            selectElement('climate', 'temperate')
+            break
+        case 'Hill':
+            selectElement('climate', 'temperate')
+            break
+        case 'Jungle':
+            selectElement('climate', 'tropical')
+            break
+        case 'Mountain':
+            selectElement('climate', 'continental')
+            break
+        case 'Open_Water':
+            selectElement('climate', 'temperate')
+            break
+        case 'Swamp':
+            selectElement('climate', 'tropical')
+            break
+        case 'Underdark':
+            selectElement('climate', 'polar')
+            break
+        case 'Underwater':
+            selectElement('climate', 'temperate')
+            break
+        case 'Urban':
+            selectElement('climate', 'temperate')
+            break
+        case 'Wasteland':
+            selectElement('climate', 'arid/dry')
+            break
+        case 'Woodland':
+            selectElement('climate', 'temperate')
+            break
+    }   
+}

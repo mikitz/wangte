@@ -30,6 +30,13 @@ function fMultiRoll(number_of_dice, dice_sides, multiplier) {
     }
     return parseInt(total)
 }
+// Define a function to generate a 5etools link based on the creature name and book
+function linkGenerator(Creature, Book) {
+    let creature = Creature.replace(/ /g, "%20")
+    let link = `<a href="https://5e.tools/bestiary.html#${creature}_${Book}">${creature}</a>`
+    return link
+}
+
 // Define the function to generate a random encounter
 function tool_random_encounter(){
     clear_output()
@@ -120,12 +127,27 @@ function tool_random_encounter(){
     // Non-combat Encounter
     if (roll >= ncdc && roll < cdc) {
         var encQ = true
-        var len = eval(`${biome.toLowerCase()}_nc`).length
+        var len = eval(`${biome.toLowerCase()}_nc`).length       
         // Roll 1dx
         var ad100 = getRndInteger(1, len)
         var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
         console.log(encounter)
-        const NewRegEx = /(?:\d+d\d*\+?\d*)/gm // Find all dice groups
+        // Extract creatures from the encounter
+        var creatureExtract = bestiary_basic.forEach(function(){
+            var reFull = new RegExp(bestiary_basic.name_lower, "g")
+            var inc = encounter.match(reFull)
+            //var inc1 = encounter.match(reCut)
+            if (inc) {
+                for (k = 0; k < inc.length; k++) {
+                    var creatureExtract = bestiary_basic.name_lower
+                }
+                    
+                    return creatureExtract
+            }
+        })
+        console.log(`Creature: ${creatureExtract}`)
+        // Extract dice groups from encounter
+        const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
         var aDice = encounter.match(NewRegEx)
         console.log(aDice)
         // Check to see if aDice is not empty
@@ -171,7 +193,19 @@ function tool_random_encounter(){
         // Get the data from the DB
         var encounter = eval(biome.toLowerCase()).filter(n => n.Level == lvl)
         encounter = encounter.find(x => x.d100 === ad100).Encounter
-        const NewRegEx = /(?:\d+d\d*\+?\d*)/gm // Find all dice groups
+        // Extract creatures from the encounter
+        var creatureExtract = bestiary_basic.forEach(function(){
+            var reFull = new RegExp(bestiary_basic.name_lower, "g")
+            var inc = encounter.match(reFull)
+            //var inc1 = encounter.match(reCut)
+            if (inc || inc1) {
+                var creatureExtract = bestiary_basic.name_lower
+                return creatureExtract
+            }
+        })
+        console.log(`Creature: ${creatureExtract}`)
+        // Extract dice groups from encounter
+        const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
         var aDice = encounter.match(NewRegEx)
         // Check to see if aDice is not empty
         if (aDice) {
