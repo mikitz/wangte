@@ -30,10 +30,22 @@ function fMultiRoll(number_of_dice, dice_sides, multiplier) {
     }
     return parseInt(total)
 }
+// Define a function to replace a string by index range
+// Source: https://stackoverflow.com/a/12568270/3725925
+function replaceRange(str, start, end, substitute) {
+    return str.substring(0, start) + substitute + str.substring(end);
+}
+
 // Define a function to generate a 5etools link based on the creature name and book
-function linkGenerator(Creature, Book) {
-    let creature = Creature.replace(/ /g, "%20")
-    let link = `<a href="https://5e.tools/bestiary.html#${creature}_${Book}">${creature}</a>`
+function linkGenerator5eTools(Creature, Book) {
+    let creatureLink = Creature.replace(/ /g, "%20")
+    let link = `<a href="https://5e.tools/bestiary.html#${creatureLink}_${Book}" target="_blank" rel="noreferrer noopener">${Creature}</a>`
+    return link
+}
+// Define a function to get the link on DnDBeyond
+function linkGeneratorBeyond(Creature) {
+    let creatureLink = Creature.replace(/ /g, "-")
+    let link = `<a href="https://www.dndbeyond.com/monsters/${creatureLink}" target="_blank" rel="noreferrer noopener">${Creature}</a>`
     return link
 }
 
@@ -132,17 +144,22 @@ function tool_random_encounter(){
         var ad100 = getRndInteger(1, len)
         var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
         console.log(encounter)
-        // Extract creatures from the encounter
-        var creatureExtract = bestiary_basic.forEach(function(){
-            var reFull = new RegExp(bestiary_basic.name_lower, "g")
+        // Extract creatures from the encounter and replace them with links
+        var creatureExtract = bestiary_basic.forEach(function(element){
+            var nameFixed = element.name_lower.replace("(", "\(")
+            nameFixed = nameFixed.replace(")", "\)")
+            var creatureName = `(${nameFixed}[a-z]\b)`
+            var reFull = new RegExp(`${creatureName}`, "g")
             var inc = encounter.match(reFull)
-            //var inc1 = encounter.match(reCut)
             if (inc) {
+                inc = inc.sort(function(a, b){return b.length - a.length})
+                console.log(inc)
                 for (k = 0; k < inc.length; k++) {
-                    var creatureExtract = bestiary_basic.name_lower
+                    var creatureExtract = inc[k]
+                    var bookExtract = bestiary_basic.find(r => r.name_lower == creatureExtract).book_lower
+                    encounter = encounter.replace(creatureExtract, linkGenerator5eTools(creatureExtract, bookExtract))
                 }
-                    
-                    return creatureExtract
+                return creatureExtract
             }
         })
         console.log(`Creature: ${creatureExtract}`)
@@ -193,16 +210,86 @@ function tool_random_encounter(){
         // Get the data from the DB
         var encounter = eval(biome.toLowerCase()).filter(n => n.Level == lvl)
         encounter = encounter.find(x => x.d100 === ad100).Encounter
-        // Extract creatures from the encounter
-        var creatureExtract = bestiary_basic.forEach(function(){
-            var reFull = new RegExp(bestiary_basic.name_lower, "g")
-            var inc = encounter.match(reFull)
-            //var inc1 = encounter.match(reCut)
-            if (inc || inc1) {
-                var creatureExtract = bestiary_basic.name_lower
-                return creatureExtract
-            }
-        })
+        console.log('ENCOUNTER')
+        console.log(encounter)
+        // Extract creatures from the encounter 
+            // Push regex matches to a list while looping through the whole DB
+            var lCreatures = []
+            var creatureExtract = bestiary_basic.forEach(function(element){
+                var nameFixed = element.name_lower.replace(/\)/g, "\)")
+                var creatureName = nameFixed.replace(/\(/g, "\(")
+                var reFull = new RegExp(`${creatureName}`, "g")
+                // RegEx still doesn't find "half-ogre (ogrillon)"
+                var inc = encounter.match(reFull)
+                if (inc) {
+                    // Sort inc by length to swap out longer strings first
+                    inc = inc.sort(function(a, b){return b.length - a.length})
+                    // Loop through inc and append each element to lCreatures
+                    for (m = 0; m < inc.length; m++) {
+                        lCreatures.push(inc[m])
+                    }
+                    console.log("--INC--")
+                    console.log(inc)
+                }
+            })
+            // Manipulate the list
+            console.log("++++++++CREATURE LIST++++++++")
+            console.log(lCreatures)
+                // Remove duplicates
+                lCreatures = lCreatures.filter (function (value, index, array) { 
+                    return array.indexOf (value) == index;
+                });
+                console.log("========CREATURE LIST========")
+                console.log(lCreatures)
+                // Check if any of the elements are in the other elements
+                // Loop through the list
+                for (z = 0; z < lCreatures.length; z++) {
+                    var item = lCreatures[z]
+                    var bookExtract = bestiary_basic.find(r => r.name_lower == item).book_lower
+                    console.log(`ITEM: ${item}`)
+                    // Extract all matches of the item
+                    var regex = new RegExp(item, 'g')
+                    var regMatch = encounter.match(regex)
+                    console.log("REGMATCH")
+                    console.log(regMatch)
+                    // Log their indecies to a list
+                    var lIndecies = []
+                    while ((match = regex.exec(encounter)) != null) {
+                        lIndecies.push(match.index)
+                    }
+                    console.log("INDEX LIST")
+                    console.log(lIndecies)
+                    // Loop through the matches by index checking
+                    for (m = 0; m < regMatch.length; m++) {
+                        // Needed variables
+                        var idxStart = lIndecies[m]
+                        var word = regMatch[m]
+                        var idxEnd = idxStart + word.length
+                        var idxRange = encounter.substring(idxStart, idxEnd)
+                        var idxExtra = encounter.substring(idxStart - 1, idxEnd + 1)
+                        // Check for undesirables
+                        var inclu = ['<','_','%','0', '>'].some(el => idxExtra.includes(el))
+                        var incluNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+                        // Define function to add the links
+                        function addLinks(){
+                            // if (incluNum) {
+                            //     encounter = replaceRange(encounter, idxStart, idxEnd, linkGenerator5eTools(word, bookExtract))
+                            // } else 
+                            if (!inclu) {
+                                encounter = replaceRange(encounter, idxStart, idxEnd, linkGenerator5eTools(word, bookExtract))
+                            }                             
+                        }
+                        // Run said function
+                        addLinks()
+                        // Log for debugging
+                        console.log(`INDEX VARS
+                        Start: ${idxStart}
+                        End: ${idxEnd}
+                        Word: ${word}
+                        Substring: ${idxRange}
+                        Extra: ${idxExtra}`)
+                    }
+                }
         console.log(`Creature: ${creatureExtract}`)
         // Extract dice groups from encounter
         const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
