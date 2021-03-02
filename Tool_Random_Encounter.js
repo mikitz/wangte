@@ -10,7 +10,7 @@ function getRndInteger(min, max) {
     return parseInt((Math.floor(Math.random() * (max - min)) + min))
 }
 // Clears "output"
-function clear_sail() {
+function clear_output() {
     document.getElementById('output').innerHTML = ""
 }
 // Define a dice function to roll multiple dice
@@ -32,9 +32,9 @@ function fMultiRoll(number_of_dice, dice_sides, multiplier) {
 }
 // Define the function to generate a random encounter
 function tool_random_encounter(){
-    clear_sail()
+    clear_output()
     // Log a seperator
-    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    console.log("~~~~~~~~~~~~~~~~RANDOM ENCOUNTER~~~~~~~~~~~~~~~~~~~~~~")
     // Get default adjustments
     var a = document.getElementById("combat_threshold")
     var nct = a.options[a.selectedIndex].text
@@ -118,16 +118,18 @@ function tool_random_encounter(){
     var roll = getRndInteger(1, 20)
     // Non-combat Encounter
     if (roll >= ncdc && roll < cdc) {
+        var encQ = true
         var len = eval(`${biome.toLowerCase()}_nc`).length
         // Roll 1dx
         var ad100 = getRndInteger(1, len)
         var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
         console.log(encounter)
-        var encounterFinal = `<h3>NON-COMBAT ENCOUNTER</h3>`
+        var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>`
         encounterFinal += encounter + ` ${ED} ft. away.`
     }
     // Combat Encounter
     if (roll >= cdc) {
+        var encQ = true
         // Roll 1d100
         var ad100 = getRndInteger(1, 100)
         // Get the data from the DB
@@ -165,13 +167,14 @@ function tool_random_encounter(){
                 encounterF = encounterF.replace(aDice[i], total)
             }
             encounterF += ` ${ED} ft. away.`
-            var encounterFinal = `<h3>COMBAT ENCOUNTER</h3><br>${encounterF}`
+            var encounterFinal = `<h2>COMBAT ENCOUNTER</h2>${encounterF}`
         } else {
-            var encounterFinal = `<h3>COMBAT ENCOUNTER</h3><br>${encounter} ${ED} ft. away.`
+            var encounterFinal = `<h2>COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
         }
     }
     // No Random Encounter
     if (roll < ncdc && roll < cdc) {
+        var encQ = false
         encounterFinal = `No Random Encounter`
     }
     // Logged Rolled Vars
@@ -185,4 +188,8 @@ function tool_random_encounter(){
     var p = document.createElement('p')
     p.innerHTML = vMessage
     document.getElementById("output").appendChild(p)
+    // WEATHER
+    if (encQ) {
+        generate_weather()
+    }
 }

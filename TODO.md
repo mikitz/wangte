@@ -66,15 +66,20 @@
         * Red Light District
         * Road
         * Tavern
-    * Weather as part of the encounter?
     * And a map that auto generate?
 * Spell Helper
 * Downtime Activities
 * Ship Expenses
-* Weather Geneartor
-    * Tie this in with Random Encounters?
-    * See [Homebrew Tables](https://docs.google.com/spreadsheets/d/1N_znTY_gMZDlYvmaiF9HaiwbhZWio8tnhm4WrBQ9evc/edit#gid=1038137305)
-        * Need to add in more data into the **Climate** table on the *Weather (Not HB)* sheet
+* [x] Weather Geneartor
+    * [x] Wind
+    * [x] Temperature
+    * [x] Precipitation
+    * Humidity
+    * [x] Mechanical Effects
+        * [x] Wind
+        * [x] Temperature
+        * [x] Precipitation
+        * Humidity
 
 ## style.css
 * Tables

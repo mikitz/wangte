@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css"/>
     <script src="Database_Combat_Encounters.js"></script>
     <script src="Database_Non_combat_Encounters.js"></script>
+    <script src="Database_Weather.js"></script>
 </head>  
   
 <body>
@@ -21,6 +22,7 @@
     </nav>
     <main>
         <script src="Tool_Random_Encounter.js"></script>
+        <script src="Tool_Weather_Generator.js"></script>
         <h1>Random Encounter Generator</h1>
         <p>This generator will generate a random encounter based on the level range, biome, and time of day. It will also generate the distance at which the creature(s)/event is away from the players. In addition, weather, along with its mechanical effets, will be generated based on the biome, time of day, and season. </p>
         <label for="lvl-range">Level Range:</label>
@@ -51,6 +53,15 @@
                 <option value="woodland">Woodland</option>
             </select>
         <p></p>
+        <label for="climate">Climate:</label>
+            <select name="climate" id="climate">
+                <option value="tropical">Tropical</option>
+                <option value="arid/dry">Arid/Dry</option>
+                <option value="temperate">Temperate</option>
+                <option value="continental">Continental</option>
+                <option value="polar">Polar</option>
+            </select>
+        <p></p>
         <label for="season">Season:</label>
             <select name="season" id="season">
                 <option value="spring">Spring</option>
@@ -67,9 +78,11 @@
             <br><i>Encounters are more likely to occur at night.</i>
         <p></p>
         <button onclick="tool_random_encounter()">Calculate</button>
-        <button onclick="clear_sail()">Clear Output</button>
-        <!--Output Element-->
-        <p id = "output"></p>
+        <button onclick="clear_output();clear_weather()">Clear Output</button>
+        <!--Encounter Output-->
+        <p id ="output"></p>
+        <!--Weather Output-->
+        <p id ="weather"></p>
         <h3>---------------------------------------------------------------------------------------------------------------------</h3>
         <h3>Adjust Defaults</h3>
         <p><b>WARNING: <i>Non-combat Encounter DC</i> MUST be lower than <i>Combat Encounter DC</i></b></p>
