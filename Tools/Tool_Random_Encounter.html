@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GameMaster Website</title>  
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="../style.css"/>
     <script src="Database_Combat_Encounters.js"></script>
     <script src="Database_Non_combat_Encounters.js"></script>
     <script src="Database_Weather.js"></script>
     <script src="Database_Bestiary_Basic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>  
 <style>
     main a {
@@ -26,14 +27,9 @@
     }
 </style>}
 <body>
-    <nav>
-        <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png" alt="Logo">
-        <a href="Nav_Homepage.html">Home</a>
-        <a href="Nav_Calculators.html">Calculators</a>
-        <a href="Nav_Homebrew.html">Homebrew</a>
-        <a href="Nav_Tools.html">Tools</a>
-        <a href="">Donate</a>
-    </nav>
+    <!--Navigation Panel START-->   
+    <div id="nav_placeholder"></div>
+    <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
     <main>
         <script src="Tool_Random_Encounter.js"></script>
         <script src="Tool_Weather_Generator.js"></script>
