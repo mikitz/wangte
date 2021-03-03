@@ -58,12 +58,13 @@
             * faerie dragon (green)
                 * 'd' is getting chopped off in 'dragon'
     * [x] Implement DnD Beyond link generation
-    * Incoporate extra non-combat tables
+    * Incoporate extra tables
         * Dungeon
         * Festivals
         * Red Light District
         * Road
         * Tavern
+        * Hazards
     * Load the image from 5etools for the creature?
         * https://5e.tools/img/bestiary/MM/Yeti.jpg?v=1.123.0
         * https://5e.tools/img/bestiary/MM/Aarakocra.jpg?v=1.123.0
