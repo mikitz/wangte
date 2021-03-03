@@ -69,7 +69,6 @@
         * https://5e.tools/img/bestiary/MM/Yeti.jpg?v=1.123.0
         * https://5e.tools/img/bestiary/MM/Aarakocra.jpg?v=1.123.0
 * Spell Helper
-* Downtime Activities
 * Ship Expenses
 * [x] Weather Geneartor
 

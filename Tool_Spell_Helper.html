@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GameMaster Website</title>  
+    <link rel="stylesheet" href="style.css"/>
+    <script src="Database_Combat_Encounters.js"></script>
+    <script src="Database_Non_combat_Encounters.js"></script>
+    <script src="Database_Weather.js"></script>
+</head>  
+  
+<body>
+    <nav>
+        <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png" alt="Logo">
+        <a href="Nav_Homepage.html">Home</a>
+        <a href="Nav_Calculators.html">Calculators</a>
+        <a href="Nav_Homebrew.html">Homebrew</a>
+        <a href="Nav_Tools.html">Tools</a>
+        <a href="">Donate</a>
+    </nav>
+    <main>
+        <script src="Tool_Random_Encounter.js"></script>
+        <script src="Tool_Weather_Generator.js"></script>
+        <h1>Random Encounter Generator</h1>
+        <p>This generator will generate weather based on climate type and season.</p>
+        <label for="climate">Climate:</label>
+            <select name="climate" id="climate">
+                <option value="tropical">Tropical</option>
+                <option value="arid/dry">Arid/Dry</option>
+                <option value="temperate">Temperate</option>
+                <option value="continental">Continental</option>
+                <option value="polar">Polar</option>
+            </select>
+        <p></p>
+        <label for="season">Season:</label>
+            <select name="season" id="season">
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="fall">Fall</option>
+                <option value="winter">Winter</option>
+            </select>
+        <p></p>
+        <button onclick="generate_weather()">Generate</button>
+        <button onclick="clear_weather()">Clear Output</button>
+        <!--Encounter Output-->
+        <p id ="output"></p>
+        <!--Weather Output-->
+        <p id ="weather"></p>
+    </main> 
+</body>  
+  
+</html>
