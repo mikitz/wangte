@@ -5,42 +5,11 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
-/* nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-} */
 main {
     margin-left: 250px;
     padding-left: 10px;
+    float: flex;
 }
-/* nav img {
-    width: 70%;
-    display: block;
-    margin-bottom: 35px;
-    align-content: center;
-}
-nav a {
-    display: inline-block;
-    text-decoration: none;
-    padding: 5px 15px;
-    font-size: 1.4em;
-    color: red;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-nav a:hover {
-    color: purple;
-}  */
 select {
     background-color: green;
 }
@@ -48,13 +17,13 @@ input {
     background-color: orange;
 }
 body h1{
-    background-color: rgb(29, 29, 29);
     color: red;
     text-transform: uppercase;
 }
 body {
     background-color: rgb(29, 29, 29);
     color: rgb(138, 138, 138);
+    float: flex;
 }
 main a {
     display: inline-block;
