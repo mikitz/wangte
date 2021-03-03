@@ -48,18 +48,25 @@
 * Random Encounter Generator
     * [x] Combat Encounters
     * [x] Non-combat Encounters
-    * Implement 5etools.net link generation for the monsters
-        * Need to scrape a DB for the name if it matches what's in the encounter
-        * Scrape from the Site:
-            * All bestiary entry's names and book
-            * URL: https://5e.tools/bestiary.html#NAME_BOOK
-                * Spaces are filled with %20
+    * Implement 5etools.net link generation
+        * bugs
+            * swarm of
+            * () parentheticals
+            * words within words need to be handled
+                * E.G. 'rat' in 'ration' and 'triceratops'
+            * giant something (E.G. giant wolf spider)
+            * faerie dragon (green)
+                * 'd' is getting chopped off in 'dragon'
+    * [x] Implement DnD Beyond link generation
     * Incoporate extra non-combat tables
         * Dungeon
         * Festivals
         * Red Light District
         * Road
         * Tavern
+    * Load the image from 5etools for the creature?
+        * https://5e.tools/img/bestiary/MM/Yeti.jpg?v=1.123.0
+        * https://5e.tools/img/bestiary/MM/Aarakocra.jpg?v=1.123.0
 * Spell Helper
 * Downtime Activities
 * Ship Expenses

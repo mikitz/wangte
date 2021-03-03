@@ -215,10 +215,10 @@ function tool_random_encounter(){
         // Extract creatures from the encounter 
             // Push regex matches to a list while looping through the whole DB
             var lCreatures = []
+            var newregex = new RegExp('[\(*\)*]', 'gm')
             var creatureExtract = bestiary_basic.forEach(function(element){
-                var nameFixed = element.name_lower.replace(/\)/g, "\)")
-                var creatureName = nameFixed.replace(/\(/g, "\(")
-                var reFull = new RegExp(`${creatureName}`, "g")
+                var nameFixed = element.name_lower.replace(newregex, '\\$&')
+                var reFull = new RegExp(`${nameFixed}`, "g")
                 // RegEx still doesn't find "half-ogre (ogrillon)"
                 var inc = encounter.match(reFull)
                 if (inc) {
@@ -247,8 +247,12 @@ function tool_random_encounter(){
                     var item = lCreatures[z]
                     var bookExtract = bestiary_basic.find(r => r.name_lower == item).book_lower
                     console.log(`ITEM: ${item}`)
+                    // Escape special RegEx characters
+                    var newregex = new RegExp('[\(*\)*]', 'gm')
+                    console.log(`ITEM REPLACE: ${item}\n` + 
+                                `ENCOUNTER: ${encounter}`)
                     // Extract all matches of the item
-                    var regex = new RegExp(item, 'g')
+                    var regex = new RegExp(`(${item})`, "g")
                     var regMatch = encounter.match(regex)
                     console.log("REGMATCH")
                     console.log(regMatch)
@@ -268,14 +272,12 @@ function tool_random_encounter(){
                         var idxRange = encounter.substring(idxStart, idxEnd)
                         var idxExtra = encounter.substring(idxStart - 1, idxEnd + 1)
                         // Check for undesirables
-                        var inclu = ['<','_','%','0', '>'].some(el => idxExtra.includes(el))
+                        var inclu = ['<','_','%','0', '>', '#'].some(el => idxExtra.includes(el))
                         var incluNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
                         // Define function to add the links
                         function addLinks(){
-                            // if (incluNum) {
-                            //     encounter = replaceRange(encounter, idxStart, idxEnd, linkGenerator5eTools(word, bookExtract))
-                            // } else 
                             if (!inclu) {
+                                word = bestiary_basic.find(y => y.name_lower == word).name.toLowerCase()
                                 encounter = replaceRange(encounter, idxStart, idxEnd, linkGenerator5eTools(word, bookExtract))
                             }                             
                         }
@@ -349,4 +351,7 @@ function tool_random_encounter(){
     if (encQ) {
         generate_weather()
     }
+}
+function urbanStuff() {
+
 }
