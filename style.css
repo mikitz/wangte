@@ -1,3 +1,10 @@
+html {
+    height: 100%;
+}
+.container-fluid{
+    margin-top: 0;
+    margin-bottom: 0;
+}
 .GFG {  
     font-size:40px;  
     font-weight:bold; 
@@ -6,9 +13,9 @@
     box-sizing: border-box;
 }
 main {
-    margin-left: 250px;
-    padding-left: 10px;
-    float: flex;
+    margin-left: 2vh;
+    display: inline-block;
+    flex: 1;
 }
 select {
     background-color: green;
@@ -23,10 +30,11 @@ body h1{
 body {
     background-color: rgb(29, 29, 29);
     color: rgb(138, 138, 138);
-    float: flex;
+    margin: 0;
+    height: 100%;
 }
 main a {
-    display: inline-block;
+    display: inline-flex;
     text-decoration: none;
     padding: 5px 15px;
     font-size: 1.1em;

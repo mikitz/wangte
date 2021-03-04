@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GameMaster Website</title>  
-    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <script src="Database_Combat_Encounters.js"></script>
     <script src="Database_Non_combat_Encounters.js"></script>
     <script src="Database_Weather.js"></script>
     <script src="Database_Bestiary_Basic.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    
 </head>  
 <style>
     main a {
         display: default !important;
         text-decoration: default !important;
         padding: 0 !important;
-        font-size: 1.00em !important;
+        font-size: default !important;
         color: skyblue !important;
         letter-spacing: 0 !important;
         font-family: default !important;
@@ -28,12 +26,14 @@
     }
 </style>
 <body>
-    <!--Navigation Panel START-->   
-    <nav id="nav_placeholder"></nav>
-    <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
-    <!--Navigation Local START-->   
-    <nav id="nav_local"></nav>
-    <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+    <nav>
+        <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png" alt="Logo">
+        <a href="Nav_Homepage.html">Home</a>
+        <a href="Nav_Calculators.html">Calculators</a>
+        <a href="Nav_Homebrew.html">Homebrew</a>
+        <a href="Nav_Tools.html">Tools</a>
+        <a href="">Donate</a>
+    </nav>
     <main>
         <script src="Tool_Random_Encounter.js"></script>
         <script src="Tool_Weather_Generator.js"></script>
