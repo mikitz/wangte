@@ -98,9 +98,9 @@ function generate_weather() {
             var TempC = (TempF-32) * (5/9)
             // Effect Message
             if (TempF < 0) {
-                var mTempEffect = "Whenever the temperature is at or below 0 degrees Fahrenheit, a creature exposed to the cold must succeed on a DC 10 Constitution saving throw at the end of each hour or gain one level of exhaustion. Creatures with resistance or immunity to cold damage automatically succeed on the saving throw, as do creatures wearing cold weather gear (thick coats, gloves, and the like) and creatures naturally adapted to cold climates."
+                var mTempEffect = "Whenever the temperature is at or below 0 degrees Fahrenheit, a creature exposed to the cold must succeed on a DC 10 Constitution saving throw at the end of each hour or gain one level of exhaustion. <br>Creatures with resistance or immunity to cold damage automatically succeed on the saving throw, as do creatures wearing cold weather gear (thick coats, gloves, and the like) and creatures naturally adapted to cold climates."
             } else if (TempF > 100) {
-                var mTempEffect = "When the temperature is at or above 100 degrees Fahrenheit, a creature exposed to the heat and without access to drinkable water must succeed on a Constitution saving throw at the end of each hour or gain one level of exhaustion. The DC is 5 for the first hour and increases by 1 for each additional hour. Creatures wearing medium or heavy armor, or who are clad in heavy clothing, have disadvantage on the saving throw. Creatures with resistance or immunity to fire damage automatically succeed on the saving throw, as do creatures naturally adapted to hot climates."
+                var mTempEffect = "When the temperature is at or above 100 degrees Fahrenheit, a creature exposed to the heat and without access to drinkable water must succeed on a Constitution saving throw at the end of each hour or gain one level of exhaustion. <br> The DC is 5 for the first hour and increases by 1 for each additional hour. Creatures wearing medium or heavy armor, or who are clad in heavy clothing, have disadvantage on the saving throw. <br> Creatures with resistance or immunity to fire damage automatically succeed on the saving throw, as do creatures naturally adapted to hot climates."
             } else {
                 var mTempEffect = 'N/A'
             }
@@ -151,9 +151,9 @@ function generate_weather() {
             }
             // Precipitation Effect
             if (precClass == 'Heavy') {
-                var mPrecEffect = "Everything within an area of heavy rain or heavy snowfall is heavily obscured: creatures in the area are blinded. Heavy rain also extinguishes open flames and imposes disadvantage on Wisdom (Perception) checks that rely on hearing."
+                var mPrecEffect = "Everything within an area of heavy rain or heavy snowfall is heavily obscured: creatures in the area are blinded. <br> Heavy rain also extinguishes open flames and imposes disadvantage on Wisdom (Perception) checks that rely on hearing."
             } else if (precClass == 'Medium') {
-                var mPrecEffect = "Everything within an area of medium rain or medium snowfall is lightly obscured: creatures in the area have disadvantage on Wisdom (Perception) checks that rely on sight."
+                var mPrecEffect = "Everything within an area of medium rain or medium snowfall is lightly obscured: <br> creatures in the area have disadvantage on Wisdom (Perception) checks that rely on sight."
             } else if (precClass == 'Light') {
                 var mPrecEffect = 'N/A'
             } else {
@@ -180,7 +180,7 @@ function generate_weather() {
             }
             // Wind Effect
             if (windSpeed == 'heavy wind') {
-                var mWindEffect = "A strong wind imposes disadvantage on ranged weapon attack rolls and Wisdom (Perception) checks that rely on hearing. A strong wind also extinguishes open flames, disperses fog, and makes flying by nonmagical means nearly impossible. A flying creature in a strong wind must land at the end of its turn or fall. <br>A strong wind in a desert can create a sandstorm that imposes disadvantage on Wisdom (Perception) checks that rely on sight."
+                var mWindEffect = "A strong wind imposes disadvantage on ranged weapon attack rolls and Wisdom (Perception) checks that rely on hearing. <br> A strong wind also extinguishes open flames, disperses fog, and makes flying by nonmagical means nearly impossible. <br>A flying creature in a strong wind must land at the end of its turn or fall. <br>A strong wind in a desert can create a sandstorm that imposes disadvantage on Wisdom (Perception) checks that rely on sight."
             } else {
                 var mWindEffect = 'N/A'
             }

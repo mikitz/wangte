@@ -39,6 +39,7 @@
 
 ## Tools
 * Bounty Board
+    * Table of images, descriptions, and bounties
 * Calendar
 * Procedural Battle Maps
     * Tie this in with Random Encounter?
@@ -65,9 +66,6 @@
         * Road
         * Tavern
         * Hazards
-    * Load the image from 5etools for the creature?
-        * https://5e.tools/img/bestiary/MM/Yeti.jpg?v=1.123.0
-        * https://5e.tools/img/bestiary/MM/Aarakocra.jpg?v=1.123.0
 * Spell Helper
 * Ship Expenses
 * [x] Weather Geneartor
