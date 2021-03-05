@@ -18,15 +18,17 @@
     <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
     <main>
         <h1>Medicine Check for Determining Health</h1>
-        <ul>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">nat 1: A bug flew in your eye and learn nothing</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">5+: 50% range</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">10+: 25% range</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">15+: 10% range</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">20+: 5% range</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">25+: Exact percentage</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">nat 20: Exact percentage</span></li>
-        </ul>
+        <table class="tableizer-table">
+            <thead><tr class="tableizer-firstrow"><th>DC</th><th>Result</th></tr></thead><tbody>
+                <tr><td>nat 1</td><td>"I'm not sure they're injured whatsoever. <br>Are you sure we've actually hit this creature before?"</td></tr>
+                <tr><td>5</td><td>50% range</td></tr>
+                <tr><td>10</td><td>25% range</td></tr>
+                <tr><td>15</td><td>10% range</td></tr>
+                <tr><td>20</td><td>5% range</td></tr>
+                <tr><td>25</td><td>exact percentage</td></tr>
+                <tr><td>nat 20</td><td>exact percentage</td></tr>
+            </tbody></table>
+            <br><i>*This may be performed once per turn as a free reaction</i>
     </main> 
 </body>  
 </html>

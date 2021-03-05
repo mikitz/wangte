@@ -18,26 +18,29 @@
     <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
     <main>
         <h1>Foraging/Harvesting</h1>
-        <p><span style="font-weight: 400;">Survival Check to find them</span></p>
-        <ul>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">nat 1: You find no herbs</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">5+: 1d4+nature</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">10+: 1d6+nature</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">15+: 1d8+nature</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">20+: 1d10+nature</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">25+: 1d12+nature</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">30+: 1d20+nature</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">nat 20: Max whatever die you get based on modifiers, then roll again</span></li>
-        </ul>
-        <p><span style="font-weight: 400;">Modifiers based on creature size: (x10 for small things, like dragon scales)</span></p>
-        <ul>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">Tiny /4</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">Small /2</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">Medium x1</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">Large x2</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">Huge x4&nbsp;</span></li>
-            <li style="font-weight: 400;"><span style="font-weight: 400;">Gargantuan x8 </span></li>
-        </ul>
+        <h2>Foraging/Harvesting</h2>
+        <table class="tableizer-table">
+            <thead><tr class="tableizer-firstrow"><th>zDC</th><th>Result</th></tr></thead><tbody>
+                <tr><td>nat 1</td><td>"Those plants don't exist. I'm conviced of that!"<br>"Oh yeah, that creature.... nothing was harvestable due to... external reasons."</td></tr>
+                <tr><td>5</td><td>1d4 + skill mod.</td></tr>
+                <tr><td>10</td><td>1d6 + skill mod.</td></tr>
+                <tr><td>15</td><td>1d8 + skill mod.</td></tr>
+                <tr><td>20</td><td>1d10 + skill mod.</td></tr>
+                <tr><td>25</td><td>1d12 + skill mod.</td></tr>
+                <tr><td>30</td><td>2d12 + skill mod</td></tr>
+                <tr><td>nat 20</td><td>2d12 + skill mod</td></tr>
+            </tbody></table>
+        <h2>Creature Size Modifiers</h2>
+        <table class="tableizer-table">
+            <thead><tr class="tableizer-firstrow"><th>Size</th><th>Modifier</th></tr></thead><tbody>
+             <tr><td>Tiny</td><td>/4</td></tr>
+             <tr><td>Small</td><td>/2</td></tr>
+             <tr><td>Medium</td><td>x1</td></tr>
+             <tr><td>Large</td><td>x2</td></tr>
+             <tr><td>Huge</td><td>x4</td></tr>
+             <tr><td>Gargantuan</td><td>x8</td></tr>
+            </tbody></table>
+            <br><i>*x10 for small things, such as Dragon scales.</i>
     </main> 
 </body>  
 </html>

@@ -99,6 +99,7 @@ table.tableizer-table {
     border: 1px solid #CCC; 
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+    word-wrap: break-word;
 } 
 .tableizer-table td {
     padding: 4px;
