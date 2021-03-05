@@ -70,6 +70,8 @@
     * Random PC Picker
 * [x] Spell Helper
 * Ship Expenses
+* QuickRoll
+    * *local_nav* style got screwed up
 
 ## style.css
 * Tables

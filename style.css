@@ -124,3 +124,58 @@ table.tableizer-table {
     -webkit-transform: scale(5); /* Safari 3-8 */
     transform: scale(5); 
 }
+/* 
+    The following is from tdj182's original style sheet for GMQuickRollAdjustable 
+*/
+.seperateDiceArea {
+    display: flex;
+    flex-direction: row;
+
+    /*to eliminate all padding&margin*/
+    flex-grow: 0;
+}
+.btn-primary {
+    background-color: rgb(41, 41, 41);
+    min-width: 90px;
+    border: rgb(100, 90, 77) 1px solid;
+}
+.outline {
+    border: red solid 1px;
+}
+input {
+    text-align: center;
+    /* font-size: large; */
+    width: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+input:not(:focus) {
+    background-color: rgb(209, 209, 209);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.static-text {
+    /* font-size: large; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.type-4d {
+    background-color: red;
+}
+.type-6d {
+    background-color: green;
+}
+.type-8d {
+    background-color: yellow;
+    color: black; /*Use this if you want to change the font color*/
+}
+.type-10d {
+    background-color: orange;
+}
+.type-12d {
+    background-color: magenta;
+}
+.container-fluid li {
+    background-color: rgb(74, 80, 76);
+}
+  
