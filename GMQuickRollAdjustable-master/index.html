@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>QuickRoll Adjustable</title>
+  </head>
+  <body>
+    <!--Navigation Panel START-->   
+    <div id="nav_placeholder"></div>
+    <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+    <!--Navigation Local START-->   
+    <div id="nav_local"></div>
+    <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+    <main>
+      <!--Input and d20 area-->
+    <div class="container-fluid">
+      <div id="header" class="row no-gutters">
+        <input type="number" name="" value="24" id="diceCountInput" />
+        <button onclick="adjustDiceDisplay()">Change</button>
+
+        <!-- 1d20 and the history -->
+        <button onclick="rollD20(this)" class="btn-primary list-group-item">
+          1d<span class="dice-type">20</span>
+        </button>
+        <ul class="list-group">
+          <li class="list-group-item last-roll" id="1d20history">#</li>
+        </ul>
+
+        <!-- Adv -->
+        <button onclick="rollD20(this)" class="btn-primary list-group-item">
+          <span class="dice-type">Adv.</span>
+        </button>
+        <ul class="list-group">
+          <li class="list-group-item last-roll" id="advhistory">#</li>
+        </ul>
+
+        <!-- Dis -->
+        <button onclick="rollD20(this)" class="btn-primary list-group-item">
+          <span class="dice-type">Dis.</span>
+        </button>
+        <ul class="list-group">
+          <li class="list-group-item last-roll" id="dishistory">#</li>
+        </ul>
+
+        <!-- 1d100 -->
+        <button onclick="rollD20(this)" class="btn-primary list-group-item">
+          1d<span class="dice-type">100</span>
+        </button>
+        <ul class="list-group">
+          <li class="list-group-item last-roll" id="1d100history">#</li>
+        </ul>
+      </div>
+    </div>
+    <div id="header"></div>
+
+    <!-- Generated Dice -->
+    <div class="container-fluid">
+      <div id="primary-dice-area" class="row no-gutters">
+        <!--D4 dice area-->
+        <div id="d4" class="seperateDiceArea col-sm">
+          <div id="d4buttons"></div>
+          <ul id="d4rolls" class="history-list list-group"></ul>
+        </div>
+
+        <!--D6-->
+        <div id="d6" class="seperateDiceArea col-sm">
+          <div id="d6buttons"></div>
+          <ul id="d6rolls" class="history-list list-group"></ul>
+        </div>
+
+        <!--D8-->
+        <div id="d8" class="seperateDiceArea col-sm">
+          <div id="d8buttons"></div>
+          <ul id="d8rolls" class="history-list list-group"></ul>
+        </div>
+
+        <!--D10-->
+        <div id="d10" class="seperateDiceArea col-sm">
+          <div id="d10buttons"></div>
+          <ul id="d10rolls" class="history-list list-group"></ul>
+        </div>
+
+        <!--D12-->
+        <div id="d12" class="seperateDiceArea col-sm">
+          <div id="d12buttons"></div>
+          <ul id="d12rolls" class="history-list list-group"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div id="footer" class="row no-gutters">
+        <!-- custom dice count input -->
+        <input type="number" name="" value="1" id="custom-dice-count" />
+        <!-- The D to seperate -->
+        <div class="list-group-item static-text">d</div>
+        <!-- Custom Dice type input -->
+        <input type="number" name="" value="1000" id="custom-dice-type" />
+        <!-- custom roll button -->
+        <button onclick="rollD20(this)" class="btn-primary list-group-item">
+          <span class="dice-type">Roll</span>
+        </button>
+        <ul class="list-group">
+          <li class="list-group-item last-roll" id="customhistory">#</li>
+        </ul>
+      </div>
+    </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
