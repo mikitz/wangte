@@ -63,13 +63,12 @@
 * [x] Weather Generator
 
 ## Tools
-* Bounty Board
-    * Table of images, descriptions, and bounties
+* [x] Bounty Board
 * Calendar
 * Combat Tracker
     * Enemy Stealth Roll
     * Random PC Picker
-* Spell Helper
+* [x] Spell Helper
 * Ship Expenses
 
 ## style.css
