@@ -47,6 +47,10 @@ main a:hover {
 }
 main li:hover {
     color: skyblue;
+    word-wrap: break-word;
+}
+main li {
+    word-wrap: break-word;
 }
 /* Dropdown Button */
 .dropbtn {
