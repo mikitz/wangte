@@ -1,53 +1,78 @@
-<!DOCTYPE html> 
-<html lang ="en">  
-<head>  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GameMaster Website</title>  
-    <link rel="stylesheet" href="../style.css"/>
-    <script src="Database_Combat_Encounters.js"></script>
-    <script src="Database_Non_combat_Encounters.js"></script>
-    <script src="Database_Weather.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-</head>  
-  
-<body>
-    <!--Navigation Panel START-->   
-    <div id="nav_placeholder"></div>
-    <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
-    <!--Navigation Local START-->   
-    <div id="nav_local"></div>
-    <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
-    <main>
-        <script src="Tool_Random_Encounter.js"></script>
-        <script src="Tool_Weather_Generator.js"></script>
-        <h1>Random Encounter Generator</h1>
-        <p>This generator will generate weather based on climate type and season.</p>
-        <label for="climate">Climate:</label>
-            <select name="climate" id="climate">
-                <option value="tropical">Tropical</option>
-                <option value="arid/dry">Arid/Dry</option>
-                <option value="temperate">Temperate</option>
-                <option value="continental">Continental</option>
-                <option value="polar">Polar</option>
-            </select>
-        <p></p>
-        <label for="season">Season:</label>
-            <select name="season" id="season">
-                <option value="spring">Spring</option>
-                <option value="summer">Summer</option>
-                <option value="fall">Fall</option>
-                <option value="winter">Winter</option>
-            </select>
-        <p></p>
-        <button onclick="generate_weather()">Generate</button>
-        <button onclick="clear_weather()">Clear Output</button>
-        <!--Encounter Output-->
-        <p id ="output"></p>
-        <!--Weather Output-->
-        <p id ="weather"></p>
-    </main> 
-</body>  
-  
+<!DOCTYPE html>
+<html lang ="en">
+<!--HEAD START-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="../style.css"/>
+        <script src="../Global_Functions.js"></script>
+        <script src="Spell_Helper.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    </head>
+<!--BODY START-->
+    <body>
+        <!--Navigation Panel START-->   
+        <div id="nav_placeholder"></div>
+        <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+        <!--Navigation Local START-->   
+        <div id="nav_local"></div>
+        <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+        <main>
+            <h1>Spell Helper</h1>
+            <table class="tableizer-table">
+                <thead><tr class="tableizer-firstrow"><tbody>
+                    <tr style="width: 33pc;">
+                        <td>
+                            <h2><u>Teleport</u></h2>
+                            <label for="familiarity">Familiarity:</label>
+                                <select name="familiarity" id="familiarity">
+                                    <option value="permanent-circle">Permanent Circle</option>
+                                    <option value="associated-object">Associated Object</option>
+                                    <option value="very-familiar">Very Familiar</option>
+                                    <option value="seen-casually">Seen Casually</option>
+                                    <option value="viewed-once">Viewed Once</option>
+                                    <option value="description-only">Description Only</option>
+                                    <option value="fasle-destination">Fasle Destination</option>
+                            </select>
+                            <br><br>
+                            <label for="distance">Distance:</label>
+                                <input type="number" id="distance" name="distance"><br><br>
+                            </form>
+                            <button onclick="teleport()">Calculate</button>
+                            <button onclick="clear_teleport()">Clear Output</button>
+                            <p id = "output_teleport"></p>
+                        </td>
+                        <td>
+                            <h2><u>Scrying</u></h2>
+                            <label for="knowledge">Knowledge:</label>
+                                <select name="knowledge" id="knowledge">
+                                    <option value="secondhand-(you-have-heard-of-the-target)">Secondhand (you have heard of the target)</option>
+                                    <option value="firsthand-(you-have-met-the-target)">Firsthand (you have met the target)</option>
+                                    <option value="familiar-(you-know-the-target-well)">Familiar (you know the target well)</option>
+                            </select>
+                            <br><br>
+                            <label for="connection">Connection:</label>
+                                <select name="connection" id="connection">
+                                    <option value="likeness-or-picture">Likeness or picture</option>
+                                    <option value="possession-or-garment">Possession or garment</option>
+                                    <option value="body-part,-lock-of-hair,-bit-of-nail,-or-the-like">Body part, lock of hair, bit of nail, or the like</option>
+                            </select>
+                            <br><br>
+                            <label for="target_bonus">Target's Wisdom Save Mod.:</label>
+                                <input type="number" id="target_bonus" name="target_bonus">
+                            <br><br>
+                            <label for="caster_save_dc">Caster's Spell Save DC:</label>
+                                <input type="number" id="caster_save_dc" name="caster_save_dc">
+                            <br><br>
+                            <button onclick="scrying()">Calculate</button>
+                            <button onclick="clear_scrying()">Clear Output</button>
+                            <br><br>
+                            <p id = "output_scrying"></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+        </main>
+    </body>
 </html>

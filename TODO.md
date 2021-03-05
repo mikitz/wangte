@@ -37,20 +37,14 @@
 * [x] Training a Skill
 * [x] Traveling
 
-## Tools
-* Bounty Board
-    * Table of images, descriptions, and bounties
-* Calendar
+## Generators
 * Procedural Battle Maps
     * Tie this in with Random Encounter?
-* Combat Tracker
-    * Enemy Stealth Roll
-    * Random PC Picker
 * Random Encounter Generator
     * [x] Combat Encounters
     * [x] Non-combat Encounters
     * Implement 5etools.net link generation
-        * bugs
+        * **bugs**
             * swarm of
             * () parentheticals
             * words within words need to be handled
@@ -66,9 +60,17 @@
         * Road
         * Tavern
         * Hazards
+* [x] Weather Generator
+
+## Tools
+* Bounty Board
+    * Table of images, descriptions, and bounties
+* Calendar
+* Combat Tracker
+    * Enemy Stealth Roll
+    * Random PC Picker
 * Spell Helper
 * Ship Expenses
-* [x] Weather Geneartor
 
 ## style.css
 * Tables
@@ -76,3 +78,5 @@
 * Dropdown selectors
 * Text inputs
 * Buttons
+* Text
+    * Need to figure out how to properly wrap all text
