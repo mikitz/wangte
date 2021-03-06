@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="../style.css"/>
+        <script src="../Global_Functions.js"></script>
+        <script src="./Calendar.js"></script>
+        <script src="./Database_Calendars.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    </head>  
+
+    <body>
+        <!--Navigation Panel START-->   
+        <div id="nav_placeholder"></div>
+        <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+        <!--Navigation Local START-->   
+        <div id="nav_local"></div>
+        <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+        <script src="../Global_Functions.js"></script>
+        <main>
+            <h1>Calendar</h1>
+            <label for="calendar">Most Wanted Status:</label>
+                <select name="calendar" id="calendar">
+                    <option value="calendar_harptos">Calendar of Harptos</option>
+                    <option value="calendar_barovian">Calendar of Barovia</option>
+                </select>
+            </p>
+            <button onclick="populateCalendar()">Spawn Calendar</button>
+            <button onclick="clear_output()">Clear Output</button>
+            <p id = "output"></p>
+        </main>
+    </body>  
+</html>

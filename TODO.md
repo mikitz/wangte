@@ -65,6 +65,16 @@
 ## Tools
 * [x] Bounty Board
 * Calendar
+    * Presets
+        * Load Custom JSON
+        * Exandrian Calendar
+        * Gregorian Calendar
+        * Barovian Calendar
+        * Calendar of Galifar
+        * Calendar of Golarion
+        * Calendar of Greyhawk
+        * Calendar of Harptos
+        * The Lunar Calendar
 * Combat Tracker
     * Enemy Stealth Roll
     * Random PC Picker

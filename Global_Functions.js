@@ -41,9 +41,9 @@ function replaceRange(str, start, end, substitute) {
 }
 
 // Define a function to populate an HTML element
-function populateElemant(id, contents){
+function populateElement(id, contents, type){
     // Print the output
-    var p = document.createElement('p')
+    var p = document.createElement(type)
     p.innerHTML = contents
     document.getElementById(id).appendChild(p)
 }
