@@ -213,3 +213,16 @@ function calculate_level_demographics(){
     p.innerHTML = `Level ${level} Individuals in a Location with a Population of ${numberWithCommas(pop)}: ${numberWithCommas(demographics)} person(s)`
     document.getElementById("output").appendChild(p)
 }
+// Function to calculate the weight of currency
+function currencyWeight(){
+    // Get number of pieces
+    var pieces = parseInt(document.getElementById("pieces").value)
+    // Divide it by 50
+    var weightPounds = (pieces / 50).toFixed(2)
+    // Conver to KG
+    var weightKG = (weightPounds * 2.205).toFixed(2)
+    // Set up the message
+    var vMessage = `${pieces} pieces weigh ${weightPounds} lbs (${weightKG} kg).`
+    // Populate the element
+    populateElement('output', vMessage, 'p')
+}

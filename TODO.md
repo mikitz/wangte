@@ -1,4 +1,5 @@
 ## Calculators
+1. Perhaps combine these onto one page inside a table?
 * [x] Dice Probabilities
 * [x] Sailing Duration and Cargo Tranport Revenue
 * Foot Travel Duration
@@ -8,6 +9,7 @@
     * All levels
 * [x] Crafting Duration
 * [x] Bounty Reward
+* [x] Currency Weight
 
 ## Homebrew
 * [x] Adjusting Races

@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="../style.css"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="../Global_Functions.js"></script>
+    </head>  
+      
+    <body>
+        <!--Navigation Panel START-->   
+        <div id="nav_placeholder"></div>
+        <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+        <!--Navigation Local START-->   
+        <div id="nav_local"></div>
+        <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+        <main>
+            <script src="Calculators.js"></script>
+            <h1>Currency Weight</h1>
+            <label for="pieces">Pieces:</label>
+                <input type="number" id="pieces" name="pieces"><br>
+            </form>
+            <p>Simply divide the number of pieces, no matter the denomination, by 50 to get the weight in pounds.</p>
+            <button onclick="currencyWeight()">Calculate</button>
+            <button onclick="clear_sail()">Clear Output</button>
+            <p id = "output"></p>
+            
+    </main> 
+    </body>  
+</html>
