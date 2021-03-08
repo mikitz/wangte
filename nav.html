@@ -3,7 +3,7 @@
     .topnav {
         background-color: #333;
         overflow: hidden;
-        display: flex;
+        /* display: flex; */
     }
     /* Style the links inside the navigation bar */
     .topnav a {
@@ -12,7 +12,7 @@
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
-        display: flex;
+        float: left;
     }
     /* Change the color of links on hover */
     .topnav a:hover {
@@ -24,22 +24,22 @@
         background-color: #4CAF50;
         color: white;
     }
-    /* Adjust the image */
-    .topnav img {
-        width: 5%;
-        display: flex;
-        margin-bottom: 35px;
-        align-content: center;
-        float: left
+    /* Right-side navigation links */
+    .topnav-right {
+        float: right;
     }
 </style>
 
 <div class="topnav">
     <!-- <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png" alt="Logo"> -->
-    <a href="Nav_Homepage.html">Home</a>
-    <a href="Calculators/Calculator_Bounty_Reward.html">Calculators</a>
-    <a href="Generators/Random_Encounters.html">Generators</a>
-    <a href="Homebrew/Homebrew_Beer_Brewing.html">Homebrew</a>
-    <a href="Tools/Bounty_Board.html">Tools</a>
-    <a href="Nav_Donate.html">Donate</a>
+    <a href="./Nav_Homepage.html">Home</a>
+    <a href="./Calculators/Calculator_Bounty_Reward.html">Calculators</a>
+    <a href="./Generators/Random_Encounters.html">Generators</a>
+    <a href="./Homebrew/Homebrew_Beer_Brewing.html">Homebrew</a>
+    <a href="./Tools/Bounty_Board.html">Tools</a>
+    <a href="./Nav_Donate.html">Donate</a>
+    <div class="topnav-right">
+        <a href="./signup.html" style="float: right;">Sign Up</a>
+        <a href="./login.html">Login</a>
+    </div>
 </div>

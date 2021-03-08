@@ -58,14 +58,14 @@
             * giant something (E.G. giant wolf spider)
             * faerie dragon (green)
                 * 'd' is getting chopped off in 'dragon'
-    * [x] Implement DnD Beyond link generation
+    * [x] DnD Beyond link generation function
 * [x] Weather Generator
 
 ## Tools
 * [x] Bounty Board
     * Have user input data on the site
         * Form input
-        * JSON upload
+        * [x] JSON upload
 * Calendar
     * Presets
         * Load Custom JSON
