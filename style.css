@@ -36,10 +36,10 @@ body {
 main a {
     display: inline-flex;
     text-decoration: none;
-    padding: 5px 15px;
-    font-size: 1.1em;
+    padding: 0;
+    font-size: 1.00em;
     color: skyblue;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.00em;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 main a:hover {

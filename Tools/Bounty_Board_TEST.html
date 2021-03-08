@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GameMaster Website</title>  
+    <link rel="stylesheet" href="../style.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="../Global_Functions.js"></script>
+</head>  
+<style>
+    input {
+        text-align: center !important;
+        width: 200px !important;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+</style>
+<body>
+    <!--Navigation Panel START-->   
+    <div id="nav_placeholder"></div>
+    <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+    <!--Navigation Local START-->   
+    <div id="nav_local"></div>
+    <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+    <main>
+        <h1>Bounty Board</h1>
+        <h2>Universal Bounty Board</h2>
+        <h3>Upload your own JSON</h3>
+        <p><i>See below for instruction on how to make a JSON.</i></p>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="upload">
+        </form>
+        <h3>How to Make a JSON file for upload</h3>
+        <ol type="1">
+            <li>Create your table in Excel or Google Sheets. <a href="https://i.imgur.com/fnHPheq.png" target="_blank" rel="noopener noreferrer">(Example)</a> <a href="https://mega.nz/file/k9cWlLrZ#wIIf9tJfiMSWgCopqfmU_SfdaikZLQYBcHN2DxKHdiM" target="_blank" rel="noopener noreferrer">[Template]</a></li>
+            <ul>
+                <li>The bold and underlined words are the column names. They MUST be written exactly as the image.</li>
+            </ul>
+            <li>Go to <a href="https://shancarter.github.io/mr-data-converter/">Mr. Data Converter</a> and make sure the Output is set to <i>JSON - Properties.</i></li>
+            <li>Copy your Excel table and paste it into the input box on <a href="https://shancarter.github.io/mr-data-converter/">Mr. Data Converter</a></li>
+            <li>Copy the output text and create a new txt file with notepad and paste the output into it.</li>
+            <li>Save the new file as whatever you want .json. E.G. chicken.json</li>
+        </ol>
+    </main>
+</body>  
+</html>
