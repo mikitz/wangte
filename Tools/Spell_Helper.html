@@ -25,6 +25,7 @@
                 <thead><tr class="tableizer-firstrow"><tbody>
                     <tr style="width: 33pc;">
                         <td>
+                            <!--TELEPORT-->
                             <h2><u>Teleport</u></h2>
                             <label for="familiarity">Familiarity:</label>
                                 <select name="familiarity" id="familiarity">
@@ -36,15 +37,19 @@
                                     <option value="description-only">Description Only</option>
                                     <option value="fasle-destination">Fasle Destination</option>
                             </select>
-                            <br><br>
+                            <br>
                             <label for="distance">Distance:</label>
-                                <input type="number" id="distance" name="distance"><br><br>
+                                <input type="number" id="distance" name="distance"><br>
+                            <label for="arcana">Arcana Mod.:</label>
+                                <input type="number" id="arcana" name="arcana"><br>
                             </form>
+                            <br>
                             <button onclick="teleport()">Calculate</button>
                             <button onclick="clear_teleport()">Clear Output</button>
                             <p id = "output_teleport"></p>
                         </td>
                         <td>
+                            <!--SCRYING-->
                             <h2><u>Scrying</u></h2>
                             <label for="knowledge">Knowledge:</label>
                                 <select name="knowledge" id="knowledge">

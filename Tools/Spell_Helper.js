@@ -9,9 +9,15 @@ function clear_scrying(){
 // Teleport functions
 function teleportOutcome(off_target, similar_area, mishap){
     // Get distance in miles
-    var distance = document.getElementById("distance").value
+    var distance = parseInt(document.getElementById("distance").value)
+    // Get the caster's Arcana Modifier
+    var arcana = parseInt(document.getElementById("arcana").value)
     // Roll 1d100 to determine the outcome of the teleport
     let d100 = getRndInteger(1, 100)
+    console.log(`d100: ${d100}`)
+        // Add arcana to the d100
+        d100 = d100 + arcana
+        console.log(`+Arcana: ${d100}`)
     // Calculate the percentage off as determined by the Off Target entry in the Teleport spell
     let firstd10 = getRndInteger(1, 10)
     let secd10 = getRndInteger(1, 10)
@@ -30,25 +36,25 @@ function teleportOutcome(off_target, similar_area, mishap){
         if (d100 >= off_target + 1) {
             // On target
             var result = 'on target';
-            var vMessage = `The caster and their group were <B>${result}</B> and arrive safely at the intended destination.<br> ------------------------------`
-            populateElemant('output_teleport', vMessage)
+            var vMessage = `<br>The caster and their group were <B>${result}</B> and arrive safely at the intended destination.<br> ------------------------------`
+            populateElement('output_teleport', vMessage)
         } else if (d100 >= similar_area + 1 && d100 <= off_target) {
             // Off target
             console.log(`Percent Off: ${percent_off}`);
             var result = 'off target';
-            var vMessage = `The caster and their group were <B>${result}</B>, resulting in the group being teleported <B><I>${distance_off} miles ${direction}</I></B> of the intended distination.<br> ------------------------------`
-            populateElemant('output_teleport', vMessage)
+            var vMessage = `<br>The caster and their group were <B>${result}</B>, resulting in the group being teleported <B><I>${distance_off} miles ${direction}</I></B> of the intended distination.<br> ------------------------------`
+            populateElement('output_teleport', vMessage)
         } else if (d100 >= mishap + 1 && d100 <= similar_area) {
             // Similar Area
             var result = 'similar area';
-            var vMessage = `The caster and their group wind up in a different <B>${result}</B> that's visually and/or thematically similar to the intended destination.<br> ------------------------------`
-            populateElemant('output_teleport', vMessage)
+            var vMessage = `<br>The caster and their group wind up in a different <B>${result}</B> that's visually and/or thematically similar to the intended destination.<br> ------------------------------`
+            populateElement('output_teleport', vMessage)
         } else if (d100 <= mishap) {
             // Mishap
             var result = 'mishap';
             var dmg = fMultiRoll(3, 10, 1)
-            var vMessage = `The caster had a teleportation <B>${result}</B>, resulting in everyone who teleported suffering <B><I>${dmg}</I></B> force damage. </P> THE GM MUST ROLL AGAIN ON THE TELEPORT OUTCOME TABLE!<br> ------------------------------`
-            populateElemant('output_teleport', vMessage)
+            var vMessage = `<br>The caster had a teleportation <B>${result}</B>, resulting in everyone who teleported suffering <B><I>${dmg}</I></B> force damage. </P> THE GM MUST ROLL AGAIN ON THE TELEPORT OUTCOME TABLE!<br> ------------------------------`
+            populateElement('output_teleport', vMessage)
         }
     }
 }
@@ -61,11 +67,11 @@ function teleport(){
     switch (familiarity) {
         case 'Permanent Circle':
             var result = 'on target';
-            populateElemant('output_teleport', `The caster and their group were <B>${result}</B> and arrive safely at the intended destination.<br> ------------------------------`)
+            populateElement('output_teleport', `<br>The caster and their group were <B>${result}</B> and arrive safely at the intended destination.<br> ------------------------------`)
             break
         case 'Associated Object':
             var result = 'on target';
-            populateElemant('output_teleport', `The caster and their group were <B>${result}</B> and arrive safely at the intended destination.<br> ------------------------------`)
+            populateElement('output_teleport', `<br>The caster and their group were <B>${result}</B> and arrive safely at the intended destination.<br> ------------------------------`)
             break
         case 'Very Familiar':
             teleportOutcome(24, 13, 5)
@@ -123,5 +129,5 @@ function scrying(){
         var vMessage = "Scrying successful!<br> ------------------------------"
     }
     // Populate the output
-    populateElemant('output_scrying', vMessage)
+    populateElement('output_scrying', vMessage)
 }
