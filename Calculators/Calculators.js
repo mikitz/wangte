@@ -220,7 +220,7 @@ function currencyWeight(){
     // Divide it by 50
     var weightPounds = (pieces / 50).toFixed(2)
     // Conver to KG
-    var weightKG = (weightPounds * 2.205).toFixed(2)
+    var weightKG = (weightPounds / 2.205).toFixed(2)
     // Set up the message
     var vMessage = `${pieces} pieces weigh ${weightPounds} lbs (${weightKG} kg).`
     // Populate the element
