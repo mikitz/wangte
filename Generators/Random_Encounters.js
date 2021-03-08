@@ -320,8 +320,9 @@ function urbanStuff() {
     var d = document.getElementById("biome")
     var biome = d.options[d.selectedIndex].text
     // Set up the Bonus Urban Selector
-    var bonus_urban = `<label for="bonus_urban">Urban Region:</label>
+    var bonus_urban = `<label for="bonus_urban">Urban Area:</label>
     <select name="bonus_urban" id="bonus_urban">
+        <option value="no-area">No Specific Area</option>
         <option value="festivals">Festivals</option>
         <option value="red-light-district">Red Light District</option>
         <option value="tavern">Tavern</option>

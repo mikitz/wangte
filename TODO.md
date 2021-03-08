@@ -30,6 +30,7 @@
 * [x] Item Prices
 * Kibble's Crafting
 * [x] Medidcine Check for Determining Health
+* Movement speed to other velocities
 * [x] Negotiating a Price
 * [x] Ship Navigation
 * [x] Sprint
@@ -44,7 +45,22 @@
     * Tie this in with Random Encounter?
 * Random Encounter Generator
     * [x] Combat Encounters
+        * To Add
+            * Dungeon
     * [x] Non-combat Encounters
+        * Incoporate extra tables
+            * Urban (Subcategory)
+                * Festivals (Non-combat)
+                * Red Light District (Non-combat)
+                * Tavern (Non-combat)
+            * Hazards (Non-combat)
+                * *In addition to Non-combat encounters or in lieu of them?*
+            * Dungeon (Non-combat) 
+                * Just need to add Dungeon combat encounters
+            * Road (Non-combat)
+                * Simple "On a Road" select
+                    * [x] html
+                    * JS
     * Implement 5etools.net link generation
         * **bugs**
             * swarm of
@@ -55,14 +71,6 @@
             * faerie dragon (green)
                 * 'd' is getting chopped off in 'dragon'
     * [x] Implement DnD Beyond link generation
-    * Incoporate extra tables
-        * Urban (Subcategory)
-            * Festivals (Non-combat)
-            * Red Light District (Non-combat)
-            * Tavern (Non-combat)
-        * Hazards (Non-combat)
-        * Dungeon (Non-combat)
-        * Road (Non-combat)
 * [x] Weather Generator
 
 ## Tools

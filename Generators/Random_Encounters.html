@@ -40,6 +40,7 @@
         <script src="Weather.js"></script>
         <h1>Random Encounter Generator</h1>
         <p>This generator will generate a random encounter based on the level range, biome, and time of day. <br>It will also generate the distance at which the creature(s)/event is away from the players based on the biome. <br>In addition, weather, along with its mechanical effets, will be generated based on the climate and season. </p>
+        <!--Level Range-->
         <label for="lvl-range">Level Range:</label>
             <select name="lvl-range" id="lvl-range">
                 <option value="1-4">1-4</option>
@@ -48,6 +49,7 @@
                 <option value="17-20">17-20</option>
             </select>
         <p></p>
+        <!--Biome-->
         <label for="biome">Biome:</label>
             <select name="biome" id="biome" onchange="select_climate(); urbanStuff()">
                 <option value="arctic">Arctic</option>
@@ -77,9 +79,17 @@
                 <option value="arid/dry">Arid/Dry</option>
                 <option value="temperate">Temperate</option>
                 <option value="continental">Continental</option>
-                <option value="polar" selected>Polar</option>
+                <option value="polar">Polar</option>
             </select>
         <p></p>
+        <!--On a Road?-->
+        <label for="road">On a Road?:</label>
+            <select name="road" id="road">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        <p></p>
+        <!--Season-->
         <label for="season">Season:</label>
             <select name="season" id="season">
                 <option value="spring">Spring</option>
@@ -88,6 +98,7 @@
                 <option value="winter">Winter</option>
             </select>
         <p></p>
+        <!--Time of Day-->
         <label for="time_of_day">Time of Day:</label>
             <select name="time_of_day" id="time_of_day">
                 <option value="day">Day</option>
