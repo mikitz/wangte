@@ -66,6 +66,9 @@
 
 ## Tools
 * [x] Bounty Board
+    * Have user input data on the site
+        * Form input
+        * JSON upload
 * Calendar
     * Presets
         * Load Custom JSON
