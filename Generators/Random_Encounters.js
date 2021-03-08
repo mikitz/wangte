@@ -34,6 +34,15 @@ function tool_random_encounter(){
     // Get the season
     var f = document.getElementById("season")
     var season = f.options[f.selectedIndex].text
+    // Get Road status
+    var g = document.getElementById("road")
+    var road = g.options[g.selectedIndex].text
+    // Get urban biome
+    var urbanAreaVis = document.getElementById('ba')
+    if (urbanAreaVis) {
+        var h = document.getElementById("ba")
+        var urbanArea = h.options[h.selectedIndex].value
+    }
     // Check to see if nct is lower than ct
     if (parseInt(nct) >= parseInt(ct)) {
         alert("Non-combat Encounter DC MUST be lower than Combat Encounter DC")
@@ -101,69 +110,100 @@ function tool_random_encounter(){
     // Non-combat Encounter
     if (roll >= ncdc && roll < cdc) {
         var encQ = true
-        var len = eval(`${biome.toLowerCase()}_nc`).length       
-        // Roll 1dx
-        var ad100 = getRndInteger(1, len)
-        var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
-        console.log(encounter)
-        // Extract creatures from the encounter and replace them with links
-        var creatureExtract = bestiary_basic.forEach(function(element){
-            var nameFixed = element.name_lower.replace("(", "\(")
-            nameFixed = nameFixed.replace(")", "\)")
-            var creatureName = `(${nameFixed}[a-z]\b)`
-            var reFull = new RegExp(`${creatureName}`, "g")
-            var inc = encounter.match(reFull)
-            if (inc) {
-                inc = inc.sort(function(a, b){return b.length - a.length})
-                console.log(inc)
-                for (k = 0; k < inc.length; k++) {
-                    var creatureExtract = inc[k]
-                    var bookExtract = bestiary_basic.find(r => r.name_lower == creatureExtract).book_lower
-                    encounter = encounter.replace(creatureExtract, linkGenerator5eTools(creatureExtract, bookExtract))
-                }
-                return creatureExtract
-            }
-        })
-        console.log(`Creature: ${creatureExtract}`)
-        // Extract dice groups from encounter
-        const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
-        var aDice = encounter.match(NewRegEx)
-        console.log(aDice)
-        // Check to see if aDice is not empty
-        if (aDice) {
-            var encounterF = encounter
-            // Log for debugging
-            console.log("aDice")
-            console.log(aDice)
-            // Loop through aDice and calculate totals for each element
-            for (i = 0; i < aDice.length; i++) {
-                // Extract number of dice
-                const RegEx = /\d+(?=d)/g
-                var num_dice = RegEx.exec(aDice[i])
-                // Extrect Dice Sides
-                const MoreRegEx = /(?<=d)(\d*)/g
-                var num_of_sides = MoreRegEx.exec(aDice[i])
-                num_of_sides = num_of_sides[0]
-                // Extract Modifier
-                const EvenMoreRegEx = /(?<=\+)(\d*)/g
-                var modifier = EvenMoreRegEx.exec(aDice[i])
-                if (modifier) {modifier = parseInt(modifier[0])}
-                else {modifier = 0}
-                // Total
-                var total = fMultiRoll(num_dice, num_of_sides, 1)
-                total = total + modifier
-                // Log for debugging
-                console.log(`${aDice[i]}'s total is ${total}`)
-                // Set up the Encounter message
-                console.log(`${i}: ${encounterF}`)
-                encounterF = encounterF.replace(aDice[i], total)
-            }
-            encounterF += ` ${ED} ft. away.`
-            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounterF}`
-        } else {
+        // Grab the proper table
+        if (urbanAreaVis && urbanArea != "no_area") {
+            // Get length for the d100
+            var len = eval(`${urbanArea}_nc`).length
+            // Roll 1dx
+            var ad100 = getRndInteger(1, len)
+            // Get the rolled encounter
+            var encounter = eval(`${urbanArea}_nc`)[ad100]
+            // Set up the final encounter
             var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
+        } else if (road == 'Yes') {
+            // Get length for the d100
+            var len = road_nc.length
+            // Roll 1dx
+            var ad100 = getRndInteger(1, len)
+            // Get the rolled encounter
+            var encounter = road_nc[ad100]
+            // Set up the final encounter
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
+        } else {
+            // Set some vars to true
+            var vCreature = true
+            var vDice = true
+            // Get length for the d100
+            var len = eval(`${biome.toLowerCase()}_nc`).length
+            // Roll 1dx
+            var ad100 = getRndInteger(1, len)      
+            // Get the rolled encounter
+            var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
+        }
+        // Log the encounter
+        console.log(encounter)
+        if (vCreature && vDice) {
+            // Extract creatures from the encounter and replace them with links
+            var creatureExtract = bestiary_basic.forEach(function(element){
+                var nameFixed = element.name_lower.replace("(", "\(")
+                nameFixed = nameFixed.replace(")", "\)")
+                var creatureName = `(${nameFixed}[a-z]\b)`
+                var reFull = new RegExp(`${creatureName}`, "g")
+                var inc = encounter.match(reFull)
+                if (inc) {
+                    inc = inc.sort(function(a, b){return b.length - a.length})
+                    console.log(inc)
+                    for (k = 0; k < inc.length; k++) {
+                        var creatureExtract = inc[k]
+                        var bookExtract = bestiary_basic.find(r => r.name_lower == creatureExtract).book_lower
+                        encounter = encounter.replace(creatureExtract, linkGenerator5eTools(creatureExtract, bookExtract))
+                    }
+                    return creatureExtract
+                }
+            })
+            // Log the creatures in the encounter
+            console.log(`Creature: ${creatureExtract}`)
+            // Extract dice groups from encounter
+            const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
+            var aDice = encounter.match(NewRegEx)
+            console.log(aDice)
+            // Check to see if aDice is not empty
+            if (aDice) {
+                var encounterF = encounter
+                // Log for debugging
+                console.log("aDice")
+                console.log(aDice)
+                // Loop through aDice and calculate totals for each element
+                for (i = 0; i < aDice.length; i++) {
+                    // Extract number of dice
+                    const RegEx = /\d+(?=d)/g
+                    var num_dice = RegEx.exec(aDice[i])
+                    // Extrect Dice Sides
+                    const MoreRegEx = /(?<=d)(\d*)/g
+                    var num_of_sides = MoreRegEx.exec(aDice[i])
+                    num_of_sides = num_of_sides[0]
+                    // Extract Modifier
+                    const EvenMoreRegEx = /(?<=\+)(\d*)/g
+                    var modifier = EvenMoreRegEx.exec(aDice[i])
+                    if (modifier) {modifier = parseInt(modifier[0])}
+                    else {modifier = 0}
+                    // Total
+                    var total = fMultiRoll(num_dice, num_of_sides, 1)
+                    total = total + modifier
+                    // Log for debugging
+                    console.log(`${aDice[i]}'s total is ${total}`)
+                    // Set up the Encounter message
+                    console.log(`${i}: ${encounterF}`)
+                    encounterF = encounterF.replace(aDice[i], total)
+                }
+                encounterF += ` ${ED} ft. away.`
+                var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounterF}`
+            } else {
+                var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
+            }
         }
     }
+        
     // Combat Encounter
     if (roll >= cdc) {
         var encQ = true
@@ -320,11 +360,11 @@ function urbanStuff() {
     var d = document.getElementById("biome")
     var biome = d.options[d.selectedIndex].text
     // Set up the Bonus Urban Selector
-    var bonus_urban = `<label for="bonus_urban">Urban Area:</label>
-    <select name="bonus_urban" id="bonus_urban">
-        <option value="no-area">No Specific Area</option>
+    var bonus_urban = `<label for="ba">Urban Area:</label>
+    <select name="ba" id="ba">
+        <option value="no_area">No Specific Area</option>
         <option value="festivals">Festivals</option>
-        <option value="red-light-district">Red Light District</option>
+        <option value="red_light_district">Red Light District</option>
         <option value="tavern">Tavern</option>
     </select>`
     // If Biome is Urban

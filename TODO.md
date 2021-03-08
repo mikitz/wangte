@@ -49,18 +49,15 @@
             * Dungeon
     * [x] Non-combat Encounters
         * Incoporate extra tables
-            * Urban (Subcategory)
-                * Festivals (Non-combat)
-                * Red Light District (Non-combat)
-                * Tavern (Non-combat)
+            * [x] Urban (Subcategory)
+                * [x] Festivals (Non-combat)
+                * [x] Red Light District (Non-combat)
+                * [x] Tavern (Non-combat)
             * Hazards (Non-combat)
                 * *In addition to Non-combat encounters or in lieu of them?*
             * Dungeon (Non-combat) 
                 * Just need to add Dungeon combat encounters
-            * Road (Non-combat)
-                * Simple "On a Road" select
-                    * [x] html
-                    * JS
+            * [x] Road (Non-combat)
     * Implement 5etools.net link generation
         * **bugs**
             * swarm of
