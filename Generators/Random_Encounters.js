@@ -366,7 +366,7 @@ function urbanStuff() {
         <option value="festivals">Festivals</option>
         <option value="red_light_district">Red Light District</option>
         <option value="tavern">Tavern</option>
-        <option value="seedy_tavern>Seedy Tavern</option>
+        <option value="seedy_tavern">Seedy Tavern</option>
     </select>`
     // If Biome is Urban
     if (biome == 'Urban') {
