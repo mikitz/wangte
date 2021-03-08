@@ -6,7 +6,7 @@ function clear_scrying(){
     document.getElementById('output_scrying').innerHTML = ""
 }
 
-// Teleport functions
+// Function to determine the outcome of the Teleport roll
 function teleportOutcome(off_target, similar_area, mishap){
     // Get distance in miles
     var distance = parseInt(document.getElementById("distance").value)
@@ -58,7 +58,7 @@ function teleportOutcome(off_target, similar_area, mishap){
         }
     }
 }
-// What Do
+// Algorithm for the Teleport spell
 function teleport(){
     // Get the familiarity
     var c = document.getElementById("familiarity")
