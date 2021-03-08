@@ -314,6 +314,22 @@ function tool_random_encounter(){
         generate_weather()
     }
 }
+// Function to handle extra urban environment
 function urbanStuff() {
-
+    // Get biome
+    var d = document.getElementById("biome")
+    var biome = d.options[d.selectedIndex].text
+    // Set up the Bonus Urban Selector
+    var bonus_urban = `<label for="bonus_urban">Urban Region:</label>
+    <select name="bonus_urban" id="bonus_urban">
+        <option value="festivals">Festivals</option>
+        <option value="red-light-district">Red Light District</option>
+        <option value="tavern">Tavern</option>
+    </select>`
+    // If Biome is Urban
+    if (biome == 'Urban') {
+        document.getElementById('bonus_urban').innerHTML = bonus_urban
+    } else if (biome != 'Urban') {
+        document.getElementById('bonus_urban').innerHTML = ""
+    }
 }

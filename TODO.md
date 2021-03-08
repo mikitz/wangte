@@ -50,18 +50,19 @@
             * swarm of
             * () parentheticals
             * words within words need to be handled
-                * E.G. 'rat' in 'ration' and 'triceratops'
+                * E.G. 'rat' in 'ration' and 'rat' in 'triceratops'
             * giant something (E.G. giant wolf spider)
             * faerie dragon (green)
                 * 'd' is getting chopped off in 'dragon'
     * [x] Implement DnD Beyond link generation
     * Incoporate extra tables
-        * Dungeon
-        * Festivals
-        * Red Light District
-        * Road
-        * Tavern
-        * Hazards
+        * Urban (Subcategory)
+            * Festivals (Non-combat)
+            * Red Light District (Non-combat)
+            * Tavern (Non-combat)
+        * Hazards (Non-combat)
+        * Dungeon (Non-combat)
+        * Road (Non-combat)
 * [x] Weather Generator
 
 ## Tools
