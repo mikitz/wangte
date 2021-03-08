@@ -45,19 +45,10 @@
     * Tie this in with Random Encounter?
 * Random Encounter Generator
     * [x] Combat Encounters
-        * To Add
-            * Dungeon
     * [x] Non-combat Encounters
         * Incoporate extra tables
-            * [x] Urban (Subcategory)
-                * [x] Festivals (Non-combat)
-                * [x] Red Light District (Non-combat)
-                * [x] Tavern (Non-combat)
             * Hazards (Non-combat)
                 * *In addition to Non-combat encounters or in lieu of them?*
-            * Dungeon (Non-combat) 
-                * Just need to add Dungeon combat encounters
-            * [x] Road (Non-combat)
     * Implement 5etools.net link generation
         * **bugs**
             * swarm of
