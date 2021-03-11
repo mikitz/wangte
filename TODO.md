@@ -48,7 +48,8 @@
     * [x] Non-combat Encounters
         * Incoporate extra tables
             * Hazards (Non-combat)
-                * *In addition to Non-combat encounters or in lieu of them?*
+                * Triggers on a 1 on the d20 encounter
+                   * Open Water 
     * Implement 5etools.net link generation
         * **bugs**
             * swarm of
