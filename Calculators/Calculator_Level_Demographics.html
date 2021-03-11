@@ -18,6 +18,8 @@
     <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
         <main>
             <script src="Calculators.js"></script>
+            <script src="Database_Calculator.js">
+            </script>
             <h1>Level Demographics</h1>
             <label for="lvl">Level:</label>
                 <select name="lvl" id="lvl">
@@ -51,9 +53,18 @@
             <button onclick="calculate_level_demographics()">Calculate</button>
             <button onclick="clear_sail()">Clear Output</button>
             <!--Output Table-->
-    
+            </p>
+            <table id="table_output" class="tableizer-table" style="display: none;">
+                <thead><tr class="tableizer-firstrow"><th>Level</th><th>Population</th></tr></thead>
+                <tbody>
+
+                </tbody>
+            </table>
             <!-- Single Output-->
             <p id = "output"></p>
+            <!-- Output List-->
+            <ul id ="output_list">
+            </ul>
             <h2>Some Examples (Year 1500)</h2>
             <table class="tableizer-table">
                 <thead><tr class="tableizer-firstrow"><th>City</th><th>Toril</th><th>Tianfrit</th><th>Waterdeep</th><th>Westgate</th><th>Calimport</th><th>Gheldaneth</th><th>Unthalass</th><th>Suldolphor</th><th>Bezantur</th><th>Eltabbar</th><th>Athkatla</th><th>Zazesspur</th><th>Cimbar</th><th>Baldur's Gate</th><th>Neverwinter</th><th>Lyrabar</th></tr></thead><tbody>

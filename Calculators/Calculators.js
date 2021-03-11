@@ -1,7 +1,3 @@
-// Define a function to format number with commas
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
 // Calculates the duration of the sailing 
 // as well as revenue earned from the conveyance of cargo
 function calculate_sail_duration_and_cargo_revenue() {
@@ -64,6 +60,7 @@ function calculate_sail_duration_and_cargo_revenue() {
 // Clears "output"
 function clear_sail() {
     document.getElementById('output').innerHTML = ""
+    document.getElementById("output_list").innerHTML = ""
 }
 // Calculates the probability of obtaining a single specific outcome across n rolls of a d-sided die
 function probability_one() {
@@ -169,24 +166,39 @@ function calculate_bounty(){
 }
 // Calculate level demographics
 function calculate_level_demographics(){ 
+    document.getElementById("output").innerHTML = ""
+    document.getElementById("output_list").innerHTML = ""
     // Get the level
     var a = document.getElementById("lvl")
     var level = a.options[a.selectedIndex].text
     // Turn level into an int if it's not "All"
     if (level != "All") {level = parseInt(level)}
     // Get the population
-    var pop = document.getElementById("population").value
+    var pop = parseInt(document.getElementById("population").value)
     // Calculate the demographics
     if (level === "All") {
-        // Assemble the Table
-        
+        document.getElementById('output').innerHTML = `Population: ${pop.toLocaleString()}`
+        // Loop through each level and calculate its population
+        for (lvl = 1; lvl < 20 + 1; lvl++) {
+            // Get the respective percentage
+            var perc = oaData.find(i => i.lvl == lvl).perc_of_pop
+            var demographics = parseInt(Math.round(pop * perc))
+            // Log it
+            console.log(`Level ${lvl}: ${demographics}`)
+            // Build it
+            var vMessage = `Level ${lvl.toLocaleString()}: ${demographics.toLocaleString()} person(s)`
+            // Output it
+            var ul = document.createElement('li')
+            ul.innerHTML = vMessage
+            document.getElementById('output_list').appendChild(ul)
+        }
     } else {
         // Get the respective percentage
         var perc = oaData.find(i => i.lvl == level).perc_of_pop
-        var demographics = Math.round(pop * perc)
+        var demographics = parseInt(Math.round(pop * perc))
         // Print the output
         var p = document.createElement('p')
-        p.innerHTML = `Level ${level} Individuals in a Location with a Population of ${numberWithCommas(pop)}: ${numberWithCommas(demographics)} person(s)`
+        p.innerHTML = `Level ${level.toLocaleString()}: ${demographics.toLocaleString()} person(s)`
         document.getElementById("output").appendChild(p)
     }
     
