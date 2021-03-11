@@ -46,10 +46,10 @@
 * Random Encounter Generator
     * [x] Combat Encounters
     * [x] Non-combat Encounters
-        * Incoporate extra tables
+       * Incoporate extra tables
             * Hazards (Non-combat)
                 * Triggers on a 1 on the d20 encounter
-                     * [Open Water](https://5e.tools/variantrules.html#travel%20at%20sea_gos)
+                    * [Open Water](https://5e.tools/variantrules.html#travel%20at%20sea_gos)
 
         * Open Water
             * [Mysterious Islands](https://5e.tools/variantrules.html#mysterious%20islands_gos)
