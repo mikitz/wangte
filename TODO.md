@@ -4,9 +4,7 @@
 * [x] Sailing Duration and Cargo Tranport Revenue
 * Foot Travel Duration
 * [x] Horizon Calculator
-* Level Demographics
-    * [x] Single level
-    * All levels
+* [x] Level Demographics
 * [x] Crafting Duration
 * [x] Bounty Reward
 * [x] Currency Weight
