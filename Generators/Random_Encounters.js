@@ -57,29 +57,29 @@ function tool_random_encounter(){
     if (nct === "N/A" && ct === "N/A") {
         // Pull both DCs from the database based on time of day
         if (time_of_day === "Day") {
-            var ncdc = oaData.find(i => i.Biome == biome).Day_NC_DC
-            var cdc = oaData.find(i => i.Biome == biome).Day_C_DC
+            var ncdc = oaBiome.find(i => i.Biome == biome).Day_NC_DC
+            var cdc = oaBiome.find(i => i.Biome == biome).Day_C_DC
         } else {
-            var ncdc = oaData.find(i => i.Biome == biome).Night_NC_DC
-            var cdc = oaData.find(i => i.Biome == biome).Night_C_DC
+            var ncdc = oaBiome.find(i => i.Biome == biome).Night_NC_DC
+            var cdc = oaBiome.find(i => i.Biome == biome).Night_C_DC
         }
     } else if (ct === "N/A") {
         // Set Non-combat DC as the user's input
         var ncdc = parseInt(nct)
         // Pull Combat DC from database based on time of day
         if (time_of_day === "Day") {
-            var cdc = oaData.find(i => i.Biome == biome).Day_C_DC
+            var cdc = oaBiome.find(i => i.Biome == biome).Day_C_DC
         } else {
-            var cdc = oaData.find(i => i.Biome == biome).Night_C_DC
+            var cdc = oaBiome.find(i => i.Biome == biome).Night_C_DC
         }
     } else if (nct === "N/A") {
         // Set Combat DC as user's input
         var cdc = parseInt(ct)
         // Pull both DCs from the database based on time of day
         if (time_of_day === "Day") {
-            var ncdc = oaData.find(i => i.Biome == biome).Day_NC_DC
+            var ncdc = oaBiome.find(i => i.Biome == biome).Day_NC_DC
         } else {
-            var ncdc = oaData.find(i => i.Biome == biome).Night_NC_DC
+            var ncdc = oaBiome.find(i => i.Biome == biome).Night_NC_DC
         }
     } else {
         // Use user inputs as the DCs
@@ -107,6 +107,10 @@ function tool_random_encounter(){
                 Distance: ${ED} ft.`)
     // Roll the dice and see if it produces a random encounter or not
     var roll = getRndInteger(1, 20)
+    // Hazard
+    if (roll == 1){
+
+    }
     // Non-combat Encounter
     if (roll >= ncdc && roll < cdc) {
         var encQ = true
@@ -136,72 +140,88 @@ function tool_random_encounter(){
             // Get length for the d100
             var len = eval(`${biome.toLowerCase()}_nc`).length
             // Roll 1dx
-            var ad100 = getRndInteger(1, len)      
+            // var ad100 = getRndInteger(1, len)   
+            var ad100 = 103
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
         }
-        // Log the encounter
-        console.log(encounter)
-        if (vCreature && vDice) {
-            // Extract creatures from the encounter and replace them with links
-            var creatureExtract = bestiary_basic.forEach(function(element){
-                var nameFixed = element.name_lower.replace("(", "\(")
-                nameFixed = nameFixed.replace(")", "\)")
-                var creatureName = `(${nameFixed}[a-z]\b)`
-                var reFull = new RegExp(`${creatureName}`, "g")
-                var inc = encounter.match(reFull)
-                if (inc) {
-                    inc = inc.sort(function(a, b){return b.length - a.length})
-                    console.log(inc)
-                    for (k = 0; k < inc.length; k++) {
-                        var creatureExtract = inc[k]
-                        var bookExtract = bestiary_basic.find(r => r.name_lower == creatureExtract).book_lower
-                        encounter = encounter.replace(creatureExtract, linkGenerator5eTools(creatureExtract, bookExtract))
+        if (encounter == "Random Ship") {
+            console.log(`TEST`)
+            rollTable(ship_adjective)
+            rollTable(ship_noun)
+            rollTable(ship_disposition)
+            rollTable(ship_attitude)
+        } else if (encounter == "Mysterious Island") {
+            console.log(`TEST`)
+            rollTable(ship_purpose)
+        } else if (encounter == "Blue Hole") {
+            console.log(`TEST`)
+            rollTable(ship_purpose)
+        } else {
+            // Log the encounter
+            console.log(encounter)
+            if (vCreature && vDice) {
+                // Extract creatures from the encounter and replace them with links
+                var creatureExtract = bestiary_basic.forEach(function(element){
+                    var nameFixed = element.name_lower.replace("(", "\(")
+                    nameFixed = nameFixed.replace(")", "\)")
+                    var creatureName = `(${nameFixed}[a-z]\b)`
+                    var reFull = new RegExp(`${creatureName}`, "g")
+                    var inc = encounter.match(reFull)
+                    if (inc) {
+                        inc = inc.sort(function(a, b){return b.length - a.length})
+                        console.log(inc)
+                        for (k = 0; k < inc.length; k++) {
+                            var creatureExtract = inc[k]
+                            var bookExtract = bestiary_basic.find(r => r.name_lower == creatureExtract).book_lower
+                            encounter = encounter.replace(creatureExtract, linkGenerator5eTools(creatureExtract, bookExtract))
+                        }
+                        return creatureExtract
                     }
-                    return creatureExtract
-                }
-            })
-            // Log the creatures in the encounter
-            console.log(`Creature: ${creatureExtract}`)
-            // Extract dice groups from encounter
-            const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
-            var aDice = encounter.match(NewRegEx)
-            console.log(aDice)
-            // Check to see if aDice is not empty
-            if (aDice) {
-                var encounterF = encounter
-                // Log for debugging
-                console.log("aDice")
+                })
+                // Log the creatures in the encounter
+                console.log(`Creature: ${creatureExtract}`)
+                // Extract dice groups from encounter
+                const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
+                var aDice = encounter.match(NewRegEx)
                 console.log(aDice)
-                // Loop through aDice and calculate totals for each element
-                for (i = 0; i < aDice.length; i++) {
-                    // Extract number of dice
-                    const RegEx = /\d+(?=d)/g
-                    var num_dice = RegEx.exec(aDice[i])
-                    // Extrect Dice Sides
-                    const MoreRegEx = /(?<=d)(\d*)/g
-                    var num_of_sides = MoreRegEx.exec(aDice[i])
-                    num_of_sides = num_of_sides[0]
-                    // Extract Modifier
-                    const EvenMoreRegEx = /(?<=\+)(\d*)/g
-                    var modifier = EvenMoreRegEx.exec(aDice[i])
-                    if (modifier) {modifier = parseInt(modifier[0])}
-                    else {modifier = 0}
-                    // Total
-                    var total = fMultiRoll(num_dice, num_of_sides, 1)
-                    total = total + modifier
+                // Check to see if aDice is not empty
+                if (aDice) {
+                    var encounterF = encounter
                     // Log for debugging
-                    console.log(`${aDice[i]}'s total is ${total}`)
-                    // Set up the Encounter message
-                    console.log(`${i}: ${encounterF}`)
-                    encounterF = encounterF.replace(aDice[i], total)
+                    console.log("aDice")
+                    console.log(aDice)
+                    // Loop through aDice and calculate totals for each element
+                    for (i = 0; i < aDice.length; i++) {
+                        // Extract number of dice
+                        const RegEx = /\d+(?=d)/g
+                        var num_dice = RegEx.exec(aDice[i])
+                        // Extrect Dice Sides
+                        const MoreRegEx = /(?<=d)(\d*)/g
+                        var num_of_sides = MoreRegEx.exec(aDice[i])
+                        num_of_sides = num_of_sides[0]
+                        // Extract Modifier
+                        const EvenMoreRegEx = /(?<=\+)(\d*)/g
+                        var modifier = EvenMoreRegEx.exec(aDice[i])
+                        if (modifier) {modifier = parseInt(modifier[0])}
+                        else {modifier = 0}
+                        // Total
+                        var total = fMultiRoll(num_dice, num_of_sides, 1)
+                        total = total + modifier
+                        // Log for debugging
+                        console.log(`${aDice[i]}'s total is ${total}`)
+                        // Set up the Encounter message
+                        console.log(`${i}: ${encounterF}`)
+                        encounterF = encounterF.replace(aDice[i], total)
+                    }
+                    encounterF += ` ${ED} ft. away.`
+                    var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounterF}`
+                } else {
+                    var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
                 }
-                encounterF += ` ${ED} ft. away.`
-                var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounterF}`
-            } else {
-                var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
             }
         }
+        
     }
         
     // Combat Encounter

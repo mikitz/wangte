@@ -40,7 +40,7 @@
 * [x] Traveling
 
 ## Generators
-* Procedural Battle Maps
+* Battle Maps
     * Tie this in with Random Encounter?
 * Random Encounter Generator
     * [x] Combat Encounters
@@ -49,9 +49,27 @@
          * Open Water
             * [Mysterious Islands](https://5e.tools/variantrules.html#mysterious%20islands_gos)
             * [Random Ships](https://5e.tools/variantrules.html#random%20ships_gos)
+                * [x] In Database
+                * In Javascript
+                * Tables
+                    * Type
+                    * Name
+                    * Purpose
+                    * Attitude
+                    * Disposition
             * [Ocean Environs](https://5e.tools/variantrules.html#ocean%20environs_gos)
             * [Hazards](https://5e.tools/variantrules.html#travel%20at%20sea_gos)
-               * Triggers on a 1 on the d20 encounter roll 
+                * In Database
+                * In Javascript
+                * Tables
+                    * Storms
+                        * Magic Storms
+                        * Non-magic Storms
+                    * Fire
+                    * Infestation
+                    * Fog
+                        * Magic Fog
+                        * Non-magic Fog
     * Implement 5etools.net link generation
         * **bugs**
             * swarm of

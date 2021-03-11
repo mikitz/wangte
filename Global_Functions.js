@@ -92,4 +92,58 @@ function JSONtoHTMLTable(){
     return columnSet;
     }
 }
-    
+
+// Function to pull a rolled result from a given table with ranges for its properties
+function rollTable(table){
+    // Get the first key
+        if (table.length > 0) {
+            var columnsIn = table[0]
+            for(var keyFirst in columnsIn) {
+                break
+            }
+        } else {
+            var keyFirst = 'No Columns'
+        } 
+        // Log the first key
+        console.log(`First Key: ${keyFirst}`)
+    // Get the last key
+        if (table.length > 0) {
+            var columnsIn = table[0]
+            var x = 0
+            for(var keyLast in columnsIn) {
+                x = x + 1
+                if (x = columnsIn.length - 1) {
+                    break
+                }
+            }
+        } else {
+            var keyLast = 'No Columns'
+        } 
+        // Log the last key
+        console.log(`Last Key: ${keyLast}`)
+    // Get number of sides
+        const NewRegEx = /\d\d*/gm
+        var sides = keyFirst.match(NewRegEx)
+        sides = sides[0]
+        // Log it
+        console.log(sides)
+    // Roll the die
+        var roll = fMultiRoll(1, sides, 1)
+        console.log(roll)
+    // Find the result  
+    debugger
+        if (table.find(r => r[keyFirst] == roll)[`${keyLast}`] === 'undefined') {
+            // Loop through the first key values and determine if roll is in the range
+            table.forEach(function(row){
+                var blah = table[row][keyFirst][`${keyLast}`]
+                console.log(blah)
+            })
+            var result = ''
+        } else {
+            // Pull the exact result
+            var result = table.find(r => r[keyFirst] == roll)[`${keyLast}`]
+        }
+        // Log it
+        console.log(result)
+
+}
