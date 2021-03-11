@@ -49,7 +49,7 @@
         * Incoporate extra tables
             * Hazards (Non-combat)
                 * Triggers on a 1 on the d20 encounter
-                   * Open Water 
+                   * [Open Water](https://5e.tools/variantrules.html#travel%20at%20sea_gos) 
     * Implement 5etools.net link generation
         * **bugs**
             * swarm of
