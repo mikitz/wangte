@@ -168,31 +168,7 @@ function calculate_bounty(){
     document.getElementById("output").appendChild(p)
 }
 // Calculate level demographics
-function calculate_level_demographics(){
-    // Define the object array to store the data
-    let oaData = [
-        {"lvl":0,"perc_of_pop":0.009677909091},
-        {"lvl":1,"perc_of_pop":0.0005962575758},
-        {"lvl":2,"perc_of_pop":0.0005184545455},
-        {"lvl":3,"perc_of_pop":0.0004351969697},
-        {"lvl":4,"perc_of_pop":0.0003466818182},
-        {"lvl":5,"perc_of_pop":0.0002679545455},
-        {"lvl":6,"perc_of_pop":0.000201530303},
-        {"lvl":7,"perc_of_pop":0.0001477878788},
-        {"lvl":8,"perc_of_pop":0.0001061666667},
-        {"lvl":9,"perc_of_pop":0.00007290909091},
-        {"lvl":10,"perc_of_pop":0.00005051515152},
-        {"lvl":11,"perc_of_pop":0.0000321969697},
-        {"lvl":12,"perc_of_pop":0.00002001515152},
-        {"lvl":13,"perc_of_pop":0.00001178787879},
-        {"lvl":14,"perc_of_pop":0.000007257575758},
-        {"lvl":15,"perc_of_pop":0.000003636363636},
-        {"lvl":16,"perc_of_pop":0.000001954545455},
-        {"lvl":17,"perc_of_pop":0.00000103030303},
-        {"lvl":18,"perc_of_pop":0.0000004848484848},
-        {"lvl":19,"perc_of_pop":0.0000001818181818},
-        {"lvl":20,"perc_of_pop":0.0000000303030303}
-    ];
+function calculate_level_demographics(){ 
     // Get the level
     var a = document.getElementById("lvl")
     var level = a.options[a.selectedIndex].text
@@ -202,16 +178,18 @@ function calculate_level_demographics(){
     var pop = document.getElementById("population").value
     // Calculate the demographics
     if (level === "All") {
-
+        // Assemble the Table
+        
     } else {
         // Get the respective percentage
         var perc = oaData.find(i => i.lvl == level).perc_of_pop
         var demographics = Math.round(pop * perc)
+        // Print the output
+        var p = document.createElement('p')
+        p.innerHTML = `Level ${level} Individuals in a Location with a Population of ${numberWithCommas(pop)}: ${numberWithCommas(demographics)} person(s)`
+        document.getElementById("output").appendChild(p)
     }
-    // Print the output
-    var p = document.createElement('p')
-    p.innerHTML = `Level ${level} Individuals in a Location with a Population of ${numberWithCommas(pop)}: ${numberWithCommas(demographics)} person(s)`
-    document.getElementById("output").appendChild(p)
+    
 }
 // Function to calculate the weight of currency
 function currencyWeight(){
@@ -225,4 +203,36 @@ function currencyWeight(){
     var vMessage = `${pieces} pieces weigh ${weightPounds} lbs (${weightKG} kg).`
     // Populate the element
     populateElement('output', vMessage, 'p')
+}
+
+// Function to calculate the number of creatures for any given level
+function calculateCreatures(){
+    // Get the CR
+    var b = document.getElementById("cr")
+    var CR = b.options[b.selectedIndex].text
+    // Get the Desired Level
+    var a = document.getElementById("lvl")
+    var level = a.options[a.selectedIndex].text
+    // Get the number of party memebers
+    var c = document.getElementById("party")
+    var party = parseInt(c.options[c.selectedIndex].text)
+    // Pull the XP per creature based on the cr
+    var cXP = XP_by_CR.find(i => i.CR == CR).XP
+    // Pull the XP needed for the given level
+    var nXP = beyond_1st_level.find(c => c.level == level).XP
+    // Compute the total number of creatures
+    var nrCreatures = (nXP / cXP) * party
+    var rCreatures = Math.ceil(nrCreatures).toLocaleString()
+    // Build the message
+    var vMessage = `With <b>${party} party members</b>, you (and your group) will have to kill <b>${rCreatures} CR ${CR}</b> creatures in order to reach <b>level ${level}</b>.`
+    document.getElementById('output').innerHTML = vMessage
+    // Log for debugging
+    console.log(`INITIAL VARS
+    Input CR: ${CR}
+    Input Lvl: ${level}
+    cXP: ${cXP}
+    nXP: ${nXP}
+    Party Members: ${party}
+    NR Creatures: ${nrCreatures}
+    R Creatures: ${rCreatures}`)
 }

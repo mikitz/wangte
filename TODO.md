@@ -4,12 +4,13 @@
 * [x] Sailing Duration and Cargo Tranport Revenue
 * Foot Travel Duration
 * [x] Horizon Calculator
-* How Special Are You?
+* Level Demographics
     * [x] Single level
     * All levels
 * [x] Crafting Duration
 * [x] Bounty Reward
 * [x] Currency Weight
+* [x] n CR x Creatures to Level y
 
 ## Homebrew
 * [x] Adjusting Races
