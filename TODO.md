@@ -10,6 +10,9 @@
 * [x] Currency Weight
 * [x] n CR x Creatures to Level y
 * Movement speed to other velocities
+* Training
+    * [x] Training Successes Needed
+    * Training Roller
 
 ## Homebrew
 * [x] Adjusting Races

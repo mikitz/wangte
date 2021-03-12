@@ -248,3 +248,49 @@ function calculateCreatures(){
     NR Creatures: ${nrCreatures}
     R Creatures: ${rCreatures}`)
 }
+
+// Function to calculate how many training success the user needs
+function calculateTrainingHours(){
+    // Get the skill level
+    var a = document.getElementById('skill')
+    var skillLevel = a.options[a.selectedIndex].text
+    // Get the ability score mod.
+    var abiltyMod = parseInt(document.getElementById('ability').value)
+    // Get the int. mod.
+    var intMod = parseInt(document.getElementById('int').value)
+    // Determine number of starting hours and the DC
+    if (skillLevel == 'Proficiency') {
+        var hoursStart = 100
+        var DC = 15
+    } else {
+        var hoursStart = 200
+        var DC = 20
+    }
+    // Calculate the total successful traning hours needed
+    var hoursFinal = hoursStart - ((abiltyMod * 10) + (intMod * 10))
+    // Assemble the message
+    var vMessage = `Successful Hours Needed: ${hoursFinal}<br>
+                DC: ${DC}`
+    // Populate the element
+    document.getElementById('output_successes').innerHTML = vMessage
+}
+
+// Function to roll any give number of training hours
+function trainingRoller(){
+    // Get the skill level
+    var a = document.getElementById('skill')
+    var skillLevel = a.options[a.selectedIndex].text
+    // Get the ability score mod.
+    var abiltyMod = parseInt(document.getElementById('ability').value)
+    // Get the int. mod.
+    var intMod = parseInt(document.getElementById('int').value)
+    // Get the number of hours
+    var hours = parseInt(document.getElementById('hours').value)
+    // Determine number of starting hours and the DC
+    if (skillLevel == 'Proficiency') {
+        var DC = 15
+    } else {
+        var DC = 20
+    }
+    // Roll the dice
+}
