@@ -123,11 +123,11 @@ function calculate_horizon () {
 // Calculates how long it will take to craft a certain item
 function calculate_crafting_time(){
     // Get gold
-    var g = document.getElementById("gold").value
+    var g = parseInt(document.getElementById("gold").value)
     // Get prof. bonus
-    var p = document.getElementById("prof").value
+    var p = parseInt(document.getElementById("prof").value)
     // Get int. mod.
-    var i = document.getElementById("int").value
+    var i = parseInt(document.getElementById("int").value)
     // Calculate amount of gold per 8 hours of work (1 workday)
     var wd = (p + i)*10
     // Calculate the amount of gold per 1 hour (1 workhour)
