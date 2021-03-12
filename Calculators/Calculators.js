@@ -305,7 +305,7 @@ function trainingRoller(){
                 DC: ${DC}`)
     // Roll the dice
         // Define a nat 1 list
-        var nat1s = []
+        var nat1s, nat20s, successes  = []
         // Define a nat 20 list
         var nat20s = []
         // Define a success list
