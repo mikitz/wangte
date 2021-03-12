@@ -7,7 +7,7 @@ var randomProperty = function (obj) {
 // Function to get a random integer
 // Source: https://www.w3schools.com/js/js_random.asp
 function getRndInteger(min, max) {
-    return parseInt((Math.floor(Math.random() * (max - min)) + min))
+    return parseInt((Math.floor(Math.random() * ((max+1) - min)) + min))
 }
 // Clears "output"
 function clear_output() {

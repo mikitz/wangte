@@ -255,7 +255,7 @@ function calculateTrainingHours(){
     var a = document.getElementById('skill')
     var skillLevel = a.options[a.selectedIndex].text
     // Get the ability score mod.
-    var abiltyMod = parseInt(document.getElementById('ability').value)
+    var abilityMod = parseInt(document.getElementById('ability').value)
     // Get the int. mod.
     var intMod = parseInt(document.getElementById('int').value)
     // Determine number of starting hours and the DC
@@ -267,7 +267,7 @@ function calculateTrainingHours(){
         var DC = 20
     }
     // Calculate the total successful traning hours needed
-    var hoursFinal = hoursStart - ((abiltyMod * 10) + (intMod * 10))
+    var hoursFinal = hoursStart - ((abilityMod * 10) + (intMod * 10))
     // Assemble the message
     var vMessage = `Successful Hours Needed: ${hoursFinal}<br>
                 DC: ${DC}`
@@ -280,10 +280,14 @@ function trainingRoller(){
     // Get the skill level
     var a = document.getElementById('skill')
     var skillLevel = a.options[a.selectedIndex].text
+    // Get proficiency bonus
+    if (skillLevel == 'Expertise') {
+        var prof = parseInt(document.getElementById('prof').value)
+    } else {
+        var prof = 0
+    }
     // Get the ability score mod.
-    var abiltyMod = parseInt(document.getElementById('ability').value)
-    // Get the int. mod.
-    var intMod = parseInt(document.getElementById('int').value)
+    var abilityMod = parseInt(document.getElementById('ability1').value)
     // Get the number of hours
     var hours = parseInt(document.getElementById('hours').value)
     // Determine number of starting hours and the DC
@@ -292,5 +296,72 @@ function trainingRoller(){
     } else {
         var DC = 20
     }
+    // Log it
+    console.log(`INPUT VARS
+                Skill Level: ${skillLevel}
+                Ability Mod: ${abilityMod}
+                Proficiency: ${prof}
+                Hours: ${hours}
+                DC: ${DC}`)
     // Roll the dice
+        // Define a nat 1 list
+        var nat1s = []
+        // Define a nat 20 list
+        var nat20s = []
+        // Define a success list
+        var successes = []
+        // Define a failures list
+        var failures = []
+        // Roll List
+        var rolls = []
+        // Checks list
+        var checks = []
+        // Loop through each hour to roll a die
+        for (x = 0; x < hours; x++) {
+            var roll = getRndInteger(1, 20)
+            // Check for nat1s and nat20s
+            if (roll == 1) {
+                nat1s.push(roll)
+                rolls.push(roll)
+                continue
+            } else if (roll == 20) {
+                nat20s.push(roll)
+                rolls.push(roll)
+                continue
+            }
+            rolls.push(roll)
+            // Add modifiers to determine success and fail
+            check = roll + prof + abilityMod
+            if (check >= DC) {
+                successes.push(check)
+                checks.push(check)
+                continue
+            } else {
+                failures.push(check)
+            }
+            checks.push(check)
+        }
+        // Log the lists
+        console.log(`-----ROLLS-----`)
+        console.log(rolls)
+        console.log(`-----NAT 1s-----`)
+        console.log(nat1s)
+        console.log(`-----NAT 20s-----`)
+        console.log(nat20s)
+        console.log(`-----CHECKS-----`)
+        console.log(checks)
+        console.log(`-----SUCCESSES-----`)
+        console.log(successes)
+        console.log(`-----FAILURES-----`)
+        console.log(failures)
+    // Calculate total successes
+    var successesFinal = (successes.length + (nat20s.length * 2)) - nat1s.length
+    // Build the message
+    var vMessage = `Nat 20s: ${nat20s.length}<br>
+                    Nat 1s: ${nat1s.length}<br>
+                    Successes: ${successes.length}<br>
+                    Failures: ${failures.length}<br>
+                    <b>Total Successes: ${successesFinal}</b>`
+    // Populate the element
+    document.getElementById('output_rolls').innerHTML = vMessage
 }
