@@ -9,6 +9,7 @@
 * [x] Bounty Reward
 * [x] Currency Weight
 * [x] n CR x Creatures to Level y
+* Movement speed to other velocities
 
 ## Homebrew
 * [x] Adjusting Races
@@ -29,7 +30,6 @@
 * [x] Item Prices
 * Kibble's Crafting
 * [x] Medidcine Check for Determining Health
-* Movement speed to other velocities
 * [x] Negotiating a Price
 * [x] Ship Navigation
 * [x] Sprint
@@ -41,12 +41,16 @@
 
 ## Generators
 * Battle Maps
-    * Tie this in with Random Encounter?
+    * **Merging canvases**
 * Random Encounter Generator
+    * Functions
+        * rollTable()
+            * **Need to handle looping through each row**
+                * Pulling first values and parsing in to a number range
     * [x] Combat Encounters
     * [x] Non-combat Encounters
-       * Incoporate extra tables
-         * Open Water
+        * Incoporate extra tables
+        * Open Water
             * [Mysterious Islands](https://5e.tools/variantrules.html#mysterious%20islands_gos)
             * [Random Ships](https://5e.tools/variantrules.html#random%20ships_gos)
                 * [x] In Database
@@ -88,16 +92,17 @@
         * Form input
         * [x] JSON upload
 * Calendar
-    * Presets
-        * Load Custom JSON
-        * Exandrian Calendar
-        * Gregorian Calendar
-        * Barovian Calendar
-        * Calendar of Galifar
-        * Calendar of Golarion
-        * Calendar of Greyhawk
-        * Calendar of Harptos
-        * The Lunar Calendar
+    * Add Proper UI to the generated week rows
+    * In DBs
+        1. [x] Calendar of Harptos
+        2. [x] Barovian Calendar
+        3. Load Custom JSON
+        4. Exandrian Calendar
+        5. Gregorian Calendar
+        6. Calendar of Galifar
+        7. Calendar of Golarion
+        8. Calendar of Greyhawk
+        9. The Lunar Calendar
 * Combat Tracker
     * Enemy Stealth Roll
     * Random PC Picker
@@ -107,10 +112,15 @@
     * *local_nav* style got screwed up
 
 ## style.css
-* Tables
-    * Borders
-* Dropdown selectors
-* Text inputs
-* Buttons
-* Text
-    * Need to figure out how to properly wrap all text
+* UI Bugs
+    * Top Nav needs to stick to the top
+    * Left Nav needs to stick where it is
+    * Left Nav needs to stretch to the bottom
+    * Text outputs need to wrap and stay to the right of Left Nav
+* Elements
+    * Tables
+        * Borders
+    * Dropdown selectors
+    * Text inputs
+    * Buttons
+    * Text
