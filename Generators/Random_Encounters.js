@@ -140,8 +140,8 @@ function tool_random_encounter(){
             // Get length for the d100
             var len = eval(`${biome.toLowerCase()}_nc`).length
             // Roll 1dx
-            // var ad100 = getRndInteger(1, len)   
-            var ad100 = 103
+            var ad100 = getRndInteger(1, len)
+            //var ad100 = 103
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
         }
