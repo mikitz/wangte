@@ -166,3 +166,13 @@ function rollTable(table){
         console.log(`------------`)
         return result
 }
+
+// Function to roll dice inside a string
+function rollDice(string){
+    
+}
+
+// Function to replace creatures with links
+function appendLink(string) {
+
+}

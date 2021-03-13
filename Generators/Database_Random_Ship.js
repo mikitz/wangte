@@ -96,3 +96,14 @@ let ship_emergency = [{"d4":1,"Emergency":"The ship's crew is lost."},
 {"d4":2,"Emergency":"The ship is damaged and can't be steered as it drifts with the current."},
 {"d4":3,"Emergency":"The ship is stuck on a sandbar."},
 {"d4":4,"Emergency":"The ship is sinking."}]
+
+let blue_hole = [{"d10":1,"Creatures or Treasure":"2d10 sahuagin"},
+{"d10":2,"Creatures or Treasure":"1 giant octopus"},
+{"d10":3,"Creatures or Treasure":"1d4 + 1 chuuls"},
+{"d10":4,"Creatures or Treasure":"1 sea hag and 2d4 merrow"},
+{"d10":5,"Creatures or Treasure":"1 plesiosaurus"},
+{"d10":6,"Creatures or Treasure":"1d4 swarms of quippers"},
+{"d10":7,"Creatures or Treasure":"2d4 reef sharks"},
+{"d10":8,"Creatures or Treasure":"1 giant shark"},
+{"d10":9,"Creatures or Treasure":"1d6 items from Magic Item Table A in chapter 7, "},
+{"d10":10,"Creatures or Treasure":"Treasure rolled on the Treasure Hoard: Challenge 0–4 table in chapter 7, "}]

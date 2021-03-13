@@ -165,7 +165,10 @@ function randomEncounter(){
             // Set the final encounter message
             var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
         } else if (encounter == "Mysterious Island") {
-
+            // Roll on the table
+            var result = rollTable(blue_hole)
+            // Build the message
+            
         } else if (encounter == "Blue Hole") {
 
         } else {
