@@ -12,7 +12,7 @@ function linkGeneratorBeyond(Creature) {
 }
 
 // Define the function to generate a random encounter
-function tool_random_encounter(){
+function randomEncounter(){
     clear_output()
     clear_weather()
     // Log a seperator
@@ -141,25 +141,38 @@ function tool_random_encounter(){
             var len = eval(`${biome.toLowerCase()}_nc`).length
             // Roll 1dx
             var ad100 = getRndInteger(1, len)
-            //var ad100 = 103
+            // var ad100 = 103
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
         }
         if (encounter == "Random Ship") {
-            console.log(`TEST`)
-            rollTable(ship_adjective)
-            rollTable(ship_noun)
-            rollTable(ship_disposition)
-            rollTable(ship_attitude)
+            // Roll on the Random Ship Tables
+                var purpose = rollTable(ship_purpose)
+                var type = rollTable(ship_type)
+                var adj = rollTable(ship_adjective)
+                var noun = rollTable(ship_noun)
+                var attitude = rollTable(ship_attitude)
+                var attitudeLower = attitude.toLowerCase()
+                var races = rollTable(eval(`ship_${attitudeLower}`))
+                var disposition = rollTable(ship_disposition)
+                if (disposition == 'Emergency') {
+                    var emergency = rollTable(ship_emergency)
+                } else {
+                    var emergency = 'no emergency'
+                }
+            // Build the message
+            var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${races}. <br>This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b> with ${emergency}.`
+            // Set the final encounter message
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
         } else if (encounter == "Mysterious Island") {
-            console.log(`TEST`)
-            rollTable(ship_purpose)
+
         } else if (encounter == "Blue Hole") {
-            console.log(`TEST`)
-            rollTable(ship_purpose)
+
         } else {
             // Log the encounter
-            console.log(encounter)
+            console.log(`ENCOUNTER: ${encounter}`)
+            console.log(`ROLL: ${ad100}`)
+            console.log(`LENGTH: ${len}`)
             if (vCreature && vDice) {
                 // Extract creatures from the encounter and replace them with links
                 var creatureExtract = bestiary_basic.forEach(function(element){
@@ -226,7 +239,31 @@ function tool_random_encounter(){
         
     // Combat Encounter
     if (roll >= cdc) {
-        var encQ = true
+        if (encounter == "Random Ship") {
+            // Roll on the Random Ship Tables
+                var purpose = rollTable(ship_purpose)
+                var type = rollTable(ship_type)
+                var adj = rollTable(ship_adjective)
+                var noun = rollTable(ship_noun)
+                var attitude = rollTable(ship_attitude)
+                var attitudeLower = attitude.toLowerCase()
+                var races = rollTable(eval(`ship_${attitudeLower}`))
+                var disposition = rollTable(ship_disposition)
+                if (disposition == 'Emergency') {
+                    var emergency = rollTable(ship_emergency)
+                } else {
+                    var emergency = 'no emergency'
+                }
+            // Build the message
+            var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${races}. <br>This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b> with ${emergency}.`
+            // Set the final encounter message
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
+        } else if (encounter == "Mysterious Island") {
+
+        } else if (encounter == "Blue Hole") {
+
+        } else {
+            var encQ = true
         // Roll 1d100
         var ad100 = getRndInteger(1, 100)
         // Get the data from the DB
@@ -352,6 +389,7 @@ function tool_random_encounter(){
         } else {
             var encounterFinal = `<h2>COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
         }
+        }
     }
     // No Random Encounter
     if (roll < ncdc && roll < cdc) {
@@ -364,7 +402,7 @@ function tool_random_encounter(){
                 d20: ${roll}
                 Encounter: ${encounterFinal}`)
     // Build the message
-    let vMessage = `${encounterFinal}`
+    vMessage = `${encounterFinal}`
     // Print the output
     var p = document.createElement('p')
     p.innerHTML = vMessage

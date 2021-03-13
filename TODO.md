@@ -55,16 +55,9 @@
         * Incoporate extra tables
         * Open Water
             * [Mysterious Islands](https://5e.tools/variantrules.html#mysterious%20islands_gos)
-            * [Random Ships](https://5e.tools/variantrules.html#random%20ships_gos)
-                * [x] In Database
-                * In Javascript
-                * Tables
-                    * Type
-                    * Name
-                    * Purpose
-                    * Attitude
-                    * Disposition
+            * [x] [Random Ships](https://5e.tools/variantrules.html#random%20ships_gos)
             * [Ocean Environs](https://5e.tools/variantrules.html#ocean%20environs_gos)
+                * Blue Holes
             * [Hazards](https://5e.tools/variantrules.html#travel%20at%20sea_gos)
                 * In Database
                 * In Javascript

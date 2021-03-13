@@ -126,24 +126,43 @@ function rollTable(table){
         var sides = keyFirst.match(NewRegEx)
         sides = sides[0]
         // Log it
-        console.log(sides)
+        console.log(`Sides: ${sides}`)
     // Roll the die
         var roll = fMultiRoll(1, sides, 1)
-        console.log(roll)
-    // Find the result  
-    debugger
-        if (table.find(r => r[keyFirst] == roll)[`${keyLast}`] === 'undefined') {
+        console.log(`Roll: ${roll}`)
+    // Find the result 
+        console.log(`FIRST ROW`)
+        console.log(Object.values(table)[0])
+        console.log(`FIRST VALUE`)
+        console.log(Object.values(table)[0][keyFirst])
+        if (typeof Object.values(table)[0][keyFirst] == 'string' || Object.values(table)[0][keyFirst] instanceof String) {
             // Loop through the first key values and determine if roll is in the range
-            table.forEach(function(row){
-                var blah = table[row][keyFirst][`${keyLast}`]
-                console.log(blah)
-            })
-            var result = ''
+            for (r = 0; r < table.length; r++) {
+                var blah = Object.values(table)[r][keyFirst]
+                console.log(`BLAH: ${blah}`)
+                // Parse the range
+                    // Get the first number
+                    const RegEx1 = /^(\d+)/gm
+                    var firstNum = blah.match(RegEx1)
+                    firstNum = firstNum[0]
+                    console.log(`FIRST NUMBER: ${firstNum}`)
+                    // Get the second number
+                    const RegEx2 = /(\d+)$/gm
+                    var secondNum = blah.match(RegEx2)
+                    secondNum = secondNum[0]
+                    console.log(`SECOND NUMBER: ${secondNum}`)
+                // Determine if the roll was within the range
+                if (roll <= parseInt(secondNum) && roll >= parseInt(firstNum)) {
+                    var result = Object.values(table)[r][keyLast] 
+                    break
+                }
+            }
         } else {
             // Pull the exact result
             var result = table.find(r => r[keyFirst] == roll)[`${keyLast}`]
         }
         // Log it
-        console.log(result)
-
+        console.log(`RESULT: <b>${result}</b>`)
+        console.log(`------------`)
+        return result
 }
