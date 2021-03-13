@@ -5,7 +5,7 @@ let ship_purpose = [
     {"d100":"52-68","Purpose":"Military"},
     {"d100":"69-85","Purpose":"Piracy"},
     {"d100":"86-95","Purpose":"Mercenary"},
-    {"d100":"96-00","Purpose":"Ghost"}
+    {"d100":"96-100","Purpose":"Ghost"}
 ]
 
 let ship_type = [{"d100":"01-09","Ship":"Rowboat"},
@@ -13,7 +13,7 @@ let ship_type = [{"d100":"01-09","Ship":"Rowboat"},
 {"d100":"26-38","Ship":"Longship"},
 {"d100":"39-60","Ship":"Sailing ship"},
 {"d100":"61-79","Ship":"Galley"},
-{"d100":"80-00","Ship":"Warship"}]
+{"d100":"80-100","Ship":"Warship"}]
 
 let ship_adjective = [{"d20":1,"Adjective":"Beautiful"},
 {"d20":2,"Adjective":"Bilious"},
@@ -67,7 +67,7 @@ let ship_friendly = [{"d100":"01-05","Race":"Dragonborn"},
 {"d100":"31-40","Race":"Gnomes"},
 {"d100":"41-50","Race":"Tieflings"},
 {"d100":"51-60","Race":"Halflings"},
-{"d100":"61-00","Race":"Humans"}]
+{"d100":"61-100","Race":"Humans"}]
 
 let ship_neutral = [{"d100":"01-05","Race":"Dragonborn"},
 {"d100":"06-10","Race":"Dwarves"},
@@ -75,7 +75,7 @@ let ship_neutral = [{"d100":"01-05","Race":"Dragonborn"},
 {"d100":"31-40","Race":"Hobgoblins"},
 {"d100":"41-50","Race":"Orcs"},
 {"d100":"51-60","Race":"Halflings"},
-{"d100":"61-00","Race":"Humans"}]
+{"d100":"61-100","Race":"Humans"}]
 
 let ship_hostile = [{"d100":"01-05","Race":"Frost giants"},
 {"d100":"06-10","Race":"Kobolds"},
@@ -83,7 +83,7 @@ let ship_hostile = [{"d100":"01-05","Race":"Frost giants"},
 {"d100":"31-40","Race":"Hobgoblins"},
 {"d100":"41-50","Race":"Undead"},
 {"d100":"51-60","Race":"Gnolls"},
-{"d100":"61-00","Race":"Humans"}]
+{"d100":"61-100","Race":"Humans"}]
 
 let ship_disposition = [{"d10":"1","Disposition":"Diseased"},
 {"d10":"2","Disposition":"Emergency"},
