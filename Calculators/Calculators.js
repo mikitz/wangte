@@ -304,18 +304,8 @@ function trainingRoller(){
                 Hours: ${hours}
                 DC: ${DC}`)
     // Roll the dice
-        // Define a nat 1 list
-        var nat1s, nat20s, successes  = []
-        // Define a nat 20 list
-        var nat20s = []
-        // Define a success list
-        var successes = []
-        // Define a failures list
-        var failures = []
-        // Roll List
-        var rolls = []
-        // Checks list
-        var checks = []
+        // Define the lists
+        var [nat1s, nat20s, successes, failures, rolls, checks]  = [[], [], [], [], [], []]
         // Loop through each hour to roll a die
         for (x = 0; x < hours; x++) {
             var roll = getRndInteger(1, 20)

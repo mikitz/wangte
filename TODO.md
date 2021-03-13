@@ -94,6 +94,7 @@
     * Have user input data on the site
         * Form input
         * [x] JSON upload
+    * Player & GM versions
 * Calendar
     * Add Proper UI to the generated week rows
     * In DBs
@@ -106,9 +107,12 @@
         7. Calendar of Golarion
         8. Calendar of Greyhawk
         9. The Lunar Calendar
+    * Player & GM versions
 * Combat Tracker
     * Enemy Stealth Roll
     * Random PC Picker
+    * Auto text initiative order?
+    * Player & GM versions?
 * [x] Spell Helper
 * Ship Expenses
 * QuickRoll
