@@ -131,3 +131,45 @@
     * Text inputs
     * Buttons
     * Text
+
+## Databases
+* Combat Encounters
+    * Need to redo the following as they're duplicates of others
+        * Dungeon (Duplicate of Underdark)
+        * Farmland (Duplicate of Grassland)
+        * Jungle (Duplicate of Forest)
+        * Wasteland (Duplicate of Swamp)
+        * Woodland (Duplicate of Forest)
+* Non-combat Encounters
+    * Need to redo the following as they're duplicates of others
+        * Farmland (Duplicate of Grassland)
+        * Hill (Duplicate of Grassland)
+        * Wasteland (Duplicate of Road) {WTF? Why did I pick road?}
+        * Woodland (Duplicate of Forest)
+* Hazards/COmplications
+    * No Data
+        * Arctic
+        * Carousing
+        * Coastal
+        * Desert
+        * Dungeon
+        * Farmland
+        * Festivals
+        * Forest
+        * Grassland
+        * Hill
+        * Jungle
+        * Mountain
+        * Open Sea
+        * Red Light District
+        * Road
+        * Swamp
+        * Tavern
+        * Tavern_Seedy
+        * Underdark
+        * Underwater
+        * Urban
+        * Wasteland
+        * Woodland
+    * Data (not yet added)
+        * Ship (Open water, river, etc.)
