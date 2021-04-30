@@ -152,7 +152,7 @@ function customMagicItem() {
         if (spellLevel.length > 3) {
             spellLevel = spellLevel
         } else {
-            spellLevel = spellLevel[0]
+            spellLevel = spellLevel.charAt(0)
         }
     console.log(`Spell Level: ${spellLevel}`)
     // Get the # of Charges
@@ -186,7 +186,7 @@ function customMagicItem() {
     p.innerHTML = `Total Price: ${pTotal} gp <br>
                     Total Days: ${tDays} workdays <br>
                     Total Workhours: ${tTotal} workhours<br>
-                    Cost for Spell Scrolls: ${pSpellScrolls} gp <br>
+                    Cost for Spell Scrolls: ${pSpellScrolls} gp<br>
                     Cost for Spell Slots: ${pSpellSlots} gp <br>`
     document.getElementById("output1").appendChild(p)
 }
