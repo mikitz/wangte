@@ -13,6 +13,7 @@
 * [x] Training
     * [x] Training Successes Needed
     * [x] Training Roller
+* Turning a Spell into a Magic Item
 
 ## Homebrew
 * [x] Adjusting Races
@@ -35,7 +36,8 @@
 * [x] Medidcine Check for Determining Health
 * [x] Negotiating a Price
 * [x] Ship Navigation
-* [x] Sprint
+* Sprint
+    * Add a limit or exhaustion or something
 * [x] Street Drugs
 * [x] Tavern Games
 * [x] The Economy
