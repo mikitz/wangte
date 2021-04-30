@@ -144,6 +144,34 @@ function calculate_crafting_time(){
                     Workdays for this Item: ${wdi} days`
     document.getElementById("output").appendChild(p)
 }
+// Function to Calculate the cost of a custom magic item based on a spell
+function customMagicItem() {
+    // Get the Spell Level
+    var spellLevel = document.getElementById('spell-level').value
+    // Get the # of Charges
+    var numCharges = document.getElementById('numOfCharges').value
+    // Pull the cost for the spell scroll
+    var cSpellScroll = item_prices.find(i => i["Spell Scrolls"] == spellLevel)["Cost (To Purchase)"]
+    // Pull the cost for the spell slot
+    var cSpellSlot = item_prices.find(i => i["Spell Scrolls"] == spellLevel)["Cost (For Service) + Materials"]
+    // Calculate cost of spell scrolls
+    var pSpellScrolls = numCharges * cSpellScroll
+    // Calculate cost of spell slots
+    var pSpellSlots = numCharges * cSpellSlot
+    // Calculate total price
+    var pTotal = pSpellScrolls + pSpellSlots
+    // Calculate total time to make
+    var tTotal = (spellLevel * 8) * numCharges
+    // Print the output
+    var p = document.createElement('p')
+    p.innerHTML = `Total Price: ${pTotal}
+                    Total Workhours: ${tTotal}
+                    Cost for Spell Scrolls: ${pSpellScrolls}
+                    Cost for Spell Slots: ${pSpellSlots}
+                    `
+    document.getElementById("output1").appendChild(p)
+
+}
 // Calculate the reward for a bounty
 function calculate_bounty(){
     // Get the most wanted status

@@ -37,8 +37,7 @@
 * [x] Medidcine Check for Determining Health
 * [x] Negotiating a Price
 * [x] Ship Navigation
-* Sprint
-    * Add a limit or exhaustion or something
+* [x] Sprint
 * [x] Street Drugs
 * [x] Tavern Games
 * [x] The Economy

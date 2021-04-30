@@ -36,7 +36,38 @@
                     </ul>
             </ul>
             <p id = "output"></p>
-            
+
+            <h1>Custom Magic Item Cost</h1>
+            <label for="spell-level">Spell Level:</label>
+                <select name="spell-level" id="spell-level">
+                    <option value="Cantrip">Cantrip</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+            </select>
+            <br><br>
+            <label for="numOfCharges"># of Charges:</label>
+                <select name="numOfCharges" id="numOfCharges">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="0">10</option>
+            </select>
+            <button onclick="customMagicItem()">Calculate</button>
+            <button onclick="clear_sail()">Clear Output</button>
+            <p id = "output1"></p>
     </main> 
     </body>  
 </html>
