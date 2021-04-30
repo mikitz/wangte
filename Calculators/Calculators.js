@@ -164,6 +164,17 @@ function customMagicItem() {
     var tTotal = (spellLevel * 8) * numCharges
     // Calculate the # of workdays the character has to wait
     var tDays = tTotal / 8
+    // Console logs
+    console.log(`~~LOG IT BABY~~
+                Spell Level: ${spellLevel}
+                # of Charges: ${numCharges}
+                Spell Scroll Cost: ${cSpellScroll}
+                Spell Slot Cost: ${cSpellSlot}
+                Spell Scrolls Price: ${pSpellScrolls}
+                Spell Slots Price: ${pSpellSlots}
+                Total Price: ${pTotal}
+                Total Workhours: ${tTotal}
+                Total Workdays: ${tDays}`)
     // Print the output
     var p = document.createElement('p')
     p.innerHTML = `Total Price: ${pTotal} <br>
