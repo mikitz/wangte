@@ -162,15 +162,17 @@ function customMagicItem() {
     var pTotal = pSpellScrolls + pSpellSlots
     // Calculate total time to make
     var tTotal = (spellLevel * 8) * numCharges
+    // Calculate the # of workdays the character has to wait
+    var tDays = tTotal / 8
     // Print the output
     var p = document.createElement('p')
     p.innerHTML = `Total Price: ${pTotal}
+                    Total Days: ${tDays}
                     Total Workhours: ${tTotal}
                     Cost for Spell Scrolls: ${pSpellScrolls}
                     Cost for Spell Slots: ${pSpellSlots}
                     `
     document.getElementById("output1").appendChild(p)
-
 }
 // Calculate the reward for a bounty
 function calculate_bounty(){
