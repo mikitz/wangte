@@ -157,28 +157,28 @@ function customMagicItem() {
         }
     console.log(`Spell Level: ${spellLevel}`)
     // Get the # of Charges
-    var numCharges = document.getElementById('numOfCharges').value
+    var numCharges = parseInt(document.getElementById('numOfCharges').value)
     console.log(`# of Charges: ${numCharges}`)
     // Pull the cost for the spell scroll
-    var cSpellScroll = item_prices.find(i => i["Spell Scrolls"] == spellLevelName)["Cost (To Purchase)"]
+    var cSpellScroll = parseInt(item_prices.find(i => i["Spell Scrolls"] == spellLevelName)["Cost (To Purchase)"])
     console.log(`Cost - Spell Scroll: ${cSpellScroll}`)
     // Pull the cost for the spell slot
-    var cSpellSlot = item_prices.find(i => i["Spell Scrolls"] == spellLevelName)["Cost (For Service) + Materials"]
+    var cSpellSlot = parseInt(item_prices.find(i => i["Spell Scrolls"] == spellLevelName)["Cost (For Service) + Materials"])
     console.log(`Cost - Spell Slot: ${cSpellSlot}`)
     // Calculate cost of spell scrolls
-    var pSpellScrolls = numCharges * cSpellScroll
+    var pSpellScrolls = parseInt(numCharges * cSpellScroll)
     console.log(`Price - Spell Scrolls: ${pSpellScrolls}`)
     // Calculate cost of spell slots
-    var pSpellSlots = numCharges * cSpellSlot
+    var pSpellSlots = parseInt(numCharges * cSpellSlot)
     console.log(`Price - Spell Slots: ${pSpellSlots}`)
     // Calculate total price
-    var pTotal = pSpellScrolls + pSpellSlots
+    var pTotal = parseInt(pSpellScrolls + pSpellSlots)
     console.log(`Price - Total: ${pTotal}`)
     // Calculate total time to make
-    var tTotal = (spellLevel * 8) * numCharges
+    var tTotal = parseInt((spellLevel * 8) * numCharges)
     console.log(`Time - Workhours: ${tTotal}`)
     // Calculate the # of workdays the character has to wait
-    var tDays = tTotal / 8
+    var tDays = parseInt(tTotal / 8)
     console.log(`Time - Workdays: ${tDays}`)
     // Print the output
     var p = document.createElement('p')
