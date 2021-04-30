@@ -154,6 +154,7 @@ function customMagicItem() {
         } else {
             spellLevel = spellLevel[0]
         }
+    console.log(`Spell Level: ${spellLevel}`)
     // Get the # of Charges
     var numCharges = document.getElementById('numOfCharges').value
     // Pull the cost for the spell scroll
@@ -172,7 +173,6 @@ function customMagicItem() {
     var tDays = tTotal / 8
     // Console logs
     console.log(`~~LOG IT BABY~~
-                Spell Level: ${spellLevel}
                 # of Charges: ${numCharges}
                 Spell Scroll Cost: ${cSpellScroll}
                 Spell Slot Cost: ${cSpellSlot}
