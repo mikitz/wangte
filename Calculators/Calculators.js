@@ -147,20 +147,20 @@ function calculate_crafting_time(){
 // Function to Calculate the cost of a custom magic item based on a spell
 function customMagicItem() {
     // Get the Spell Level
-    var spellLevel = document.getElementById('spell-level').value
+    var spellLevelName = document.getElementById('spell-level').value
         // Get the int from the spell level
-        if (spellLevel.length > 3) {
-            spellLevel = spellLevel
+        if (spellLevelName.length > 3) {
+            spellLevel = 0.5
         } else {
-            spellLevel = spellLevel.charAt(0)
+            spellLevel = spellLevelName.charAt(0)
         }
     console.log(`Spell Level: ${spellLevel}`)
     // Get the # of Charges
     var numCharges = document.getElementById('numOfCharges').value
     // Pull the cost for the spell scroll
-    var cSpellScroll = item_prices.find(i => i["Spell Scrolls"] == spellLevel)["Cost (To Purchase)"]
+    var cSpellScroll = item_prices.find(i => i["Spell Scrolls"] == spellLevelName)["Cost (To Purchase)"]
     // Pull the cost for the spell slot
-    var cSpellSlot = item_prices.find(i => i["Spell Scrolls"] == spellLevel)["Cost (For Service) + Materials"]
+    var cSpellSlot = item_prices.find(i => i["Spell Scrolls"] == spellLevelName)["Cost (For Service) + Materials"]
     // Calculate cost of spell scrolls
     var pSpellScrolls = numCharges * cSpellScroll
     // Calculate cost of spell slots
