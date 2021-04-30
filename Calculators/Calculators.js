@@ -146,6 +146,7 @@ function calculate_crafting_time(){
 }
 // Function to Calculate the cost of a custom magic item based on a spell
 function customMagicItem() {
+    console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`)
     // Get the Spell Level
     var spellLevelName = document.getElementById('spell-level').value
         // Get the int from the spell level

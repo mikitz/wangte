@@ -80,9 +80,9 @@ let item_prices = [{"Spell Scrolls":"Cantrip","Cost (To Purchase)":8,"Duration i
 {"Spell Scrolls":"1st","Cost (To Purchase)":13,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":7,"Cost (For Service) + Materials":10},
 {"Spell Scrolls":"2nd","Cost (To Purchase)":125,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":63,"Cost (For Service) + Materials":94},
 {"Spell Scrolls":"3rd","Cost (To Purchase)":250,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":125,"Cost (For Service) + Materials":188},
-{"Spell Scrolls":"4th","Cost (To Purchase)":1.250,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":625,"Cost (For Service) + Materials":938},
-{"Spell Scrolls":"5th","Cost (To Purchase)":2.500,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":1.250,"Cost (For Service) + Materials":1.875},
-{"Spell Scrolls":"6th","Cost (To Purchase)":7.500,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":3.750,"Cost (For Service) + Materials":5.625},
-{"Spell Scrolls":"7th","Cost (To Purchase)":12.500,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":6.250,"Cost (For Service) + Materials":9.375},
-{"Spell Scrolls":"8th","Cost (To Purchase)":25.000,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":12.500,"Cost (For Service) + Materials":18.750},
-{"Spell Scrolls":"9th","Cost (To Purchase)":125.000,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":62.500,"Cost (For Service) + Materials":46.875}]
+{"Spell Scrolls":"4th","Cost (To Purchase)":1250,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":625,"Cost (For Service) + Materials":938},
+{"Spell Scrolls":"5th","Cost (To Purchase)":2500,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":1250,"Cost (For Service) + Materials":1875},
+{"Spell Scrolls":"6th","Cost (To Purchase)":7500,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":3750,"Cost (For Service) + Materials":5625},
+{"Spell Scrolls":"7th","Cost (To Purchase)":12500,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":6250,"Cost (For Service) + Materials":9375},
+{"Spell Scrolls":"8th","Cost (To Purchase)":25000,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":12500,"Cost (For Service) + Materials":18750},
+{"Spell Scrolls":"9th","Cost (To Purchase)":125000,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":62500,"Cost (For Service) + Materials":46875}]
