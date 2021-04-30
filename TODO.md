@@ -14,6 +14,7 @@
     * [x] Training Successes Needed
     * [x] Training Roller
 * Turning a Spell into a Magic Item
+* Chicken
 
 ## Homebrew
 * [x] Adjusting Races
