@@ -183,11 +183,11 @@ function customMagicItem() {
                 Total Workdays: ${tDays}`)
     // Print the output
     var p = document.createElement('p')
-    p.innerHTML = `Total Price: ${pTotal} <br>
-                    Total Days: ${tDays} <br>
-                    Total Workhours: ${tTotal} <br>
-                    Cost for Spell Scrolls: ${pSpellScrolls} <br>
-                    Cost for Spell Slots: ${pSpellSlots} <br>`
+    p.innerHTML = `Total Price: ${pTotal} gp <br>
+                    Total Days: ${tDays} workdays <br>
+                    Total Workhours: ${tTotal} workhours<br>
+                    Cost for Spell Scrolls: ${pSpellScrolls} gp <br>
+                    Cost for Spell Slots: ${pSpellSlots} gp <br>`
     document.getElementById("output1").appendChild(p)
 }
 // Calculate the reward for a bounty
