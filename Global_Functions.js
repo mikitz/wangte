@@ -17,6 +17,10 @@ function clear_output() {
 function clear(id){
     document.getElementById(id).innerHTML = ""
 }
+// Clears "output1"
+function clear_output1(){
+    document.getElementById('output1').innerHTML = ""
+}
 // Define a dice function to roll multiple dice
 function fMultiRoll(number_of_dice, dice_sides, multiplier) {
     // Define an empty array to store the rolls
