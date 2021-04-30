@@ -148,6 +148,12 @@ function calculate_crafting_time(){
 function customMagicItem() {
     // Get the Spell Level
     var spellLevel = document.getElementById('spell-level').value
+        // Get the int from the spell level
+        if (spellLevel.length > 3) {
+            spellLevel = spellLevel
+        } else {
+            spellLevel = spellLevel[0]
+        }
     // Get the # of Charges
     var numCharges = document.getElementById('numOfCharges').value
     // Pull the cost for the spell scroll
