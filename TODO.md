@@ -4,9 +4,15 @@
 * [x] Sailing Duration and Cargo Tranport Revenue
 * Foot Travel Duration
 * [x] Horizon Calculator
-* How Special Are You?
-    * [x] Single level
-    * All levels
+* Demographics?
+    * Levels of people in the city
+        * [x] Single level
+        * [x] All levels
+    * Magic Items
+        * Types
+        * Price Modifier
+            * Buying
+            * Selling
 * [x] Crafting Duration
 * [x] Bounty Reward
 * [x] Currency Weight
