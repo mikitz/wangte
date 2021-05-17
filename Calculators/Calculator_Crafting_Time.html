@@ -7,6 +7,8 @@
         <title>GameMaster Website</title>  
         <link rel="stylesheet" href="../style.css"/>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="./Database_Calculator.js"></script>
+        <script src="../Global_Functions.js"></script>
     </head>  
       
     <body>
@@ -28,8 +30,47 @@
             </form>
             <button onclick="calculate_crafting_time()">Calculate</button>
             <button onclick="clear_sail()">Clear Output</button>
+            <h3>Gold per Day</h3>
+            <ul>
+                <li style="font-weight: 400;"><span style="font-weight: 400;">The amount of gold one can produce in a day is equal to your proficiency bonus (assuming you have proficiency in the relevant tool) plus your Intelligence modifier, then times that sum by 10.</span></li>
+                    <ul>
+                        <li style="font-weight: 400;"><span style="font-weight: 400;">E.G. I have a proficiency bonus of +7 and an Int. mod. of +5. So, I add 7 and 5 to get 12, then multiply it by 10, equalling 120gp of crafting per 8 hours of work per day.</span></li>
+                    </ul>
+            </ul>
             <p id = "output"></p>
-            
+
+            <h1>Custom Magic Item Cost</h1>
+            <label for="spell-level">Spell Level:</label>
+                <select name="spell-level" id="spell-level">
+                    <option value="Cantrip">Cantrip</option>
+                    <option value="1st">1st</option>
+                    <option value="2nd">2nd</option>
+                    <option value="3rd">3rd</option>
+                    <option value="4th">4th</option>
+                    <option value="5th">5th</option>
+                    <option value="6th">6th</option>
+                    <option value="7th">7th</option>
+                    <option value="8th">8th</option>
+                    <option value="9th">9th</option>
+            </select>
+            <br><br>
+            <label for="numOfCharges"># of Charges:</label>
+                <select name="numOfCharges" id="numOfCharges">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="0">10</option>
+            </select>
+            <br><br>
+            <button onclick="customMagicItem()">Calculate</button>
+            <button onclick="clear_output1()">Clear Output</button>
+            <p id = "output1"></p>
     </main> 
     </body>  
 </html>

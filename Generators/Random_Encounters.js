@@ -12,7 +12,7 @@ function linkGeneratorBeyond(Creature) {
 }
 
 // Define the function to generate a random encounter
-function tool_random_encounter(){
+function randomEncounter(){
     clear_output()
     clear_weather()
     // Log a seperator
@@ -57,29 +57,29 @@ function tool_random_encounter(){
     if (nct === "N/A" && ct === "N/A") {
         // Pull both DCs from the database based on time of day
         if (time_of_day === "Day") {
-            var ncdc = oaData.find(i => i.Biome == biome).Day_NC_DC
-            var cdc = oaData.find(i => i.Biome == biome).Day_C_DC
+            var ncdc = oaBiome.find(i => i.Biome == biome).Day_NC_DC
+            var cdc = oaBiome.find(i => i.Biome == biome).Day_C_DC
         } else {
-            var ncdc = oaData.find(i => i.Biome == biome).Night_NC_DC
-            var cdc = oaData.find(i => i.Biome == biome).Night_C_DC
+            var ncdc = oaBiome.find(i => i.Biome == biome).Night_NC_DC
+            var cdc = oaBiome.find(i => i.Biome == biome).Night_C_DC
         }
     } else if (ct === "N/A") {
         // Set Non-combat DC as the user's input
         var ncdc = parseInt(nct)
         // Pull Combat DC from database based on time of day
         if (time_of_day === "Day") {
-            var cdc = oaData.find(i => i.Biome == biome).Day_C_DC
+            var cdc = oaBiome.find(i => i.Biome == biome).Day_C_DC
         } else {
-            var cdc = oaData.find(i => i.Biome == biome).Night_C_DC
+            var cdc = oaBiome.find(i => i.Biome == biome).Night_C_DC
         }
     } else if (nct === "N/A") {
         // Set Combat DC as user's input
         var cdc = parseInt(ct)
         // Pull both DCs from the database based on time of day
         if (time_of_day === "Day") {
-            var ncdc = oaData.find(i => i.Biome == biome).Day_NC_DC
+            var ncdc = oaBiome.find(i => i.Biome == biome).Day_NC_DC
         } else {
-            var ncdc = oaData.find(i => i.Biome == biome).Night_NC_DC
+            var ncdc = oaBiome.find(i => i.Biome == biome).Night_NC_DC
         }
     } else {
         // Use user inputs as the DCs
@@ -107,6 +107,10 @@ function tool_random_encounter(){
                 Distance: ${ED} ft.`)
     // Roll the dice and see if it produces a random encounter or not
     var roll = getRndInteger(1, 20)
+    // Hazard
+    if (roll == 1){
+
+    }
     // Non-combat Encounter
     if (roll >= ncdc && roll < cdc) {
         var encQ = true
@@ -136,37 +140,224 @@ function tool_random_encounter(){
             // Get length for the d100
             var len = eval(`${biome.toLowerCase()}_nc`).length
             // Roll 1dx
-            var ad100 = getRndInteger(1, len)      
+            var ad100 = getRndInteger(1, len)
+            // var ad100 = 103
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
         }
-        // Log the encounter
-        console.log(encounter)
-        if (vCreature && vDice) {
-            // Extract creatures from the encounter and replace them with links
-            var creatureExtract = bestiary_basic.forEach(function(element){
-                var nameFixed = element.name_lower.replace("(", "\(")
-                nameFixed = nameFixed.replace(")", "\)")
-                var creatureName = `(${nameFixed}[a-z]\b)`
-                var reFull = new RegExp(`${creatureName}`, "g")
-                var inc = encounter.match(reFull)
-                if (inc) {
-                    inc = inc.sort(function(a, b){return b.length - a.length})
-                    console.log(inc)
-                    for (k = 0; k < inc.length; k++) {
-                        var creatureExtract = inc[k]
-                        var bookExtract = bestiary_basic.find(r => r.name_lower == creatureExtract).book_lower
-                        encounter = encounter.replace(creatureExtract, linkGenerator5eTools(creatureExtract, bookExtract))
-                    }
-                    return creatureExtract
+        if (encounter == "Random Ship") {
+            // Roll on the Random Ship Tables
+                var purpose = rollTable(ship_purpose)
+                var type = rollTable(ship_type)
+                var adj = rollTable(ship_adjective)
+                var noun = rollTable(ship_noun)
+                var attitude = rollTable(ship_attitude)
+                var attitudeLower = attitude.toLowerCase()
+                var races = rollTable(eval(`ship_${attitudeLower}`))
+                var disposition = rollTable(ship_disposition)
+                if (disposition == 'Emergency') {
+                    var emergency = rollTable(ship_emergency)
+                } else {
+                    var emergency = 'Nothing Unique'
                 }
-            })
-            // Log the creatures in the encounter
+            // Build the message
+            var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${races}. <br>This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b>: ${emergency}.`
+            // Set the final encounter message
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
+        } else if (encounter == "Mysterious Island") {
+            // Roll on the table
+            var result = rollTable(blue_hole)
+            // Build the message
+            
+        } else if (encounter == "Blue Hole") {
+
+        } else {
+            // Log the encounter
+            console.log(`ENCOUNTER: ${encounter}`)
+            console.log(`ROLL: ${ad100}`)
+            console.log(`LENGTH: ${len}`)
+            if (vCreature && vDice) {
+                // Extract creatures from the encounter and replace them with links
+                var creatureExtract = bestiary_basic.forEach(function(element){
+                    var nameFixed = element.name_lower.replace("(", "\(")
+                    nameFixed = nameFixed.replace(")", "\)")
+                    var creatureName = `(${nameFixed}[a-z]\b)`
+                    var reFull = new RegExp(`${creatureName}`, "g")
+                    var inc = encounter.match(reFull)
+                    if (inc) {
+                        inc = inc.sort(function(a, b){return b.length - a.length})
+                        console.log(inc)
+                        for (k = 0; k < inc.length; k++) {
+                            var creatureExtract = inc[k]
+                            var bookExtract = bestiary_basic.find(r => r.name_lower == creatureExtract).book_lower
+                            encounter = encounter.replace(creatureExtract, linkGenerator5eTools(creatureExtract, bookExtract))
+                        }
+                        return creatureExtract
+                    }
+                })
+                // Log the creatures in the encounter
+                console.log(`Creature: ${creatureExtract}`)
+                // Extract dice groups from encounter
+                const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
+                var aDice = encounter.match(NewRegEx)
+                console.log(aDice)
+                // Check to see if aDice is not empty
+                if (aDice) {
+                    var encounterF = encounter
+                    // Log for debugging
+                    console.log("aDice")
+                    console.log(aDice)
+                    // Loop through aDice and calculate totals for each element
+                    for (i = 0; i < aDice.length; i++) {
+                        // Extract number of dice
+                        const RegEx = /\d+(?=d)/g
+                        var num_dice = RegEx.exec(aDice[i])
+                        // Extrect Dice Sides
+                        const MoreRegEx = /(?<=d)(\d*)/g
+                        var num_of_sides = MoreRegEx.exec(aDice[i])
+                        num_of_sides = num_of_sides[0]
+                        // Extract Modifier
+                        const EvenMoreRegEx = /(?<=\+)(\d*)/g
+                        var modifier = EvenMoreRegEx.exec(aDice[i])
+                        if (modifier) {modifier = parseInt(modifier[0])}
+                        else {modifier = 0}
+                        // Total
+                        var total = fMultiRoll(num_dice, num_of_sides, 1)
+                        total = total + modifier
+                        // Log for debugging
+                        console.log(`${aDice[i]}'s total is ${total}`)
+                        // Set up the Encounter message
+                        console.log(`${i}: ${encounterF}`)
+                        encounterF = encounterF.replace(aDice[i], total)
+                    }
+                    encounterF += ` ${ED} ft. away.`
+                    var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounterF}`
+                } else {
+                    var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
+                }
+            }
+        }
+        
+    }
+        
+    // Combat Encounter
+    if (roll >= cdc) {
+        var encQ = true
+        // Roll 1d100
+        var ad100 = getRndInteger(1, 100)
+        // Get the data from the DB
+        var encounter = eval(biome.toLowerCase()).filter(n => n.Level == lvl)
+        encounter = encounter.find(x => x.d100 === ad100).Encounter
+        console.log('ENCOUNTER')
+        console.log(encounter)
+        if (encounter == "Random Ship") {
+            // Roll on the Random Ship Tables
+                var purpose = rollTable(ship_purpose)
+                var type = rollTable(ship_type)
+                var adj = rollTable(ship_adjective)
+                var noun = rollTable(ship_noun)
+                var attitude = rollTable(ship_attitude)
+                var attitudeLower = attitude.toLowerCase()
+                var races = rollTable(eval(`ship_${attitudeLower}`))
+                var disposition = rollTable(ship_disposition)
+                if (disposition == 'Emergency') {
+                    var emergency = rollTable(ship_emergency)
+                } else {
+                    var emergency = 'Nothing Unique'
+                }
+            // Build the message
+            var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${races}. <br>This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b>: ${emergency}.`
+            // Set the final encounter message
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
+        } else if (encounter == "Mysterious Island") {
+
+        } else if (encounter == "Blue Hole") {
+            
+        } else {
+            // Extract creatures from the encounter 
+                // Push regex matches to a list while looping through the whole DB
+                var lCreatures = []
+                var newregex = new RegExp('[\(*\)*]', 'gm')
+                var creatureExtract = bestiary_basic.forEach(function(element){
+                    var nameFixed = element.name_lower.replace(newregex, '\\$&')
+                    var reFull = new RegExp(`${nameFixed}`, "g")
+                    // RegEx still doesn't find "half-ogre (ogrillon)"
+                    var inc = encounter.match(reFull)
+                    if (inc) {
+                        // Sort inc by length to swap out longer strings first
+                        inc = inc.sort(function(a, b){return b.length - a.length})
+                        // Loop through inc and append each element to lCreatures
+                        for (m = 0; m < inc.length; m++) {
+                            lCreatures.push(inc[m])
+                        }
+                        console.log("--INC--")
+                        console.log(inc)
+                    }
+                })
+                // Manipulate the list
+                console.log("++++++++CREATURE LIST++++++++")
+                console.log(lCreatures)
+                    // Remove duplicates
+                    lCreatures = lCreatures.filter (function (value, index, array) { 
+                        return array.indexOf (value) == index;
+                    });
+                    console.log("========CREATURE LIST========")
+                    console.log(lCreatures)
+                    // Check if any of the elements are in the other elements
+                    // Loop through the list
+                    for (z = 0; z < lCreatures.length; z++) {
+                        var item = lCreatures[z]
+                        var bookExtract = bestiary_basic.find(r => r.name_lower == item).book_lower
+                        console.log(`ITEM: ${item}`)
+                        // Escape special RegEx characters
+                        var newregex = new RegExp('[\(*\)*]', 'gm')
+                        console.log(`ITEM REPLACE: ${item}\n` + 
+                                    `ENCOUNTER: ${encounter}`)
+                        // Extract all matches of the item
+                        var regex = new RegExp(`(${item})`, "g")
+                        var regMatch = encounter.match(regex)
+                        console.log("REGMATCH")
+                        console.log(regMatch)
+                        // Log their indecies to a list
+                        var lIndecies = []
+                        while ((match = regex.exec(encounter)) != null) {
+                            lIndecies.push(match.index)
+                        }
+                        console.log("INDEX LIST")
+                        console.log(lIndecies)
+                        // Loop through the matches by index checking
+                        for (m = 0; m < regMatch.length; m++) {
+                            // Needed variables
+                            var idxStart = lIndecies[m]
+                            var word = regMatch[m]
+                            var idxEnd = idxStart + word.length
+                            var idxRange = encounter.substring(idxStart, idxEnd)
+                            var idxExtra = encounter.substring(idxStart - 1, idxEnd + 1)
+                            // Check for undesirables
+                            var inclu = ['<','_','%','0', '>', '#'].some(el => idxExtra.includes(el))
+                            var incluNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+                            // Define function to add the links
+                            function addLinks(){
+                                if (!inclu) {
+                                    word = bestiary_basic.find(y => y.name_lower == word).name.toLowerCase()
+                                    encounter = replaceRange(encounter, idxStart, idxEnd, linkGenerator5eTools(word, bookExtract))
+                                }                             
+                            }
+                            // Run said function
+                            addLinks()
+                            // Log for debugging
+                            console.log(`INDEX VARS
+                            Start: ${idxStart}
+                            End: ${idxEnd}
+                            Word: ${word}
+                            Substring: ${idxRange}
+                            Extra: ${idxExtra}`)
+                        }
+                    }
             console.log(`Creature: ${creatureExtract}`)
             // Extract dice groups from encounter
             const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
             var aDice = encounter.match(NewRegEx)
-            console.log(aDice)
             // Check to see if aDice is not empty
             if (aDice) {
                 var encounterF = encounter
@@ -197,140 +388,10 @@ function tool_random_encounter(){
                     encounterF = encounterF.replace(aDice[i], total)
                 }
                 encounterF += ` ${ED} ft. away.`
-                var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounterF}`
+                var encounterFinal = `<h2>COMBAT ENCOUNTER</h2>${encounterF}`
             } else {
-                var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
+                var encounterFinal = `<h2>COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
             }
-        }
-    }
-        
-    // Combat Encounter
-    if (roll >= cdc) {
-        var encQ = true
-        // Roll 1d100
-        var ad100 = getRndInteger(1, 100)
-        // Get the data from the DB
-        var encounter = eval(biome.toLowerCase()).filter(n => n.Level == lvl)
-        encounter = encounter.find(x => x.d100 === ad100).Encounter
-        console.log('ENCOUNTER')
-        console.log(encounter)
-        // Extract creatures from the encounter 
-            // Push regex matches to a list while looping through the whole DB
-            var lCreatures = []
-            var newregex = new RegExp('[\(*\)*]', 'gm')
-            var creatureExtract = bestiary_basic.forEach(function(element){
-                var nameFixed = element.name_lower.replace(newregex, '\\$&')
-                var reFull = new RegExp(`${nameFixed}`, "g")
-                // RegEx still doesn't find "half-ogre (ogrillon)"
-                var inc = encounter.match(reFull)
-                if (inc) {
-                    // Sort inc by length to swap out longer strings first
-                    inc = inc.sort(function(a, b){return b.length - a.length})
-                    // Loop through inc and append each element to lCreatures
-                    for (m = 0; m < inc.length; m++) {
-                        lCreatures.push(inc[m])
-                    }
-                    console.log("--INC--")
-                    console.log(inc)
-                }
-            })
-            // Manipulate the list
-            console.log("++++++++CREATURE LIST++++++++")
-            console.log(lCreatures)
-                // Remove duplicates
-                lCreatures = lCreatures.filter (function (value, index, array) { 
-                    return array.indexOf (value) == index;
-                });
-                console.log("========CREATURE LIST========")
-                console.log(lCreatures)
-                // Check if any of the elements are in the other elements
-                // Loop through the list
-                for (z = 0; z < lCreatures.length; z++) {
-                    var item = lCreatures[z]
-                    var bookExtract = bestiary_basic.find(r => r.name_lower == item).book_lower
-                    console.log(`ITEM: ${item}`)
-                    // Escape special RegEx characters
-                    var newregex = new RegExp('[\(*\)*]', 'gm')
-                    console.log(`ITEM REPLACE: ${item}\n` + 
-                                `ENCOUNTER: ${encounter}`)
-                    // Extract all matches of the item
-                    var regex = new RegExp(`(${item})`, "g")
-                    var regMatch = encounter.match(regex)
-                    console.log("REGMATCH")
-                    console.log(regMatch)
-                    // Log their indecies to a list
-                    var lIndecies = []
-                    while ((match = regex.exec(encounter)) != null) {
-                        lIndecies.push(match.index)
-                    }
-                    console.log("INDEX LIST")
-                    console.log(lIndecies)
-                    // Loop through the matches by index checking
-                    for (m = 0; m < regMatch.length; m++) {
-                        // Needed variables
-                        var idxStart = lIndecies[m]
-                        var word = regMatch[m]
-                        var idxEnd = idxStart + word.length
-                        var idxRange = encounter.substring(idxStart, idxEnd)
-                        var idxExtra = encounter.substring(idxStart - 1, idxEnd + 1)
-                        // Check for undesirables
-                        var inclu = ['<','_','%','0', '>', '#'].some(el => idxExtra.includes(el))
-                        var incluNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-                        // Define function to add the links
-                        function addLinks(){
-                            if (!inclu) {
-                                word = bestiary_basic.find(y => y.name_lower == word).name.toLowerCase()
-                                encounter = replaceRange(encounter, idxStart, idxEnd, linkGenerator5eTools(word, bookExtract))
-                            }                             
-                        }
-                        // Run said function
-                        addLinks()
-                        // Log for debugging
-                        console.log(`INDEX VARS
-                        Start: ${idxStart}
-                        End: ${idxEnd}
-                        Word: ${word}
-                        Substring: ${idxRange}
-                        Extra: ${idxExtra}`)
-                    }
-                }
-        console.log(`Creature: ${creatureExtract}`)
-        // Extract dice groups from encounter
-        const NewRegEx = /(?:\d+d\d*\+?\d*)/gm
-        var aDice = encounter.match(NewRegEx)
-        // Check to see if aDice is not empty
-        if (aDice) {
-            var encounterF = encounter
-            // Log for debugging
-            console.log("aDice")
-            console.log(aDice)
-            // Loop through aDice and calculate totals for each element
-            for (i = 0; i < aDice.length; i++) {
-                // Extract number of dice
-                const RegEx = /\d+(?=d)/g
-                var num_dice = RegEx.exec(aDice[i])
-                // Extrect Dice Sides
-                const MoreRegEx = /(?<=d)(\d*)/g
-                var num_of_sides = MoreRegEx.exec(aDice[i])
-                num_of_sides = num_of_sides[0]
-                // Extract Modifier
-                const EvenMoreRegEx = /(?<=\+)(\d*)/g
-                var modifier = EvenMoreRegEx.exec(aDice[i])
-                if (modifier) {modifier = parseInt(modifier[0])}
-                else {modifier = 0}
-                // Total
-                var total = fMultiRoll(num_dice, num_of_sides, 1)
-                total = total + modifier
-                // Log for debugging
-                console.log(`${aDice[i]}'s total is ${total}`)
-                // Set up the Encounter message
-                console.log(`${i}: ${encounterF}`)
-                encounterF = encounterF.replace(aDice[i], total)
-            }
-            encounterF += ` ${ED} ft. away.`
-            var encounterFinal = `<h2>COMBAT ENCOUNTER</h2>${encounterF}`
-        } else {
-            var encounterFinal = `<h2>COMBAT ENCOUNTER</h2>${encounter} ${ED} ft. away.`
         }
     }
     // No Random Encounter
@@ -344,7 +405,7 @@ function tool_random_encounter(){
                 d20: ${roll}
                 Encounter: ${encounterFinal}`)
     // Build the message
-    let vMessage = `${encounterFinal}`
+    vMessage = `${encounterFinal}`
     // Print the output
     var p = document.createElement('p')
     p.innerHTML = vMessage

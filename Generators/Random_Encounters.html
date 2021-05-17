@@ -10,6 +10,7 @@
     <script src="Database_Non_combat_Encounters.js"></script>
     <script src="Database_Weather.js"></script>
     <script src="Database_Bestiary_Basic.js"></script>
+    <script src="Database_Random_Ship.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="../Global_Functions.js"></script>
     
@@ -36,10 +37,10 @@
     <nav id="nav_local"></nav>
     <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
     <main>
-        <script src="Random_Encounters.js"></script>
-        <script src="Weather.js"></script>
+        <script src="./Random_Encounters.js"></script>
+        <script src="./Weather.js"></script>
         <h1>Random Encounter Generator</h1>
-        <p>This generator will generate a random encounter based on the level range, biome, and time of day. <br>It will also generate the distance at which the creature(s)/event is away from the players based on the biome. <br>In addition, weather, along with its mechanical effets, will be generated based on the climate and season. </p>
+        <p>This generator will generate a random encounter* based on the level range, biome, and time of day. <br>It will also generate the distance at which the creature(s)/event is away from the players based on the biome. <br>In addition, weather, along with its mechanical effets, will be generated based on the climate and season. <br><i>*Random encounter includes combat encounters, non-combat encounters, and hazards.</i><br><i>**If you get an blank output, just click Generate again. That's due to not fully implemented Encounters.</i></p>
         <!--Level Range-->
         <label for="lvl-range">Level Range:</label>
             <select name="lvl-range" id="lvl-range">
@@ -108,7 +109,7 @@
             </select>
             <br><i>Combat Encounters are more likely to occur at night.</i>
         <p></p>
-        <button onclick="tool_random_encounter()">Generate</button>
+        <button onclick="randomEncounter()">Generate</button>
         <button onclick="clear_output();clear_weather()">Clear Output</button>
         <!--Encounter Output-->
         <p id ="output"></p>
@@ -169,6 +170,7 @@
             </select>
             <br><i>Set this if you want to override the default threshold for triggering a combat encounter on 1d20.</i>
         <h2>Defaults</h2>
+        <i>A hazard occurs on a roll of 1 on the d20 encounter die.</i>
         <table class="tableizer-table">
             <thead><tr class="tableizer-firstrow">
                 <th></th><th colspan="5">Night</th><th colspan="5">Day</th></tr></thead><tbody>
@@ -194,7 +196,6 @@
             </tbody></table>
         <h2>Combat Encounter Data</h2>
         <p>Xanathar's Guide to Everything pages 92-112</p>
-        <p></p>
         <h2>Non-combat Encounter Data</h2>
         <p>Various Reddit threads and <a href="http://dndspeak.com/encounters/">DnDSpeak</a></p>
     </main> 
