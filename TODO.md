@@ -4,7 +4,6 @@
 * [x] Sailing Duration and Cargo Tranport Revenue
 * Foot Travel Duration
 * [x] Horizon Calculator
-<<<<<<< HEAD
 * Demographics?
     * Levels of people in the city
         * [x] Single level
@@ -14,9 +13,6 @@
         * Price Modifier
             * Buying
             * Selling
-=======
-* [x] Level Demographics
->>>>>>> cdd6463e904a931f8bde33160033caa34487c138
 * [x] Crafting Duration
 * [x] Bounty Reward
 * [x] Currency Weight
