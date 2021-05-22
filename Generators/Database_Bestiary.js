@@ -1,4 +1,4 @@
-let dbBestiary = [{"NAME":"The Demogorgon","TYPE":"Giant","SUBTYPE":"","CR":"8","SOURCE":"IMR","LINK":"https://5e.tools/bestiary.html#the%20demogorgon_imr"},
+let dbCreatures = [{"NAME":"The Demogorgon","TYPE":"Giant","SUBTYPE":"","CR":"8","SOURCE":"IMR","LINK":"https://5e.tools/bestiary.html#the%20demogorgon_imr"},
 {"NAME":"Aarakocra","TYPE":"Humanoid","SUBTYPE":"aarakocra","CR":"1/4","SOURCE":"MM","LINK":"https://5e.tools/bestiary.html#aarakocra_mm"},
 {"NAME":"Aarakocra Simulacra","TYPE":"Humanoid","SUBTYPE":"aarakocra","CR":"1/8","SOURCE":"SKT","LINK":"https://5e.tools/bestiary.html#aarakocra%20simulacra_skt"},
 {"NAME":"Aberrant Spirit","TYPE":"Aberration","SUBTYPE":"","CR":"—","SOURCE":"TCE","LINK":"https://5e.tools/bestiary.html#aberrant%20spirit_tce"},

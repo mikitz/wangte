@@ -88,7 +88,6 @@ function pick_item(){
 
 // Function pick a random creature
 function pick_creature(){
-    // Table name: dbBestiary
     // Clear the outputs
     clear_shit()
     // Get User Inputs
@@ -107,13 +106,13 @@ function pick_creature(){
     // Filter
         // Filter the table based on user input
         if (uiCR == "All" && uiType == "All") {
-            var items = dbBestiary
+            var items = dbCreatures
         } else if (uiType == "All") {
-            var items = dbBestiary.filter(creature => creature.CR == uiCR)
+            var items = dbCreatures.filter(creature => creature.CR == uiCR)
         } else if (uiCR == "All") {
-            var items = dbBestiary.filter(creature => creature.TYPE == uiType)
+            var items = dbCreatures.filter(creature => creature.TYPE == uiType)
         } else {
-            var items = dbBestiary.filter(creature => creature.CR == uiCR)
+            var items = dbCreatures.filter(creature => creature.CR == uiCR)
             items = items.filter(creature => creature.TYPE == uiType)
         }
 
@@ -158,7 +157,6 @@ function pick_spell(){
             var items = dbSpells.filter(spell => spell.LEVEL == uiLevel)
             items = items.filter(spell => spell.SCHOOL == uiSchool)
         }
-
 
     // Get the length of the resulting array
     var table_length = items.length
