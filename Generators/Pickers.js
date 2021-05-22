@@ -126,6 +126,54 @@ function pick_creature(){
         alert(`The quantity (${quantity}) is larger than the possible number of choices (${table_length})! Please choose a quantity lower than ${table_length}.`)
         return
     }
+
+    // Generate as many random integers as quantity
+        // Create an empty list
+        var randInts = []
+        // Loop through the quantity
+        for (var x = 0; x < quantity; x++) {
+            // Generate a random number
+            var number = getRndInteger(1, table_length)
+            // Check to see if this number is already in the list
+            while (randInts.includes(number) == true) {
+                number = getRndInteger(1, table_length)
+            }
+            // Push it to the list of random integers
+            randInts.push(number)
+        }
+        // Log it
+        console.log(randInts)
+
+    // Pull the rows that were randomly selected from the table
+        // Loop through each random integer
+        randInts.forEach(function(idx) {
+            // Name
+                // Pull the name from the table
+                var vName = items[idx].NAME
+                // Log it
+                console.log(`Item: ${vName}`)
+            // Link
+                // PUll the link from the table
+                var vLink = items[idx].LINK
+                // Log it
+                console.log(`Link: ${vLink}`)
+            
+            // Linked Text List
+                // Build the message of linked items
+                var vMessage1 = `<a href="${vLink}" rel="noopener noreferrer" target="_blank">${vName}</a>`
+                // Populate the element
+                var ul1 = document.createElement('li')
+                ul1.innerHTML = vMessage1
+                document.getElementById('output').appendChild(ul1)
+
+            // List of Copyable Links    
+                // Build the message of the links
+                var vMessage2 = `${vName}: ${vLink}`
+                // Populate the element
+                var ul2 = document.createElement('li')
+                ul2.innerHTML = vMessage2
+                document.getElementById('output_link_list').appendChild(ul2)
+        })    
 }
 
 // Function to pick a random spell
