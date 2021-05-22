@@ -64,7 +64,7 @@ function pick_item(){
             
             // Linked Text List
                 // Build the message of linked items
-                var vMessage1 = `<a href="${vLink}">${vName}</a>`
+                var vMessage1 = `<a href="${vLink}" rel="noopener noreferrer" target="_blank">${vName}</a>`
                 // Populate the element
                 var ul1 = document.createElement('li')
                 ul1.innerHTML = vMessage1
