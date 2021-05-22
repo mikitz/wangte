@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GameMaster Website</title>  
     <link rel="stylesheet" href="../style.css"/>
-    <script src="Database_Combat_Encounters.js"></script>
-    <script src="Database_Non_combat_Encounters.js"></script>
-    <script src="Database_Weather.js"></script>
+    <script src="Database_Bestiary.js"></script>
+    <script src="Pickers.js"></script>
+    <script src="../Global_Functions.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>  
   
@@ -20,32 +20,82 @@
     <div id="nav_local"></div>
     <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
     <main>
-        <script src="Weather.js"></script>
         <h1>Random Creature Picker</h1>
-        <p>This generator will generate weather based on climate type and season.</p>
-        <label for="climate">Climate:</label>
-            <select name="climate" id="climate">
-                <option value="tropical">Tropical</option>
-                <option value="arid/dry">Arid/Dry</option>
-                <option value="temperate">Temperate</option>
-                <option value="continental">Continental</option>
-                <option value="polar">Polar</option>
+        <p>This generator will generate weather based on CR type and type.</p>
+        <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity">
+            </form>
+        <p></p>
+        <label for="CR">CR:</label>
+            <select name="CR" id="CR">
+                <option value="all">All</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="28">28</option>
+                <option value="30">30</option>
+                <option value="1/2">1/2</option>
+                <option value="1/4">1/4</option>
+                <option value="1/8">1/8</option>
+                <option value="—">—</option>
+                <option value="unknown">Unknown</option>
             </select>
         <p></p>
-        <label for="season">Season:</label>
-            <select name="season" id="season">
-                <option value="spring">Spring</option>
-                <option value="summer">Summer</option>
-                <option value="fall">Fall</option>
-                <option value="winter">Winter</option>
+        <label for="type">Type:</label>
+            <select name="type" id="type">
+                <option value="all">All</option>
+                <option value="aberration">Aberration</option>
+                <option value="beast">Beast</option>
+                <option value="celestial">Celestial</option>
+                <option value="construct">Construct</option>
+                <option value="dragon">Dragon</option>
+                <option value="elemental">Elemental</option>
+                <option value="fey">Fey</option>
+                <option value="fiend">Fiend</option>
+                <option value="giant">Giant</option>
+                <option value="humanoid">Humanoid</option>
+                <option value="monstrosity">Monstrosity</option>
+                <option value="ooze">Ooze</option>
+                <option value="plant">Plant</option>
+                <option value="swarm-of-medium-undead">Swarm of medium undead</option>
+                <option value="swarm-of-tiny-beasts">Swarm of tiny beasts</option>
+                <option value="swarm-of-tiny-constructs">Swarm of tiny constructs</option>
+                <option value="swarm-of-tiny-monstrosities">Swarm of tiny monstrosities</option>
+                <option value="swarm-of-tiny-undead">Swarm of tiny undead</option>
+                <option value="undead">Undead</option>
             </select>
         <p></p>
-        <button onclick="generate_weather()">Generate</button>
-        <button onclick="clear_weather()">Clear Output</button>
+        <button onclick="pick_creature()">Generate</button>
+        <button onclick="clear_shit()">Clear Output</button>
         <!--Encounter Output-->
         <p id ="output"></p>
         <!--Weather Output-->
-        <p id ="weather"></p>
+        <p id ="output_link_list"></p>
+        <button onclick="copyElementText('output_link_list')">Copy Text</button>
     </main> 
 </body>  
 </html>

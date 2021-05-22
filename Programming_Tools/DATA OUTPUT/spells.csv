@@ -1,0 +1,574 @@
+NAME,LEVEL,RITUAL,TECHNOLOGY,CASTING_TIME,SCHOOL,CONCENTRATION,RANGE,SOURCE,LINK
+Abi-Dalzim's Horrid Wilting,8th,N,N,Action,Necro.,N,150 feet,XGE,https://5e.tools/spells.html#abi-dalzim's%20horrid%20wilting_xge
+Absorb Elements,1st,N,N,Reaction,Abj.,N,Self,XGE,https://5e.tools/spells.html#absorb%20elements_xge
+Acid Splash,Cantrip,N,N,Action,Conj.,N,60 feet,PHB,https://5e.tools/spells.html#acid%20splash_phb
+Acid Stream,1st,N,N,Action,Evoc.,Y,Self (30-foot line),UA20SMT,https://5e.tools/spells.html#acid%20stream_ua20smt
+Aganazzar's Scorcher,2nd,N,N,Action,Evoc.,N,30 feet,XGE,https://5e.tools/spells.html#aganazzar's%20scorcher_xge
+Aid,2nd,N,N,Action,Abj.,N,30 feet,PHB,https://5e.tools/spells.html#aid_phb
+Alarm,1st,Y,N,1 Minute,Abj.,N,30 feet,PHB,https://5e.tools/spells.html#alarm_phb
+Alter Self,2nd,N,N,Action,Trans.,Y,Self,PHB,https://5e.tools/spells.html#alter%20self_phb
+Animal Friendship,1st,N,N,Action,Ench.,N,30 feet,PHB,https://5e.tools/spells.html#animal%20friendship_phb
+Animal Messenger,2nd,Y,N,Action,Ench.,N,30 feet,PHB,https://5e.tools/spells.html#animal%20messenger_phb
+Animal Shapes,8th,N,N,Action,Trans.,Y,30 feet,PHB,https://5e.tools/spells.html#animal%20shapes_phb
+Animate Dead,3rd,N,N,1 Minute,Necro.,N,10 feet,PHB,https://5e.tools/spells.html#animate%20dead_phb
+Animate Objects,5th,N,N,Action,Trans.,Y,120 feet,PHB,https://5e.tools/spells.html#animate%20objects_phb
+Antilife Shell,5th,N,N,Action,Abj.,Y,Self (10-foot radius),PHB,https://5e.tools/spells.html#antilife%20shell_phb
+Antimagic Field,8th,N,N,Action,Abj.,Y,Self (10-foot radius),PHB,https://5e.tools/spells.html#antimagic%20field_phb
+Antipathy/Sympathy,8th,N,N,1 Hour,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#antipathy/sympathy_phb
+Arcane Eye,4th,N,N,Action,Divin.,Y,30 feet,PHB,https://5e.tools/spells.html#arcane%20eye_phb
+Arcane Gate,6th,N,N,Action,Conj.,Y,500 feet,PHB,https://5e.tools/spells.html#arcane%20gate_phb
+Arcane Hacking (UA),2nd,N,Y,Action,Trans.,Y,Self,UAMM,https://5e.tools/spells.html#arcane%20hacking%20(ua)_uamm
+Arcane Lock,2nd,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#arcane%20lock_phb
+Arcane Weapon,1st,N,N,Bonus acn.,Trans.,Y,Self,UAAR,https://5e.tools/spells.html#arcane%20weapon_uaar
+Armor of Agathys,1st,N,N,Action,Abj.,N,Self,PHB,https://5e.tools/spells.html#armor%20of%20agathys_phb
+Arms of Hadar,1st,N,N,Action,Conj.,N,Self (10-foot radius),PHB,https://5e.tools/spells.html#arms%20of%20hadar_phb
+Astral Projection,9th,N,N,1 Hour,Necro.,N,10 feet,PHB,https://5e.tools/spells.html#astral%20projection_phb
+Augury,2nd,Y,N,1 Minute,Divin.,N,Self,PHB,https://5e.tools/spells.html#augury_phb
+Aura of Life,4th,N,N,Action,Abj.,Y,Self (30-foot radius),PHB,https://5e.tools/spells.html#aura%20of%20life_phb
+Aura of Purity,4th,N,N,Action,Abj.,Y,Self (30-foot radius),PHB,https://5e.tools/spells.html#aura%20of%20purity_phb
+Aura of Vitality,3rd,N,N,Action,Evoc.,Y,Self (30-foot radius),PHB,https://5e.tools/spells.html#aura%20of%20vitality_phb
+Awaken,5th,N,N,8 Hours,Trans.,N,Touch,PHB,https://5e.tools/spells.html#awaken_phb
+Bane,1st,N,N,Action,Ench.,Y,30 feet,PHB,https://5e.tools/spells.html#bane_phb
+Banishing Smite,5th,N,N,Bonus acn.,Abj.,Y,Self,PHB,https://5e.tools/spells.html#banishing%20smite_phb
+Banishment,4th,N,N,Action,Abj.,Y,60 feet,PHB,https://5e.tools/spells.html#banishment_phb
+Barkskin,2nd,N,N,Action,Trans.,Y,Touch,PHB,https://5e.tools/spells.html#barkskin_phb
+Beacon of Hope,3rd,N,N,Action,Abj.,Y,30 feet,PHB,https://5e.tools/spells.html#beacon%20of%20hope_phb
+Beast Bond,1st,N,N,Action,Divin.,Y,Touch,XGE,https://5e.tools/spells.html#beast%20bond_xge
+Beast Sense,2nd,Y,N,Action,Divin.,Y,Touch,PHB,https://5e.tools/spells.html#beast%20sense_phb
+Bestow Curse,3rd,N,N,Action,Necro.,Y,Touch,PHB,https://5e.tools/spells.html#bestow%20curse_phb
+Bigby's Hand,5th,N,N,Action,Evoc.,Y,120 feet,PHB,https://5e.tools/spells.html#bigby's%20hand_phb
+Blade Barrier,6th,N,N,Action,Evoc.,Y,90 feet,PHB,https://5e.tools/spells.html#blade%20barrier_phb
+Blade of Disaster,9th,N,N,Bonus acn.,Conj.,Y,60 feet,TCE,https://5e.tools/spells.html#blade%20of%20disaster_tce
+Blade Ward,Cantrip,N,N,Action,Abj.,N,Self,PHB,https://5e.tools/spells.html#blade%20ward_phb
+Bless,1st,N,N,Action,Ench.,Y,30 feet,PHB,https://5e.tools/spells.html#bless_phb
+Blight,4th,N,N,Action,Necro.,N,30 feet,PHB,https://5e.tools/spells.html#blight_phb
+Blinding Smite,3rd,N,N,Bonus acn.,Evoc.,Y,Self,PHB,https://5e.tools/spells.html#blinding%20smite_phb
+Blindness/Deafness,2nd,N,N,Action,Necro.,N,30 feet,PHB,https://5e.tools/spells.html#blindness/deafness_phb
+Blink,3rd,N,N,Action,Trans.,N,Self,PHB,https://5e.tools/spells.html#blink_phb
+Blur,2nd,N,N,Action,Illu.,Y,Self,PHB,https://5e.tools/spells.html#blur_phb
+Bones of the Earth,6th,N,N,Action,Trans.,N,120 feet,XGE,https://5e.tools/spells.html#bones%20of%20the%20earth_xge
+Booming Blade,Cantrip,N,N,Action,Evoc.,N,Self (5-foot radius),TCE,https://5e.tools/spells.html#booming%20blade_tce
+Branding Smite,2nd,N,N,Bonus acn.,Evoc.,Y,Self,PHB,https://5e.tools/spells.html#branding%20smite_phb
+Burning Hands,1st,N,N,Action,Evoc.,N,Self (15-foot cone),PHB,https://5e.tools/spells.html#burning%20hands_phb
+Call Lightning,3rd,N,N,Action,Conj.,Y,120 feet,PHB,https://5e.tools/spells.html#call%20lightning_phb
+Calm Emotions,2nd,N,N,Action,Ench.,Y,60 feet,PHB,https://5e.tools/spells.html#calm%20emotions_phb
+Catapult,1st,N,N,Action,Trans.,N,60 feet,XGE,https://5e.tools/spells.html#catapult_xge
+Catnap,3rd,N,N,Action,Ench.,N,30 feet,XGE,https://5e.tools/spells.html#catnap_xge
+Cause Fear,1st,N,N,Action,Necro.,Y,60 feet,XGE,https://5e.tools/spells.html#cause%20fear_xge
+Cause Fear (UA),1st,N,N,Action,Necro.,Y,60 feet,UASS,https://5e.tools/spells.html#cause%20fear%20(ua)_uass
+Ceremony,1st,Y,N,1 Hour,Abj.,N,Touch,XGE,https://5e.tools/spells.html#ceremony_xge
+Ceremony (UA),1st,Y,N,1 Hour,Evoc.,N,Touch,UASS,https://5e.tools/spells.html#ceremony%20(ua)_uass
+Chain Lightning,6th,N,N,Action,Evoc.,N,150 feet,PHB,https://5e.tools/spells.html#chain%20lightning_phb
+Chaos Bolt,1st,N,N,Action,Evoc.,N,120 feet,XGE,https://5e.tools/spells.html#chaos%20bolt_xge
+Chaos Bolt (UA),1st,N,N,Action,Evoc.,N,120 feet,UASS,https://5e.tools/spells.html#chaos%20bolt%20(ua)_uass
+Charm Monster,4th,N,N,Action,Ench.,N,30 feet,XGE,https://5e.tools/spells.html#charm%20monster_xge
+Charm Person,1st,N,N,Action,Ench.,N,30 feet,PHB,https://5e.tools/spells.html#charm%20person_phb
+Chill Touch,Cantrip,N,N,Action,Necro.,N,120 feet,PHB,https://5e.tools/spells.html#chill%20touch_phb
+Chromatic Orb,1st,N,N,Action,Evoc.,N,90 feet,PHB,https://5e.tools/spells.html#chromatic%20orb_phb
+Circle of Death,6th,N,N,Action,Necro.,N,150 feet,PHB,https://5e.tools/spells.html#circle%20of%20death_phb
+Circle of Power,5th,N,N,Action,Abj.,Y,Self (30-foot radius),PHB,https://5e.tools/spells.html#circle%20of%20power_phb
+Clairvoyance,3rd,N,N,10 Minutes,Divin.,Y,1 mile,PHB,https://5e.tools/spells.html#clairvoyance_phb
+Clone,8th,N,N,1 Hour,Necro.,N,Touch,PHB,https://5e.tools/spells.html#clone_phb
+Cloud of Daggers,2nd,N,N,Action,Conj.,Y,60 feet,PHB,https://5e.tools/spells.html#cloud%20of%20daggers_phb
+Cloudkill,5th,N,N,Action,Conj.,Y,120 feet,PHB,https://5e.tools/spells.html#cloudkill_phb
+Color Spray,1st,N,N,Action,Illu.,N,Self (15-foot cone),PHB,https://5e.tools/spells.html#color%20spray_phb
+Command,1st,N,N,Action,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#command_phb
+Commune,5th,Y,N,1 Minute,Divin.,N,Self,PHB,https://5e.tools/spells.html#commune_phb
+Commune with City (UA),5th,Y,N,1 Minute,Divin.,N,Self,UAMM,https://5e.tools/spells.html#commune%20with%20city%20(ua)_uamm
+Commune with Nature,5th,Y,N,1 Minute,Divin.,N,Self,PHB,https://5e.tools/spells.html#commune%20with%20nature_phb
+Compelled Duel,1st,N,N,Bonus acn.,Ench.,Y,30 feet,PHB,https://5e.tools/spells.html#compelled%20duel_phb
+Comprehend Languages,1st,Y,N,Action,Divin.,N,Self,PHB,https://5e.tools/spells.html#comprehend%20languages_phb
+Compulsion,4th,N,N,Action,Ench.,Y,30 feet,PHB,https://5e.tools/spells.html#compulsion_phb
+Cone of Cold,5th,N,N,Action,Evoc.,N,Self (60-foot cone),PHB,https://5e.tools/spells.html#cone%20of%20cold_phb
+Confusion,4th,N,N,Action,Ench.,Y,90 feet,PHB,https://5e.tools/spells.html#confusion_phb
+Conjure Animals,3rd,N,N,Action,Conj.,Y,60 feet,PHB,https://5e.tools/spells.html#conjure%20animals_phb
+Conjure Barlgura (UA),4th,N,N,Action,Conj.,N,60 feet,UAOBM,https://5e.tools/spells.html#conjure%20barlgura%20(ua)_uaobm
+Conjure Barrage,3rd,N,N,Action,Conj.,N,Self (60-foot cone),PHB,https://5e.tools/spells.html#conjure%20barrage_phb
+Conjure Celestial,7th,N,N,1 Minute,Conj.,Y,90 feet,PHB,https://5e.tools/spells.html#conjure%20celestial_phb
+Conjure Elemental,5th,N,N,1 Minute,Conj.,Y,90 feet,PHB,https://5e.tools/spells.html#conjure%20elemental_phb
+Conjure Fey,6th,N,N,1 Minute,Conj.,Y,90 feet,PHB,https://5e.tools/spells.html#conjure%20fey_phb
+Conjure Hezrou (UA),7th,N,N,Action,Conj.,Y,60 feet,UAOBM,https://5e.tools/spells.html#conjure%20hezrou%20(ua)_uaobm
+Conjure Knowbot (UA),4th,N,Y,Action,Conj.,N,Touch,UAMM,https://5e.tools/spells.html#conjure%20knowbot%20(ua)_uamm
+Conjure Lesser Demon (UA),3rd,N,N,Action,Conj.,Y,60 feet,UAOBM,https://5e.tools/spells.html#conjure%20lesser%20demon%20(ua)_uaobm
+Conjure Minor Elementals,4th,N,N,1 Minute,Conj.,Y,90 feet,PHB,https://5e.tools/spells.html#conjure%20minor%20elementals_phb
+Conjure Shadow Demon (UA),4th,N,N,Action,Conj.,Y,60 feet,UAOBM,https://5e.tools/spells.html#conjure%20shadow%20demon%20(ua)_uaobm
+Conjure Volley,5th,N,N,Action,Conj.,N,150 feet,PHB,https://5e.tools/spells.html#conjure%20volley_phb
+Conjure Vrock (UA),5th,N,N,Action,Conj.,Y,60 feet,UAOBM,https://5e.tools/spells.html#conjure%20vrock%20(ua)_uaobm
+Conjure Woodland Beings,4th,N,N,Action,Conj.,Y,60 feet,PHB,https://5e.tools/spells.html#conjure%20woodland%20beings_phb
+Contact Other Plane,5th,Y,N,1 Minute,Divin.,N,Self,PHB,https://5e.tools/spells.html#contact%20other%20plane_phb
+Contagion,5th,N,N,Action,Necro.,N,Touch,PHB,https://5e.tools/spells.html#contagion_phb
+Contingency,6th,N,N,10 Minutes,Evoc.,N,Self,PHB,https://5e.tools/spells.html#contingency_phb
+Continual Flame,2nd,N,N,Action,Evoc.,N,Touch,PHB,https://5e.tools/spells.html#continual%20flame_phb
+Control Flames,Cantrip,N,N,Action,Trans.,N,60 feet,XGE,https://5e.tools/spells.html#control%20flames_xge
+Control Water,4th,N,N,Action,Trans.,Y,300 feet,PHB,https://5e.tools/spells.html#control%20water_phb
+Control Weather,8th,N,N,10 Minutes,Trans.,Y,Self (5-mile radius),PHB,https://5e.tools/spells.html#control%20weather_phb
+Control Winds,5th,N,N,Action,Trans.,Y,300 feet,XGE,https://5e.tools/spells.html#control%20winds_xge
+Cordon of Arrows,2nd,N,N,Action,Trans.,N,5 feet,PHB,https://5e.tools/spells.html#cordon%20of%20arrows_phb
+Counterspell,3rd,N,N,Reaction,Abj.,N,60 feet,PHB,https://5e.tools/spells.html#counterspell_phb
+Create Bonfire,Cantrip,N,N,Action,Conj.,Y,60 feet,XGE,https://5e.tools/spells.html#create%20bonfire_xge
+Create Food and Water,3rd,N,N,Action,Conj.,N,30 feet,PHB,https://5e.tools/spells.html#create%20food%20and%20water_phb
+Create Homunculus,6th,N,N,1 Hour,Trans.,N,Touch,XGE,https://5e.tools/spells.html#create%20homunculus_xge
+Create Magen,7th,N,N,1 Hour,Trans.,N,Touch,IDRotF,https://5e.tools/spells.html#create%20magen_idrotf
+Create or Destroy Water,1st,N,N,Action,Trans.,N,30 feet,PHB,https://5e.tools/spells.html#create%20or%20destroy%20water_phb
+Create Undead,6th,N,N,1 Minute,Necro.,N,10 feet,PHB,https://5e.tools/spells.html#create%20undead_phb
+Creation,5th,N,N,1 Minute,Illu.,N,30 feet,PHB,https://5e.tools/spells.html#creation_phb
+Crown of Madness,2nd,N,N,Action,Ench.,Y,120 feet,PHB,https://5e.tools/spells.html#crown%20of%20madness_phb
+Crown of Stars,7th,N,N,Action,Evoc.,N,Self,XGE,https://5e.tools/spells.html#crown%20of%20stars_xge
+Crusader's Mantle,3rd,N,N,Action,Evoc.,Y,Self (30-foot radius),PHB,https://5e.tools/spells.html#crusader's%20mantle_phb
+Cure Wounds,1st,N,N,Action,Evoc.,N,Touch,PHB,https://5e.tools/spells.html#cure%20wounds_phb
+Dancing Lights,Cantrip,N,N,Action,Evoc.,Y,120 feet,PHB,https://5e.tools/spells.html#dancing%20lights_phb
+Danse Macabre,5th,N,N,Action,Necro.,Y,60 feet,XGE,https://5e.tools/spells.html#danse%20macabre_xge
+Dark Star,8th,N,N,Action,Evoc.,Y,150 feet,EGW,https://5e.tools/spells.html#dark%20star_egw
+Darkness,2nd,N,N,Action,Evoc.,Y,60 feet,PHB,https://5e.tools/spells.html#darkness_phb
+Darkvision,2nd,N,N,Action,Trans.,N,Touch,PHB,https://5e.tools/spells.html#darkvision_phb
+Dawn,5th,N,N,Action,Evoc.,Y,60 feet,XGE,https://5e.tools/spells.html#dawn_xge
+Daylight,3rd,N,N,Action,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#daylight_phb
+Death Ward,4th,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#death%20ward_phb
+Delayed Blast Fireball,7th,N,N,Action,Evoc.,Y,150 feet,PHB,https://5e.tools/spells.html#delayed%20blast%20fireball_phb
+Demiplane,8th,N,N,Action,Conj.,N,60 feet,PHB,https://5e.tools/spells.html#demiplane_phb
+Destructive Wave,5th,N,N,Action,Evoc.,N,Self (30-foot radius),PHB,https://5e.tools/spells.html#destructive%20wave_phb
+Detect Evil and Good,1st,N,N,Action,Divin.,Y,Self,PHB,https://5e.tools/spells.html#detect%20evil%20and%20good_phb
+Detect Magic,1st,Y,N,Action,Divin.,Y,Self,PHB,https://5e.tools/spells.html#detect%20magic_phb
+Detect Poison and Disease,1st,Y,N,Action,Divin.,Y,Self,PHB,https://5e.tools/spells.html#detect%20poison%20and%20disease_phb
+Detect Thoughts,2nd,N,N,Action,Divin.,Y,Self,PHB,https://5e.tools/spells.html#detect%20thoughts_phb
+Digital Phantom (UA),2nd,N,Y,Action,Abj.,Y,Self,UAMM,https://5e.tools/spells.html#digital%20phantom%20(ua)_uamm
+Dimension Door,4th,N,N,Action,Conj.,N,500 feet,PHB,https://5e.tools/spells.html#dimension%20door_phb
+Disguise Self,1st,N,N,Action,Illu.,N,Self,PHB,https://5e.tools/spells.html#disguise%20self_phb
+Disintegrate,6th,N,N,Action,Trans.,N,60 feet,PHB,https://5e.tools/spells.html#disintegrate_phb
+Dispel Evil and Good,5th,N,N,Action,Abj.,Y,Self,PHB,https://5e.tools/spells.html#dispel%20evil%20and%20good_phb
+Dispel Magic,3rd,N,N,Action,Abj.,N,120 feet,PHB,https://5e.tools/spells.html#dispel%20magic_phb
+Dissonant Whispers,1st,N,N,Action,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#dissonant%20whispers_phb
+Distort Value,1st,N,N,1 Minute,Illu.,N,Touch,AI,https://5e.tools/spells.html#distort%20value_ai
+Divination,4th,Y,N,Action,Divin.,N,Self,PHB,https://5e.tools/spells.html#divination_phb
+Divine Favor,1st,N,N,Bonus acn.,Evoc.,Y,Self,PHB,https://5e.tools/spells.html#divine%20favor_phb
+Divine Word,7th,N,N,Bonus acn.,Evoc.,N,30 feet,PHB,https://5e.tools/spells.html#divine%20word_phb
+Dominate Beast,4th,N,N,Action,Ench.,Y,60 feet,PHB,https://5e.tools/spells.html#dominate%20beast_phb
+Dominate Monster,8th,N,N,Action,Ench.,Y,60 feet,PHB,https://5e.tools/spells.html#dominate%20monster_phb
+Dominate Person,5th,N,N,Action,Ench.,Y,60 feet,PHB,https://5e.tools/spells.html#dominate%20person_phb
+Draconic Transformation,7th,N,N,Bonus acn.,Trans.,Y,Self,UA21DO,https://5e.tools/spells.html#draconic%20transformation_ua21do
+Dragon's Breath,2nd,N,N,Bonus acn.,Trans.,Y,Touch,XGE,https://5e.tools/spells.html#dragon's%20breath_xge
+Drawmij's Instant Summons,6th,Y,N,1 Minute,Conj.,N,Touch,PHB,https://5e.tools/spells.html#drawmij's%20instant%20summons_phb
+Dream,5th,N,N,1 Minute,Illu.,N,Special,PHB,https://5e.tools/spells.html#dream_phb
+Dream of the Blue Veil,7th,N,N,10 Minutes,Conj.,N,20 feet,TCE,https://5e.tools/spells.html#dream%20of%20the%20blue%20veil_tce
+Druid Grove,6th,N,N,10 Minutes,Abj.,N,Touch,XGE,https://5e.tools/spells.html#druid%20grove_xge
+Druidcraft,Cantrip,N,N,Action,Trans.,N,30 feet,PHB,https://5e.tools/spells.html#druidcraft_phb
+Dust Devil,2nd,N,N,Action,Conj.,Y,60 feet,XGE,https://5e.tools/spells.html#dust%20devil_xge
+Earth Tremor,1st,N,N,Action,Evoc.,N,10 feet,XGE,https://5e.tools/spells.html#earth%20tremor_xge
+Earthbind,2nd,N,N,Action,Trans.,Y,300 feet,XGE,https://5e.tools/spells.html#earthbind_xge
+Earthquake,8th,N,N,Action,Evoc.,Y,500 feet,PHB,https://5e.tools/spells.html#earthquake_phb
+Ego Whip,4th,N,N,Action,Ench.,Y,30 feet,UAFRW,https://5e.tools/spells.html#ego%20whip_uafrw
+Eldritch Blast,Cantrip,N,N,Action,Evoc.,N,120 feet,PHB,https://5e.tools/spells.html#eldritch%20blast_phb
+Elemental Bane,4th,N,N,Action,Trans.,Y,90 feet,XGE,https://5e.tools/spells.html#elemental%20bane_xge
+Elemental Weapon,3rd,N,N,Action,Trans.,Y,Touch,PHB,https://5e.tools/spells.html#elemental%20weapon_phb
+Encode Thoughts,Cantrip,N,N,Action,Ench.,N,Self,GGR,https://5e.tools/spells.html#encode%20thoughts_ggr
+Enemies Abound,3rd,N,N,Action,Ench.,Y,120 feet,XGE,https://5e.tools/spells.html#enemies%20abound_xge
+Enervation,5th,N,N,Action,Necro.,Y,60 feet,XGE,https://5e.tools/spells.html#enervation_xge
+Enhance Ability,2nd,N,N,Action,Trans.,Y,Touch,PHB,https://5e.tools/spells.html#enhance%20ability_phb
+Enlarge/Reduce,2nd,N,N,Action,Trans.,Y,30 feet,PHB,https://5e.tools/spells.html#enlarge/reduce_phb
+Ensnaring Strike,1st,N,N,Bonus acn.,Conj.,Y,Self,PHB,https://5e.tools/spells.html#ensnaring%20strike_phb
+Entangle,1st,N,N,Action,Conj.,Y,90 feet,PHB,https://5e.tools/spells.html#entangle_phb
+Enthrall,2nd,N,N,Action,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#enthrall_phb
+Erupting Earth,3rd,N,N,Action,Trans.,N,120 feet,XGE,https://5e.tools/spells.html#erupting%20earth_xge
+Etherealness,7th,N,N,Action,Trans.,N,Self,PHB,https://5e.tools/spells.html#etherealness_phb
+Evard's Black Tentacles,4th,N,N,Action,Conj.,Y,90 feet,PHB,https://5e.tools/spells.html#evard's%20black%20tentacles_phb
+Expeditious Retreat,1st,N,N,Bonus acn.,Trans.,Y,Self,PHB,https://5e.tools/spells.html#expeditious%20retreat_phb
+Eyebite,6th,N,N,Action,Necro.,Y,Self,PHB,https://5e.tools/spells.html#eyebite_phb
+Fabricate,4th,N,N,10 Minutes,Trans.,N,120 feet,PHB,https://5e.tools/spells.html#fabricate_phb
+Faerie Fire,1st,N,N,Action,Evoc.,Y,60 feet,PHB,https://5e.tools/spells.html#faerie%20fire_phb
+False Life,1st,N,N,Action,Necro.,N,Self,PHB,https://5e.tools/spells.html#false%20life_phb
+Far Step,5th,N,N,Bonus acn.,Conj.,Y,Self,XGE,https://5e.tools/spells.html#far%20step_xge
+Fast Friends,3rd,N,N,Action,Ench.,Y,30 feet,AI,https://5e.tools/spells.html#fast%20friends_ai
+Fear,3rd,N,N,Action,Illu.,Y,Self (30-foot cone),PHB,https://5e.tools/spells.html#fear_phb
+Feather Fall,1st,N,N,Reaction,Trans.,N,60 feet,PHB,https://5e.tools/spells.html#feather%20fall_phb
+Feeblemind,8th,N,N,Action,Ench.,N,150 feet,PHB,https://5e.tools/spells.html#feeblemind_phb
+Feign Death,3rd,Y,N,Action,Necro.,N,Touch,PHB,https://5e.tools/spells.html#feign%20death_phb
+Find Familiar,1st,Y,N,1 Hour,Conj.,N,10 feet,PHB,https://5e.tools/spells.html#find%20familiar_phb
+Find Greater Steed,4th,N,N,10 Minutes,Conj.,N,30 feet,XGE,https://5e.tools/spells.html#find%20greater%20steed_xge
+Find Steed,2nd,N,N,10 Minutes,Conj.,N,30 feet,PHB,https://5e.tools/spells.html#find%20steed_phb
+Find the Path,6th,N,N,1 Minute,Divin.,Y,Self,PHB,https://5e.tools/spells.html#find%20the%20path_phb
+Find Traps,2nd,N,N,Action,Divin.,N,120 feet,PHB,https://5e.tools/spells.html#find%20traps_phb
+Find Vehicle (UA),2nd,N,N,10 Minutes,Conj.,N,30 feet,UAMM,https://5e.tools/spells.html#find%20vehicle%20(ua)_uamm
+Finger of Death,7th,N,N,Action,Necro.,N,60 feet,PHB,https://5e.tools/spells.html#finger%20of%20death_phb
+Fire Bolt,Cantrip,N,N,Action,Evoc.,N,120 feet,PHB,https://5e.tools/spells.html#fire%20bolt_phb
+Fire Shield,4th,N,N,Action,Evoc.,N,Self,PHB,https://5e.tools/spells.html#fire%20shield_phb
+Fire Storm,7th,N,N,Action,Evoc.,N,150 feet,PHB,https://5e.tools/spells.html#fire%20storm_phb
+Fireball,3rd,N,N,Action,Evoc.,N,150 feet,PHB,https://5e.tools/spells.html#fireball_phb
+Fizban's Platinum Shield,6th,N,N,Action,Abj.,Y,60 feet,UA21DO,https://5e.tools/spells.html#fizban's%20platinum%20shield_ua21do
+Flame Arrows,3rd,N,N,Action,Trans.,Y,Touch,XGE,https://5e.tools/spells.html#flame%20arrows_xge
+Flame Blade,2nd,N,N,Bonus acn.,Evoc.,Y,Self,PHB,https://5e.tools/spells.html#flame%20blade_phb
+Flame Stride,3rd,N,N,Bonus acn.,Trans.,Y,Self,UA21DO,https://5e.tools/spells.html#flame%20stride_ua21do
+Flame Strike,5th,N,N,Action,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#flame%20strike_phb
+Flaming Sphere,2nd,N,N,Action,Conj.,Y,60 feet,PHB,https://5e.tools/spells.html#flaming%20sphere_phb
+Flesh to Stone,6th,N,N,Action,Trans.,Y,60 feet,PHB,https://5e.tools/spells.html#flesh%20to%20stone_phb
+Flock of Familiars,2nd,N,N,1 Minute,Conj.,Y,Touch,LLK,https://5e.tools/spells.html#flock%20of%20familiars_llk
+Fly,3rd,N,N,Action,Trans.,Y,Touch,PHB,https://5e.tools/spells.html#fly_phb
+Fog Cloud,1st,N,N,Action,Conj.,Y,120 feet,PHB,https://5e.tools/spells.html#fog%20cloud_phb
+Forbiddance,6th,Y,N,10 Minutes,Abj.,N,Touch,PHB,https://5e.tools/spells.html#forbiddance_phb
+Forcecage,7th,N,N,Action,Evoc.,N,100 feet,PHB,https://5e.tools/spells.html#forcecage_phb
+Foresight,9th,N,N,1 Minute,Divin.,N,Touch,PHB,https://5e.tools/spells.html#foresight_phb
+Fortune's Favor,2nd,N,N,1 Minute,Divin.,N,60 feet,EGW,https://5e.tools/spells.html#fortune's%20favor_egw
+Freedom of Movement,4th,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#freedom%20of%20movement_phb
+Friends,Cantrip,N,N,Action,Ench.,Y,Self,PHB,https://5e.tools/spells.html#friends_phb
+Frost Fingers,1st,N,N,Action,Evoc.,N,Self (15-foot cone),IDRotF,https://5e.tools/spells.html#frost%20fingers_idrotf
+Frostbite,Cantrip,N,N,Action,Evoc.,N,60 feet,XGE,https://5e.tools/spells.html#frostbite_xge
+Galder's Speedy Courier,4th,N,N,Action,Conj.,N,10 feet,LLK,https://5e.tools/spells.html#galder's%20speedy%20courier_llk
+Galder's Tower,3rd,N,N,10 Minutes,Conj.,N,30 feet,LLK,https://5e.tools/spells.html#galder's%20tower_llk
+Gaseous Form,3rd,N,N,Action,Trans.,Y,Touch,PHB,https://5e.tools/spells.html#gaseous%20form_phb
+Gate,9th,N,N,Action,Conj.,Y,60 feet,PHB,https://5e.tools/spells.html#gate_phb
+Geas,5th,N,N,1 Minute,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#geas_phb
+Gentle Repose,2nd,Y,N,Action,Necro.,N,Touch,PHB,https://5e.tools/spells.html#gentle%20repose_phb
+Giant Insect,4th,N,N,Action,Trans.,Y,30 feet,PHB,https://5e.tools/spells.html#giant%20insect_phb
+Gift of Alacrity,1st,N,N,1 Minute,Divin.,N,Touch,EGW,https://5e.tools/spells.html#gift%20of%20alacrity_egw
+Gift of Gab,2nd,N,N,Reaction,Ench.,N,Self,AI,https://5e.tools/spells.html#gift%20of%20gab_ai
+Glibness,8th,N,N,Action,Trans.,N,Self,PHB,https://5e.tools/spells.html#glibness_phb
+Globe of Invulnerability,6th,N,N,Action,Abj.,Y,Self (10-foot radius),PHB,https://5e.tools/spells.html#globe%20of%20invulnerability_phb
+Glyph of Warding,3rd,N,N,1 Hour,Abj.,N,Touch,PHB,https://5e.tools/spells.html#glyph%20of%20warding_phb
+Goodberry,1st,N,N,Action,Trans.,N,Touch,PHB,https://5e.tools/spells.html#goodberry_phb
+Grasping Vine,4th,N,N,Bonus acn.,Conj.,Y,30 feet,PHB,https://5e.tools/spells.html#grasping%20vine_phb
+Gravity Fissure,6th,N,N,Action,Evoc.,N,Self (100-foot line),EGW,https://5e.tools/spells.html#gravity%20fissure_egw
+Gravity Sinkhole,4th,N,N,Action,Evoc.,N,120 feet,EGW,https://5e.tools/spells.html#gravity%20sinkhole_egw
+Grease,1st,N,N,Action,Conj.,N,60 feet,PHB,https://5e.tools/spells.html#grease_phb
+Greater Invisibility,4th,N,N,Action,Illu.,Y,Touch,PHB,https://5e.tools/spells.html#greater%20invisibility_phb
+Greater Restoration,5th,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#greater%20restoration_phb
+Green-Flame Blade,Cantrip,N,N,Action,Evoc.,N,Self (5-foot radius),TCE,https://5e.tools/spells.html#green-flame%20blade_tce
+Guardian of Faith,4th,N,N,Action,Conj.,N,30 feet,PHB,https://5e.tools/spells.html#guardian%20of%20faith_phb
+Guardian of Nature,4th,N,N,Bonus acn.,Trans.,Y,Self,XGE,https://5e.tools/spells.html#guardian%20of%20nature_xge
+Guards and Wards,6th,N,N,10 Minutes,Abj.,N,Touch,PHB,https://5e.tools/spells.html#guards%20and%20wards_phb
+Guidance,Cantrip,N,N,Action,Divin.,Y,Touch,PHB,https://5e.tools/spells.html#guidance_phb
+Guiding Bolt,1st,N,N,Action,Evoc.,N,120 feet,PHB,https://5e.tools/spells.html#guiding%20bolt_phb
+Guiding Hand (UA),1st,Y,N,1 Minute,Divin.,Y,5 feet,UASS,https://5e.tools/spells.html#guiding%20hand%20(ua)_uass
+Gust,Cantrip,N,N,Action,Trans.,N,30 feet,XGE,https://5e.tools/spells.html#gust_xge
+Gust of Wind,2nd,N,N,Action,Evoc.,Y,Self (60-foot line),PHB,https://5e.tools/spells.html#gust%20of%20wind_phb
+Hail of Thorns,1st,N,N,Bonus acn.,Conj.,Y,Self,PHB,https://5e.tools/spells.html#hail%20of%20thorns_phb
+Hallow,5th,N,N,24 Hours,Evoc.,N,Touch,PHB,https://5e.tools/spells.html#hallow_phb
+Hallucinatory Terrain,4th,N,N,10 Minutes,Illu.,N,300 feet,PHB,https://5e.tools/spells.html#hallucinatory%20terrain_phb
+Hand of Radiance (UA),Cantrip,N,N,Action,Evoc.,N,Self (5-foot radius),UASS,https://5e.tools/spells.html#hand%20of%20radiance%20(ua)_uass
+Harm,6th,N,N,Action,Necro.,N,60 feet,PHB,https://5e.tools/spells.html#harm_phb
+Haste,3rd,N,N,Action,Trans.,Y,30 feet,PHB,https://5e.tools/spells.html#haste_phb
+Haywire (UA),3rd,N,Y,Action,Ench.,Y,90 feet,UAMM,https://5e.tools/spells.html#haywire%20(ua)_uamm
+Heal,6th,N,N,Action,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#heal_phb
+Healing Elixir (UA),1st,N,N,1 Minute,Conj.,N,Self,UASS,https://5e.tools/spells.html#healing%20elixir%20(ua)_uass
+Healing Spirit,2nd,N,N,Bonus acn.,Conj.,Y,60 feet,XGE,https://5e.tools/spells.html#healing%20spirit_xge
+Healing Word,1st,N,N,Bonus acn.,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#healing%20word_phb
+Heat Metal,2nd,N,N,Action,Trans.,Y,60 feet,PHB,https://5e.tools/spells.html#heat%20metal_phb
+Hellish Rebuke,1st,N,N,Reaction,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#hellish%20rebuke_phb
+Heroes' Feast,6th,N,N,10 Minutes,Conj.,N,30 feet,PHB,https://5e.tools/spells.html#heroes'%20feast_phb
+Heroism,1st,N,N,Action,Ench.,Y,Touch,PHB,https://5e.tools/spells.html#heroism_phb
+Hex,1st,N,N,Bonus acn.,Ench.,Y,90 feet,PHB,https://5e.tools/spells.html#hex_phb
+Hold Monster,5th,N,N,Action,Ench.,Y,90 feet,PHB,https://5e.tools/spells.html#hold%20monster_phb
+Hold Person,2nd,N,N,Action,Ench.,Y,60 feet,PHB,https://5e.tools/spells.html#hold%20person_phb
+Holy Aura,8th,N,N,Action,Abj.,Y,Self,PHB,https://5e.tools/spells.html#holy%20aura_phb
+Holy Weapon,5th,N,N,Bonus acn.,Evoc.,Y,Touch,XGE,https://5e.tools/spells.html#holy%20weapon_xge
+Hunger of Hadar,3rd,N,N,Action,Conj.,Y,150 feet,PHB,https://5e.tools/spells.html#hunger%20of%20hadar_phb
+Hunter's Mark,1st,N,N,Bonus acn.,Divin.,Y,90 feet,PHB,https://5e.tools/spells.html#hunter's%20mark_phb
+Hypnotic Pattern,3rd,N,N,Action,Illu.,Y,120 feet,PHB,https://5e.tools/spells.html#hypnotic%20pattern_phb
+Ice Knife,1st,N,N,Action,Conj.,N,60 feet,XGE,https://5e.tools/spells.html#ice%20knife_xge
+Ice Storm,4th,N,N,Action,Evoc.,N,300 feet,PHB,https://5e.tools/spells.html#ice%20storm_phb
+Icingdeath's Frost,2nd,N,N,Action,Evoc.,N,Self (15-foot cone),UA21DO,https://5e.tools/spells.html#icingdeath's%20frost_ua21do
+Id Insinuation,1st,N,N,Action,Ench.,Y,60 feet,UAFRW,https://5e.tools/spells.html#id%20insinuation_uafrw
+Identify,1st,Y,N,1 Minute,Divin.,N,Touch,PHB,https://5e.tools/spells.html#identify_phb
+Illusory Dragon,8th,N,N,Action,Illu.,Y,120 feet,XGE,https://5e.tools/spells.html#illusory%20dragon_xge
+Illusory Script,1st,Y,N,1 Minute,Illu.,N,Touch,PHB,https://5e.tools/spells.html#illusory%20script_phb
+Immolation,5th,N,N,Action,Evoc.,Y,90 feet,XGE,https://5e.tools/spells.html#immolation_xge
+Immovable Object,2nd,N,N,Action,Trans.,N,Touch,EGW,https://5e.tools/spells.html#immovable%20object_egw
+Imprisonment,9th,N,N,1 Minute,Abj.,N,30 feet,PHB,https://5e.tools/spells.html#imprisonment_phb
+Incendiary Cloud,8th,N,N,Action,Conj.,Y,150 feet,PHB,https://5e.tools/spells.html#incendiary%20cloud_phb
+Incite Greed,3rd,N,N,Action,Ench.,Y,30 feet,AI,https://5e.tools/spells.html#incite%20greed_ai
+Infallible Relay (UA),1st,N,Y,1 Minute,Divin.,Y,Self,UAMM,https://5e.tools/spells.html#infallible%20relay%20(ua)_uamm
+Infernal Calling,5th,N,N,1 Minute,Conj.,Y,90 feet,XGE,https://5e.tools/spells.html#infernal%20calling_xge
+Infestation,Cantrip,N,N,Action,Conj.,N,30 feet,XGE,https://5e.tools/spells.html#infestation_xge
+Infestation (UA),Cantrip,N,N,Action,Conj.,N,30 feet,UASS,https://5e.tools/spells.html#infestation%20(ua)_uass
+Inflict Wounds,1st,N,N,Action,Necro.,N,Touch,PHB,https://5e.tools/spells.html#inflict%20wounds_phb
+Insect Plague,5th,N,N,Action,Conj.,Y,300 feet,PHB,https://5e.tools/spells.html#insect%20plague_phb
+Intellect Fortress,3rd,N,N,Action,Abj.,Y,30 feet,TCE,https://5e.tools/spells.html#intellect%20fortress_tce
+Intellect Fortress,4th,N,N,Action,Abj.,Y,30 feet,UA20POR,https://5e.tools/spells.html#intellect%20fortress_ua20por
+Intellect Fortress,5th,N,N,Action,Abj.,Y,Self,UAFRW,https://5e.tools/spells.html#intellect%20fortress_uafrw
+Investiture of Flame,6th,N,N,Action,Trans.,Y,Self,XGE,https://5e.tools/spells.html#investiture%20of%20flame_xge
+Investiture of Ice,6th,N,N,Action,Trans.,Y,Self,XGE,https://5e.tools/spells.html#investiture%20of%20ice_xge
+Investiture of Stone,6th,N,N,Action,Trans.,Y,Self,XGE,https://5e.tools/spells.html#investiture%20of%20stone_xge
+Investiture of Wind,6th,N,N,Action,Trans.,Y,Self,XGE,https://5e.tools/spells.html#investiture%20of%20wind_xge
+Invisibility,2nd,N,N,Action,Illu.,Y,Touch,PHB,https://5e.tools/spells.html#invisibility_phb
+Invisibility to Cameras (UA),3rd,N,Y,Action,Illu.,Y,10 feet,UAMM,https://5e.tools/spells.html#invisibility%20to%20cameras%20(ua)_uamm
+Invulnerability,9th,N,N,Action,Abj.,Y,Self,XGE,https://5e.tools/spells.html#invulnerability_xge
+Jim's Glowing Coin,2nd,N,N,Action,Ench.,N,60 feet,AI,https://5e.tools/spells.html#jim's%20glowing%20coin_ai
+Jim's Magic Missile,1st,N,N,Action,Evoc.,N,120 feet,AI,https://5e.tools/spells.html#jim's%20magic%20missile_ai
+Jump,1st,N,N,Action,Trans.,N,Touch,PHB,https://5e.tools/spells.html#jump_phb
+Knock,2nd,N,N,Action,Trans.,N,60 feet,PHB,https://5e.tools/spells.html#knock_phb
+Legend Lore,5th,N,N,10 Minutes,Divin.,N,Self,PHB,https://5e.tools/spells.html#legend%20lore_phb
+Leomund's Secret Chest,4th,N,N,Action,Conj.,N,Touch,PHB,https://5e.tools/spells.html#leomund's%20secret%20chest_phb
+Leomund's Tiny Hut,3rd,Y,N,1 Minute,Evoc.,N,Self (10-foot-radius hemisphere),PHB,https://5e.tools/spells.html#leomund's%20tiny%20hut_phb
+Lesser Restoration,2nd,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#lesser%20restoration_phb
+Levitate,2nd,N,N,Action,Trans.,Y,60 feet,PHB,https://5e.tools/spells.html#levitate_phb
+Life Transference,3rd,N,N,Action,Necro.,N,30 feet,XGE,https://5e.tools/spells.html#life%20transference_xge
+Light,Cantrip,N,N,Action,Evoc.,N,Touch,PHB,https://5e.tools/spells.html#light_phb
+Lightning Arrow,3rd,N,N,Bonus acn.,Trans.,Y,Self,PHB,https://5e.tools/spells.html#lightning%20arrow_phb
+Lightning Bolt,3rd,N,N,Action,Evoc.,N,Self (100-foot line),PHB,https://5e.tools/spells.html#lightning%20bolt_phb
+Lightning Lure,Cantrip,N,N,Action,Evoc.,N,Self (15-foot radius),TCE,https://5e.tools/spells.html#lightning%20lure_tce
+Locate Animals or Plants,2nd,Y,N,Action,Divin.,N,Self,PHB,https://5e.tools/spells.html#locate%20animals%20or%20plants_phb
+Locate Creature,4th,N,N,Action,Divin.,Y,Self,PHB,https://5e.tools/spells.html#locate%20creature_phb
+Locate Object,2nd,N,N,Action,Divin.,Y,Self,PHB,https://5e.tools/spells.html#locate%20object_phb
+Longstrider,1st,N,N,Action,Trans.,N,Touch,PHB,https://5e.tools/spells.html#longstrider_phb
+Maddening Darkness,8th,N,N,Action,Evoc.,Y,150 feet,XGE,https://5e.tools/spells.html#maddening%20darkness_xge
+Maelstrom,5th,N,N,Action,Evoc.,Y,120 feet,XGE,https://5e.tools/spells.html#maelstrom_xge
+Mage Armor,1st,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#mage%20armor_phb
+Mage Hand,Cantrip,N,N,Action,Conj.,N,30 feet,PHB,https://5e.tools/spells.html#mage%20hand_phb
+Magic Circle,3rd,N,N,1 Minute,Abj.,N,10 feet,PHB,https://5e.tools/spells.html#magic%20circle_phb
+Magic Jar,6th,N,N,1 Minute,Necro.,N,Self,PHB,https://5e.tools/spells.html#magic%20jar_phb
+Magic Missile,1st,N,N,Action,Evoc.,N,120 feet,PHB,https://5e.tools/spells.html#magic%20missile_phb
+Magic Mouth,2nd,Y,N,1 Minute,Illu.,N,30 feet,PHB,https://5e.tools/spells.html#magic%20mouth_phb
+Magic Stone,Cantrip,N,N,Bonus acn.,Trans.,N,Touch,XGE,https://5e.tools/spells.html#magic%20stone_xge
+Magic Weapon,2nd,N,N,Bonus acn.,Trans.,Y,Touch,PHB,https://5e.tools/spells.html#magic%20weapon_phb
+Magnify Gravity,1st,N,N,Action,Trans.,N,60 feet,EGW,https://5e.tools/spells.html#magnify%20gravity_egw
+Major Image,3rd,N,N,Action,Illu.,Y,120 feet,PHB,https://5e.tools/spells.html#major%20image_phb
+Mass Cure Wounds,5th,N,N,Action,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#mass%20cure%20wounds_phb
+Mass Heal,9th,N,N,Action,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#mass%20heal_phb
+Mass Healing Word,3rd,N,N,Bonus acn.,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#mass%20healing%20word_phb
+Mass Polymorph,9th,N,N,Action,Trans.,Y,120 feet,XGE,https://5e.tools/spells.html#mass%20polymorph_xge
+Mass Suggestion,6th,N,N,Action,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#mass%20suggestion_phb
+Maximilian's Earthen Grasp,2nd,N,N,Action,Trans.,Y,30 feet,XGE,https://5e.tools/spells.html#maximilian's%20earthen%20grasp_xge
+Maze,8th,N,N,Action,Conj.,Y,60 feet,PHB,https://5e.tools/spells.html#maze_phb
+Meld into Stone,3rd,Y,N,Action,Trans.,N,Touch,PHB,https://5e.tools/spells.html#meld%20into%20stone_phb
+Melf's Acid Arrow,2nd,N,N,Action,Evoc.,N,90 feet,PHB,https://5e.tools/spells.html#melf's%20acid%20arrow_phb
+Melf's Minute Meteors,3rd,N,N,Action,Evoc.,Y,Self,XGE,https://5e.tools/spells.html#melf's%20minute%20meteors_xge
+Mending,Cantrip,N,N,1 Minute,Trans.,N,Touch,PHB,https://5e.tools/spells.html#mending_phb
+Mental Barrier,2nd,N,N,Reaction,Abj.,N,Self,UAFRW,https://5e.tools/spells.html#mental%20barrier_uafrw
+Mental Prison,6th,N,N,Action,Illu.,Y,60 feet,XGE,https://5e.tools/spells.html#mental%20prison_xge
+Message,Cantrip,N,N,Action,Trans.,N,120 feet,PHB,https://5e.tools/spells.html#message_phb
+Meteor Swarm,9th,N,N,Action,Evoc.,N,1 mile,PHB,https://5e.tools/spells.html#meteor%20swarm_phb
+Mighty Fortress,8th,N,N,1 Minute,Conj.,N,1 mile,XGE,https://5e.tools/spells.html#mighty%20fortress_xge
+Mind Blank,8th,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#mind%20blank_phb
+Mind Sliver,Cantrip,N,N,Action,Ench.,N,60 feet,TCE,https://5e.tools/spells.html#mind%20sliver_tce
+Mind Sliver,Cantrip,N,N,Action,Ench.,N,60 feet,UA20POR,https://5e.tools/spells.html#mind%20sliver_ua20por
+Mind Sliver,Cantrip,N,N,Action,Ench.,N,60 feet,UAFRW,https://5e.tools/spells.html#mind%20sliver_uafrw
+Mind Sliver,Cantrip,N,N,Action,Ench.,N,60 feet,UASAW,https://5e.tools/spells.html#mind%20sliver_uasaw
+Mind Spike,2nd,N,N,Action,Divin.,Y,60 feet,XGE,https://5e.tools/spells.html#mind%20spike_xge
+Mind Thrust,2nd,N,N,Action,Ench.,N,90 feet,UA20POR,https://5e.tools/spells.html#mind%20thrust_ua20por
+Mind Thrust,2nd,N,N,Bonus acn.,Ench.,N,60 feet,UAFRW,https://5e.tools/spells.html#mind%20thrust_uafrw
+Minor Illusion,Cantrip,N,N,Action,Illu.,N,30 feet,PHB,https://5e.tools/spells.html#minor%20illusion_phb
+Mirage Arcane,7th,N,N,10 Minutes,Illu.,N,Sight,PHB,https://5e.tools/spells.html#mirage%20arcane_phb
+Mirror Image,2nd,N,N,Action,Illu.,N,Self,PHB,https://5e.tools/spells.html#mirror%20image_phb
+Mislead,5th,N,N,Action,Illu.,Y,Self,PHB,https://5e.tools/spells.html#mislead_phb
+Misty Step,2nd,N,N,Bonus acn.,Conj.,N,Self,PHB,https://5e.tools/spells.html#misty%20step_phb
+Modify Memory,5th,N,N,Action,Ench.,Y,30 feet,PHB,https://5e.tools/spells.html#modify%20memory_phb
+Mold Earth,Cantrip,N,N,Action,Trans.,N,30 feet,XGE,https://5e.tools/spells.html#mold%20earth_xge
+Moonbeam,2nd,N,N,Action,Evoc.,Y,120 feet,PHB,https://5e.tools/spells.html#moonbeam_phb
+Mordenkainen's Faithful Hound,4th,N,N,Action,Conj.,N,30 feet,PHB,https://5e.tools/spells.html#mordenkainen's%20faithful%20hound_phb
+Mordenkainen's Magnificent Mansion,7th,N,N,1 Minute,Conj.,N,300 feet,PHB,https://5e.tools/spells.html#mordenkainen's%20magnificent%20mansion_phb
+Mordenkainen's Private Sanctum,4th,N,N,10 Minutes,Abj.,N,120 feet,PHB,https://5e.tools/spells.html#mordenkainen's%20private%20sanctum_phb
+Mordenkainen's Sword,7th,N,N,Action,Evoc.,Y,60 feet,PHB,https://5e.tools/spells.html#mordenkainen's%20sword_phb
+Motivational Speech,3rd,N,N,1 Minute,Ench.,N,60 feet,AI,https://5e.tools/spells.html#motivational%20speech_ai
+Move Earth,6th,N,N,Action,Trans.,Y,120 feet,PHB,https://5e.tools/spells.html#move%20earth_phb
+Nathair's Mischief,2nd,N,N,Action,Illu.,Y,60 feet,UA21DO,https://5e.tools/spells.html#nathair's%20mischief_ua21do
+Negative Energy Flood,5th,N,N,Action,Necro.,N,60 feet,XGE,https://5e.tools/spells.html#negative%20energy%20flood_xge
+Nondetection,3rd,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#nondetection_phb
+Nystul's Magic Aura,2nd,N,N,Action,Illu.,N,Touch,PHB,https://5e.tools/spells.html#nystul's%20magic%20aura_phb
+On/Off (UA),Cantrip,N,Y,Action,Trans.,N,60 feet,UAMM,https://5e.tools/spells.html#on/off%20(ua)_uamm
+Otherworldly Form,6th,N,N,Action,Trans.,Y,Self,UA20SMT,https://5e.tools/spells.html#otherworldly%20form_ua20smt
+Otiluke's Freezing Sphere,6th,N,N,Action,Evoc.,N,300 feet,PHB,https://5e.tools/spells.html#otiluke's%20freezing%20sphere_phb
+Otiluke's Resilient Sphere,4th,N,N,Action,Evoc.,Y,30 feet,PHB,https://5e.tools/spells.html#otiluke's%20resilient%20sphere_phb
+Otto's Irresistible Dance,6th,N,N,Action,Ench.,Y,30 feet,PHB,https://5e.tools/spells.html#otto's%20irresistible%20dance_phb
+Pass without Trace,2nd,N,N,Action,Abj.,Y,Self,PHB,https://5e.tools/spells.html#pass%20without%20trace_phb
+Passwall,5th,N,N,Action,Trans.,N,30 feet,PHB,https://5e.tools/spells.html#passwall_phb
+Phantasmal Force,2nd,N,N,Action,Illu.,Y,60 feet,PHB,https://5e.tools/spells.html#phantasmal%20force_phb
+Phantasmal Killer,4th,N,N,Action,Illu.,Y,120 feet,PHB,https://5e.tools/spells.html#phantasmal%20killer_phb
+Phantom Steed,3rd,Y,N,1 Minute,Illu.,N,30 feet,PHB,https://5e.tools/spells.html#phantom%20steed_phb
+Planar Ally,6th,N,N,10 Minutes,Conj.,N,60 feet,PHB,https://5e.tools/spells.html#planar%20ally_phb
+Planar Binding,5th,N,N,1 Hour,Abj.,N,60 feet,PHB,https://5e.tools/spells.html#planar%20binding_phb
+Plane Shift,7th,N,N,Action,Conj.,N,Touch,PHB,https://5e.tools/spells.html#plane%20shift_phb
+Plant Growth,3rd,N,N,Action,Trans.,N,150 feet,PHB,https://5e.tools/spells.html#plant%20growth_phb
+Poison Spray,Cantrip,N,N,Action,Conj.,N,10 feet,PHB,https://5e.tools/spells.html#poison%20spray_phb
+Polymorph,4th,N,N,Action,Trans.,Y,60 feet,PHB,https://5e.tools/spells.html#polymorph_phb
+Power Word Heal,9th,N,N,Action,Evoc.,N,Touch,PHB,https://5e.tools/spells.html#power%20word%20heal_phb
+Power Word Kill,9th,N,N,Action,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#power%20word%20kill_phb
+Power Word Pain,7th,N,N,Action,Ench.,N,60 feet,XGE,https://5e.tools/spells.html#power%20word%20pain_xge
+Power Word Stun,8th,N,N,Action,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#power%20word%20stun_phb
+Prayer of Healing,2nd,N,N,10 Minutes,Evoc.,N,30 feet,PHB,https://5e.tools/spells.html#prayer%20of%20healing_phb
+Prestidigitation,Cantrip,N,N,Action,Trans.,N,10 feet,PHB,https://5e.tools/spells.html#prestidigitation_phb
+Primal Savagery,Cantrip,N,N,Action,Trans.,N,Self,XGE,https://5e.tools/spells.html#primal%20savagery_xge
+Primal Savagery (UA),Cantrip,N,N,Action,Trans.,N,Self,UASS,https://5e.tools/spells.html#primal%20savagery%20(ua)_uass
+Primordial Ward,6th,N,N,Action,Abj.,Y,Self,XGE,https://5e.tools/spells.html#primordial%20ward_xge
+Prismatic Spray,7th,N,N,Action,Evoc.,N,Self (60-foot cone),PHB,https://5e.tools/spells.html#prismatic%20spray_phb
+Prismatic Wall,9th,N,N,Action,Abj.,N,60 feet,PHB,https://5e.tools/spells.html#prismatic%20wall_phb
+Produce Flame,Cantrip,N,N,Action,Conj.,N,Self,PHB,https://5e.tools/spells.html#produce%20flame_phb
+Programmed Illusion,6th,N,N,Action,Illu.,N,120 feet,PHB,https://5e.tools/spells.html#programmed%20illusion_phb
+Project Image,7th,N,N,Action,Illu.,Y,500 miles,PHB,https://5e.tools/spells.html#project%20image_phb
+Protection from Ballistics (UA),3rd,N,N,Action,Abj.,Y,Touch,UAMM,https://5e.tools/spells.html#protection%20from%20ballistics%20(ua)_uamm
+Protection from Energy,3rd,N,N,Action,Abj.,Y,Touch,PHB,https://5e.tools/spells.html#protection%20from%20energy_phb
+Protection from Evil and Good,1st,N,N,Action,Abj.,Y,Touch,PHB,https://5e.tools/spells.html#protection%20from%20evil%20and%20good_phb
+Protection from Poison,2nd,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#protection%20from%20poison_phb
+Psionic Blast,3rd,N,N,Action,Evoc.,N,Self (30-foot cone),UAFRW,https://5e.tools/spells.html#psionic%20blast_uafrw
+Psychic Crush,6th,N,N,Action,Ench.,N,60 feet,UAFRW,https://5e.tools/spells.html#psychic%20crush_uafrw
+Psychic Scream,9th,N,N,Action,Ench.,N,90 feet,XGE,https://5e.tools/spells.html#psychic%20scream_xge
+Pulse Wave,3rd,N,N,Action,Evoc.,N,Self (30-foot cone),EGW,https://5e.tools/spells.html#pulse%20wave_egw
+Puppet (UA),1st,N,N,Action,Ench.,N,120 feet,UASS,https://5e.tools/spells.html#puppet%20(ua)_uass
+Purify Food and Drink,1st,Y,N,Action,Trans.,N,10 feet,PHB,https://5e.tools/spells.html#purify%20food%20and%20drink_phb
+Pyrotechnics,2nd,N,N,Action,Trans.,N,60 feet,XGE,https://5e.tools/spells.html#pyrotechnics_xge
+Raise Dead,5th,N,N,1 Hour,Necro.,N,Touch,PHB,https://5e.tools/spells.html#raise%20dead_phb
+Rary's Telepathic Bond,5th,Y,N,Action,Divin.,N,30 feet,PHB,https://5e.tools/spells.html#rary's%20telepathic%20bond_phb
+Raulothim's Psychic Lance,4th,N,N,Action,Ench.,N,120 feet,UA21DO,https://5e.tools/spells.html#raulothim's%20psychic%20lance_ua21do
+Ravenous Void,9th,N,N,Action,Evoc.,Y,1000 feet,EGW,https://5e.tools/spells.html#ravenous%20void_egw
+Ray of Enfeeblement,2nd,N,N,Action,Necro.,Y,60 feet,PHB,https://5e.tools/spells.html#ray%20of%20enfeeblement_phb
+Ray of Frost,Cantrip,N,N,Action,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#ray%20of%20frost_phb
+Ray of Sickness,1st,N,N,Action,Necro.,N,60 feet,PHB,https://5e.tools/spells.html#ray%20of%20sickness_phb
+Reality Break,8th,N,N,Action,Conj.,Y,60 feet,EGW,https://5e.tools/spells.html#reality%20break_egw
+Regenerate,7th,N,N,1 Minute,Trans.,N,Touch,PHB,https://5e.tools/spells.html#regenerate_phb
+Reincarnate,5th,N,N,1 Hour,Trans.,N,Touch,PHB,https://5e.tools/spells.html#reincarnate_phb
+Remote Access (UA),1st,N,Y,Action,Trans.,N,120 feet,UAMM,https://5e.tools/spells.html#remote%20access%20(ua)_uamm
+Remove Curse,3rd,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#remove%20curse_phb
+Resistance,Cantrip,N,N,Action,Abj.,Y,Touch,PHB,https://5e.tools/spells.html#resistance_phb
+Resurrection,7th,N,N,1 Hour,Necro.,N,Touch,PHB,https://5e.tools/spells.html#resurrection_phb
+Reverse Gravity,7th,N,N,Action,Trans.,Y,100 feet,PHB,https://5e.tools/spells.html#reverse%20gravity_phb
+Revivify,3rd,N,N,Action,Necro.,N,Touch,PHB,https://5e.tools/spells.html#revivify_phb
+Rope Trick,2nd,N,N,Action,Trans.,N,Touch,PHB,https://5e.tools/spells.html#rope%20trick_phb
+Sacred Flame,Cantrip,N,N,Action,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#sacred%20flame_phb
+Sanctuary,1st,N,N,Bonus acn.,Abj.,N,30 feet,PHB,https://5e.tools/spells.html#sanctuary_phb
+Sapping Sting,Cantrip,N,N,Action,Necro.,N,30 feet,EGW,https://5e.tools/spells.html#sapping%20sting_egw
+Scatter,6th,N,N,Action,Conj.,N,30 feet,XGE,https://5e.tools/spells.html#scatter_xge
+Scorching Ray,2nd,N,N,Action,Evoc.,N,120 feet,PHB,https://5e.tools/spells.html#scorching%20ray_phb
+Scrying,5th,N,N,10 Minutes,Divin.,Y,Self,PHB,https://5e.tools/spells.html#scrying_phb
+Searing Smite,1st,N,N,Bonus acn.,Evoc.,Y,Self,PHB,https://5e.tools/spells.html#searing%20smite_phb
+See Invisibility,2nd,N,N,Action,Divin.,N,Self,PHB,https://5e.tools/spells.html#see%20invisibility_phb
+Seeming,5th,N,N,Action,Illu.,N,30 feet,PHB,https://5e.tools/spells.html#seeming_phb
+Sending,3rd,N,N,Action,Evoc.,N,Unlimited,PHB,https://5e.tools/spells.html#sending_phb
+Sense Emotion (UA),1st,N,N,Action,Divin.,Y,Self,UASS,https://5e.tools/spells.html#sense%20emotion%20(ua)_uass
+Sequester,7th,N,N,Action,Trans.,N,Touch,PHB,https://5e.tools/spells.html#sequester_phb
+Shadow Blade,2nd,N,N,Bonus acn.,Illu.,Y,Self,XGE,https://5e.tools/spells.html#shadow%20blade_xge
+Shadow of Moil,4th,N,N,Action,Necro.,Y,Self,XGE,https://5e.tools/spells.html#shadow%20of%20moil_xge
+Shape Water,Cantrip,N,N,Action,Trans.,N,30 feet,XGE,https://5e.tools/spells.html#shape%20water_xge
+Shapechange,9th,N,N,Action,Trans.,Y,Self,PHB,https://5e.tools/spells.html#shapechange_phb
+Shatter,2nd,N,N,Action,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#shatter_phb
+Shield,1st,N,N,Reaction,Abj.,N,Self,PHB,https://5e.tools/spells.html#shield_phb
+Shield of Faith,1st,N,N,Bonus acn.,Abj.,Y,60 feet,PHB,https://5e.tools/spells.html#shield%20of%20faith_phb
+Shillelagh,Cantrip,N,N,Bonus acn.,Trans.,N,Touch,PHB,https://5e.tools/spells.html#shillelagh_phb
+Shocking Grasp,Cantrip,N,N,Action,Evoc.,N,Touch,PHB,https://5e.tools/spells.html#shocking%20grasp_phb
+Shutdown (UA),5th,N,Y,Action,Trans.,Y,120 feet,UAMM,https://5e.tools/spells.html#shutdown%20(ua)_uamm
+Sickening Radiance,4th,N,N,Action,Evoc.,Y,120 feet,XGE,https://5e.tools/spells.html#sickening%20radiance_xge
+Silence,2nd,Y,N,Action,Illu.,Y,120 feet,PHB,https://5e.tools/spells.html#silence_phb
+Silent Image,1st,N,N,Action,Illu.,Y,60 feet,PHB,https://5e.tools/spells.html#silent%20image_phb
+Simulacrum,7th,N,N,12 Hours,Illu.,N,Touch,PHB,https://5e.tools/spells.html#simulacrum_phb
+Skill Empowerment,5th,N,N,Action,Trans.,Y,Touch,XGE,https://5e.tools/spells.html#skill%20empowerment_xge
+Skywrite,2nd,Y,N,Action,Trans.,Y,Sight,XGE,https://5e.tools/spells.html#skywrite_xge
+Sleep,1st,N,N,Action,Ench.,N,90 feet,PHB,https://5e.tools/spells.html#sleep_phb
+Sleet Storm,3rd,N,N,Action,Conj.,Y,150 feet,PHB,https://5e.tools/spells.html#sleet%20storm_phb
+Slow,3rd,N,N,Action,Trans.,Y,120 feet,PHB,https://5e.tools/spells.html#slow_phb
+Snare,1st,N,N,1 Minute,Abj.,N,Touch,XGE,https://5e.tools/spells.html#snare_xge
+Snare (UA),1st,N,N,1 Minute,Abj.,N,Touch,UASS,https://5e.tools/spells.html#snare%20(ua)_uass
+Snilloc's Snowball Swarm,2nd,N,N,Action,Evoc.,N,90 feet,XGE,https://5e.tools/spells.html#snilloc's%20snowball%20swarm_xge
+Soul Cage,6th,N,N,Reaction,Necro.,N,60 feet,XGE,https://5e.tools/spells.html#soul%20cage_xge
+Spare the Dying,Cantrip,N,N,Action,Necro.,N,Touch,PHB,https://5e.tools/spells.html#spare%20the%20dying_phb
+Speak with Animals,1st,Y,N,Action,Divin.,N,Self,PHB,https://5e.tools/spells.html#speak%20with%20animals_phb
+Speak with Dead,3rd,N,N,Action,Necro.,N,10 feet,PHB,https://5e.tools/spells.html#speak%20with%20dead_phb
+Speak with Plants,3rd,N,N,Action,Trans.,N,Self (30-foot radius),PHB,https://5e.tools/spells.html#speak%20with%20plants_phb
+Spider Climb,2nd,N,N,Action,Trans.,Y,Touch,PHB,https://5e.tools/spells.html#spider%20climb_phb
+Spike Growth,2nd,N,N,Action,Trans.,Y,150 feet,PHB,https://5e.tools/spells.html#spike%20growth_phb
+Spirit Guardians,3rd,N,N,Action,Conj.,Y,Self (15-foot radius),PHB,https://5e.tools/spells.html#spirit%20guardians_phb
+Spirit Shroud,3rd,N,N,Bonus acn.,Necro.,Y,Self,TCE,https://5e.tools/spells.html#spirit%20shroud_tce
+Spirit Shroud,3rd,N,N,1 Bonus action,Necro.,Y,Self,UA20SMT,https://5e.tools/spells.html#spirit%20shroud_ua20smt
+Spiritual Weapon,2nd,N,N,Bonus acn.,Evoc.,N,60 feet,PHB,https://5e.tools/spells.html#spiritual%20weapon_phb
+Staggering Smite,4th,N,N,Bonus acn.,Evoc.,Y,Self,PHB,https://5e.tools/spells.html#staggering%20smite_phb
+Steel Wind Strike,5th,N,N,Action,Conj.,N,30 feet,XGE,https://5e.tools/spells.html#steel%20wind%20strike_xge
+Stinking Cloud,3rd,N,N,Action,Conj.,Y,90 feet,PHB,https://5e.tools/spells.html#stinking%20cloud_phb
+Stone Shape,4th,N,N,Action,Trans.,N,Touch,PHB,https://5e.tools/spells.html#stone%20shape_phb
+Stoneskin,4th,N,N,Action,Abj.,Y,Touch,PHB,https://5e.tools/spells.html#stoneskin_phb
+Storm of Vengeance,9th,N,N,Action,Conj.,Y,Sight,PHB,https://5e.tools/spells.html#storm%20of%20vengeance_phb
+Storm Sphere,4th,N,N,Action,Evoc.,Y,150 feet,XGE,https://5e.tools/spells.html#storm%20sphere_xge
+Sudden Awakening (UA),1st,N,N,Bonus acn.,Ench.,N,10 feet,UASS,https://5e.tools/spells.html#sudden%20awakening%20(ua)_uass
+Suggestion,2nd,N,N,Action,Ench.,Y,30 feet,PHB,https://5e.tools/spells.html#suggestion_phb
+Summon Aberrant Spirit,4th,N,N,Action,Conj.,Y,90 feet,UA20SMT,https://5e.tools/spells.html#summon%20aberrant%20spirit_ua20smt
+Summon Aberration,4th,N,N,Action,Conj.,Y,90 feet,TCE,https://5e.tools/spells.html#summon%20aberration_tce
+Summon Beast,2nd,N,N,Action,Conj.,Y,90 feet,TCE,https://5e.tools/spells.html#summon%20beast_tce
+Summon Bestial Spirit,2nd,N,N,Action,Conj.,Y,90 feet,UA20SMT,https://5e.tools/spells.html#summon%20bestial%20spirit_ua20smt
+Summon Celestial,5th,N,N,Action,Conj.,Y,90 feet,TCE,https://5e.tools/spells.html#summon%20celestial_tce
+Summon Celestial Spirit,5th,N,N,Action,Conj.,Y,90 feet,UA20SMT,https://5e.tools/spells.html#summon%20celestial%20spirit_ua20smt
+Summon Construct,4th,N,N,Action,Conj.,Y,90 feet,TCE,https://5e.tools/spells.html#summon%20construct_tce
+Summon Draconic Spirit,5th,N,N,Action,Conj.,Y,60 feet,UA21DO,https://5e.tools/spells.html#summon%20draconic%20spirit_ua21do
+Summon Elemental,4th,N,N,Action,Conj.,Y,90 feet,TCE,https://5e.tools/spells.html#summon%20elemental_tce
+Summon Elemental Spirit,4th,N,N,Action,Conj.,Y,90 feet,UA20SMT,https://5e.tools/spells.html#summon%20elemental%20spirit_ua20smt
+Summon Fey,3rd,N,N,Action,Conj.,Y,90 feet,TCE,https://5e.tools/spells.html#summon%20fey_tce
+Summon Fey Spirit,3rd,N,N,Action,Conj.,Y,90 feet,UA20SMT,https://5e.tools/spells.html#summon%20fey%20spirit_ua20smt
+Summon Fiend,6th,N,N,Action,Conj.,Y,90 feet,TCE,https://5e.tools/spells.html#summon%20fiend_tce
+Summon Fiendish Spirit,6th,N,N,Action,Conj.,Y,90 feet,UA20SMT,https://5e.tools/spells.html#summon%20fiendish%20spirit_ua20smt
+Summon Greater Demon,4th,N,N,Action,Conj.,Y,60 feet,XGE,https://5e.tools/spells.html#summon%20greater%20demon_xge
+Summon Lesser Demons,3rd,N,N,Action,Conj.,Y,60 feet,XGE,https://5e.tools/spells.html#summon%20lesser%20demons_xge
+Summon Shadow Spirit,3rd,N,N,Action,Conj.,Y,90 feet,UA20SMT,https://5e.tools/spells.html#summon%20shadow%20spirit_ua20smt
+Summon Shadowspawn,3rd,N,N,Action,Conj.,Y,90 feet,TCE,https://5e.tools/spells.html#summon%20shadowspawn_tce
+Summon Undead,3rd,N,N,Action,Necro.,Y,90 feet,TCE,https://5e.tools/spells.html#summon%20undead_tce
+Summon Undead Spirit,3rd,N,N,Action,Necro.,Y,90 feet,UA20SMT,https://5e.tools/spells.html#summon%20undead%20spirit_ua20smt
+Sunbeam,6th,N,N,Action,Evoc.,Y,Self (60-foot line),PHB,https://5e.tools/spells.html#sunbeam_phb
+Sunburst,8th,N,N,Action,Evoc.,N,150 feet,PHB,https://5e.tools/spells.html#sunburst_phb
+Swift Quiver,5th,N,N,Bonus acn.,Trans.,Y,Touch,PHB,https://5e.tools/spells.html#swift%20quiver_phb
+Sword Burst,Cantrip,N,N,Action,Conj.,N,Self (5-foot radius),TCE,https://5e.tools/spells.html#sword%20burst_tce
+Symbol,7th,N,N,1 Minute,Abj.,N,Touch,PHB,https://5e.tools/spells.html#symbol_phb
+Synaptic Static,5th,N,N,Action,Ench.,N,120 feet,XGE,https://5e.tools/spells.html#synaptic%20static_xge
+Synchronicity (UA),4th,N,N,Action,Ench.,Y,Touch,UAMM,https://5e.tools/spells.html#synchronicity%20(ua)_uamm
+System Backdoor (UA),4th,N,Y,1 Minute,Trans.,Y,Self,UAMM,https://5e.tools/spells.html#system%20backdoor%20(ua)_uamm
+Tasha's Caustic Brew,1st,N,N,Action,Evoc.,Y,Self (30-foot line),TCE,https://5e.tools/spells.html#tasha's%20caustic%20brew_tce
+Tasha's Hideous Laughter,1st,N,N,Action,Ench.,Y,30 feet,PHB,https://5e.tools/spells.html#tasha's%20hideous%20laughter_phb
+Tasha's Mind Whip,2nd,N,N,Action,Ench.,N,90 feet,TCE,https://5e.tools/spells.html#tasha's%20mind%20whip_tce
+Tasha's Otherworldly Guise,6th,N,N,Bonus acn.,Trans.,Y,Self,TCE,https://5e.tools/spells.html#tasha's%20otherworldly%20guise_tce
+Telekinesis,5th,N,N,Action,Trans.,Y,60 feet,PHB,https://5e.tools/spells.html#telekinesis_phb
+Telepathy,8th,N,N,Action,Evoc.,N,Unlimited,PHB,https://5e.tools/spells.html#telepathy_phb
+Teleport,7th,N,N,Action,Conj.,N,10 feet,PHB,https://5e.tools/spells.html#teleport_phb
+Teleportation Circle,5th,N,N,1 Minute,Conj.,N,10 feet,PHB,https://5e.tools/spells.html#teleportation%20circle_phb
+Temple of the Gods,7th,N,N,1 Hour,Conj.,N,120 feet,XGE,https://5e.tools/spells.html#temple%20of%20the%20gods_xge
+Temporal Shunt,5th,N,N,Reaction,Trans.,N,120 feet,EGW,https://5e.tools/spells.html#temporal%20shunt_egw
+Tenser's Floating Disk,1st,Y,N,Action,Conj.,N,30 feet,PHB,https://5e.tools/spells.html#tenser's%20floating%20disk_phb
+Tenser's Transformation,6th,N,N,Action,Trans.,Y,Self,XGE,https://5e.tools/spells.html#tenser's%20transformation_xge
+Tether Essence,7th,N,N,Action,Necro.,Y,60 feet,EGW,https://5e.tools/spells.html#tether%20essence_egw
+Thaumaturgy,Cantrip,N,N,Action,Trans.,N,30 feet,PHB,https://5e.tools/spells.html#thaumaturgy_phb
+Thorn Whip,Cantrip,N,N,Action,Trans.,N,30 feet,PHB,https://5e.tools/spells.html#thorn%20whip_phb
+Thought Shield,2nd,N,N,Action,Abj.,N,Touch,UAFRW,https://5e.tools/spells.html#thought%20shield_uafrw
+Thunder Step,3rd,N,N,Action,Conj.,N,90 feet,XGE,https://5e.tools/spells.html#thunder%20step_xge
+Thunderclap,Cantrip,N,N,Action,Evoc.,N,5 feet,XGE,https://5e.tools/spells.html#thunderclap_xge
+Thunderous Smite,1st,N,N,Bonus acn.,Evoc.,Y,Self,PHB,https://5e.tools/spells.html#thunderous%20smite_phb
+Thunderwave,1st,N,N,Action,Evoc.,N,Self (15-foot cube),PHB,https://5e.tools/spells.html#thunderwave_phb
+Tidal Wave,3rd,N,N,Action,Conj.,N,120 feet,XGE,https://5e.tools/spells.html#tidal%20wave_xge
+Time Ravage,9th,N,N,Action,Necro.,N,90 feet,EGW,https://5e.tools/spells.html#time%20ravage_egw
+Time Stop,9th,N,N,Action,Trans.,N,Self,PHB,https://5e.tools/spells.html#time%20stop_phb
+Tiny Servant,3rd,N,N,1 Minute,Trans.,N,Touch,XGE,https://5e.tools/spells.html#tiny%20servant_xge
+Toll the Dead,Cantrip,N,N,Action,Necro.,N,60 feet,XGE,https://5e.tools/spells.html#toll%20the%20dead_xge
+Toll the Dead (UA),Cantrip,N,N,Action,Necro.,N,60 feet,UASS,https://5e.tools/spells.html#toll%20the%20dead%20(ua)_uass
+Tongues,3rd,N,N,Action,Divin.,N,Touch,PHB,https://5e.tools/spells.html#tongues_phb
+Transmute Rock,5th,N,N,Action,Trans.,N,120 feet,XGE,https://5e.tools/spells.html#transmute%20rock_xge
+Transport via Plants,6th,N,N,Action,Conj.,N,10 feet,PHB,https://5e.tools/spells.html#transport%20via%20plants_phb
+Tree Stride,5th,N,N,Action,Conj.,Y,Self,PHB,https://5e.tools/spells.html#tree%20stride_phb
+True Polymorph,9th,N,N,Action,Trans.,Y,30 feet,PHB,https://5e.tools/spells.html#true%20polymorph_phb
+True Resurrection,9th,N,N,1 Hour,Necro.,N,Touch,PHB,https://5e.tools/spells.html#true%20resurrection_phb
+True Seeing,6th,N,N,Action,Divin.,N,Touch,PHB,https://5e.tools/spells.html#true%20seeing_phb
+True Strike,Cantrip,N,N,Action,Divin.,Y,30 feet,PHB,https://5e.tools/spells.html#true%20strike_phb
+Tsunami,8th,N,N,1 Minute,Conj.,Y,Sight,PHB,https://5e.tools/spells.html#tsunami_phb
+Unearthly Chorus (UA),1st,N,N,Action,Illu.,Y,Self (30-foot radius),UASS,https://5e.tools/spells.html#unearthly%20chorus%20(ua)_uass
+Unseen Servant,1st,Y,N,Action,Conj.,N,60 feet,PHB,https://5e.tools/spells.html#unseen%20servant_phb
+Vampiric Touch,3rd,N,N,Action,Necro.,Y,Self,PHB,https://5e.tools/spells.html#vampiric%20touch_phb
+Vicious Mockery,Cantrip,N,N,Action,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#vicious%20mockery_phb
+Virtue (UA),Cantrip,N,N,Action,Abj.,N,Touch,UASS,https://5e.tools/spells.html#virtue%20(ua)_uass
+Vitriolic Sphere,4th,N,N,Action,Evoc.,N,150 feet,XGE,https://5e.tools/spells.html#vitriolic%20sphere_xge
+Wall of Fire,4th,N,N,Action,Evoc.,Y,120 feet,PHB,https://5e.tools/spells.html#wall%20of%20fire_phb
+Wall of Force,5th,N,N,Action,Evoc.,Y,120 feet,PHB,https://5e.tools/spells.html#wall%20of%20force_phb
+Wall of Ice,6th,N,N,Action,Evoc.,Y,120 feet,PHB,https://5e.tools/spells.html#wall%20of%20ice_phb
+Wall of Light,5th,N,N,Action,Evoc.,Y,120 feet,XGE,https://5e.tools/spells.html#wall%20of%20light_xge
+Wall of Sand,3rd,N,N,Action,Evoc.,Y,90 feet,XGE,https://5e.tools/spells.html#wall%20of%20sand_xge
+Wall of Stone,5th,N,N,Action,Evoc.,Y,120 feet,PHB,https://5e.tools/spells.html#wall%20of%20stone_phb
+Wall of Thorns,6th,N,N,Action,Conj.,Y,120 feet,PHB,https://5e.tools/spells.html#wall%20of%20thorns_phb
+Wall of Water,3rd,N,N,Action,Evoc.,Y,60 feet,XGE,https://5e.tools/spells.html#wall%20of%20water_xge
+Warding Bond,2nd,N,N,Action,Abj.,N,Touch,PHB,https://5e.tools/spells.html#warding%20bond_phb
+Warding Wind,2nd,N,N,Action,Evoc.,Y,Self,XGE,https://5e.tools/spells.html#warding%20wind_xge
+Water Breathing,3rd,Y,N,Action,Trans.,N,30 feet,PHB,https://5e.tools/spells.html#water%20breathing_phb
+Water Walk,3rd,Y,N,Action,Trans.,N,30 feet,PHB,https://5e.tools/spells.html#water%20walk_phb
+Watery Sphere,4th,N,N,Action,Conj.,Y,90 feet,XGE,https://5e.tools/spells.html#watery%20sphere_xge
+Web,2nd,N,N,Action,Conj.,Y,60 feet,PHB,https://5e.tools/spells.html#web_phb
+Weird,9th,N,N,Action,Illu.,Y,120 feet,PHB,https://5e.tools/spells.html#weird_phb
+Whirlwind,7th,N,N,Action,Evoc.,Y,300 feet,XGE,https://5e.tools/spells.html#whirlwind_xge
+Wild Cunning (UA),1st,Y,N,Action,Trans.,N,120 feet,UASS,https://5e.tools/spells.html#wild%20cunning%20(ua)_uass
+Wind Walk,6th,N,N,1 Minute,Trans.,N,30 feet,PHB,https://5e.tools/spells.html#wind%20walk_phb
+Wind Wall,3rd,N,N,Action,Evoc.,Y,120 feet,PHB,https://5e.tools/spells.html#wind%20wall_phb
+Wish,9th,N,N,Action,Conj.,N,Self,PHB,https://5e.tools/spells.html#wish_phb
+Witch Bolt,1st,N,N,Action,Evoc.,Y,30 feet,PHB,https://5e.tools/spells.html#witch%20bolt_phb
+Word of Radiance,Cantrip,N,N,Action,Evoc.,N,5 feet,XGE,https://5e.tools/spells.html#word%20of%20radiance_xge
+Word of Recall,6th,N,N,Action,Conj.,N,5 feet,PHB,https://5e.tools/spells.html#word%20of%20recall_phb
+Wrath of Nature,5th,N,N,Action,Evoc.,Y,120 feet,XGE,https://5e.tools/spells.html#wrath%20of%20nature_xge
+Wrathful Smite,1st,N,N,Bonus acn.,Evoc.,Y,Self,PHB,https://5e.tools/spells.html#wrathful%20smite_phb
+Wristpocket,2nd,Y,N,Action,Conj.,Y,Self,EGW,https://5e.tools/spells.html#wristpocket_egw
+Zephyr Strike,1st,N,N,Bonus acn.,Trans.,Y,Self,XGE,https://5e.tools/spells.html#zephyr%20strike_xge
+Zephyr Strike (UA),1st,N,N,Bonus acn.,Trans.,Y,Self,UASS,https://5e.tools/spells.html#zephyr%20strike%20(ua)_uass
+Zone of Truth,2nd,N,N,Action,Ench.,N,60 feet,PHB,https://5e.tools/spells.html#zone%20of%20truth_phb
