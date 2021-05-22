@@ -180,3 +180,17 @@ function rollDice(string){
 function appendLink(string) {
 
 }
+
+// Function to copy text of a specified element
+// Source: https://stackoverflow.com/a/54498963/3725925
+function copyElementText(id) {
+    var text = document.getElementById(id).innerText;
+    var elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = text;
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+    // Alert the user that it has been copied
+    alert("The bottom list has been copied to your clipboard!");
+}
