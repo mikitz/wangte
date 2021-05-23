@@ -54,6 +54,50 @@ main li:hover {
 main li {
     word-wrap: break-word;
 }
+
+/* Vertical Navigation */
+.navlocal {
+    float: left;
+    top: 0 !important;
+    left: 0 !important;
+    width: 250px !important;
+    height: 100vh !important;
+    overflow: auto !important;
+    background: black !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: top !important;
+    position: fixed;
+    margin-top: 50px;
+}
+.navlocal img {
+    width: 70% !important;
+    display: block !important;
+    margin-bottom: 35px !important;
+    align-content: center !important;
+}
+.navlocal a {
+    display: inline-block !important;
+    text-decoration: none !important;
+    /* padding: 5px 15px !important; */
+    font-size: 0.7em !important;
+    color: red !important;
+    font-weight: bold !important;
+    /* text-transform: uppercase !important; */
+    letter-spacing: 0.05em !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    text-align: center !important;
+}
+.navlocal a:hover {
+    color: purple !important;
+}
+.navlocal h2 {
+    background-color: black !important;
+    text-transform: uppercase;
+}
+
+
 /* Dropdown Button */
 .dropbtn {
 background-color: #4CAF50;
@@ -126,58 +170,3 @@ table.tableizer-table {
     -webkit-transform: scale(5); /* Safari 3-8 */
     transform: scale(5); 
 }
-/* 
-    The following is from tdj182's original style sheet for GMQuickRollAdjustable 
-*/
-.seperateDiceArea {
-    display: flex;
-    flex-direction: row;
-
-    /*to eliminate all padding&margin*/
-    flex-grow: 0;
-}
-.btn-primary {
-    background-color: rgb(41, 41, 41);
-    min-width: 90px;
-    border: rgb(100, 90, 77) 1px solid;
-}
-.outline {
-    border: red solid 1px;
-}
-input {
-    text-align: center;
-    /* font-size: large; */
-    width: 50px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-input:not(:focus) {
-    background-color: rgb(209, 209, 209);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-.static-text {
-    /* font-size: large; */
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.type-4d {
-    background-color: red;
-}
-.type-6d {
-    background-color: green;
-}
-.type-8d {
-    background-color: yellow;
-    color: black; /*Use this if you want to change the font color*/
-}
-.type-10d {
-    background-color: orange;
-}
-.type-12d {
-    background-color: magenta;
-}
-.container-fluid li {
-    background-color: rgb(74, 80, 76);
-}
-  
