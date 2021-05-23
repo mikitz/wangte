@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GameMaster Website</title>  
+    <link rel="stylesheet" href="../style.css"/>
+    <script src="Pickers.js"></script>
+    <script src="Database_Wild_Magic_Surge.js"></script>
+    <script src="../Global_Functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>  
+  
+<body>
+    <!--Navigation Panel START-->
+    <div id="nav_placeholder"></div>
+    <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+    <!--Navigation Local START-->   
+    <div id="nav_local"></div>
+    <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+    <main>
+        <h1>Wild Magic Surge</h1>
+        <h2>Just Gimme a Wild Surge!</h2>
+        <p>Roll on <a href="https://www.dandwiki.com/wiki/Wild_Magic_Surge_Table,_Variant_(5e_Variant_Rule)" rel="noopener noreferrer" target="_blank">this</a> Wild Magic Surge table.</p>
+        <p>
+            Wild Surges only occur if you roll the spell's level or lower on 1d10.<br>
+            <i>Set Level to N/A if you just want a random surge.</i>
+        </p>
+        <label for="level">Level:</label>
+            <select name="level" id="level">
+                <option value="n/a">N/A</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">5th</option>
+                <option value="6">6th</option>
+                <option value="7">7th</option>
+                <option value="8">8th</option>
+                <option value="9">9th</option>
+            </select>
+        <p></p>
+        <button onclick="wild_magic_surge()">Generate</button>
+        <button onclick="clear_shit()">Clear Output</button>
+        <!--Linked Text List-->
+        <p id ="output"></p>
+        <!--Link List Output-->
+        <p id="output_link_list"></p>
+        <button onclick="copyElementText('output_link_list')">Copy Text</button>
+    </main> 
+</body>  
+</html>

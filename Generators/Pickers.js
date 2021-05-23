@@ -262,3 +262,59 @@ function pick_spell(){
                 document.getElementById('output_link_list').appendChild(ul2)
         })    
 }
+
+// Function to pull a Wild Magic Surge
+function wild_magic_surge(){
+    // CLEAR OUTPUT
+        clear_shit()
+    // DICE
+        // Roll the dice
+        var d20 = getRndInteger(1, 20)
+        var d100 = getRndInteger(1, 100)
+        var d10 = getRndInteger(1, 10)
+        // Log the dice to console
+        console.log(`DICE ROLLS
+            d20: ${d20}
+            d100: ${d100}
+            d10: ${d10}`)
+    // USER VARIABLES
+        // Get the spell's level
+        var a = document.getElementById("level")
+        var uiLevel = a.options[a.selectedIndex].value
+        // Log it
+        console.log(`Level: ${uiLevel}`)
+    // GET THE WILD SURGE RESULT
+        // Check the level for N/A
+        if (uiLevel == 'n/a') {
+            // Roll on the table
+            var vMessage = wildSurge(d20, d100)
+        // Check if the d10 is equal to or less than the selected level
+        } else if (d10 <= uiLevel) {
+            // Roll on the table
+            var vMessage = wildSurge(d20, d100)
+        } else {
+            // Set message to no wild surge
+            var vMessage = `No Wild Surge occured!`
+        }
+    // PRINT THE RESULT
+        // Populate the element
+        var ul1 = document.createElement('p')
+        ul1.innerHTML = vMessage
+        document.getElementById('output').appendChild(ul1)
+}
+
+// Define a function to get a wild surge
+function wildSurge(d20, rd100){
+    // Extreme Result
+    if (d20 <= 3) {
+        var vResult = wsExtreme.find(item => item.d100 == rd100).RESULT
+    // Moderate Result
+    } else if (d20 <= 9) {
+        var vResult = wsModerate.find(item => item.d100 == rd100).RESULT
+    // Nuisance Result
+    } else if (d20 <= 20) {
+        var vResult = wsNuisance.find(item => item.d100 == rd100).RESULT
+    }
+    var vMessage = `WILD SURGE: ${vResult}`
+    return vMessage
+}
