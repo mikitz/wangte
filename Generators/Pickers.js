@@ -43,10 +43,10 @@ function pick_item(){
         // Loop through the quantity
         for (var x = 0; x < quantity; x++) {
             // Generate a random number
-            var number = getRndInteger(1, table_length)
+            var number = getRndInteger(1, table_length - 1)
             // Check to see if this number is already in the list
             while (randInts.includes(number) == true) {
-                number = getRndInteger(1, table_length)
+                number = getRndInteger(1, table_length - 1)
             }
             // Push it to the list of random integers
             randInts.push(number)
@@ -133,10 +133,10 @@ function pick_creature(){
         // Loop through the quantity
         for (var x = 0; x < quantity; x++) {
             // Generate a random number
-            var number = getRndInteger(1, table_length)
+            var number = getRndInteger(1, table_length - 1)
             // Check to see if this number is already in the list
             while (randInts.includes(number) == true) {
-                number = getRndInteger(1, table_length)
+                number = getRndInteger(1, table_length - 1)
             }
             // Push it to the list of random integers
             randInts.push(number)
@@ -223,10 +223,10 @@ function pick_spell(){
         // Loop through the quantity
         for (var x = 0; x < quantity; x++) {
             // Generate a random number
-            var number = getRndInteger(1, table_length)
+            var number = getRndInteger(1, table_length - 1)
             // Check to see if this number is already in the list
             while (randInts.includes(number) == true) {
-                number = getRndInteger(1, table_length)
+                number = getRndInteger(1, table_length - 1)
             }
             // Push it to the list of random integers
             randInts.push(number)
