@@ -55,6 +55,7 @@ main li {
     word-wrap: break-word;
 }
 
+
 /* Vertical Navigation */
 .navlocal {
     float: left;
@@ -140,6 +141,9 @@ display: block;
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+
+
+/* TABLES */
 table.tableizer-table {
     font-size: 12px;
     border: 1px solid #CCC; 
