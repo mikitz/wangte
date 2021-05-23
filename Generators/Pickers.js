@@ -5,7 +5,7 @@ function clear_shit(){
 }
 
 // Function to pick random items
-function pick_item(){
+function pick_item(){ // TODO: #1 Bug: cannot enter a quantity equalt to table_length, unlike the other pickers. Find this bug.
     // Clear the outputs
     clear_shit()
     // Get the quantity
@@ -18,7 +18,7 @@ function pick_item(){
     
     // Filter the table based on user input of rarity
         // Check if the item the user wants is magical
-        if (uiRarity == "mundane") {
+        if (uiRarity == "Mundane") {
             var items = mundane_items
         } else {
             var items = magic_items.filter(item => item.RARITY == uiRarity)
@@ -60,13 +60,10 @@ function pick_item(){
             // Name
                 // Pull the name from the table
                 var vName = items[idx].NAME
-                // Log it
-                console.log(`Item: ${vName}`)
+            
             // Link
-                // PUll the link from the table
+                // Pull the link from the table
                 var vLink = items[idx].LINK
-                // Log it
-                console.log(`Link: ${vLink}`)
             
             // Linked Text List
                 // Build the message of linked items
