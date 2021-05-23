@@ -1,12 +1,10 @@
-let ship_purpose = [
-    {"d100":"01-17","Purpose":"Cargo"},
-    {"d100":"18-34","Purpose":"Passenger"},
-    {"d100":"35-51","Purpose":"Fishing"},
-    {"d100":"52-68","Purpose":"Military"},
-    {"d100":"69-85","Purpose":"Piracy"},
-    {"d100":"86-95","Purpose":"Mercenary"},
-    {"d100":"96-100","Purpose":"Ghost"}
-]
+let ship_purpose = [{"d100":"01-17","Purpose":"Cargo"},
+{"d100":"18-34","Purpose":"Passenger"},
+{"d100":"35-51","Purpose":"Fishing"},
+{"d100":"52-68","Purpose":"Military"},
+{"d100":"69-85","Purpose":"Piracy"},
+{"d100":"86-95","Purpose":"Mercenary"},
+{"d100":"96-100","Purpose":"Ghost"}]
 
 let ship_type = [{"d100":"01-09","Ship":"Rowboat"},
 {"d100":"10-25","Ship":"Keelboat"},
@@ -14,6 +12,13 @@ let ship_type = [{"d100":"01-09","Ship":"Rowboat"},
 {"d100":"39-60","Ship":"Sailing ship"},
 {"d100":"61-79","Ship":"Galley"},
 {"d100":"80-100","Ship":"Warship"}]
+
+let ship_crew = [{"Ship":"Rowboat","Crew":2,"Passengers":2},
+{"Ship":"Keelboat","Crew":3,"Passengers":4},
+{"Ship":"Longship","Crew":40,"Passengers":100},
+{"Ship":"Sailing ship","Crew":30,"Passengers":20},
+{"Ship":"Galley","Crew":80,"Passengers":40},
+{"Ship":"Warship","Crew":40,"Passengers":60}]
 
 let ship_adjective = [{"d20":1,"Adjective":"Beautiful"},
 {"d20":2,"Adjective":"Bilious"},

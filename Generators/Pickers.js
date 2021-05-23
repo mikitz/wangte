@@ -318,3 +318,54 @@ function wildSurge(d20, rd100){
     var vMessage = `WILD SURGE: ${vResult}`
     return vMessage
 }
+
+// Function to generate a random ship
+function randomShip(){
+    // CLEAR OUTPUT
+        clear_shit()
+    // USER VARIABLES
+        // Get the quantity
+        var quantity = document.getElementById("quantity").value
+        console.log(`Quantity: ${quantity}`)
+        // Log it
+        console.log(`Level: ${quantity}`)
+    // PULL RESULT(S)
+        // Loop through the quantities to generate that many ships
+        for (q = 0; q < quantity; q++) {
+            // SHIP DISTANCE FROM PARTY
+                // Pull number of dice from the database
+                var dice = oaEncounterDistance.find(i => i.biome == "Open_Water").number_of_dice
+                // Pull the number of sides from the database
+                var sides = oaEncounterDistance.find(i => i.biome == "Open_Water").number_of_sides
+                // Pull the multiplier from the database
+                var mult = oaEncounterDistance.find(i => i.biome == "Open_Water").multiplier
+                // Roll the distance
+                var ED = fMultiRoll(dice, sides, mult)
+            // ROLL TABLES
+                var purpose = rollTable(ship_purpose)
+                var type = rollTable(ship_type)
+                var adj = rollTable(ship_adjective)
+                var noun = rollTable(ship_noun)
+                var attitude = rollTable(ship_attitude)
+                var attitudeLower = attitude.toLowerCase()
+                var races = rollTable(eval(`ship_${attitudeLower}`))
+                var disposition = rollTable(ship_disposition)
+                if (disposition == 'Emergency') {
+                    var emergency = rollTable(ship_emergency)
+                } else {
+                    var emergency = 'Nothing Unique'
+                }
+                var cCrew = ship_crew.find(ship => ship.Ship == type).Crew
+                var cPassengers = ship_crew.find(ship => ship.Ship == type).Passengers
+                var qCrew = getRndInteger(1, cCrew)
+                var qPassengers = getRndInteger(1, cPassengers)
+            // BUILD THE MESSAGE
+                var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${qCrew} (max. ${cCrew}) ${races} with ${qPassengers} (max. ${cPassengers}) ${races} passengers on board. This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b>: ${emergency}.`
+            // PRINT THE RESULT
+                // Populate the element
+                var ul1 = document.createElement('p')
+                ul1.innerHTML = vMessage
+                document.getElementById('output').appendChild(ul1)
+        }
+    
+}
