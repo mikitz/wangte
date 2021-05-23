@@ -21,8 +21,7 @@
 * [x] Training
     * [x] Training Successes Needed
     * [x] Training Roller
-* Turning a Spell into a Magic Item
-* Chicken
+* [x] Turning a Spell into a Magic Item
 
 ## Homebrew
 * [x] Adjusting Races
@@ -67,18 +66,32 @@
             * [Mysterious Islands](https://5e.tools/variantrules.html#mysterious%20islands_gos)
             * [x] [Random Ships](https://5e.tools/variantrules.html#random%20ships_gos)
             * [Ocean Environs](https://5e.tools/variantrules.html#ocean%20environs_gos)
-                * Blue Holes
+                * [x] Blue Holes
+                * Coral Reefs
+                * Currents
+                * Kelp Forest
+                * Kraken's Grave
+                * Lure Lights
+                * Sandbars
+                * Sapping Snow
+                * Shipwreck
+                * Whirlpool
             * [Hazards](https://5e.tools/variantrules.html#travel%20at%20sea_gos)
                 * In Database
                 * In Javascript
                 * Tables
                     * Storms
                         * Magic Storms
+                            * Each School
                         * Non-magic Storms
                     * Fire
                     * Infestation
                     * Fog
                         * Magic Fog
+                            * Eldritch Mist
+                                * Ghost
+                                * Shadowfell
+                                * Wild Magic 
                         * Non-magic Fog
     * Implement 5etools.net link generation
         * **bugs**
@@ -91,6 +104,11 @@
                 * 'd' is getting chopped off in 'dragon'
     * [x] DnD Beyond link generation function
 * [x] Weather Generator
+* [x] Creature (Picker)
+* [x] Item (Picker)
+* [x] Ship
+* [x] Spell (Picker)
+* [x] Wild Magic Surge (Picker)
 
 ## Tools
 * [x] Bounty Board

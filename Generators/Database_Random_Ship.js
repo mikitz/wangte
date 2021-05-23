@@ -6,19 +6,23 @@ let ship_purpose = [{"d100":"01-17","Purpose":"Cargo"},
 {"d100":"86-95","Purpose":"Mercenary"},
 {"d100":"96-100","Purpose":"Ghost"}]
 
-let ship_type = [{"d100":"01-09","Ship":"Rowboat"},
-{"d100":"10-25","Ship":"Keelboat"},
-{"d100":"26-38","Ship":"Longship"},
-{"d100":"39-60","Ship":"Sailing ship"},
-{"d100":"61-79","Ship":"Galley"},
-{"d100":"80-100","Ship":"Warship"}]
+let ship_type = [{"d200":"01-18","Ship":"Rowboat"},
+{"d200":"19-50","Ship":"Keelboat"},
+{"d200":"51-76","Ship":"Longship"},
+{"d200":"77-120","Ship":"Sailing ship"},
+{"d200":"121-158","Ship":"Galley"},
+{"d200":"159-198","Ship":"Warship"},
+{"d200":"199-199","Ship":"Nautiloid"},
+{"d200":"200-200","Ship":"Spelljammer"}]
 
 let ship_crew = [{"Ship":"Rowboat","Crew":2,"Passengers":2},
 {"Ship":"Keelboat","Crew":3,"Passengers":4},
 {"Ship":"Longship","Crew":40,"Passengers":100},
 {"Ship":"Sailing ship","Crew":30,"Passengers":20},
 {"Ship":"Galley","Crew":80,"Passengers":40},
-{"Ship":"Warship","Crew":40,"Passengers":60}]
+{"Ship":"Warship","Crew":40,"Passengers":60},
+{"Ship":"Nautiloid","Crew":10,"Passengers":35},
+{"Ship":"Spelljammer","Crew":10,"Passengers":60}]
 
 let ship_adjective = [{"d20":1,"Adjective":"Beautiful"},
 {"d20":2,"Adjective":"Bilious"},
@@ -103,12 +107,12 @@ let ship_emergency = [{"d4":1,"Emergency":"The ship's crew is lost."},
 {"d4":4,"Emergency":"The ship is sinking."}]
 
 let blue_hole = [{"d10":1,"Creatures or Treasure":"2d10 sahuagin"},
-{"d10":2,"Creatures or Treasure":"1 giant octopus"},
+{"d10":2,"Creatures or Treasure":"1d1 giant octopus"},
 {"d10":3,"Creatures or Treasure":"1d4 + 1 chuuls"},
 {"d10":4,"Creatures or Treasure":"1 sea hag and 2d4 merrow"},
-{"d10":5,"Creatures or Treasure":"1 plesiosaurus"},
+{"d10":5,"Creatures or Treasure":"1d1 plesiosaurus"},
 {"d10":6,"Creatures or Treasure":"1d4 swarms of quippers"},
 {"d10":7,"Creatures or Treasure":"2d4 reef sharks"},
-{"d10":8,"Creatures or Treasure":"1 giant shark"},
-{"d10":9,"Creatures or Treasure":"1d6 items from Magic Item Table A in chapter 7, "},
-{"d10":10,"Creatures or Treasure":"Treasure rolled on the Treasure Hoard: Challenge 0–4 table in chapter 7, "}]
+{"d10":8,"Creatures or Treasure":"1d1 giant shark"},
+{"d10":9,"Creatures or Treasure":"1d6 items from <a href='https://5e.tools/tables.html#magic%20item%20table%20a_dmg' rel='noopener noreferrer' target='_blank'>Magic Item Table A</a> in Chapter 7"},
+{"d10":10,"Creatures or Treasure":"Treasure rolled on the <a href='https://5e.tools/tables.html#treasure%20hoard%3a%20challenge%200%e2%80%944_dmg' rel='noopener noreferrer' target='_blank'>Treasure Hoard: Challenge 0–4</a> table in Chapter 7"}]

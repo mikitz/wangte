@@ -144,7 +144,10 @@ function randomEncounter(){
             // var ad100 = 103
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
+            // SET ENCOUNTER FOR TESTING
+            encounter = 'Blue Hole'
         }
+        // Random Ship Encounter
         if (encounter == "Random Ship") {
             // Roll on the Random Ship Tables
                 var purpose = rollTable(ship_purpose)
@@ -164,12 +167,30 @@ function randomEncounter(){
             var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${races}. <br>This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b>: ${emergency}.`
             // Set the final encounter message
             var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
+        // Mysterious Island Encounter
         } else if (encounter == "Mysterious Island") {
-            // Roll on the table
-            var result = rollTable(blue_hole)
-            // Build the message
+            // TODO: #2 Implement Mysterious Island Encounters
             
+        // Blue Hole Encounter
         } else if (encounter == "Blue Hole") {
+            // Blue Hole dimensions
+            var diameter = getRndInteger(1, 10) * 100
+            var depth = getRndInteger(1, 10) * 100
+            // GET RESULT
+                // Roll on the table
+                var result = rollTable(blue_hole)
+                // Roll dice in result
+                result = rollDice(result)
+                // Replace creatures with links in result
+                result = appendLink(result)
+            // Build the message
+            var vMessage = `The party comes across a Blue Hole that is ${diameter}ft in diameter and ${depth}ft deep. It contains ${result}.`
+            // Set the final encounter message
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
+
+        // Hazard Encounter
+        } else if (encounter == 'Hazard') {
+            // TODO: #3 Implement Hazard Encounters
 
         } else {
             // Log the encounter
@@ -237,7 +258,6 @@ function randomEncounter(){
                 }
             }
         }
-        
     }
         
     // Combat Encounter
@@ -250,6 +270,7 @@ function randomEncounter(){
         encounter = encounter.find(x => x.d100 === ad100).Encounter
         console.log('ENCOUNTER')
         console.log(encounter)
+        // Random Ship Encounter
         if (encounter == "Random Ship") {
             // Roll on the Random Ship Tables
                 var purpose = rollTable(ship_purpose)
@@ -269,8 +290,13 @@ function randomEncounter(){
             var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${races}. <br>This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b>: ${emergency}.`
             // Set the final encounter message
             var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
+        // Mysterious Island Encounter
         } else if (encounter == "Mysterious Island") {
-
+            // Build the message
+            var vMessage = mysteriousIsland()
+            // Set the final encounter message
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
+        // Blue Hole Encounter
         } else if (encounter == "Blue Hole") {
             
         } else {
@@ -336,15 +362,11 @@ function randomEncounter(){
                             // Check for undesirables
                             var inclu = ['<','_','%','0', '>', '#'].some(el => idxExtra.includes(el))
                             var incluNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-                            // Define function to add the links
-                            function addLinks(){
-                                if (!inclu) {
-                                    word = bestiary_basic.find(y => y.name_lower == word).name.toLowerCase()
-                                    encounter = replaceRange(encounter, idxStart, idxEnd, linkGenerator5eTools(word, bookExtract))
-                                }                             
-                            }
-                            // Run said function
-                            addLinks()
+                            // Replace creatures with links
+                            if (!inclu) {
+                                word = bestiary_basic.find(y => y.name_lower == word).name.toLowerCase()
+                                encounter = replaceRange(encounter, idxStart, idxEnd, linkGenerator5eTools(word, bookExtract))
+                            }                             
                             // Log for debugging
                             console.log(`INDEX VARS
                             Start: ${idxStart}

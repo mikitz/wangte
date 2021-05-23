@@ -8,13 +8,19 @@ function clear_shit(){
 function pick_item(){ // TODO: #1 Bug: cannot enter a quantity equalt to table_length, unlike the other pickers. Find this bug.
     // Clear the outputs
     clear_shit()
-    // Get the quantity
-    var quantity = document.getElementById("quantity").value
-    console.log(`Quantity: ${quantity}`)
-    // Get the rarity
-    var a = document.getElementById("rarity")
-    var uiRarity = a.options[a.selectedIndex].text
-    console.log(`Rarity: ${uiRarity}`)
+    // USER INPUTS
+        // Get the quantity
+        var quantity = document.getElementById("quantity").value
+        console.log(`Quantity: ${quantity}`)
+        // Check if empty
+        if (quantity == "") {
+            alert("Please input a quantity.")
+            return
+        }
+        // Get the rarity
+        var a = document.getElementById("rarity")
+        var uiRarity = a.options[a.selectedIndex].text
+        console.log(`Rarity: ${uiRarity}`)
     
     // Filter the table based on user input of rarity
         // Check if the item the user wants is magical
@@ -99,7 +105,11 @@ function pick_creature(){
         var b = document.getElementById("type")
         var uiType = b.options[b.selectedIndex].text
         console.log(`Level: ${uiType}`)
-
+        // Check if empty
+        if (quantity == "") {
+            alert("Please input a quantity.")
+            return
+        }
     // Filter
         // Filter the table based on user input
         if (uiCR == "All" && uiType == "All") {
@@ -189,7 +199,11 @@ function pick_spell(){
         var b = document.getElementById("level")
         var uiLevel = b.options[b.selectedIndex].text
         console.log(`Level: ${uiLevel}`)
-
+        // Check if empty
+        if (quantity == "") {
+            alert("Please input a quantity.")
+            return
+        }
     // Filter
         // Filter the table based on user input
         if (uiSchool == "All" && uiLevel == "All") {
@@ -329,6 +343,11 @@ function randomShip(){
         console.log(`Quantity: ${quantity}`)
         // Log it
         console.log(`Level: ${quantity}`)
+        // Check if empty
+        if (quantity == "") {
+            alert("Please input a quantity.")
+            return
+        }
     // PULL RESULT(S)
         // Loop through the quantities to generate that many ships
         for (q = 0; q < quantity; q++) {
@@ -367,5 +386,9 @@ function randomShip(){
                 ul1.innerHTML = vMessage
                 document.getElementById('output').appendChild(ul1)
         }
-    
+}
+
+// Function to generate a Myserious Island
+function mysteriousIsland(){
+
 }
