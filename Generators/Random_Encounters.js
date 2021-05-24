@@ -157,7 +157,7 @@ function randomEncounter(){
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
             // SET ENCOUNTER FOR TESTING
-            encounter = 'Blue Hole'
+            //encounter = 'Blue Hole'
         }
         // Random Ship Encounter
         if (encounter == "Random Ship") {
