@@ -55,44 +55,38 @@
 * Battle Maps
     * **Merging canvases**
 * Random Encounter Generator
-    * Functions
-        * rollTable()
-            * **Need to handle looping through each row**
-                * Pulling first values and parsing in to a number range
     * [x] Combat Encounters
+        * Open Water
+            * [x] Whirlpool
+                * // TODO: #5 Remove Whirlpool from Combat Encounters
+            * [x] [Random Ships](https://5e.tools/variantrules.html#random%20ships_gos)
+        * Underwater
+            * 
     * [x] Non-combat Encounters
         * Incoporate extra tables
         * Open Water
-            * [Mysterious Islands](https://5e.tools/variantrules.html#mysterious%20islands_gos)
             * [x] [Random Ships](https://5e.tools/variantrules.html#random%20ships_gos)
             * [Ocean Environs](https://5e.tools/variantrules.html#ocean%20environs_gos)
-                * [x] Blue Holes
-                * Coral Reefs
-                * Currents
+                * [x] Blue Holes                
+                * Shipwreck
+                * [Mysterious Islands](https://5e.tools/variantrules.html#mysterious%20islands_gos)
+            * [Hazards](https://5e.tools/variantrules.html#travel%20at%20sea_gos)
+                * Storms
+                * Fire
+                * Infestation
+                * Fog
+                * Whirlpools
+        * Underwater
+            * [Ocean Environs](https://5e.tools/variantrules.html#ocean%20environs_gos)
                 * Kelp Forest
                 * Kraken's Grave
                 * Lure Lights
                 * Sandbars
                 * Sapping Snow
                 * Shipwreck
-                * Whirlpool
+                * Blue Hole
             * [Hazards](https://5e.tools/variantrules.html#travel%20at%20sea_gos)
-                * In Database
-                * In Javascript
-                * Tables
-                    * Storms
-                        * Magic Storms
-                            * Each School
-                        * Non-magic Storms
-                    * Fire
-                    * Infestation
-                    * Fog
-                        * Magic Fog
-                            * Eldritch Mist
-                                * Ghost
-                                * Shadowfell
-                                * Wild Magic 
-                        * Non-magic Fog
+                * Whirlpool
     * Implement 5etools.net link generation
         * **bugs**
             * swarm of

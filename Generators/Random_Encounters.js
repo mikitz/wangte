@@ -109,6 +109,18 @@ function randomEncounter(){
     var roll = getRndInteger(1, 20)
     // Hazard
     if (roll == 1){
+        // TODO: #4 Implement hazards!
+            // Open Water
+                // Storms
+                    // Magic Storms
+                    // Normal Storms
+                // Fire
+                // Infestation
+                // Fog
+                    // Magic Fog
+                    // Normal Fog
+                // Whirlpools
+            // Other Biomes
 
     }
     // Non-combat Encounter
@@ -170,7 +182,10 @@ function randomEncounter(){
         // Mysterious Island Encounter
         } else if (encounter == "Mysterious Island") {
             // TODO: #2 Implement Mysterious Island Encounters
-            
+            // Build the message
+            var vMessage = mysteriousIsland()
+            // Set the final encounter message
+            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
         // Blue Hole Encounter
         } else if (encounter == "Blue Hole") {
             // Blue Hole dimensions
@@ -187,11 +202,9 @@ function randomEncounter(){
             var vMessage = `The party comes across a Blue Hole that is ${diameter}ft in diameter and ${depth}ft deep. It contains ${result}.`
             // Set the final encounter message
             var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
-
-        // Hazard Encounter
-        } else if (encounter == 'Hazard') {
-            // TODO: #3 Implement Hazard Encounters
-
+        // Shipwreck Enouncter
+        } else if (encounter = 'Shipwreck') {
+            // TODO: #6 Implement Shipwrecks
         } else {
             // Log the encounter
             console.log(`ENCOUNTER: ${encounter}`)
@@ -290,15 +303,6 @@ function randomEncounter(){
             var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${races}. <br>This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b>: ${emergency}.`
             // Set the final encounter message
             var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
-        // Mysterious Island Encounter
-        } else if (encounter == "Mysterious Island") {
-            // Build the message
-            var vMessage = mysteriousIsland()
-            // Set the final encounter message
-            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
-        // Blue Hole Encounter
-        } else if (encounter == "Blue Hole") {
-            
         } else {
             // Extract creatures from the encounter 
                 // Push regex matches to a list while looping through the whole DB
