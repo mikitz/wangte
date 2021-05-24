@@ -113,32 +113,34 @@
 * Calendar
     * Add Proper UI to the generated week rows
     * In DBs
-        1. [x] Calendar of Harptos
-        2. [x] Barovian Calendar
-        3. Load Custom JSON
-        4. Exandrian Calendar
-        5. Gregorian Calendar
-        6. Calendar of Galifar
-        7. Calendar of Golarion
-        8. Calendar of Greyhawk
-        9. The Lunar Calendar
+        * [x] Calendar of Harptos
+        * [x] Barovian Calendar
+        * Load Custom JSON
+        * Exandrian Calendar
+        * Gregorian Calendar
+        * Calendar of Galifar
+        * Calendar of Golarion
+        * Calendar of Greyhawk
+        * The Lunar Calendar
     * Player & GM versions
 * Combat Tracker
     * Enemy Stealth Roll
+        * Marks the characters who see them and who don't
     * Random PC Picker
-    * Auto text initiative order?
+    * Send initiative order to players
+        * SMS/Discord/etc.
     * Player & GM versions?
+    * Integrate Random Encounter Generator
+        * Auto-pull in random encounter creatures and auto-roll inititiave in a new 'scene'
 * [x] Spell Helper
 * Ship Expenses
-* QuickRoll
-    * *local_nav* style got screwed up
 
 ## style.css
 * UI Bugs
-    * Top Nav needs to stick to the top
-    * Left Nav needs to stick where it is
-    * Left Nav needs to stretch to the bottom
-    * Text outputs need to wrap and stay to the right of Left Nav
+    * [x] Top Nav needs to stick to the top
+    * [x] Left Nav needs to stick where it is
+    * [x] Left Nav needs to stretch to the bottom
+    * [x] Text outputs need to wrap and stay to the right of Left Nav
 * Elements
     * Tables
         * Borders
