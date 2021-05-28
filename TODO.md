@@ -57,8 +57,6 @@
 * Random Encounter Generator
     * [x] Combat Encounters
         * Open Water
-            * [x] Whirlpool
-                * // TODO: #5 Remove Whirlpool from Combat Encounters table
             * [x] [Random Ships](https://5e.tools/variantrules.html#random%20ships_gos)
         * Underwater
             * 
@@ -69,13 +67,8 @@
             * [Ocean Environs](https://5e.tools/variantrules.html#ocean%20environs_gos)
                 * [x] Blue Holes                
                 * Shipwreck
-                * [Mysterious Islands](https://5e.tools/variantrules.html#mysterious%20islands_gos)
-            * [Hazards](https://5e.tools/variantrules.html#travel%20at%20sea_gos)
-                * Storms
-                * Fire
-                * Infestation
-                * Fog
-                * Whirlpools
+                * [x] [Mysterious Islands](https://5e.tools/variantrules.html#mysterious%20islands_gos)
+            * [x] [Hazards](https://5e.tools/variantrules.html#travel%20at%20sea_gos)
         * Underwater
             * [Ocean Environs](https://5e.tools/variantrules.html#ocean%20environs_gos)
                 * Kelp Forest
@@ -103,6 +96,7 @@
 * [x] Ship
 * [x] Spell (Picker)
 * [x] Wild Magic Surge (Picker)
+* [x] Mysterious Island
 
 ## Tools
 * [x] Bounty Board
