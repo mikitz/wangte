@@ -24,32 +24,8 @@
 * [x] Turning a Spell into a Magic Item
 
 ## Homebrew
-* [x] Adjusting Races
-* [x] Animal Husbandry
-* [x] Arrows
-* [x] Beer Brewing
-* [x] Casting Spells of a Higher Level
-* [x] Crafting
-* [x] Divine Ranks and Powers
-* [x] Enlarge/Reduce Spell
-* [x] Fall Damage
-* [x] Flanking
-* [x] Foraging/Harvesting
-* [x] Gemstones
-* [x] Identifying a Spell Being Cast
-* [x] Improving Ability Scores
-* [x] Intelligence
-* [x] Item Prices
-* Kibble's Crafting
-* [x] Medidcine Check for Determining Health
-* [x] Negotiating a Price
-* [x] Ship Navigation
-* [x] Sprint
-* [x] Street Drugs
-* [x] Tavern Games
-* [x] The Economy
-* [x] Training a Skill
-* [x] Traveling
+* [x] ALL DONE 
+    * Will add rules as/mods as they become necessary
 
 ## Generators
 * Battle Maps
