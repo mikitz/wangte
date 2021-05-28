@@ -15,6 +15,7 @@ function linkGeneratorBeyond(Creature) {
 function randomEncounter(){
     clear_output()
     clear_weather()
+    clear_table()
     // Log a seperator
     console.log("~~~~~~~~~~~~~~~~RANDOM ENCOUNTER~~~~~~~~~~~~~~~~~~~~~~")
     // Get default adjustments
@@ -107,24 +108,16 @@ function randomEncounter(){
                 Distance: ${ED} ft.`)
     // Roll the dice and see if it produces a random encounter or not
     var roll = getRndInteger(1, 20)
+    // Set the roll for testing purposes
+    //roll = 1
     // Hazard
     if (roll == 1){
         // TODO: #4 Implement hazards!
-            // Open Water
-                // Storms
-                    // Magic Storms
-                    // Normal Storms
-                // Fire
-                // Infestation
-                // Fog
-                    // Magic Fog
-                    // Normal Fog
-                // Whirlpools
-            // Other Biomes
-
+        var hazardQ = true
+        var encounterFinal = hazard(biome)
     }
     // Non-combat Encounter
-    if (roll >= ncdc && roll < cdc) {
+    else if (roll >= ncdc && roll < cdc) {
         var encQ = true
         // Grab the proper table
         if (urbanAreaVis && urbanArea != "no_area") {
@@ -157,7 +150,7 @@ function randomEncounter(){
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
             // SET ENCOUNTER FOR TESTING
-            //encounter = 'Blue Hole'
+            encounter = 'Mysterious Island'
         }
         // Random Ship Encounter
         if (encounter == "Random Ship") {
@@ -182,10 +175,8 @@ function randomEncounter(){
         // Mysterious Island Encounter
         } else if (encounter == "Mysterious Island") {
             // TODO: #2 Implement Mysterious Island Encounters
-            // Build the message
-            var vMessage = mysteriousIsland()
-            // Set the final encounter message
-            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
+            mysteriousIsland()
+            return
         // Blue Hole Encounter
         } else if (encounter == "Blue Hole") {
             // Blue Hole dimensions
@@ -272,9 +263,8 @@ function randomEncounter(){
             }
         }
     }
-        
     // Combat Encounter
-    if (roll >= cdc) {
+    else if (roll >= cdc) {
         var encQ = true
         // Roll 1d100
         var ad100 = getRndInteger(1, 100)
@@ -421,7 +411,7 @@ function randomEncounter(){
         }
     }
     // No Random Encounter
-    if (roll < ncdc && roll < cdc) {
+    else if (roll < ncdc && roll < cdc) {
         var encQ = false
         encounterFinal = `No Random Encounter`
     }
@@ -437,7 +427,7 @@ function randomEncounter(){
     p.innerHTML = vMessage
     document.getElementById("output").appendChild(p)
     // WEATHER
-    if (encQ) {
+    if (encQ || hazardQ) {
         generate_weather()
     }
 }

@@ -156,6 +156,7 @@ table.tableizer-table {
     margin: 3px;
     border: 1px solid #CCC;
     color: skyblue;
+    text-align: center;
 }
 .tableizer-table th {
     background-color: rgb(160, 0, 0); 

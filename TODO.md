@@ -58,7 +58,7 @@
     * [x] Combat Encounters
         * Open Water
             * [x] Whirlpool
-                * // TODO: #5 Remove Whirlpool from Combat Encounters
+                * // TODO: #5 Remove Whirlpool from Combat Encounters table
             * [x] [Random Ships](https://5e.tools/variantrules.html#random%20ships_gos)
         * Underwater
             * 

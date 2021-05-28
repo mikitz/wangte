@@ -97,7 +97,7 @@ function JSONtoHTMLTable(){
     }
 }
 
-// Function to pull a rolled result from a given table with ranges for its properties
+// Function to pull a rolled result from a given table with max 2 columns
 function rollTable(table){
     // Get the first key
         if (table.length > 0) {
@@ -166,7 +166,7 @@ function rollTable(table){
             var result = table.find(r => r[keyFirst] == roll)[`${keyLast}`]
         }
         // Log it
-        console.log(`RESULT: <b>${result}</b>`)
+        console.log(`RESULT: ${result}`)
         console.log(`------------`)
         return result
 }
@@ -304,4 +304,53 @@ function copyElementText(id) {
     document.body.removeChild(elem);
     // Alert the user that it has been copied
     alert("The bottom list has been copied to your clipboard!");
+}
+
+// FUnction to clear a generated table
+function clear_table(){
+    document.getElementById('table_output').innerHTML = ""
+}
+
+// Function to create an HTML table from an Object Array
+function printTable(table, element) {
+    // GET HEADERS
+        // Pull the headers from the table
+        var headers = []
+        // Loop through the table's keys (headers)
+        for (var key of Object.keys(table)) {
+            headers.push(key)
+        }
+    // SET UP THE TABLE
+        // Get the element name to append the table to
+        let div = document.querySelector(element)
+        // Remove any other children in case they're present
+        //while (div.firstChild) div.removeChild(div.firstChild)
+        // Create the table element
+        let tableFinal = document.createElement('table')
+        // Set the class of the table
+        tableFinal.className = 'tableizer-table'
+        // Create the table header group element
+        let tableFinalHead = document.createElement('thead')
+        // Create the row that contains headers
+        let tableFinalHeader = document.createElement('tr')
+        // Loop through the headers array and append them to the header row
+        headers.forEach(header => {
+            // Create the table header element
+            let tableHeader = document.createElement('th')
+            // Set the elements inner text to the header
+            tableHeader.innerText = header
+            // Append the header to the header row
+            tableFinalHead.append(tableHeader)
+        })
+        // Append the header row to the table
+        tableFinalHead.append(tableFinalHeader)
+        // Append the head to the table
+        tableFinal.append(tableFinalHead)
+        // Create the table body group element
+        let tableBody = document.createElement('tbody')
+        // Append table body to the table
+        tableFinal.append(tableBody)
+
+    // Append the table to the div
+    div.append(tableFinal)
 }

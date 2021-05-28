@@ -390,5 +390,206 @@ function randomShip(){
 
 // Function to generate a Myserious Island
 function mysteriousIsland(){
+    // CLEAR OUTPUT
+    clear_shit()
+    // USER VARIABLES
+        // Get the quantity
+        var quantity = document.getElementById("quantity").value
+        console.log(`Quantity: ${quantity}`)
+        // Log it
+        console.log(`Level: ${quantity}`)
+        // Check if empty
+        if (quantity == "") {
+            alert("Please input a quantity.")
+            return
+        }
+    // PULL RESULT(S)
+        // Loop through the quantities to generate that many ships
+        for (q = 0; q < quantity; q++) {
+        // Set up an output list
+        var lOutput = []
+        // THEME
+            // Get the island theme
+            var theme = rollTable(islandTheme)
+            // Add the theme to the list
+            lOutput.push(`Theme: ${theme}`)
+        // THEME DESCRIPTION
+            // Get the description
+            var description = islandDescription.find(i => i.Theme == theme).Description
+            // Push it to the list
+            lOutput.push(`<br>Description: ${description}`)
+        // STORY HOOK
+            // Roll on the table
+            var storyHook = rollTable(eval(`island${theme}Hooks`))
+            // Roll dice within the output
+            storyHook = rollDice(storyHook)
+            // Add links to creatures
+            storyHook = appendLink(storyHook)
+            // Push it to the output list
+            lOutput.push(`<br>Story Hook: ${storyHook}`)
+        // INHABITANTS
+            // Roll on the table
+            var inhabitants = rollTable(eval(`island${theme}Inhabitants`))
+            // Roll dice within the output
+            inhabitants = rollDice(inhabitants)
+            // Add links to creatures
+            inhabitants = appendLink(inhabitants)
+            // Push it to the output list
+            lOutput.push(`<br>Inhabitants: ${inhabitants}`)
+        // REACTIONS
+            // Check if theme is Alien or Sanctum
+            if (theme == 'Alien' || theme == 'Sanctum') {
+                // Roll on the table
+                var reaction = rollTable(eval(`island${theme}Reaction`))
+                // Roll dice within the output
+                reaction = rollDice(reaction)
+                // Add links to creatures
+                reaction = appendLink(reaction)
+                // Push it to the output list
+                lOutput.push(`<br>Inhabitants Reaction: ${reaction}`)
+            }
+        // LEADER
+            // Check if theme is NOT Cursed or Wild
+            if (theme != 'Cursed' && theme != 'Wild') {
+                // Roll on the table
+                var leader = rollTable(eval(`island${theme}Leader`))
+                // Roll dice within the output
+                leader = rollDice(leader)
+                // Add links to creatures
+                leader = appendLink(leader)
+                // Push it to the output list
+                lOutput.push(`<br>Leader: ${leader}`)
+            }
+        // MISC
+            // Check if theme is Cursed
+            if (theme == 'Cursed') {
+                // Get the curse afflicting the island
+                    // Roll on the table
+                    var curse = rollTable(eval(`island${theme}Curse`))
+                    // Roll dice within the output
+                    curse = rollDice(curse)
+                    // Add links to creatures
+                    curse = appendLink(curse)
+                    // Push it to the output list
+                    lOutput.push(`<br>Curse: ${curse}`)
+            // Check if theme is Hostile
+            } else if (theme == 'Hostile') {
+                // Get the Leader's motive
+                    // Roll on the table
+                    var motive = rollTable(eval(`island${theme}Motive`))
+                    // Roll dice within the output
+                    motive = rollDice(motive)
+                    // Add links to creatures
+                    motive = appendLink(motive)
+                    // Push it to the output list
+                    lOutput.push(`<br>Leader Motive: ${motive}`)
+            // Check if theme is Wild
+            } else if (theme == 'Wild') {
+                // Get the island's feature
+                    // Roll on the table
+                    var feature = rollTable(eval(`island${theme}Feature`))
+                    // Roll dice within the output
+                    feature = rollDice(feature)
+                    // Add links to creatures
+                    feature = appendLink(feature)
+                    // Push it to the output list
+                    lOutput.push(`<br>Island Feature: ${feature}`)
+            }
+            // OUTPUT
+                // Set up the message
+                var vMessage = `<H2>MYSTERIOUS ISLAND ENCOUNTER</H2>`
+                // Assemble the message
+                lOutput.forEach(i => {
+                    vMessage += `${i}`
+                })
+            // PRINT THE RESULT
+                // Populate the element
+                var ul1 = document.createElement('p')
+                ul1.innerHTML = vMessage
+                document.getElementById('output').appendChild(ul1)
+        }
+    return vMessage
+}
 
+// Function to generate a Hazard
+function hazard(biome){
+    // Roll on the table
+    var type = rollTable(eval(`hazard${biome}Type`))
+    // Log it
+    console.log(`                   Hazard Type: ${type}`)
+// HAZARD DC
+    // Roll on the table
+    var vDC = rollTable(eval(`hazard${biome}DC`))
+    // Log it
+    console.log(`                   Hazard DC: ${vDC}`)
+// SPECIFIC HAZARD TYPE
+    // Set up the eval of the pulled type
+        // Check if there are spaces in the rolled type
+        if (type.includes(" ")) {
+            // Replace spaces with underscore
+            var table1 = type.replace(/ /g,"_")
+            // Evaluate the table to pull from it
+            table = eval(`hazard${biome}${table1}`)
+            // Pull from the table
+            var description = table.find(x => x.DC == vDC).Description
+        } else {
+            // Evaluate the table to pull from it
+            var table1 = eval(`hazard${biome}${type}`)
+            // Pull from the table
+            var description = table1.find(x => x.DC == vDC).Description
+        }
+        // Log it
+        console.log(`                   ${type}: ${description}`)
+// HANDLE DICE IN THE DESCRIPTION
+    // Roll the dice using the custom-built function
+    description = rollDice(description)
+    console.log(`                   ${type} (ROLLED): ${description}`)
+// HANDLE MAGICAL STORMS AND FOG
+    // Roll 1d10 to determine if it's magical
+    var magical = getRndInteger(1, 10)
+    // Log it
+    console.log(`                   Magic Roll: ${magical}`)
+    // Check the hazard type and if the 1d10 above is a 1
+    if (type == 'Storm' && magical == 1) {
+        // Determine the type of magical storm
+        var magicalType = rollTable(eval(`hazard${biome}StormMagical`))
+        // Log it
+        console.log(`                   Magic Storm: ${magicalType}`)
+    } else if (type == 'Fog' && magical == 1) {
+        // Determien the type of magical fog
+        var magicalType = rollTable(eval(`hazard${biome}FogMagical`))
+        // Log it
+        console.log(`                   Magic Fog: ${magicalType}`)
+    } else if (type == 'Whirlpool' && magical == 1) {
+        var magicalType = rollTable(eval(`hazard${biome}WhirlpoolMagical`))
+    } else {
+        var magicalType = `Non-magical`
+    }
+// EXPORT THE MESSAGE
+    // Build the message
+    var vMessage = `${type} (${magicalType}) with a DC of ${vDC}<br> Description: ${description}`
+    // Handle visibility if the hazard is Fog
+    if (type == 'Fog') {
+        // Pull the distance from the obscured table
+        var visibleDistance = eval(`hazard${biome}FogThickness`).find(i => i.Thickness == description).Visibility
+        // Log it
+        console.log(`                   Visibility: ${visibleDistance}`)
+        // Append to the message
+        vMessage += `<br>Visibility: ${visibleDistance}`
+    }
+    // Send it
+    var encounterFinal = `<h2>HAZARD</h2>${vMessage}`
+// DISPLAY RESULTS TABLE
+    // Check for spaces in the hazard type
+    if (type.includes(" ")) {
+        // Replace spaces with underscore
+        var type = type.replace(/ /g,"_")
+    }
+    // Set the table
+    var vTable = eval(`hazard${biome}CheckResults${type}HTML`)
+    // Print the results table
+    var p = document.createElement('table')
+    p.innerHTML = vTable
+    document.getElementById("table_output").appendChild(p)
+    return encounterFinal
 }
