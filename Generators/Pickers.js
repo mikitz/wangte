@@ -392,7 +392,8 @@ function randomShip(){
 function mysteriousIsland(){
     // CLEAR OUTPUT
     clear_shit()
-    // USER VARIABLES
+    if (!!document.getElementById("quantity")) {
+        // USER VARIABLES
         // Get the quantity
         var quantity = document.getElementById("quantity").value
         console.log(`Quantity: ${quantity}`)
@@ -406,6 +407,110 @@ function mysteriousIsland(){
     // PULL RESULT(S)
         // Loop through the quantities to generate that many ships
         for (q = 0; q < quantity; q++) {
+            // Set up an output list
+            var lOutput = []
+            // THEME
+                // Get the island theme
+                var theme = rollTable(islandTheme)
+                // Add the theme to the list
+                lOutput.push(`Theme: ${theme}`)
+            // THEME DESCRIPTION
+                // Get the description
+                var description = islandDescription.find(i => i.Theme == theme).Description
+                // Push it to the list
+                lOutput.push(`<br>Description: ${description}`)
+            // STORY HOOK
+                // Roll on the table
+                var storyHook = rollTable(eval(`island${theme}Hooks`))
+                // Roll dice within the output
+                storyHook = rollDice(storyHook)
+                // Add links to creatures
+                storyHook = appendLink(storyHook)
+                // Push it to the output list
+                lOutput.push(`<br>Story Hook: ${storyHook}`)
+            // INHABITANTS
+                // Roll on the table
+                var inhabitants = rollTable(eval(`island${theme}Inhabitants`))
+                // Roll dice within the output
+                inhabitants = rollDice(inhabitants)
+                // Add links to creatures
+                inhabitants = appendLink(inhabitants)
+                // Push it to the output list
+                lOutput.push(`<br>Inhabitants: ${inhabitants}`)
+            // REACTIONS
+                // Check if theme is Alien or Sanctum
+                if (theme == 'Alien' || theme == 'Sanctum') {
+                    // Roll on the table
+                    var reaction = rollTable(eval(`island${theme}Reaction`))
+                    // Roll dice within the output
+                    reaction = rollDice(reaction)
+                    // Add links to creatures
+                    reaction = appendLink(reaction)
+                    // Push it to the output list
+                    lOutput.push(`<br>Inhabitants Reaction: ${reaction}`)
+                }
+            // LEADER
+                // Check if theme is NOT Cursed or Wild
+                if (theme != 'Cursed' && theme != 'Wild') {
+                    // Roll on the table
+                    var leader = rollTable(eval(`island${theme}Leader`))
+                    // Roll dice within the output
+                    leader = rollDice(leader)
+                    // Add links to creatures
+                    leader = appendLink(leader)
+                    // Push it to the output list
+                    lOutput.push(`<br>Leader: ${leader}`)
+                }
+            // MISC
+                // Check if theme is Cursed
+                if (theme == 'Cursed') {
+                    // Get the curse afflicting the island
+                        // Roll on the table
+                        var curse = rollTable(eval(`island${theme}Curse`))
+                        // Roll dice within the output
+                        curse = rollDice(curse)
+                        // Add links to creatures
+                        curse = appendLink(curse)
+                        // Push it to the output list
+                        lOutput.push(`<br>Curse: ${curse}`)
+                // Check if theme is Hostile
+                } else if (theme == 'Hostile') {
+                    // Get the Leader's motive
+                        // Roll on the table
+                        var motive = rollTable(eval(`island${theme}Motive`))
+                        // Roll dice within the output
+                        motive = rollDice(motive)
+                        // Add links to creatures
+                        motive = appendLink(motive)
+                        // Push it to the output list
+                        lOutput.push(`<br>Leader Motive: ${motive}`)
+                // Check if theme is Wild
+                } else if (theme == 'Wild') {
+                    // Get the island's feature
+                        // Roll on the table
+                        var feature = rollTable(eval(`island${theme}Feature`))
+                        // Roll dice within the output
+                        feature = rollDice(feature)
+                        // Add links to creatures
+                        feature = appendLink(feature)
+                        // Push it to the output list
+                        lOutput.push(`<br>Island Feature: ${feature}`)
+                }
+                // OUTPUT
+                    // Set up the message
+                    var vMessage = `<H2>MYSTERIOUS ISLAND ENCOUNTER</H2>`
+                    // Assemble the message
+                    lOutput.forEach(i => {
+                        vMessage += `${i}`
+                    })
+                // PRINT THE RESULT
+                    // Populate the element
+                    var ul1 = document.createElement('p')
+                    ul1.innerHTML = vMessage
+                    document.getElementById('output').appendChild(ul1)
+        }
+    return vMessage
+    } else {
         // Set up an output list
         var lOutput = []
         // THEME
@@ -509,7 +614,7 @@ function mysteriousIsland(){
                 document.getElementById('output').appendChild(ul1)
         }
     return vMessage
-}
+    }
 
 // Function to generate a Hazard
 function hazard(biome){

@@ -108,7 +108,7 @@ function randomEncounter(){
                 Distance: ${ED} ft.`)
     // Roll the dice and see if it produces a random encounter or not
     var roll = getRndInteger(1, 20)
-    // Set the roll for testing purposes
+    // SET THE ROLL FOR TESTING PURPOSES
     //roll = 1
     // Hazard
     if (roll == 1){
@@ -149,7 +149,7 @@ function randomEncounter(){
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
             // SET ENCOUNTER FOR TESTING
-            encounter = 'Shipwreck'
+            encounter = 'Mysterious Island'
         }
         // Random Ship Encounter
         if (encounter == "Random Ship") {
