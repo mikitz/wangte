@@ -4,24 +4,8 @@ function clear_shit(){
     document.getElementById("output_link_list").innerHTML = ""
 }
 
-// Function to pick random items
-function pick_item(){ // TODO: #1 Bug: cannot enter a quantity equalt to table_length, unlike the other pickers. Find this bug.
-    // Clear the outputs
-    clear_shit()
-    // USER INPUTS
-        // Get the quantity
-        var quantity = document.getElementById("quantity").value
-        console.log(`Quantity: ${quantity}`)
-        // Check if empty
-        if (quantity == "") {
-            alert("Please input a quantity.")
-            return
-        }
-        // Get the rarity
-        var a = document.getElementById("rarity")
-        var uiRarity = a.options[a.selectedIndex].text
-        console.log(`Rarity: ${uiRarity}`)
-    
+// Function to pick random items based on quantity and rarity
+function pickItems(quantity, uiRarity){
     // Filter the table based on user input of rarity
         // Check if the item the user wants is magical
         if (uiRarity == "Mundane") {
@@ -87,6 +71,28 @@ function pick_item(){ // TODO: #1 Bug: cannot enter a quantity equalt to table_l
                 ul2.innerHTML = vMessage2
                 document.getElementById('output_link_list').appendChild(ul2)
         })    
+}
+
+// Function to pick random items
+function pick_item(){ // TODO: #1 Bug: cannot enter a quantity equalt to table_length, unlike the other pickers. Find this bug.
+    // Clear the outputs
+    clear_shit()
+    // USER INPUTS
+        // Get the quantity
+        var quantity = document.getElementById("quantity").value
+        console.log(`Quantity: ${quantity}`)
+        // Check if empty
+        if (quantity == "") {
+            alert("Please input a quantity.")
+            return
+        }
+        // Get the rarity
+        var a = document.getElementById("rarity")
+        var uiRarity = a.options[a.selectedIndex].text
+        console.log(`Rarity: ${uiRarity}`)
+    // RUN THE FUNCTION
+        pickItems(quantity, uiRarity)
+    
 }
 
 // Function pick a random creature
