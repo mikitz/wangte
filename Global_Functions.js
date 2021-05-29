@@ -312,6 +312,7 @@ function clear_table(){
 }
 
 // Function to create an HTML table from an Object Array
+// TODO: #7 Finish this function
 function printTable(table, element) {
     // GET HEADERS
         // Pull the headers from the table

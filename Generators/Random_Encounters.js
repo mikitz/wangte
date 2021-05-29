@@ -112,7 +112,6 @@ function randomEncounter(){
     //roll = 1
     // Hazard
     if (roll == 1){
-        // TODO: #4 Implement hazards!
         var hazardQ = true
         var encounterFinal = hazard(biome)
     }
@@ -150,7 +149,7 @@ function randomEncounter(){
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
             // SET ENCOUNTER FOR TESTING
-            encounter = 'Mysterious Island'
+            encounter = 'Shipwreck'
         }
         // Random Ship Encounter
         if (encounter == "Random Ship") {
@@ -174,7 +173,6 @@ function randomEncounter(){
             var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
         // Mysterious Island Encounter
         } else if (encounter == "Mysterious Island") {
-            // TODO: #2 Implement Mysterious Island Encounters
             mysteriousIsland()
             return
         // Blue Hole Encounter
@@ -196,6 +194,9 @@ function randomEncounter(){
         // Shipwreck Enouncter
         } else if (encounter = 'Shipwreck') {
             // TODO: #6 Implement Shipwrecks
+            randomShipwreck(`output`)
+            generate_weather()
+            return
         } else {
             // Log the encounter
             console.log(`ENCOUNTER: ${encounter}`)

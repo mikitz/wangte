@@ -593,3 +593,64 @@ function hazard(biome){
     document.getElementById("table_output").appendChild(p)
     return encounterFinal
 }
+
+// Function to generate a shipwreck
+function randomShipwreck(element) {
+    // CLEAR OUTPUT
+    clear_shit()
+    // USER VARIABLES
+        // Get the quantity
+        if (!!document.getElementById("quantity")) {
+            var quantity = document.getElementById("quantity").value
+            // Log it
+            console.log(`Quantity: ${quantity}`)
+            // Check if empty
+            if (quantity == "") {
+                alert("Please input a quantity.")
+                return
+            }
+        }
+        
+    // PULL RESULT(S)
+        if (!!document.getElementById("quantity")) {
+            // Loop through the quantities to generate that many ships
+            for (q = 0; q < quantity; q++) {
+                // Roll on the table
+                var wreck = rollTable(tableShipwreck)
+                // Roll dice in it
+                wreck = rollDice(wreck)
+                // Replace creatures with links
+                wreck = appendLink(wreck)
+                // OUTPUT
+                    // Set up the message
+                    var vMessage = `<H2>SHIPWRECK ENCOUNTER</H2>`
+                    // Assemble the message
+                    vMessage += `Contents: ${wreck}`
+                // PRINT THE RESULT
+                    // Populate the element
+                    var ul1 = document.createElement('p')
+                    ul1.innerHTML = vMessage
+                    document.getElementById(element).appendChild(ul1)
+            }
+        } else {
+            // Roll on the table
+            var wreck = rollTable(tableShipwreck)
+            // Roll dice in it
+            wreck = rollDice(wreck)
+            // Replace creatures with links
+            wreck = appendLink(wreck)
+            // OUTPUT
+                // Set up the message
+                var vMessage = `<H2>SHIPWRECK ENCOUNTER</H2>`
+                // Assemble the message
+                vMessage += `Contents: ${wreck}`
+            // PRINT THE RESULT
+                // Populate the element
+                var ul1 = document.createElement('p')
+                ul1.innerHTML = vMessage
+                document.getElementById(element).appendChild(ul1)
+        }
+    
+    // RETURN
+    return vMessage
+}

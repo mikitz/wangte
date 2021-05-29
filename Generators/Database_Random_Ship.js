@@ -116,3 +116,14 @@ let blue_hole = [{"d10":1,"Creatures or Treasure":"2d10 sahuagin"},
 {"d10":8,"Creatures or Treasure":"1d1 giant shark"},
 {"d10":9,"Creatures or Treasure":"1d6 items from <a href='https://5e.tools/tables.html#magic%20item%20table%20a_dmg' rel='noopener noreferrer' target='_blank'>Magic Item Table A</a> in Chapter 7"},
 {"d10":10,"Creatures or Treasure":"Treasure rolled on the <a href='https://5e.tools/tables.html#treasure%20hoard%3a%20challenge%200%e2%80%944_dmg' rel='noopener noreferrer' target='_blank'>Treasure Hoard: Challenge 0–4</a> table in Chapter 7"}]
+
+let tableShipwreck = [{"d10":1,"Creatures or Treasure":"1 sahuagin priestess and 2d10 sahuagin"},
+{"d10":2,"Creatures or Treasure":"1 young bronze dragon"},
+{"d10":3,"Creatures or Treasure":"4d10 giant crabs"},
+{"d10":4,"Creatures or Treasure":"3d10 giant sea horses"},
+{"d10":5,"Creatures or Treasure":"1d4 hunter sharks"},
+{"d10":6,"Creatures or Treasure":"1 giant octopus"},
+{"d10":7,"Creatures or Treasure":"2d6 merrow"},
+{"d10":8,"Creatures or Treasure":"2d10 merfolk"},
+{"d10":9,"Creatures or Treasure":"1d6 items from Magic Item Table B in chapter 7, "},
+{"d10":10,"Creatures or Treasure":"Treasure rolled on the Treasure Hoard: Challenge 5–10 table in chapter 7, "}]
