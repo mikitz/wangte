@@ -45,6 +45,23 @@
             <button onclick="probability_two()">Calculate</button>
             <button onclick="clear_prob2()">Clear Output</button>
             <p id = "output2"></p>
-    </main> 
+            
+            <h1>test</h1>
+            <h2>P(d, n, o, k) = </h2>
+            <p>This calculates the probability of obtaining x outcomes of o or greater on n d-sided dice.</p>
+            <p><i>For example, I want to find the probability of rolling at least 15 on 2 dice out of 6d20. <br>I input n as 6 because I'm rolling 6 dice. Then, I input d as 20 because each die has 20 sides. After that, I input o as 15 because I want to roll a 15 or higher. Finally, I input x as 2 because I need at least 2 dice to be a 15 or higher. This gives us a probability of ##%.</i></p>
+            <label for="n3">Number of Dice (n):</label>
+                <input type="number" id="n3" name="n3"><br><br>
+            <label for="d3">Number of Sides on each Die (d):</label>
+                <input type="number" id="d3" name="d3"><br><br>
+            <label for="o3">Outcome or Greater Desired (o):</label>
+                <input type="number" id="o3" name="o3"><br><br>
+            <label for="k3">Number of Dice >= o (k):</label>
+                <input type="number" id="k3" name="k3"><br><br>
+            </form>
+            <button onclick="probability_three()">Calculate</button>
+            <button onclick="clear_prob3()">Clear Output</button>
+            <p id = "output3"></p>
+        </main> 
     </body>  
 </html>

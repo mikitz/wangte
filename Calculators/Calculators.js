@@ -1,3 +1,38 @@
+// Function to compute factorial of n
+// Source: https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
+function factorialize(num) {
+    // Step 1. Create a variable result to store num
+    var result = num;
+     
+    // If num = 0 OR num = 1, the factorial will return 1
+    if (num === 0 || num === 1) 
+        return 1; 
+   
+    // Instatiate the while loop
+    while (num > 1) {
+        // Decrement by 1 
+        num--
+        // Update the result
+        result *= num
+    }
+    // Return
+    return result;
+}
+
+// Function to calculate combinations
+function nCr(n, r){
+    // Compute n factorial
+    var nFact = factorialize(n)
+    // Compute r factorial
+    var rFact = factorialize(r)
+    // Compute n - r factorial
+    var nrFact = factorialize(n - r)
+    // Compute nCr
+    var result = (nFact / (rFact * nrFact))
+    // Return
+    return result
+}
+
 // Calculates the duration of the sailing 
 // as well as revenue earned from the conveyance of cargo
 function calculate_sail_duration_and_cargo_revenue() {
@@ -102,6 +137,49 @@ function probability_two() {
 function clear_prob2() {
     document.getElementById('output2').innerHTML = ""
 }
+// Calculates the probability of obtaining an outcome of o or greater, on k n d-sided dice
+function probability_three(){
+    // USER INPUTS
+        // Get number of dice
+        var n = document.getElementById("n3").value
+        // Get sides on each die
+        var d = document.getElementById("d3").value
+        // Get the value that defines a success
+        var o = document.getElementById("o3").value
+        // Get the number of success needed
+        var k = document.getElementById("k3").value
+    // CALCULATIONS
+        // p
+        var p = ((d - o) + 1)/10
+        console.log(`p: ${p}`)
+        // q
+        var q = (1 - p)
+        console.log(`q: ${q}`)
+        // nCr
+        var vnCr = nCr(n, k)
+        console.log(`nCr: ${vnCr}`)
+        // p**k
+        var pk = p**k
+        console.log(`p**k: ${pk}`)
+        // q**n-k
+        var pnk = q**(n-k)
+        console.log(`q**n-k: ${pnk}`)
+        // Probability
+        var prob = (vnCr * pk * pnk) / (p + q)**n
+        console.log(`Prob.: ${prob}`)
+        prob = parseFloat(prob*100).toFixed(2)+"%"
+        prob = `<B>${prob}</B>`
+    // Print the probability
+    var p = document.createElement('p')
+    p.innerHTML = prob
+    document.getElementById("output3").appendChild(p)
+}
+// Clears probability2 output
+function clear_prob3() {
+    document.getElementById('output3').innerHTML = ""
+}
+
+
 // Calculate the time to get to a destination on foot
 function calcuate_travel_duration () {
     // TODO

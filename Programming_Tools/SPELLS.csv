@@ -1,0 +1,125 @@
+,NAME,SOURCE,PAGE_NUMBER,LEVEL,SCHOOL,CASTING_TIME,RANGE,COMPONENTS,DURATION,COMPONENETS_COST,COMPONENTS_CURRENCY,COMPONENTS_MATERIALS
+0,Mage Hand,PHB,p256,Conjuration,cantrip,1 action,30 feet,"V, S",1 minute,,,
+1,Abi-Dalzim's Horrid Wilting,XGE,p150,8th-level,necromancy,1 action,150 feet,"V, S, M (a bit of sponge)",Instantaneous,,,
+2,Absorb Elements,XGE,p150,1st-level,abjuration,"1 reaction, which you take when you take acid, cold, fire, lightning, or thunder damage",Self,S,1 round,,,
+3,Acid Splash,PHB,p211,Conjuration,cantrip,1 action,60 feet,"V, S",Instantaneous,,,
+4,Acid Stream,UA20SMT,p2,1st-level,evocation,1 action,Self (30-foot line),"V, S, M (a bit of rotten food)","Concentration, up to 1 minute",,,
+5,Aganazzar's Scorcher,XGE,p150,2nd-level,evocation,1 action,30 feet,"V, S, M (a red dragon's scale)",Instantaneous,,,
+6,Aid,PHB,p211,2nd-level,abjuration,1 action,30 feet,"V, S, M (a tiny strip of white cloth)",8 hours,,,
+7,Alarm,PHB,p211,1st-level,abjuration,1 minute,30 feet,"V, S, M (a tiny bell and a piece of fine silver wire)",8 hours,,,
+8,Alter Self,PHB,p211,2nd-level,transmutation,1 action,Self,"V, S","Concentration, up to 1 hour",,,
+9,Animal Friendship,PHB,p212,1st-level,enchantment,1 action,30 feet,"V, S, M (a morsel of food)",24 hours,,,
+10,Animal Messenger,PHB,p212,2nd-level,enchantment,1 action,30 feet,"V, S, M (a morsel of food)",24 hours,,,
+11,Animal Shapes,PHB,p212,8th-level,transmutation,1 action,30 feet,"V, S","Concentration, up to 24 hours",,,
+12,Animate Dead,PHB,p212,3rd-level,necromancy,1 minute,10 feet,"V, S, M (a drop of blood, a piece of flesh, and a pinch of bone dust)",Instantaneous,,,
+13,Animate Objects,PHB,p213,5th-level,transmutation,1 action,120 feet,"V, S","Concentration, up to 1 minute",,,
+14,Antilife Shell,PHB,p213,5th-level,abjuration,1 action,Self (10-foot radius),"V, S","Concentration, up to 1 hour",,,
+15,Antimagic Field,PHB,p213,8th-level,abjuration,1 action,Self (10-foot radius),"V, S, M (a pinch of powdered iron or iron filings)","Concentration, up to 1 hour",,,
+16,Antipathy/Sympathy,PHB,p214,8th-level,enchantment,1 hour,60 feet,"V, S, M (either a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect)",10 days,,,
+17,Arcane Eye,PHB,p214,4th-level,divination,1 action,30 feet,"V, S, M (a bit of bat fur)","Concentration, up to 1 hour",,,
+18,Arcane Gate,PHB,p214,6th-level,conjuration,1 action,500 feet,"V, S","Concentration, up to 10 minutes",,,
+19,Arcane Hacking (UA),UAMM,p5,2nd-level,transmutation,1 action,Self,"V, S, M (hacking tools)","Concentration, up to 1 hour",,,
+20,Arcane Lock,PHB,p215,2nd-level,abjuration,1 action,Touch,"V, S, M (gold dust worth at least 25 gp, which the spell consumes)",Until dispelled,,,
+21,Arcane Weapon,UAAR,p10,1st-level,transmutation,1 bonus action,Self,"V, S","Concentration, up to 1 hour",,,
+22,Armor of Agathys,PHB,p215,1st-level,abjuration,1 action,Self,"V, S, M (a cup of water)",1 hour,,,
+23,Arms of Hadar,PHB,p215,1st-level,conjuration,1 action,Self (10-foot radius),"V, S",Instantaneous,,,
+24,Astral Projection,PHB,p215,9th-level,necromancy,1 hour,10 feet,"V, S, M (for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes)",Special,,,
+25,Augury,PHB,p215,2nd-level,divination,1 minute,Self,"V, S, M (specially marked sticks, bones, or similar tokens worth at least 25 gp)",Instantaneous,,,
+26,Aura of Life,PHB,p216,4th-level,abjuration,1 action,Self (30-foot radius),V,"Concentration, up to 10 minutes",,,
+27,Aura of Purity,PHB,p216,4th-level,abjuration,1 action,Self (30-foot radius),V,"Concentration, up to 10 minutes",,,
+28,Aura of Vitality,PHB,p216,3rd-level,evocation,1 action,Self (30-foot radius),V,"Concentration, up to 1 minute",,,
+29,Awaken,PHB,p216,5th-level,transmutation,8 hours,Touch,"V, S, M (an agate worth at least 1,000 gp, which the spell consumes)",Instantaneous,,,
+30,Bane,PHB,p216,1st-level,enchantment,1 action,30 feet,"V, S, M (a drop of blood)","Concentration, up to 1 minute",,,
+31,Banishing Smite,PHB,p216,5th-level,abjuration,1 bonus action,Self,V,"Concentration, up to 1 minute",,,
+32,Banishment,PHB,p217,4th-level,abjuration,1 action,60 feet,"V, S, M (an item distasteful to the target)","Concentration, up to 1 minute",,,
+33,Barkskin,PHB,p217,2nd-level,transmutation,1 action,Touch,"V, S, M (a handful of oak bark)","Concentration, up to 1 hour",,,
+34,Beacon of Hope,PHB,p217,3rd-level,abjuration,1 action,30 feet,"V, S","Concentration, up to 1 minute",,,
+35,Beast Bond,XGE,p150,1st-level,divination,1 action,Touch,"V, S, M (a bit of fur wrapped in a cloth)","Concentration, up to 10 minutes",,,
+36,Beast Sense,PHB,p217,2nd-level,divination,1 action,Touch,S,"Concentration, up to 1 hour",,,
+37,Bestow Curse,PHB,p218,3rd-level,necromancy,1 action,Touch,"V, S","Concentration, up to 1 minute",,,
+38,Bigby's Hand,PHB,p218,5th-level,evocation,1 action,120 feet,"V, S, M (an eggshell and a snakeskin glove)","Concentration, up to 1 minute",,,
+39,Blade Barrier,PHB,p218,6th-level,evocation,1 action,90 feet,"V, S","Concentration, up to 10 minutes",,,
+40,Blade of Disaster,TCE,p106,9th-level,conjuration,1 bonus action,60 feet,"V, S","Concentration, up to 1 minute",,,
+41,Blade Ward,PHB,p218,Abjuration,cantrip,1 action,Self,"V, S",1 round,,,
+42,Bless,PHB,p219,1st-level,enchantment,1 action,30 feet,"V, S, M (a sprinkling of holy water)","Concentration, up to 1 minute",,,
+43,Blight,PHB,p219,4th-level,necromancy,1 action,30 feet,"V, S",Instantaneous,,,
+44,Blinding Smite,PHB,p219,3rd-level,evocation,1 bonus action,Self,V,"Concentration, up to 1 minute",,,
+45,Blindness/Deafness,PHB,p219,2nd-level,necromancy,1 action,30 feet,V,1 minute,,,
+46,Blink,PHB,p219,3rd-level,transmutation,1 action,Self,"V, S",1 minute,,,
+47,Blur,PHB,p219,2nd-level,illusion,1 action,Self,V,"Concentration, up to 1 minute",,,
+48,Bones of the Earth,XGE,p150,6th-level,transmutation,1 action,120 feet,"V, S",Instantaneous,,,
+49,Booming Blade,TCE,p106,Evocation,cantrip,1 action,Self (5-foot radius),"S, M (a melee weapon worth at least 1 sp)",1 round,,,
+50,Branding Smite,PHB,p219,2nd-level,evocation,1 bonus action,Self,V,"Concentration, up to 1 minute",,,
+51,Burning Hands,PHB,p220,1st-level,evocation,1 action,Self (15-foot cone),"V, S",Instantaneous,,,
+52,Call Lightning,PHB,p220,3rd-level,conjuration,1 action,120 feet,"V, S","Concentration, up to 10 minutes",,,
+53,Calm Emotions,PHB,p221,2nd-level,enchantment,1 action,60 feet,"V, S","Concentration, up to 1 minute",,,
+54,Catapult,XGE,p150,1st-level,transmutation,1 action,60 feet,S,Instantaneous,,,
+55,Catnap,XGE,p151,3rd-level,enchantment,1 action,30 feet,"S, M (a pinch of sand)",10 minutes,,,
+56,Abi-Dalzim's Horrid Wilting,XGE,p150,8th-level,necromancy,1 action,150 feet,"V, S, M",Instantaneous,,,a bit of sponge
+57,Abi-Dalzim's Horrid Wilting,XGE,p150,8th-level,necromancy,1 action,150 feet,"V, S, M",Instantaneous,,,a bit of sponge
+58,Abi-Dalzim's Horrid Wilting,XGE,p150,8th-level,necromancy,1 action,150 feet,"V, S, M",Instantaneous,,,a bit of sponge
+59,Abi-Dalzim's Horrid Wilting,XGE,p150,8th-level,necromancy,1 action,150 feet,"V, S, M",Instantaneous,,,a bit of sponge
+60,Absorb Elements,XGE,p150,1st-level,abjuration,"1 reaction, which you take when you take acid, cold, fire, lightning, or thunder damage",Self,S,1 round,,,
+61,Acid Splash,PHB,p211,Conjuration,cantrip,1 action,60 feet,"V, S",Instantaneous,,,
+62,Acid Stream,UA20SMT,p2,1st-level,evocation,1 action,Self (30-foot line),"V, S, M","Concentration, up to 1 minute",,,a bit of rotten food
+63,Aganazzar's Scorcher,XGE,p150,2nd-level,evocation,1 action,30 feet,"V, S, M",Instantaneous,,,a red dragon's scale
+64,Aid,PHB,p211,2nd-level,abjuration,1 action,30 feet,"V, S, M",8 hours,,,a tiny strip of white cloth
+65,Alarm,PHB,p211,1st-level,abjuration,1 minute,30 feet,"V, S, M",8 hours,,,a tiny bell and a piece of fine silver wire
+66,Alter Self,PHB,p211,2nd-level,transmutation,1 action,Self,"V, S","Concentration, up to 1 hour",,,
+67,Animal Friendship,PHB,p212,1st-level,enchantment,1 action,30 feet,"V, S, M",24 hours,,,a morsel of food
+68,Animal Messenger,PHB,p212,2nd-level,enchantment,1 action,30 feet,"V, S, M",24 hours,,,a morsel of food
+69,Animal Shapes,PHB,p212,8th-level,transmutation,1 action,30 feet,"V, S","Concentration, up to 24 hours",,,
+70,Animate Dead,PHB,p212,3rd-level,necromancy,1 minute,10 feet,"V, S, M",Instantaneous,,,"a drop of blood, a piece of flesh, and a pinch of bone dust"
+71,Animate Objects,PHB,p213,5th-level,transmutation,1 action,120 feet,"V, S","Concentration, up to 1 minute",,,
+72,Antilife Shell,PHB,p213,5th-level,abjuration,1 action,Self (10-foot radius),"V, S","Concentration, up to 1 hour",,,
+73,Antimagic Field,PHB,p213,8th-level,abjuration,1 action,Self (10-foot radius),"V, S, M","Concentration, up to 1 hour",,,a pinch of powdered iron or iron filings
+74,Antipathy/Sympathy,PHB,p214,8th-level,enchantment,1 hour,60 feet,"V, S, M",10 days,,,either a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect
+75,Arcane Eye,PHB,p214,4th-level,divination,1 action,30 feet,"V, S, M","Concentration, up to 1 hour",,,a bit of bat fur
+76,Arcane Gate,PHB,p214,6th-level,conjuration,1 action,500 feet,"V, S","Concentration, up to 10 minutes",,,
+77,Arcane Hacking (UA),UAMM,p5,2nd-level,transmutation,1 action,Self,"V, S, M","Concentration, up to 1 hour",,,hacking tools
+78,Arcane Lock,PHB,p215,2nd-level,abjuration,1 action,Touch,"V, S, M",Until dispelled,25,gp,"gold dust worth at least 25 gp, which the spell consumes"
+79,Arcane Weapon,UAAR,p10,1st-level,transmutation,1 bonus action,Self,"V, S","Concentration, up to 1 hour",,,
+80,Armor of Agathys,PHB,p215,1st-level,abjuration,1 action,Self,"V, S, M",1 hour,,,a cup of water
+81,Arms of Hadar,PHB,p215,1st-level,conjuration,1 action,Self (10-foot radius),"V, S",Instantaneous,,,
+82,Astral Projection,PHB,p215,9th-level,necromancy,1 hour,10 feet,"V, S, M",Special,1,sp,"for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes"
+83,Augury,PHB,p215,2nd-level,divination,1 minute,Self,"V, S, M",Instantaneous,25,sp,"specially marked sticks, bones, or similar tokens worth at least 25 gp"
+84,Aura of Life,PHB,p216,4th-level,abjuration,1 action,Self (30-foot radius),V,"Concentration, up to 10 minutes",,,
+85,Aura of Purity,PHB,p216,4th-level,abjuration,1 action,Self (30-foot radius),V,"Concentration, up to 10 minutes",,,
+86,Aura of Vitality,PHB,p216,3rd-level,evocation,1 action,Self (30-foot radius),V,"Concentration, up to 1 minute",,,
+87,Awaken,PHB,p216,5th-level,transmutation,8 hours,Touch,"V, S, M",Instantaneous,1,gp,"an agate worth at least 1,000 gp, which the spell consumes"
+88,Bane,PHB,p216,1st-level,enchantment,1 action,30 feet,"V, S, M","Concentration, up to 1 minute",,,a drop of blood
+89,Banishing Smite,PHB,p216,5th-level,abjuration,1 bonus action,Self,V,"Concentration, up to 1 minute",,,
+90,Banishment,PHB,p217,4th-level,abjuration,1 action,60 feet,"V, S, M","Concentration, up to 1 minute",,,an item distasteful to the target
+91,Barkskin,PHB,p217,2nd-level,transmutation,1 action,Touch,"V, S, M","Concentration, up to 1 hour",,,a handful of oak bark
+92,Beacon of Hope,PHB,p217,3rd-level,abjuration,1 action,30 feet,"V, S","Concentration, up to 1 minute",,,
+93,Beast Bond,XGE,p150,1st-level,divination,1 action,Touch,"V, S, M","Concentration, up to 10 minutes",,,a bit of fur wrapped in a cloth
+94,Beast Sense,PHB,p217,2nd-level,divination,1 action,Touch,S,"Concentration, up to 1 hour",,,
+95,Bestow Curse,PHB,p218,3rd-level,necromancy,1 action,Touch,"V, S","Concentration, up to 1 minute",,,
+96,Bigby's Hand,PHB,p218,5th-level,evocation,1 action,120 feet,"V, S, M","Concentration, up to 1 minute",,,an eggshell and a snakeskin glove
+97,Blade Barrier,PHB,p218,6th-level,evocation,1 action,90 feet,"V, S","Concentration, up to 10 minutes",,,
+98,Blade of Disaster,TCE,p106,9th-level,conjuration,1 bonus action,60 feet,"V, S","Concentration, up to 1 minute",,,
+99,Blade Ward,PHB,p218,Abjuration,cantrip,1 action,Self,"V, S",1 round,,,
+100,Bless,PHB,p219,1st-level,enchantment,1 action,30 feet,"V, S, M","Concentration, up to 1 minute",,,a sprinkling of holy water
+101,Blight,PHB,p219,4th-level,necromancy,1 action,30 feet,"V, S",Instantaneous,,,
+102,Blinding Smite,PHB,p219,3rd-level,evocation,1 bonus action,Self,V,"Concentration, up to 1 minute",,,
+103,Blindness/Deafness,PHB,p219,2nd-level,necromancy,1 action,30 feet,V,1 minute,,,
+104,Blink,PHB,p219,3rd-level,transmutation,1 action,Self,"V, S",1 minute,,,
+105,Blur,PHB,p219,2nd-level,illusion,1 action,Self,V,"Concentration, up to 1 minute",,,
+106,Bones of the Earth,XGE,p150,6th-level,transmutation,1 action,120 feet,"V, S",Instantaneous,,,
+107,Booming Blade,TCE,p106,Evocation,cantrip,1 action,Self (5-foot radius),"S, M",1 round,1,ap,a melee weapon worth at least 1 sp
+108,Branding Smite,PHB,p219,2nd-level,evocation,1 bonus action,Self,V,"Concentration, up to 1 minute",,,
+109,Burning Hands,PHB,p220,1st-level,evocation,1 action,Self (15-foot cone),"V, S",Instantaneous,,,
+110,Call Lightning,PHB,p220,3rd-level,conjuration,1 action,120 feet,"V, S","Concentration, up to 10 minutes",,,
+111,Calm Emotions,PHB,p221,2nd-level,enchantment,1 action,60 feet,"V, S","Concentration, up to 1 minute",,,
+112,Catapult,XGE,p150,1st-level,transmutation,1 action,60 feet,S,Instantaneous,,,
+113,Catnap,XGE,p151,3rd-level,enchantment,1 action,30 feet,"S, M",10 minutes,,,a pinch of sand
+114,Cause Fear,XGE,p151,1st-level,necromancy,1 action,60 feet,V,"Concentration, up to 1 minute",,,
+115,Cause Fear (UA),UASS,p2,1st-level,necromancy,1 action,60 feet,"V, S","Concentration, up to 1 minute",,,
+116,Ceremony,XGE,p151,1st-level,abjuration,1 hour,Touch,"V, S, M",Instantaneous,25,gp,"25 gp worth of powdered silver, which the spell consumes"
+117,Ceremony (UA),UASS,p2,1st-level,evocation,1 hour,Touch,"V, S, M",Instantaneous (see text),25,gp,25 gp worth of powdered silver
+118,Chain Lightning,PHB,p221,6th-level,evocation,1 action,150 feet,"V, S, M",Instantaneous,,,"a bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins"
+119,Chaos Bolt,XGE,p151,1st-level,evocation,1 action,120 feet,"V, S",Instantaneous,,,
+120,Chaos Bolt (UA),UASS,p2,1st-level,evocation,1 action,120 feet,"V, S",Instantaneous,,,
+121,Charm Monster,XGE,p151,4th-level,enchantment,1 action,30 feet,"V, S",1 hour,,,
+122,Charm Person,PHB,p221,1st-level,enchantment,1 action,30 feet,"V, S",1 hour,,,
+123,Chill Touch,PHB,p221,Necromancy,cantrip,1 action,120 feet,"V, S",1 round,,,
