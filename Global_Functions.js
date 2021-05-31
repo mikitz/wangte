@@ -220,7 +220,8 @@ function appendLink(myString) {
     var creatureExtract = bestiary_basic.forEach(function(element){
         var nameFixed = element.name_lower.replace(newregex, '\\$&')
         var reFull = new RegExp(`${nameFixed}`, "g")
-        // RegEx still doesn't find "half-ogre (ogrillon)"
+        // RegEx still doesn't find "half-ogre (ogrillon)" or "vampire spawn"
+            // Instead if finds "vampire"
         var inc = myString.match(reFull)
         if (inc) {
             // Sort inc by length to swap out longer strings first
@@ -245,7 +246,7 @@ function appendLink(myString) {
         // Check if any of the elements are in the other elements
         // Loop through the list
         for (z = 0; z < lCreatures.length; z++) {
-            var item = lCreatures[z]
+            var item = lCreatures[z].toLowerCase()
             var bookExtract = bestiary_basic.find(r => r.name_lower == item).book_lower
             console.log(`ITEM: ${item}`)
             // Escape special RegEx characters

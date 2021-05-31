@@ -149,7 +149,7 @@ function randomEncounter(){
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
             // SET ENCOUNTER FOR TESTING
-            encounter = 'Mysterious Island'
+            //encounter = 'Mysterious Island'
         }
         // Random Ship Encounter
         if (encounter == "Random Ship") {
@@ -171,9 +171,12 @@ function randomEncounter(){
             var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${races}. <br>This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b>: ${emergency}.`
             // Set the final encounter message
             var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
+            // Generate weather
+            generate_weather()
         // Mysterious Island Encounter
         } else if (encounter == "Mysterious Island") {
             mysteriousIsland()
+            generate_weather()
             return
         // Blue Hole Encounter
         } else if (encounter == "Blue Hole") {

@@ -37,10 +37,10 @@ let islandAlienReaction = [{"d6":1,"Reaction":"The inhabitants try to force the 
 {"d6":5,"Reaction":"The inhabitants see the characters as no more than insects and refuse to interact with them unless forced."},
 {"d6":6,"Reaction":"The inhabitants see the characters as gods and can be convinced to worship them."}]
 
-let islandAlienLeader = [{"d4":1,"Leader":"Aboleth"},
-{"d4":2,"Leader":"Beholder"},
-{"d4":3,"Leader":"Death slaad"},
-{"d4":4,"Leader":"Kraken"}]
+let islandAlienLeader = [{"d4":1,"Leader":"aboleth"},
+{"d4":2,"Leader":"beholder"},
+{"d4":3,"Leader":"death slaad"},
+{"d4":4,"Leader":"kraken"}]
 
 let islandCursedInhabitants = [{"d6":1,"Inhabitants":"5d10 specters"},
 {"d6":2,"Inhabitants":"10d10 zombies"},
@@ -73,11 +73,11 @@ let islandHostileHooks = [{"d4":1,"Story Hook":"The island's leader killed an NP
 {"d4":3,"Story Hook":"The characters are challenged by rivals to survive a night on the island."},
 {"d4":4,"Story Hook":"An eloquent invitation from the island's leader invites the characters for a hunt."}]
 
-let islandHostileLeader = [{"d6":1,"Leader":"Cloud giant"},
-{"d6":2,"Leader":"Hill giant"},
-{"d6":3,"Leader":"Oni"},
-{"d6":4,"Leader":"Spirit naga"},
-{"d6":5,"Leader":"Werewolf"},
+let islandHostileLeader = [{"d6":1,"Leader":"cloud giant"},
+{"d6":2,"Leader":"hill giant"},
+{"d6":3,"Leader":"oni"},
+{"d6":4,"Leader":"spirit naga"},
+{"d6":5,"Leader":"werewolf"},
 {"d6":6,"Leader":"A chromatic dragon of the DM's choice"}]
 
 let islandHostileMotive = [{"d4":1,"Motivation":"The leader wants to commandeer a boat to conquer other islands."},
@@ -104,12 +104,12 @@ let islandSanctumReaction = [{"d6":1,"Reaction":"The characters are allowed on t
 {"d6":5,"Reaction":"The inhabitants hunger for information about the outside world and allow the characters to use news as currency."},
 {"d6":6,"Reaction":"The inhabitants don't trust the characters. All Charisma checks made to influence the inhabitants have disadvantage."}]
 
-let islandSanctumLeader = [{"d6":1,"Leader":"Archmage"},
-{"d6":2,"Leader":"Lich"},
-{"d6":3,"Leader":"Night hag"},
-{"d6":4,"Leader":"Noble"},
-{"d6":5,"Leader":"Rakshasa"},
-{"d6":6,"Leader":"Werebear"}]
+let islandSanctumLeader = [{"d6":1,"Leader":"archmage"},
+{"d6":2,"Leader":"lich"},
+{"d6":3,"Leader":"night hag"},
+{"d6":4,"Leader":"noble"},
+{"d6":5,"Leader":"rakshasa"},
+{"d6":6,"Leader":"werebear"}]
 
 let islandWelcomingInhabitants = [{"d6":1,"Inhabitants":"5d10 aarakocra"},
 {"d6":2,"Inhabitants":"8d8 pixies and 8d8 sprites"},
@@ -123,11 +123,11 @@ let islandWelcomingHooks = [{"d4":1,"Story Hook":"The island is a colony or outp
 {"d4":3,"Story Hook":"The island never gets visitors. The characters' arrival is cause for a peculiar but earnest celebration."},
 {"d4":4,"Story Hook":"The island's leader is a long-lost relative or friend of a character's family."}]
 
-let islandWelcomingLeader = [{"d6":1,"Leader":"Bard (see appendix C)"},
-{"d6":2,"Leader":"Druid"},
-{"d6":3,"Leader":"Guardian naga"},
-{"d6":4,"Leader":"Treant"},
-{"d6":5,"Leader":"Unicorn"},
+let islandWelcomingLeader = [{"d6":1,"Leader":"bard (see appendix C)"},
+{"d6":2,"Leader":"druid"},
+{"d6":3,"Leader":"guardian naga"},
+{"d6":4,"Leader":"treant"},
+{"d6":5,"Leader":"unicorn"},
 {"d6":6,"Leader":"A metallic dragon of the DM's choice"}]
 
 let islandWildInhabitants = [{"d20":1,"Encounter":"2d8 baboons"},

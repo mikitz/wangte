@@ -16,21 +16,24 @@ function factorialize(num) {
         result *= num
     }
     // Return
-    return result;
+    return parseFloat(result);
 }
 
 // Function to calculate combinations
 function nCr(n, r){
     // Compute n factorial
     var nFact = factorialize(n)
+    console.log(`n factorial: ${nFact}`)
     // Compute r factorial
     var rFact = factorialize(r)
+    console.log(`r factorial: ${rFact}`)
     // Compute n - r factorial
     var nrFact = factorialize(n - r)
+    console.log(`n - r factorial: ${nrFact}`)
     // Compute nCr
-    var result = (nFact / (rFact * nrFact))
+    var result = parseFloat((nFact / (rFact * nrFact)))
     // Return
-    return result
+    return parseFloat(result)
 }
 
 // Calculates the duration of the sailing 
@@ -100,16 +103,19 @@ function clear_sail() {
 // Calculates the probability of obtaining a single specific outcome across n rolls of a d-sided die
 function probability_one() {
     // Get number of dice
-    var n = document.getElementById("n1").value
+    var n = parseInt(document.getElementById("n1").value)
     // Get sides on each die
-    var d = document.getElementById("d1").value
+    var d = parseInt(document.getElementById("d1").value)
     // Calculate
-    var prob = 1 - ((d - 1) / d)**n
-    prob = parseFloat(prob*100).toFixed(2)+"%"
-    prob = `<B>${prob}</B>`
+    var prob = parseFloat(1 - ((d - 1) / d)**n)
+    probString = parseFloat(prob*100).toFixed(2)+"%"
+    // Fraction
+    var frac = new Fraction(prob.toFixed(2))
+    frac = frac.toLocaleString()
+    console.log(`Fraction: ${frac}`)
     // Print the probability
     var p = document.createElement('p')
-    p.innerHTML = prob
+    p.innerHTML = `Probability: ${probString}<br>Fraction: ${frac}`
     document.getElementById("output1").appendChild(p)
 }
 // Clears probability1 output
@@ -119,18 +125,21 @@ function clear_prob1() {
 // Calculates the probability of obtaining an outcome of o or greater, on at least one of n d-sided dice
 function probability_two() {
     // Get number of dice
-    var n = document.getElementById("n2").value
+    var n = parseFloat(document.getElementById("n2").value)
     // Get sides on each die
-    var d = document.getElementById("d2").value
+    var d = parseFloat(document.getElementById("d2").value)
     // Get the specific outcome
-    var o = document.getElementById("o2").value
+    var o = parseFloat(document.getElementById("o2").value)
     // Calculate
-    var prob = 1 - ((d - (d - o + 1)) / d)**n
-    prob = parseFloat(prob*100).toFixed(2)+"%"
-    prob = `<B>${prob}</B>`
+    var prob = parseFloat(1 - ((d - (d - o + 1)) / d)**n)
+    probString = parseFloat(prob*100).toFixed(2)+"%"
+    // Fraction
+    var frac = new Fraction(prob.toFixed(2))
+    frac = frac.toLocaleString()
+    console.log(`Fraction: ${frac}`)
     // Print the probability
     var p = document.createElement('p')
-    p.innerHTML = prob
+    p.innerHTML = `Probability: ${probString}<br>Fraction: ${frac}`
     document.getElementById("output2").appendChild(p)
 }
 // Clears probability2 output
@@ -139,18 +148,19 @@ function clear_prob2() {
 }
 // Calculates the probability of obtaining an outcome of o or greater, on k n d-sided dice
 function probability_three(){
+    // TODO #8 probability_three is not consistent with probabilty_two when n is > 1
     // USER INPUTS
         // Get number of dice
-        var n = document.getElementById("n3").value
+        var n = parseFloat(document.getElementById("n3").value)
         // Get sides on each die
-        var d = document.getElementById("d3").value
+        var d = parseFloat(document.getElementById("d3").value)
         // Get the value that defines a success
-        var o = document.getElementById("o3").value
+        var o = parseFloat(document.getElementById("o3").value)
         // Get the number of success needed
-        var k = document.getElementById("k3").value
+        var k = parseFloat(document.getElementById("k3").value)
     // CALCULATIONS
         // p
-        var p = ((d - o) + 1)/10
+        var p = ((d - o) + 1)/d
         console.log(`p: ${p}`)
         // q
         var q = (1 - p)
@@ -165,13 +175,16 @@ function probability_three(){
         var pnk = q**(n-k)
         console.log(`q**n-k: ${pnk}`)
         // Probability
-        var prob = (vnCr * pk * pnk) / (p + q)**n
+        var prob = (vnCr * pk * pnk) / ((p + q)**n)
         console.log(`Prob.: ${prob}`)
-        prob = parseFloat(prob*100).toFixed(2)+"%"
-        prob = `<B>${prob}</B>`
+        probString = parseFloat(prob*100).toFixed(2)+"%"
+        // Fraction
+        var frac = new Fraction(prob.toFixed(2))
+        frac = frac.toLocaleString()
+        console.log(`Fraction: ${frac}`)
     // Print the probability
     var p = document.createElement('p')
-    p.innerHTML = prob
+    p.innerHTML = `Probability: ${probString}<br>Fraction: ${frac}`
     document.getElementById("output3").appendChild(p)
 }
 // Clears probability2 output
