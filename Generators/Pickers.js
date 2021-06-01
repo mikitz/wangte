@@ -5,7 +5,7 @@ function clear_shit(){
 }
 
 // Function to pick random items based on quantity and rarity
-function pickItems(quantity, uiRarity){
+function pickItems(quantity, uiRarity, output1, output2){
     // Filter the table based on user input of rarity
         // Check if the item the user wants is magical
         if (uiRarity == "Mundane") {
@@ -23,7 +23,7 @@ function pickItems(quantity, uiRarity){
     
     // Alert user that their quantity exceeds possible choices
     if (quantity > table_length) {
-        alert(`The quantity (${quantity}) is larger than the possible number of choices (${table_length})! Please choose a quantity lower than ${table_length}.`)
+        alert(`ITEM PICKER: The quantity (${quantity}) is larger than the possible number of choices (${table_length})! Please choose a quantity lower than ${table_length}.`)
         return
     }
 
@@ -61,7 +61,7 @@ function pickItems(quantity, uiRarity){
                 // Populate the element
                 var ul1 = document.createElement('li')
                 ul1.innerHTML = vMessage1
-                document.getElementById('output').appendChild(ul1)
+                document.getElementById(output1).appendChild(ul1)
 
             // List of Copyable Links    
                 // Build the message of the links
@@ -69,7 +69,7 @@ function pickItems(quantity, uiRarity){
                 // Populate the element
                 var ul2 = document.createElement('li')
                 ul2.innerHTML = vMessage2
-                document.getElementById('output_link_list').appendChild(ul2)
+                document.getElementById(output2).appendChild(ul2)
         })    
 }
 
@@ -188,6 +188,69 @@ function pick_creature(){
                 document.getElementById('output_link_list').appendChild(ul2)
         })    
 }
+
+// Function to pick random spells based on the quantity and level
+function pickSpells(quantity, level, output1, output2){
+    // Filter
+        // Filter the table based on the levels
+        var items = dbSpells.filter(spell => spell.RARITY == level)
+
+    // Get the length of the resulting array
+    var table_length = items.length
+        // Log it to console
+        console.log(table_length) 
+
+    // // Alert user that their quantity exceeds possible choices
+    // if (quantity > table_length) {
+    //     alert(`SPELLS PICKER: The quantity (${quantity}) is larger than the possible number of choices (${table_length})! Please choose a quantity lower than ${table_length}.`)
+    //     return
+    // }
+
+    // Generate as many random integers as quantity
+        // Create an empty list
+        var randInts = []
+        // Loop through the quantity
+        for (var x = 0; x < quantity; x++) {
+            // Generate a random number
+            var number = (getRndInteger(0, table_length - 1))
+            // Push it to the list of random integers
+            randInts.push(number)
+        }
+        // Log it
+        console.log(randInts)
+
+    // Pull the rows that were randomly selected from the table
+        // Loop through each random integer
+        randInts.forEach(function(idx) {
+            // Name
+                // Pull the name from the table
+                var vName = items[idx].NAME
+                // Log it
+                console.log(`Item: ${vName}`)
+            // Link
+                // PUll the link from the table
+                var vLink = items[idx].LINK
+                // Log it
+                console.log(`Link: ${vLink}`)
+            
+            // Linked Text List
+                // Build the message of linked items
+                var vMessage1 = `<a href="${vLink}" rel="noopener noreferrer" target="_blank">${vName}</a>`
+                // Populate the element
+                var ul1 = document.createElement('li')
+                ul1.innerHTML = vMessage1
+                document.getElementById(output1).appendChild(ul1)
+
+            // List of Copyable Links    
+                // Build the message of the links
+                var vMessage2 = `${vName}: ${vLink}`
+                // Populate the element
+                var ul2 = document.createElement('li')
+                ul2.innerHTML = vMessage2
+                document.getElementById(output2).appendChild(ul2)
+        })    
+}
+
 
 // Function to pick a random spell
 function pick_spell(){

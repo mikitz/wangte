@@ -13,6 +13,7 @@
     <script src="Database_Magic_Shop.js"></script>
     <script src="../Global_Functions.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="Database_Spells.js"></script>
 </head>  
   
 <body>
@@ -31,12 +32,22 @@
             </form>
         <p></p>
         <button onclick="generateMagicShop()">Generate</button>
-        <button onclick="clear_shit()">Clear Output</button>
+        <button onclick="clearEverything()">Clear Output</button>
+        <!-- ITEMS-->
+        <h2>ITEMS</h2>
         <!--Linked Text List-->
-        <p id ="output"></p>
+        <p id ="output_items"></p>
         <!--Link List Output-->
-        <p id="output_link_list"></p>
-        <button onclick="copyElementText('output_link_list')">Copy Text</button>
+        <p id="output_link_list_items"></p>
+        <button onclick="copyElementText('output_link_list_items')">Copy Text</button>
+
+        <!-- SPELL COMPONENTS -->
+        <h2>SPELL COMPONENTS</h2>
+        <!--Linked Text List-->
+        <p id ="output_spells"></p>
+        <!--Link List Output-->
+        <p id="output_link_list_spells"></p>
+        <button onclick="copyElementText('output_link_list_spells')">Copy Text</button>
     </main> 
 </body>  
 </html>

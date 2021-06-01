@@ -1,10 +1,30 @@
+// Function to clear outputs
+function clearEverything(){
+    // CLEAR OUTPUTS
+        // Output Items
+        document.getElementById('output_items').innerHTML = ""
+        // List Items
+        document.getElementById('output_link_list_items').innerHTML = ""
+        // Output Spells
+        document.getElementById('output_spells').innerHTML = ""
+        // List Spells
+        document.getElementById('output_link_list_spells').innerHTML = ""
+        // Text input
+        document.getElementById('population').value = ""
+}
+
+
 // Function to generate inventory for a magic item shop
 function generateMagicShop(){
     // CLEAR OUTPUTS
-        // Output
-        document.getElementById('output').innerHTML = ""
-        // List
-        document.getElementById('output_link_list').innerHTML = ""
+        // Output Items
+        document.getElementById('output_items').innerHTML = ""
+        // List Items
+        document.getElementById('output_link_list_items').innerHTML = ""
+        // Output Spells
+        document.getElementById('output_spells').innerHTML = ""
+        // List Spells
+        document.getElementById('output_link_list_spells').innerHTML = ""
     // USER INPUTS
         // Get the population
         var population = document.getElementById("population").value
@@ -13,6 +33,8 @@ function generateMagicShop(){
         if (population == "") {
             alert("Please input a population.")
             return
+        } else if (population > 1000000) {
+            var population = 1000000
         }
     // PULL NECESSARY VARS FROM TABLES
         // Set up empty lists
@@ -81,6 +103,11 @@ function generateMagicShop(){
     // GENERATE ITEMS BASED ON QUANTITIES (STOCK DICE ROLLS)
         // Loop through the 2 lists
         for (idx = 0; idx < rarities.length; idx++) {
-            pickItems(rolls[idx] * stockMultiplier, rarities[idx])
+            pickItems(rolls[idx] * stockMultiplier, rarities[idx], 'output_items', 'output_link_list_items')
+        }    
+    // GENERATE SPELL COMPONENTS BASED ON QUANTITIES
+        // Loop through the 2 lists
+        for (idx = 0; idx < rarities.length; idx++) {
+            pickSpells(rolls[idx] * stockMultiplier, rarities[idx], 'output_spells', 'output_link_list_spells')
         }    
 }
