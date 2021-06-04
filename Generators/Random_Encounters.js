@@ -195,8 +195,7 @@ function randomEncounter(){
             // Set the final encounter message
             var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
         // Shipwreck Enouncter
-        } else if (encounter = 'Shipwreck') {
-            // TODO: #6 Implement Shipwrecks
+        } else if (encounter == 'Shipwreck') {
             randomShipwreck(`output`)
             generate_weather()
             return
