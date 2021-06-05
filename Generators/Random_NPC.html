@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GameMaster Website</title>  
+    <link rel="stylesheet" href="../style.css"/>
+    <script src="Pickers.js"></script>
+    <script src="../Global_Functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="Database_Random_NPC.js"></script>
+    <script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
+</head>  
+  
+<body>
+    <!--Navigation Panel START-->   
+    <div id="nav_placeholder"></div>
+    <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+    <!--Navigation Local START-->   
+    <div id="nav_local"></div>
+    <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+    <main>
+        <h1>Random NPC Generator</h1>
+        <p>This generator will generate <i>n</i> ships based on what is input into <i>Ship Quantity</i>.</p>
+        <label for="quantity">NPC Quantity:</label>
+                <input type="number" id="quantity" name="quantity">
+            </form>
+        <p></p>
+        <label for="age_algorithm">Age Algorithm:</label>
+            <select name="age_algorithm" id="age_algorithm">
+                <option value="real-world">Real-world Data</option>
+                <option value="uniform-probability">Uniform Probability</option>
+            </select>
+                <br><i><b>Real-world Data</b> uses slightly modified US population distribution by age data obtained from infoplease.com. The US Life Expectancy at Birth (LEB) is set to 80 years. The table can be seen below.
+                <br><b>Uniform Probabilites</b> rolls a die to determine the age with as many sides equal to the race's Life Expectancy at Birth (LEB). This ensures each age has the same odds of being selected.</i>
+        <p></p>
+        <button onclick="generateNPC('output')">Generate</button>
+        <button onclick="clear_shit()">Clear Output</button>
+        <!--Linked Text List-->
+        <p id ="output"></p>
+        <!--Link List Output-->
+        <p id="output_link_list"></p>
+        <button onclick="copyElementText('output_link_list')">Copy Text</button>
+        <p>
+            Source #1: <i>infoplease.com</i> - <a href="https://www.infoplease.com/us/census/demographic-statistics">United States Demographics Statistics</a>
+            <br>Source #2: <i>Official 5e Books</i> - Race entries to gather maximum age and adulthood age
+        </p>
+        <h2>Real-world Data</h2>
+        <table class="tableizer-table">
+            <thead><tr class="tableizer-firstrow"><th>d1,000,000</th><th>LEB_PERCENT</th></tr></thead><tbody>
+                <tr><td>926954</td><td>0.0625</td></tr>
+                <tr><td>848908</td><td>0.125</td></tr>
+                <tr><td>770863</td><td>0.1875</td></tr>
+                <tr><td>693817</td><td>0.25</td></tr>
+                <tr><td>621771</td><td>0.3125</td></tr>
+                <tr><td>545725</td><td>0.375</td></tr>
+                <tr><td>469679</td><td>0.4375</td></tr>
+                <tr><td>384633</td><td>0.5</td></tr>
+                <tr><td>299588</td><td>0.5625</td></tr>
+                <tr><td>287842</td><td>0.625</td></tr>
+                <tr><td>276096</td><td>0.6875</td></tr>
+                <tr><td>223050</td><td>0.75</td></tr>
+                <tr><td>180004</td><td>0.8125</td></tr>
+                <tr><td>142458</td><td>0.875</td></tr>
+                <tr><td>104913</td><td>0.9375</td></tr>
+                <tr><td>77867</td><td>1</td></tr>
+                <tr><td>50821</td><td>1.0625</td></tr>
+                <tr><td>37775</td><td>1.125</td></tr>
+                <tr><td>30729</td><td>1.1875</td></tr>
+                <tr><td>24683</td><td>1.25</td></tr>
+                <tr><td>17238</td><td>1.3125</td></tr>
+                <tr><td>10992</td><td>1.375</td></tr>
+                <tr><td>5346</td><td>1.4375</td></tr>
+                <tr><td>1</td><td>1.5</td></tr>
+            </tbody></table>
+    </main> 
+</body>  
+</html>

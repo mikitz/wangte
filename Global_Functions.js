@@ -9,6 +9,12 @@ var randomProperty = function (obj) {
 function getRndInteger(min, max) {
     return parseInt((Math.floor(Math.random() * ((max+1) - min)) + min))
 }
+// Function to set to a selection
+// Source: https://stackoverflow.com/questions/78932/how-do-i-programmatically-set-the-value-of-a-select-box-element-using-javascript
+function selectElement(id, valueToSelect) {    
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+}
 // Clears "output"
 function clear_output() {
     document.getElementById('output').innerHTML = ""
@@ -25,23 +31,40 @@ function clear_output1(){
 function fMultiRoll(number_of_dice, dice_sides, multiplier) {
     // Define an empty array to store the rolls
     aRolls = []
+    // Parse integers
+    var number_of_dice = parseInt(number_of_dice)
+    var dice_sides = parseInt(dice_sides)
+    var multiplier = parseInt(multiplier)
+    // Set total to zero
+    //var total = 0
     // Loop through all the dice and return random integers
     if (number_of_dice > 1) {
         for (x = 0; x < number_of_dice; x++) {
             a = getRndInteger(1, dice_sides)
             aRolls.push(a)
+            // total += a
         }
         // Get the sum of the array
         var total = aRolls.reduce((a, b) => a + b, 0) * multiplier
     } else {
         var total = getRndInteger(1, dice_sides)
     }
+    console.log(`Multi Roll Result: ${total}`)
     return parseInt(total)
 }
 // Define a function to replace a string by index range
 // Source: https://stackoverflow.com/a/12568270/3725925
 function replaceRange(str, start, end, substitute) {
     return str.substring(0, start) + substitute + str.substring(end);
+}
+
+// Function to convert inches to f'in"
+function convertInches(inches) {
+    let feetFromInches = Math.floor(inches / 12);//There are 12 inches in a foot
+    let inchesRemainder = inches % 12;
+ 
+    let result = feetFromInches + "'" + inchesRemainder + '\"';
+    return result
 }
 
 // Define a function to populate an HTML element
@@ -128,12 +151,12 @@ function rollTable(table){
     // Get number of sides
         const NewRegEx = /\d\d*/gm
         var sides = keyFirst.match(NewRegEx)
-        sides = sides[0]
+        sides = parseInt(sides[0])
         // Log it
         console.log(`Sides: ${sides}`)
     // Roll the die
-        var roll = fMultiRoll(1, parseInt(sides) + 1, 1)
-        console.log(`Roll: ${roll}`)
+        var roll = getRndInteger(1, sides)
+        console.log(`Roll Table Roll: ${roll}`)
     // Find the result 
         console.log(`FIRST ROW`)
         console.log(Object.values(table)[0])
@@ -186,11 +209,11 @@ function rollDice(myString){
         for (i = 0; i < aDice.length; i++) {
             // Extract number of dice
             const RegEx = /\d+(?=d)/g
-            var num_dice = RegEx.exec(aDice[i])
+            var num_dice = parseInt(RegEx.exec(aDice[i]))
             // Extrect Dice Sides
             const MoreRegEx = /(?<=d)(\d*)/g
             var num_of_sides = MoreRegEx.exec(aDice[i])
-            num_of_sides = num_of_sides[0]
+            num_of_sides = parseInt(num_of_sides[0])
             // Extract Modifier
             const EvenMoreRegEx = /(?<=\+)(\d*)/g
             var modifier = EvenMoreRegEx.exec(aDice[i])
@@ -208,7 +231,33 @@ function rollDice(myString){
     } else {
         encounterF = myString
     }
+    console.log(`Roll Dice Result: ${encounterF}`)
     return encounterF
+}
+
+// Function to roll dice expressed as ndx
+function rollShit(myString){
+    // Extract number of dice
+    const RegEx = /\d+(?=d)/g
+    var num_dice = RegEx.exec(myString)
+    console.log(`Number of Dice: ${num_dice}`)
+    // Extrect Dice Sides
+    const MoreRegEx = /(?<=d)(\d*)/g
+    var num_of_sides = MoreRegEx.exec(myString)
+    num_of_sides = num_of_sides[0]
+    console.log(`Number of Sides: ${num_of_sides}`)
+    // Extract Modifier
+    const EvenMoreRegEx = /(?<=\+)(\d*)/g
+    var modifier = EvenMoreRegEx.exec(myString)
+    if (modifier) {modifier = parseInt(modifier[0])}
+    else {modifier = 0}
+    // Total
+    var total = fMultiRoll(num_dice, num_of_sides, 1)
+    total = total + modifier
+    // Log for debugging
+    console.log(`${myString}'s total is ${total}`)
+    // Return
+    return parseInt(total)
 }
 
 // Function to replace creatures with links

@@ -828,3 +828,171 @@ function randomShipwreck(element) {
     // RETURN
     return vMessage
 }
+
+// Function to generate a random NPC
+function generateNPC(element){
+    // CLEAR OUTPUT
+    clear_shit()
+    // USER VARIABLES
+        // Get the quantity
+        if (!!document.getElementById("quantity")) {
+            var quantity = document.getElementById("quantity").value
+            // Log it
+            console.log(`Quantity: ${quantity}`)
+            // Check if empty
+            if (quantity == "") {
+                alert("Please input a quantity.")
+                return
+            }
+        }
+        // Get the age algorithm
+        var a = document.getElementById("age_algorithm")
+        var uiAgeAlgo = a.options[a.selectedIndex].text
+        console.log(`School: ${uiAgeAlgo}`)
+    
+    // ROLL TABLES
+        // Sex
+        var sex = rollTable(tableNPCSex)
+        // Gender
+        var gender = rollTable(tableNPCGender)
+        // Sexual Orientation
+        var sexualOrientation = rollTable(tableNPCSexualOrientation)
+        // Relationship Orientation
+        var relationshipOrientation = rollTable(tableNPCRelationshipOrientation)
+        // Alignment
+        var alignment = rollTable(tableNPCAlignment)
+        // Body Shape
+        if (gender == 'female'){
+            var bodyShape = rollTable(tableNPCBodyShapeFemale)
+        } else if (gender == 'male'){
+            var bodyShape = rollTable(tableNPCBodyShapeMale)
+        } else {
+            // Roll 1d2 to see which gender table to roll on
+            var roll = getRndInteger(1, 2)
+            // Logic to parse the roll
+            if (roll == 1){
+                var bodyShape = rollTable(tableNPCBodyShapeFemale)
+            } else {
+                var bodyShape = rollTable(tableNPCBodyShapeMale)
+            }   
+        }
+        // Relationship Status
+        if (relationshipOrientation == 'monoamorous') {
+            var relationshipStatus = rollTable(tableNPCRelationshipStatusMonoamorous)
+        } else if (relationshipOrientation == 'polyamorous') {
+            var relationshipStatus = rollDice(rollTable(tableNPCRelationshipStatusPolyamorour))
+        }
+        // Body Type
+        var bodyType = rollTable(tableNPCBodyType)
+        // Pregnant
+        if (sex == 'female') {
+            var pregnantStatus = rollTable(tableNPCPregnantStatus)
+        }
+        // Hair Length
+        var hairLength = rollTable(tableNPCHairLength)
+        // Hair Type
+        var hairType = rollTable(tableNPCHairType)
+        // Hair Color
+        var hairColor = rollTable(tableNPCHairColor)
+        // Face Shape
+        var faceShape = rollTable(tableNPCFaceShape)
+        // Eye Color
+        var eyeColor = rollTable(tableNPCEyeColor)
+        // RACE
+            // Roll
+            var raceRoll = getRndInteger(1, 96)
+            // Race
+            var race = tableNPCRace.find(i => i.d96 == raceRoll).RACE
+            console.log(`Race: ${race}`)
+            // Base Height
+            var baseHeight = parseInt(tableNPCRace.find(i => i.d96 == raceRoll).BASE_HEIGHT_IN)
+            console.log(`Base Height: ${baseHeight}`)
+            // Height Mod
+            var heightMod = rollDice(tableNPCRace.find(i => i.d96 == raceRoll).HEIGHT_MOD)
+            console.log(`Height Mod: ${heightMod}`)
+            // Base Weight
+            var baseWeight = parseInt(tableNPCRace.find(i => i.d96 == raceRoll).BASE_WEIGHT_LBS)
+            console.log(`Base Weight: ${baseWeight}`)
+            // Weight Mod
+            var weightMod = rollDice(tableNPCRace.find(i => i.d96 == raceRoll).WEIGHT_MOD)
+            console.log(`Weight Mod: ${weightMod}`)
+            // Life Expectancy at Birth (LEB)
+            var LEB = tableNPCRace.find(i => i.d96 == raceRoll).AGE_LEB
+            // Adult Age
+            var ageAdult = tableNPCRace.find(i => i.d96 == raceRoll).AGE_ADULT
+        // Weight
+        var weightPounds = +baseWeight + (+heightMod * +weightMod)
+        var weightKGS = +weightPounds / 2.205
+        // Height
+        var heightInches = +baseHeight + +heightMod
+        var heightCM = +heightInches * 2.54
+        // AGE
+            if (uiAgeAlgo == 'Real-world Data') {
+                // LEB Percent
+                var sexTable = 'total'
+                // Age Mod
+                    var d4 = getRndInteger(1, LEB * 0.04167)
+                    // Plus or Minus Age
+                    var minusPlus = getRndInteger(1, 2)
+                    if (minusPlus == 1) {
+                        var ageMod = -d4
+                    } else {
+                        var ageMod = d4
+                    }
+                // Roll d10,000,000
+                var d10mil = getRndInteger(1, 1000000)
+                console.log(`Roll 10 Mill: ${d10mil}`)
+                // Loop through the table and roll some dice
+                var tabletable = eval(`tableNPCAge_${sexTable}`)
+                console.log(`Table Table: tableNPCAge_${sexTable}`)
+                // Loop through each row of the table
+                for (row = 0; row < tabletable.length; row++) {
+                    // Pull the d10000000 value
+                    var val10mil = tabletable[row].d1000000
+                    console.log(`10 Mil Value: ${val10mil} ---- LEB Percent: ${row.LEB_PERCENT}`)
+                    // Check if the roll is equal to or greater than val10mil
+                    if (d10mil >= val10mil) {
+                        var LEBPercent = tabletable[row].LEB_PERCENT
+                        console.log(`LEB Percent: ${LEBPercent}`)
+                        break
+                    }
+                }
+                // Age
+                var age = Math.round((LEB + ageMod) * LEBPercent)
+            } else {
+                // Age
+                var age = getRndInteger(1, LEB)
+            }
+            
+            console.log(`Age: ${age}`)
+        // Name
+        var name = `Banana Man`
+    
+    // OUTPUT
+        // Set up the message
+        var vMessage = `<H2>${name}</H2>`
+        // Assemble the message
+        vMessage += `<b>Race:</b> ${race} <br>
+                    <b>Height:</b> ${convertInches(heightInches)} (${Math.round(heightCM, 0)} cm)<br>
+                    <b>Weight:</b> ${weightPounds} lbs (${Math.round(weightKGS, 0)} kg)<br>
+                    <b>Age:</b> ${age} (LEB: ${LEB}) <br>
+                    <b>Sex:</b> ${sex} <br>
+                    <b>Gender:</b> ${gender} <br>
+                    <b>Sexual Orientation:</b> ${sexualOrientation} <br>
+                    <b>Relationship Orientation:</b> ${relationshipOrientation} <br>
+                    <b>Alighment:</b> ${alignment} <br>
+                    <b>Body Type:</b> ${bodyType} <br>
+                    <b>Relationship Status:</b> ${relationshipStatus} <br>
+                    <b>Body Shape:</b> ${bodyShape} <br>
+                    <b>Hair Length:</b> ${hairLength} <br>
+                    <b>Hair Type:</b> ${hairType} <br>
+                    <b>Hair Color:</b> ${hairColor} <br>
+                    <b>Face Shape:</b> ${faceShape} <br>
+                    <b>Eye Color:</b> ${eyeColor}`
+
+    // PRINT THE RESULT
+        // Populate the element
+        var ul1 = document.createElement('p')
+        ul1.innerHTML = vMessage
+        document.getElementById(element).appendChild(ul1)
+}
