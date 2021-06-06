@@ -27,6 +27,12 @@ function clear(id){
 function clear_output1(){
     document.getElementById('output1').innerHTML = ""
 }
+// Define a function to convert a string to Title case
+// Source: https://stackoverflow.com/a/5574446/3725925
+String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
 // Define a dice function to roll multiple dice
 function fMultiRoll(number_of_dice, dice_sides, multiplier) {
     // Define an empty array to store the rolls
