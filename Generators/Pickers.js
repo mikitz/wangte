@@ -856,6 +856,21 @@ function generateNPC(element){
             var sex = rollTable(tableNPCSex)
             // Gender
             var gender = rollTable(tableNPCGender)
+                // Set up transgenders
+                if (gender == 'transgender') {
+                    if (sex == 'male') {
+                        gender = 'transwoman'
+                    } else if (sex == 'female') {
+                        gender = 'transman'
+                    } else {
+                        var rGender = getRndInteger(1, 2)
+                        if (rGender == 1) {
+                            gender = 'transman'
+                        } else {
+                            gender = 'transwoman'
+                        }
+                    }
+                }
             // Sexual Orientation
             var sexualOrientation = rollTable(tableNPCSexualOrientation)
             // Relationship Orientation
