@@ -251,7 +251,6 @@ function pickSpells(quantity, level, output1, output2){
         })    
 }
 
-
 // Function to pick a random spell
 function pick_spell(){
     // Clear the outputs
@@ -262,11 +261,11 @@ function pick_spell(){
         console.log(`Quantity: ${quantity}`)
         // Get the School
         var a = document.getElementById("school")
-        var uiSchool = a.options[a.selectedIndex].text
+        var uiSchool = a.options[a.selectedIndex].value
         console.log(`School: ${uiSchool}`)
         // Get the Level
         var b = document.getElementById("level")
-        var uiLevel = b.options[b.selectedIndex].text
+        var uiLevel = b.options[b.selectedIndex].value
         console.log(`Level: ${uiLevel}`)
         // Check if empty
         if (quantity == "") {
