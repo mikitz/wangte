@@ -942,6 +942,17 @@ function generateNPC(element){
             var faceShape = rollTable(tableNPCFaceShape)
             // Eye Color
             var eyeColor = rollTable(tableNPCEyeColor)
+            // Voice Quirk
+            var voiceQuirk = rollTable(tableNPCVoiceQuirk)
+            // PERSONALITY
+                // Roll a die
+                let rPersonality = getRndInteger(1, 16)
+                // Name
+                let personalityName = tableNPCPersonality.find(row => row.d16 == rPersonality).NAME
+                // Type
+                let personalityType = tableNPCPersonality.find(row => row.d16 == rPersonality).TYPE
+                // Description
+                let personalityDescription = tableNPCPersonality.find(row => row.d16 == rPersonality).DESCRIPTION
             // RACE
                 // Roll
                 var raceRoll = getRndInteger(1, 96)
@@ -1051,30 +1062,32 @@ function generateNPC(element){
                 }
             }
             console.log(name)
-            
         
         // OUTPUT
             // Set up the message
             var vMessage = `<H2>${name}</H2>`
             // Assemble the message
-            vMessage += `<b>Race:</b> ${race} <br>
-                        <b>Height:</b> ${convertInches(heightInches)} (${Math.round(heightCM, 0)} cm)<br>
-                        <b>Weight:</b> ${weightPounds} lbs (${Math.round(weightKGS, 0)} kg)<br>
-                        <b>Age:</b> ${age} (LEB: ${LEB}) <br>
-                        <b>Sex:</b> ${sex} <br>
-                        <b>Gender Identity:</b> ${gender} <br>
-                        <b>Pregnancy:</b> ${pregnantStatus} <br>
-                        <b>Sexual Orientation:</b> ${sexualOrientation} <br>
-                        <b>Relationship Orientation:</b> ${relationshipOrientation} <br>
-                        <b>Alignment:</b> ${alignment} <br>
-                        <b>Body Type:</b> ${bodyType} <br>
-                        <b>Relationship Status:</b> ${relationshipStatus} <br>
-                        <b>Body Shape:</b> ${bodyShape} <br>
-                        <b>Hair Length:</b> ${hairLength} <br>
-                        <b>Hair Type:</b> ${hairType} <br>
-                        <b>Hair Color:</b> ${hairColor} <br>
-                        <b>Face Shape:</b> ${faceShape} <br>
-                        <b>Eye Color:</b> ${eyeColor}`
+            vMessage += `<button onclick="rollTable('')">Reroll</button> <b>Race:</b> ${race} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Height:</b> ${convertInches(heightInches)} (${Math.round(heightCM, 0)} cm) <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Weight:</b> ${weightPounds} lbs (${Math.round(weightKGS, 0)} kg) <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Age:</b> ${age} (LEB: ${LEB}) <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Sex:</b> ${sex} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Gender Identity:</b> ${gender} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Pregnancy:</b> ${pregnantStatus} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Sexual Orientation:</b> ${sexualOrientation} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Relationship Orientation:</b> ${relationshipOrientation} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Alignment:</b> ${alignment} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Voice Quirk:</b> ${voiceQuirk} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Personality:</b> ${personalityName} (${personalityType})  <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Personality Description:</b> ${personalityDescription}  <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Body Type:</b> ${bodyType} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Relationship Status:</b> ${relationshipStatus} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Body Shape:</b> ${bodyShape} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Hair Length:</b> ${hairLength} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Hair Type:</b> ${hairType} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Hair Color:</b> ${hairColor} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Face Shape:</b> ${faceShape} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Eye Color:</b> ${eyeColor} `
 
         // PRINT THE RESULT
             // Populate the element

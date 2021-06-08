@@ -126,6 +126,79 @@ function JSONtoHTMLTable(){
     }
 }
 
+// Function to roll on a table and pull the value from the specified key
+function rollTableKey(table, keyLast){
+    // Get the first key
+        if (table.length > 0) {
+            var columnsIn = table[0]
+            for(var keyFirst in columnsIn) {
+                break
+            }
+        } else {
+            var keyFirst = 'No Columns'
+        } 
+        // Log the first key
+        console.log(`First Key: ${keyFirst}`)
+    // Get the last key
+        if (table.length > 0) {
+            var columnsIn = table[0]
+            var x = 0
+            for(var keyLast in columnsIn) {
+                x = x + 1
+                if (x = columnsIn.length - 1) {
+                    break
+                }
+            }
+        } else {
+            var keyLast = 'No Columns'
+        } 
+        // Log the last key
+        console.log(`Last Key: ${keyLast}`)
+    // Get number of sides
+        const NewRegEx = /\d\d*/gm
+        var sides = keyFirst.match(NewRegEx)
+        sides = parseInt(sides[0])
+        // Log it
+        console.log(`Sides: ${sides}`)
+    // Roll the die
+        var roll = getRndInteger(1, sides)
+        console.log(`Roll Table Roll: ${roll}`)
+    // Find the result 
+        console.log(`FIRST ROW`)
+        console.log(Object.values(table)[0])
+        console.log(`FIRST VALUE`)
+        console.log(Object.values(table)[0][keyFirst])
+        if (typeof Object.values(table)[0][keyFirst] == 'string' || Object.values(table)[0][keyFirst] instanceof String) {
+            // Loop through the first key values and determine if roll is in the range
+            for (r = 0; r < table.length; r++) {
+                var blah = Object.values(table)[r][keyFirst]
+                console.log(`BLAH: ${blah}`)
+                // Parse the range
+                    // Get the first number
+                    const RegEx1 = /^(\d+)/gm
+                    var firstNum = blah.match(RegEx1)
+                    firstNum = firstNum[0]
+                    console.log(`FIRST NUMBER: ${firstNum}`)
+                    // Get the second number
+                    const RegEx2 = /(\d+)$/gm
+                    var secondNum = blah.match(RegEx2)
+                    secondNum = secondNum[0]
+                    console.log(`SECOND NUMBER: ${secondNum}`)
+                // Determine if the roll was within the range
+                if (roll <= parseInt(secondNum) && roll >= parseInt(firstNum)) {
+                    var result = Object.values(table)[r][keyLast] 
+                    break
+                }
+            }
+        } else {
+            // Pull the exact result
+            var result = table.find(r => r[keyFirst] == roll)[`${keyLast}`]
+        }
+        // Log it
+        console.log(`RESULT: ${result}`)
+        console.log(`------------`)
+        return result
+}
 // Function to pull a rolled result from a given table with max 2 columns
 function rollTable(table){
     // Get the first key
