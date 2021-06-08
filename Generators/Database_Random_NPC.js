@@ -2,12 +2,11 @@ let tableNPCSex = [{"d3":1,"sex":"male"},
 {"d3":2,"sex":"female"},
 {"d3":3,"sex":"intersex"}]
 
-let tableNPCGender = [{"d6":1,"gender":"male"},
-{"d6":2,"gender":"female"},
-{"d6":3,"gender":"non-binary"},
-{"d6":4,"gender":"transgender"},
-{"d6":5,"gender":"agender"},
-{"d6":6,"gender":"genderfluid"}]
+let tableNPCGender = [{"d5":1,"gender":"cisgender"},
+{"d5":2,"gender":"non-binary"},
+{"d5":3,"gender":"transgender"},
+{"d5":4,"gender":"agender"},
+{"d5":5,"gender":"genderfluid"}]
 
 let tableNPCSexualOrientation = [{"d6":1,"sexual_orientation":"heterosexual"},
 {"d6":2,"sexual_orientation":"homosexual"},
@@ -322,6 +321,11 @@ let tableNPCAge_total = [{"d1000000":926954,"LEB_PERCENT":0.0625},
 {"d1000000":10992,"LEB_PERCENT":1.375},
 {"d1000000":5346,"LEB_PERCENT":1.4375},
 {"d1000000":1,"LEB_PERCENT":1.5}]
+
+let tableNPCPronouns = [{"d4":1,"pronouns":"he/him/his"},
+{"d4":2,"pronouns":"she/her/her"},
+{"d4":3,"pronouns":"they/them/their"},
+{"d4":4,"pronouns":"it/it/its"}]
 
 let tableNPCRelationshipOrientationRealWorld = [{"d10001":"501-10001","RELATIONSHIP_ORIENTATION":"monoamorous"},
 {"d10001":"1-500","RELATIONSHIP_ORIENTATION":"polyamorous"}]

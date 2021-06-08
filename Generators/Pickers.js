@@ -880,6 +880,7 @@ function generateNPC(element){
                 var sex = rollTable(tableNPCSex)
                 // Gender
                 var gender = rollTable(tableNPCGender)
+                console.log(`GENDER #1: ${gender}`)
                     // Set up transgenders
                     if (gender == 'transgender') {
                         if (sex == 'male') {
@@ -900,7 +901,30 @@ function generateNPC(element){
                 // Relationship Orientation
                 var relationshipOrientation = rollTable(tableNPCRelationshipOrientation)
             }    
-            
+            // Pronouns
+            if (gender == 'cisgender' && sex == 'male') {
+                var pronouns = 'he/his/him'
+            } else if (gender == 'cisgender' && sex == 'female') {
+                var pronouns = 'she/her/her'
+            } else if (gender == 'transman') {
+                var rPronouns = getRndInteger(1, 2)
+                if (rPronouns == 1) {
+                    var pronouns = 'he/his/him'
+                } else {
+                    var pronouns = 'they/their/them'
+                }
+            } else if (gender == 'transwoman') {
+                var rPronouns = getRndInteger(1, 2)
+                if (rPronouns == 1) {
+                    var pronouns = 'she/her/her'
+                } else {
+                    var pronouns = 'they/their/them'
+                }
+            } else if (gender != 'cisgender') {
+                var pronouns = 'they/their/them'
+            } else {
+                var pronouns = rollTable(tableNPCPronouns)
+            }
             // Alignment
             var alignment = rollTable(tableNPCAlignment)
             // Body Shape
@@ -1073,6 +1097,7 @@ function generateNPC(element){
                         <button onclick="rollTable('')">Reroll</button> <b>Age:</b> ${age} (LEB: ${LEB}) <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Sex:</b> ${sex} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Gender Identity:</b> ${gender} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Pronouns:</b> ${pronouns} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Pregnancy:</b> ${pregnantStatus} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Sexual Orientation:</b> ${sexualOrientation} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Relationship Orientation:</b> ${relationshipOrientation} <br>
