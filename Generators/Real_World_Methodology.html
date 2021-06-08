@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GameMaster Website</title>  
+    <link rel="stylesheet" href="../style.css"/>
+    <script src="Pickers.js"></script>
+    <script src="../Global_Functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="Database_Random_NPC.js"></script>
+    <script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
+    <script src="Database_NPC_Names.js"></script>
+</head>  
+
+<body>
+    <!--Navigation Panel START-->   
+    <div id="nav_placeholder"></div>
+    <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+    <!--Navigation Local START-->   
+    <div id="nav_local"></div>
+    <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+    <main>
+        <h1>Real World Methodology</h1>
+        <p>The below is a collection of the tables and their sources for the data used, along with explanations of extrapolations if necessary.</p>
+        <h2>Age</h2>
+            <p>Source #1: <i>infoplease.com</i> - <a href="https://www.infoplease.com/us/census/demographic-statistics">United States Demographics Statistics</a></p>
+            <table class="tableizer-table">
+                <thead><tr class="tableizer-firstrow"><th>d1000000</th><th>LEB_PERCENT</th><th>PROBABILITY</th><th>EXAMPLE</th></tr></thead><tbody>
+                    <tr><td>926954</td><td>0.0625</td><td>7.30%</td><td>Human LEB is 80, so 80 times 0.0625 equals 5</td></tr>
+                    <tr><td>848908</td><td>0.125</td><td>7.80%</td><td>Human LEB is 80, so 80 times 0.125 equals 10</td></tr>
+                    <tr><td>770863</td><td>0.1875</td><td>7.80%</td><td>Human LEB is 80, so 80 times 0.1875 equals 15</td></tr>
+                    <tr><td>693817</td><td>0.25</td><td>7.70%</td><td>Human LEB is 80, so 80 times 0.25 equals 20</td></tr>
+                    <tr><td>621771</td><td>0.3125</td><td>7.20%</td><td>Human LEB is 80, so 80 times 0.3125 equals 25</td></tr>
+                    <tr><td>545725</td><td>0.375</td><td>7.60%</td><td>Human LEB is 80, so 80 times 0.375 equals 30</td></tr>
+                    <tr><td>469679</td><td>0.4375</td><td>7.60%</td><td>Human LEB is 80, so 80 times 0.4375 equals 35</td></tr>
+                    <tr><td>384633</td><td>0.5</td><td>8.50%</td><td>Human LEB is 80, so 80 times 0.5 equals 40</td></tr>
+                    <tr><td>299588</td><td>0.5625</td><td>8.50%</td><td>Human LEB is 80, so 80 times 0.5625 equals 45</td></tr>
+                    <tr><td>287842</td><td>0.625</td><td>1.17%</td><td>Human LEB is 80, so 80 times 0.625 equals 50</td></tr>
+                    <tr><td>276096</td><td>0.6875</td><td>1.17%</td><td>Human LEB is 80, so 80 times 0.6875 equals 55</td></tr>
+                    <tr><td>223050</td><td>0.75</td><td>5.30%</td><td>Human LEB is 80, so 80 times 0.75 equals 60</td></tr>
+                    <tr><td>180004</td><td>0.8125</td><td>4.30%</td><td>Human LEB is 80, so 80 times 0.8125 equals 65</td></tr>
+                    <tr><td>142458</td><td>0.875</td><td>3.75%</td><td>Human LEB is 80, so 80 times 0.875 equals 70</td></tr>
+                    <tr><td>104913</td><td>0.9375</td><td>3.75%</td><td>Human LEB is 80, so 80 times 0.9375 equals 75</td></tr>
+                    <tr><td>77867</td><td>1</td><td>2.70%</td><td>Human LEB is 80, so 80 times 1 equals 80</td></tr>
+                    <tr><td>50821</td><td>1.0625</td><td>2.70%</td><td>Human LEB is 80, so 80 times 1.0625 equals 85</td></tr>
+                    <tr><td>37775</td><td>1.125</td><td>1.30%</td><td>Human LEB is 80, so 80 times 1.125 equals 90</td></tr>
+                    <tr><td>30729</td><td>1.1875</td><td>0.70%</td><td>Human LEB is 80, so 80 times 1.1875 equals 95</td></tr>
+                    <tr><td>24683</td><td>1.25</td><td>0.60%</td><td>Human LEB is 80, so 80 times 1.25 equals 100</td></tr>
+                    <tr><td>17238</td><td>1.3125</td><td>0.74%</td><td>Human LEB is 80, so 80 times 1.3125 equals 105</td></tr>
+                    <tr><td>10992</td><td>1.375</td><td>0.62%</td><td>Human LEB is 80, so 80 times 1.375 equals 110</td></tr>
+                    <tr><td>5346</td><td>1.4375</td><td>0.56%</td><td>Human LEB is 80, so 80 times 1.4375 equals 115</td></tr>
+                    <tr><td>1</td><td>1.5</td><td>0.53%</td><td>Human LEB is 80, so 80 times 1.5 equals 120</td></tr>
+                </tbody></table>
+        <h2>Sex</h2>
+            <p>Source #1: <a href="https://www.statista.com/statistics/737923/us-population-by-gender/
+                ">Statista</a> </p>
+            <p>Source #2: <a href="https://www.unfe.org/wp-content/uploads/2017/05/UNFE-Intersex.pdf">unfe.org</a> </p>
+            <table class="tableizer-table">
+                <thead><tr class="tableizer-firstrow"><th>d10001</th><th>SEX</th><th>10001</th><th>SEX</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead><tbody>
+                    <tr><td>5186</td><td>male</td><td>5186</td><td>male</td><td>4,815.00</td><td>0.4815</td><td>48.15%</td><td>https://www.statista.com/statistics/737923/us-population-by-gender/</td></tr>
+                    <tr><td>171</td><td>female</td><td>171</td><td>female</td><td>5,015.00</td><td>0.5015</td><td>50.15%</td><td>&nbsp;</td></tr>
+                    <tr><td>1</td><td>intersex</td><td>1</td><td>intersex</td><td>170.00</td><td>0.0170</td><td>1.70%</td><td>https://www.unfe.org/wp-content/uploads/2017/05/UNFE-Intersex.pdf</td></tr>
+                </tbody></table>
+        <h2>Gender Identity</h2>
+            <p>Source #1: <a href="https://endhomelessness.org/demographic-data-project-gender-minorities/">Endhomelessness.org</a> </p>
+            <p>Source #2: <a href="https://williamsinstitute.law.ucla.edu/wp-content/uploads/Trans-Adults-US-Aug-2016.pdf">William's Institute</a> </p>
+            <p>Source #3: <a href="https://www.nature.com/articles/s41598-021-81411-4">Nature</a> </p>
+            <table class="tableizer-table">
+                <thead><tr class="tableizer-firstrow"><th>d10001</th><th>GENDER</th><th>10001</th><th>GENDER</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead><tbody>
+                    <tr><td>201</td><td>cisgender</td><td>201</td><td>cisgender</td><td>9,800.00</td><td>0.9800</td><td>98.00%</td><td>This is the difference from 1 - the sum of the other genders</td></tr>
+                    <tr><td>181</td><td>non-binary</td><td>181</td><td>non-binary</td><td>20.00</td><td>0.0020</td><td>0.20%</td><td>https://endhomelessness.org/demographic-data-project-gender-minorities/</td></tr>
+                    <tr><td>123</td><td>transgender</td><td>123</td><td>transgender</td><td>58.00</td><td>0.0058</td><td>0.58%</td><td>https://williamsinstitute.law.ucla.edu/wp-content/uploads/Trans-Adults-US-Aug-2016.pdf</td></tr>
+                    <tr><td>62</td><td>agender</td><td>62</td><td>agender</td><td>61.00</td><td>0.0061</td><td>0.61%</td><td>This study was used to extrapolate data for agender. Non-binary and transgender were added together, then subtracted from 2%. Finally this difference was divided by 2 for agender and genderfluiid</td></tr>
+                    <tr><td>1</td><td>genderfluid</td><td>1</td><td>genderfluid</td><td>61.00</td><td>0.0061</td><td>0.61%</td><td>This study was used to extrapolate data for agender. Non-binary and transgender were added together, then subtracted from 2%. Finally this difference was divided by 2 for agender and genderfluiid</td></tr>
+                </tbody></table>
+        <h2>Sexual Orientation</h2>
+            <p>Source #1: <a href="https://williamsinstitute.law.ucla.edu/publications/how-many-people-lgbt/">William's Institute</a> </p>
+            <p>Source #2: <a href="https://en.wikipedia.org/wiki/Demographics_of_sexual_orientation">Wikipedia</a> </p>
+            <p>Source #3: <a href="https://cedar.wwu.edu/cgi/viewcontent.cgi?article=1081&context=wwu_honors#:~:text=Asexuality%20is%20also%20an%20uncommon,%2D24%20(GLAAD%202017).">WWU</a> </p>
+            <table class="tableizer-table">
+                <thead><tr class="tableizer-firstrow"><th>d10001</th><th>SEXUAL_ORIENTATION</th><th>10001</th><th>SEXUAL_ORIENTATION</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead><tbody>
+                    <tr><td>651</td><td>heterosexual</td><td>651</td><td>heterosexual</td><td>9,350.00</td><td>0.9350</td><td>93.50%</td><td>Remainder of the below</td></tr>
+                    <tr><td>481</td><td>homosexual</td><td>481</td><td>homosexual</td><td>170.00</td><td>0.0170</td><td>1.70%</td><td>https://williamsinstitute.law.ucla.edu/publications/how-many-people-lgbt/</td></tr>
+                    <tr><td>301</td><td>bisexual</td><td>301</td><td>bisexual</td><td>180.00</td><td>0.0180</td><td>1.80%</td><td>https://williamsinstitute.law.ucla.edu/publications/how-many-people-lgbt/</td></tr>
+                    <tr><td>201</td><td>pansexual</td><td>201</td><td>pansexual</td><td>100.00</td><td>0.0100</td><td>1.00%</td><td>https://en.wikipedia.org/wiki/Demographics_of_sexual_orientation</td></tr>
+                    <tr><td>101</td><td>asexual</td><td>101</td><td>asexual</td><td>100.00</td><td>0.0100</td><td>1.00%</td><td>https://cedar.wwu.edu/cgi/viewcontent.cgi?article=1081&context=wwu_honors#:~:text=Asexuality%20is%20also%20an%20uncommon,%2D24%20(GLAAD%202017).</td></tr>
+                    <tr><td>1</td><td>sapiosexual</td><td>1</td><td>sapiosexual</td><td>100.00</td><td>0.0100</td><td>1.00%</td><td>1% used due to the other above, no decent data found</td></tr>
+                </tbody></table>
+        <h2>Relationship Orientation</h2>
+            <p>Source #1: <a href="https://www.journal-fuer-psychologie.de/index.php/jfp/article/view/324">Journal Feur Psychologie</a> </p>
+            <table class="tableizer-table">
+                <thead><tr class="tableizer-firstrow"><th>d10001</th><th>RELATIONSHIP_ORIENTATION</th><th>10001</th><th>RELATIONSHIP_ORIENTATION</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead><tbody>
+                    <tr><td>501</td><td>monoamorous</td><td>501</td><td>monoamorous</td><td>9,500.00</td><td>0.9500</td><td>95.00%</td><td>1 - polyamorous percent</td></tr>
+                    <tr><td>1</td><td>polyamorous</td><td>1</td><td>polyamorous</td><td>500.00</td><td>0.0500</td><td>5.00%</td><td>https://www.journal-fuer-psychologie.de/index.php/jfp/article/view/324</td></tr>
+                </tbody></table>
+    </main> 
+</body>  
+</html>

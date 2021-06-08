@@ -13,7 +13,7 @@
     <script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
     <script src="Database_NPC_Names.js"></script>
 </head>  
-  
+
 <body>
     <!--Navigation Panel START-->   
     <div id="nav_placeholder"></div>
@@ -28,12 +28,12 @@
                 <input type="number" id="quantity" name="quantity">
             </form>
         <p></p>
-        <label for="age_algorithm">Age Algorithm:</label>
+        <label for="age_algorithm">Algorithm:</label>
             <select name="age_algorithm" id="age_algorithm">
                 <option value="real-world">Real-world Data</option>
                 <option value="uniform-probability">Uniform Probability</option>
             </select>
-                <br><i><b>Real-world Data</b> uses slightly modified US population distribution by age data obtained from infoplease.com. The US Life Expectancy at Birth (LEB) is set to 80 years. The table can be seen below.
+                <br><i><b>Real-world Data</b> See <a href="Real_World_Methodology.html">here</a>.
                 <br><b>Uniform Probabilites</b> rolls a die to determine the age with as many sides equal to the race's Life Expectancy at Birth (LEB). This ensures each age has the same odds of being selected.</i>
         <p></p>
         <button onclick="generateNPC('output')">Generate</button>
@@ -44,37 +44,8 @@
         <p id="output_link_list"></p>
         <button onclick="copyElementText('output_link_list')">Copy Text</button>
         <p>
-            Source #1: <i>infoplease.com</i> - <a href="https://www.infoplease.com/us/census/demographic-statistics">United States Demographics Statistics</a>
-            <br>Source #2: <i>Official 5e Books</i> - Race entries to gather maximum age and adulthood age
+            Source #1: <i>Official 5e Books</i> - Race entries to gather maximum age and adulthood age
         </p>
-        <h2>Real-world Data</h2>
-        <table class="tableizer-table">
-            <thead><tr class="tableizer-firstrow"><th>d1000000</th><th>LEB_PERCENT</th><th>PROBABILITY</th><th>EXAMPLE</th></tr></thead><tbody>
-             <tr><td>926954</td><td>0.0625</td><td>7.30%</td><td>Human LEB is 80, so 80 times 0.0625 equals 5</td></tr>
-             <tr><td>848908</td><td>0.125</td><td>7.80%</td><td>Human LEB is 80, so 80 times 0.125 equals 10</td></tr>
-             <tr><td>770863</td><td>0.1875</td><td>7.80%</td><td>Human LEB is 80, so 80 times 0.1875 equals 15</td></tr>
-             <tr><td>693817</td><td>0.25</td><td>7.70%</td><td>Human LEB is 80, so 80 times 0.25 equals 20</td></tr>
-             <tr><td>621771</td><td>0.3125</td><td>7.20%</td><td>Human LEB is 80, so 80 times 0.3125 equals 25</td></tr>
-             <tr><td>545725</td><td>0.375</td><td>7.60%</td><td>Human LEB is 80, so 80 times 0.375 equals 30</td></tr>
-             <tr><td>469679</td><td>0.4375</td><td>7.60%</td><td>Human LEB is 80, so 80 times 0.4375 equals 35</td></tr>
-             <tr><td>384633</td><td>0.5</td><td>8.50%</td><td>Human LEB is 80, so 80 times 0.5 equals 40</td></tr>
-             <tr><td>299588</td><td>0.5625</td><td>8.50%</td><td>Human LEB is 80, so 80 times 0.5625 equals 45</td></tr>
-             <tr><td>287842</td><td>0.625</td><td>1.17%</td><td>Human LEB is 80, so 80 times 0.625 equals 50</td></tr>
-             <tr><td>276096</td><td>0.6875</td><td>1.17%</td><td>Human LEB is 80, so 80 times 0.6875 equals 55</td></tr>
-             <tr><td>223050</td><td>0.75</td><td>5.30%</td><td>Human LEB is 80, so 80 times 0.75 equals 60</td></tr>
-             <tr><td>180004</td><td>0.8125</td><td>4.30%</td><td>Human LEB is 80, so 80 times 0.8125 equals 65</td></tr>
-             <tr><td>142458</td><td>0.875</td><td>3.75%</td><td>Human LEB is 80, so 80 times 0.875 equals 70</td></tr>
-             <tr><td>104913</td><td>0.9375</td><td>3.75%</td><td>Human LEB is 80, so 80 times 0.9375 equals 75</td></tr>
-             <tr><td>77867</td><td>1</td><td>2.70%</td><td>Human LEB is 80, so 80 times 1 equals 80</td></tr>
-             <tr><td>50821</td><td>1.0625</td><td>2.70%</td><td>Human LEB is 80, so 80 times 1.0625 equals 85</td></tr>
-             <tr><td>37775</td><td>1.125</td><td>1.30%</td><td>Human LEB is 80, so 80 times 1.125 equals 90</td></tr>
-             <tr><td>30729</td><td>1.1875</td><td>0.70%</td><td>Human LEB is 80, so 80 times 1.1875 equals 95</td></tr>
-             <tr><td>24683</td><td>1.25</td><td>0.60%</td><td>Human LEB is 80, so 80 times 1.25 equals 100</td></tr>
-             <tr><td>17238</td><td>1.3125</td><td>0.74%</td><td>Human LEB is 80, so 80 times 1.3125 equals 105</td></tr>
-             <tr><td>10992</td><td>1.375</td><td>0.62%</td><td>Human LEB is 80, so 80 times 1.375 equals 110</td></tr>
-             <tr><td>5346</td><td>1.4375</td><td>0.56%</td><td>Human LEB is 80, so 80 times 1.4375 equals 115</td></tr>
-             <tr><td>1</td><td>1.5</td><td>0.53%</td><td>Human LEB is 80, so 80 times 1.5 equals 120</td></tr>
-            </tbody></table>
     </main> 
 </body>  
 </html>

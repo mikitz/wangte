@@ -322,3 +322,23 @@ let tableNPCAge_total = [{"d1000000":926954,"LEB_PERCENT":0.0625},
 {"d1000000":10992,"LEB_PERCENT":1.375},
 {"d1000000":5346,"LEB_PERCENT":1.4375},
 {"d1000000":1,"LEB_PERCENT":1.5}]
+
+let tableNPCRelationshipOrientationRealWorld = [{"d10001":"501-10001","RELATIONSHIP_ORIENTATION":"monoamorous"},
+{"d10001":"1-500","RELATIONSHIP_ORIENTATION":"polyamorous"}]
+
+let tableNPCSexualOrientationRealWorld = [{"d10001":"651-10001","SEXUAL_ORIENTATION":"heterosexual"},
+{"d10001":"481-650","SEXUAL_ORIENTATION":"homosexual"},
+{"d10001":"301-480","SEXUAL_ORIENTATION":"bisexual"},
+{"d10001":"201-300","SEXUAL_ORIENTATION":"pansexual"},
+{"d10001":"101-200","SEXUAL_ORIENTATION":"asexual"},
+{"d10001":"1-100","SEXUAL_ORIENTATION":"sapiosexual"}]
+
+let tableNPCGenderRealWorld = [{"d10001":"201-10001","GENDER":"cisgender"},
+{"d10001":"181-200","GENDER":"non-binary"},
+{"d10001":"123-180","GENDER":"transgender"},
+{"d10001":"62.-122","GENDER":"agender"},
+{"d10001":"1-61","GENDER":"genderfluid"}]
+
+let tableNPCSexRealWorld = [{"d10001":"5186-10001","SEX":"male"},
+{"d10001":"171-5185","SEX":"female"},
+{"d10001":"1-1770","SEX":"intersex"}]

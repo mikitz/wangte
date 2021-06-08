@@ -851,29 +851,56 @@ function generateNPC(element){
             console.log(`School: ${uiAgeAlgo}`)
         
         // ROLL TABLES
-            // Sex
-            var sex = rollTable(tableNPCSex)
-            // Gender
-            var gender = rollTable(tableNPCGender)
-                // Set up transgenders
-                if (gender == 'transgender') {
-                    if (sex == 'male') {
-                        gender = 'transwoman'
-                    } else if (sex == 'female') {
-                        gender = 'transman'
-                    } else {
-                        var rGender = getRndInteger(1, 2)
-                        if (rGender == 1) {
+            if (uiAgeAlgo == 'Real-world Data') {
+                // Sex
+                var sex = rollTable(tableNPCSexRealWorld)
+                // Gender
+                var gender = rollTable(tableNPCGenderRealWorld)
+                    // Set up transgenders
+                    if (gender == 'transgender') {
+                        if (sex == 'male') {
+                            gender = 'transwoman'
+                        } else if (sex == 'female') {
                             gender = 'transman'
                         } else {
-                            gender = 'transwoman'
+                            var rGender = getRndInteger(1, 2)
+                            if (rGender == 1) {
+                                gender = 'transman'
+                            } else {
+                                gender = 'transwoman'
+                            }
                         }
-                    }
                 }
-            // Sexual Orientation
-            var sexualOrientation = rollTable(tableNPCSexualOrientation)
-            // Relationship Orientation
-            var relationshipOrientation = rollTable(tableNPCRelationshipOrientation)
+                // Sexual Orientation
+                var sexualOrientation = rollTable(tableNPCSexualOrientationRealWorld)
+                // Relationship Orientation
+                var relationshipOrientation = rollTable(tableNPCRelationshipOrientationRealWorld)
+            } else {
+                // Sex
+                var sex = rollTable(tableNPCSex)
+                // Gender
+                var gender = rollTable(tableNPCGender)
+                    // Set up transgenders
+                    if (gender == 'transgender') {
+                        if (sex == 'male') {
+                            gender = 'transwoman'
+                        } else if (sex == 'female') {
+                            gender = 'transman'
+                        } else {
+                            var rGender = getRndInteger(1, 2)
+                            if (rGender == 1) {
+                                gender = 'transman'
+                            } else {
+                                gender = 'transwoman'
+                            }
+                        }
+                }
+                // Sexual Orientation
+                var sexualOrientation = rollTable(tableNPCSexualOrientation)
+                // Relationship Orientation
+                var relationshipOrientation = rollTable(tableNPCRelationshipOrientation)
+            }    
+            
             // Alignment
             var alignment = rollTable(tableNPCAlignment)
             // Body Shape
@@ -982,7 +1009,6 @@ function generateNPC(element){
                     // Age
                     var age = getRndInteger(1, LEB)
                 }
-                
                 console.log(`Age: ${age}`)
             
             // Name
@@ -1040,7 +1066,7 @@ function generateNPC(element){
                         <b>Pregnancy:</b> ${pregnantStatus} <br>
                         <b>Sexual Orientation:</b> ${sexualOrientation} <br>
                         <b>Relationship Orientation:</b> ${relationshipOrientation} <br>
-                        <b>Alighment:</b> ${alignment} <br>
+                        <b>Alignment:</b> ${alignment} <br>
                         <b>Body Type:</b> ${bodyType} <br>
                         <b>Relationship Status:</b> ${relationshipStatus} <br>
                         <b>Body Shape:</b> ${bodyShape} <br>
