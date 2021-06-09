@@ -304,39 +304,54 @@ function calculate_bounty(){
 function calculate_level_demographics(){ 
     document.getElementById("output").innerHTML = ""
     document.getElementById("output_list").innerHTML = ""
-    // Get the level
-    var a = document.getElementById("lvl")
-    var level = a.options[a.selectedIndex].text
-    // Turn level into an int if it's not "All"
-    if (level != "All") {level = parseInt(level)}
-    // Get the population
-    var pop = parseInt(document.getElementById("population").value)
-    // Calculate the demographics
-    if (level === "All") {
-        document.getElementById('output').innerHTML = `Population: ${pop.toLocaleString()}`
-        // Loop through each level and calculate its population
-        for (lvl = 1; lvl < 20 + 1; lvl++) {
+
+    // USER INTPUTS
+        // Get the level
+        var a = document.getElementById("lvl")
+        var level = a.options[a.selectedIndex].text
+        // Turn level into an int if it's not "All"
+        if (level != "All") {level = parseInt(level)}
+        // Get the population
+        var pop = parseInt(document.getElementById("population").value)
+        // Get wealth
+        var wealth = document.getElementById('wealth').value
+        // Get magicness
+        var magicness = document.getElementById('magicness').value
+
+    // PULL NECESSARY DATA
+        // Pull the wealth mod
+        var modWealth = tableWealth.find(i => i.WEALTH == wealth).MODIFIER
+        // Pull the magicness mod
+        var modMagicness = tableMagicness.find(i => i.MAGICNESS == magicness).MODIFIER
+
+    // CALCULATE
+        // Calculate the demographics
+        if (level === "All") {
+            document.getElementById('output').innerHTML = `Population: ${pop.toLocaleString()}`
+            // Loop through each level and calculate its population
+            for (lvl = 1; lvl < 20 + 1; lvl++) {
+                // Get the respective percentage
+                var perc = oaData.find(i => i.lvl == lvl).perc_of_pop
+                var demographics = parseInt(Math.round(pop * perc))
+                demographics = parseInt(Math.round((demographics * modMagicness) * modWealth))
+                // Log it
+                console.log(`Level ${lvl}: ${demographics}`)
+                // Build it
+                var vMessage = `Level ${lvl.toLocaleString()}: ${demographics.toLocaleString()} person(s)`
+                // Output it
+                var ul = document.createElement('li')
+                ul.innerHTML = vMessage
+                document.getElementById('output_list').appendChild(ul)
+            }
+        } else {
             // Get the respective percentage
-            var perc = oaData.find(i => i.lvl == lvl).perc_of_pop
+            var perc = oaData.find(i => i.lvl == level).perc_of_pop
             var demographics = parseInt(Math.round(pop * perc))
-            // Log it
-            console.log(`Level ${lvl}: ${demographics}`)
-            // Build it
-            var vMessage = `Level ${lvl.toLocaleString()}: ${demographics.toLocaleString()} person(s)`
-            // Output it
-            var ul = document.createElement('li')
-            ul.innerHTML = vMessage
-            document.getElementById('output_list').appendChild(ul)
+            // Print the output
+            var p = document.createElement('p')
+            p.innerHTML = `Level ${level.toLocaleString()}: ${demographics.toLocaleString()} person(s)`
+            document.getElementById("output").appendChild(p)
         }
-    } else {
-        // Get the respective percentage
-        var perc = oaData.find(i => i.lvl == level).perc_of_pop
-        var demographics = parseInt(Math.round(pop * perc))
-        // Print the output
-        var p = document.createElement('p')
-        p.innerHTML = `Level ${level.toLocaleString()}: ${demographics.toLocaleString()} person(s)`
-        document.getElementById("output").appendChild(p)
-    }
     
 }
 // Function to calculate the weight of currency

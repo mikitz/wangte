@@ -86,3 +86,15 @@ let item_prices = [{"Spell Scrolls":"Cantrip","Cost (To Purchase)":8,"Duration i
 {"Spell Scrolls":"7th","Cost (To Purchase)":12500,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":6250,"Cost (For Service) + Materials":9375},
 {"Spell Scrolls":"8th","Cost (To Purchase)":25000,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":12500,"Cost (For Service) + Materials":18750},
 {"Spell Scrolls":"9th","Cost (To Purchase)":125000,"Duration in Work Hours (To Make)":"See CRAFTING","Cost (To Make)":62500,"Cost (For Service) + Materials":46875}]
+
+let tableWealth = [{"WEALTH":"wretched","MODIFIER":0.33},
+{"WEALTH":"squalid","MODIFIER":0.5},
+{"WEALTH":"poor","MODIFIER":0.75},
+{"WEALTH":"modest","MODIFIER":1},
+{"WEALTH":"comfortable","MODIFIER":1.5},
+{"WEALTH":"wealthy","MODIFIER":2},
+{"WEALTH":"aristocratic","MODIFIER":3}]
+
+let tableMagicness = [{"MAGICNESS":"low-magic","MODIFIER":0.5},
+{"MAGICNESS":"medium-magic","MODIFIER":1},
+{"MAGICNESS":"high-magic","MODIFIER":2}]

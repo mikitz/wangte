@@ -36,9 +36,17 @@ function generateMagicShop(){
         } else if (population > 1000000) {
             var population = 1000000
         }
+        // Get wealth
+        var wealth = document.getElementById('wealth').value
+        // Get magicness
+        var magicness = document.getElementById('magicness').value
     // PULL NECESSARY VARS FROM TABLES
         // Set up empty lists
         var diceSizes = []
+        // Pull the wealth mod
+        var modWealth = tableWealth.find(i => i.WEALTH == wealth).MODIFIER
+        // Pull the magicness mod
+        var modMagicness = tableMagicness.find(i => i.MAGICNESS == magicness).MODIFIER
         // Stock Multiplier
             // Loop through the first key's values and determine if population is in the range
             for (r = 0; r < tableStockMultipliers.length; r++) {
@@ -80,6 +88,7 @@ function generateMagicShop(){
                     // Determine if the population is within the range
                     if (population <= parseInt(secondNum) && population >= parseInt(firstNum)) {
                         var result = Object.values(eval(`tableDieSize${t}`))[r].Die_Size
+                        result = (result * modMagicness) * modWealth
                         diceSizes.push(result)
                         break
                     }
@@ -100,14 +109,28 @@ function generateMagicShop(){
         })
         // Log it
         console.log(rolls)
-    // GENERATE ITEMS BASED ON QUANTITIES (STOCK DICE ROLLS)
-        // Loop through the 2 lists
-        for (idx = 0; idx < rarities.length; idx++) {
-            pickItems(rolls[idx] * stockMultiplier, rarities[idx], 'output_items', 'output_link_list_items')
-        }    
-    // GENERATE SPELL COMPONENTS BASED ON QUANTITIES
-        // Loop through the 2 lists
-        for (idx = 0; idx < rarities.length; idx++) {
-            pickSpells(rolls[idx] * stockMultiplier, rarities[idx], 'output_spells', 'output_link_list_spells')
-        }    
+    // CHECK LIST
+    if (rolls.reduce((a, b) => a + b, 0) == 0) {
+        var vMessage = 'This city regrets to inform you there is nothing in stock. Perhaps they have a quest for the party to get some stock?'
+        // Populate the items element saying nothing for sale
+        var ul2 = document.createElement('li')
+        ul2.innerHTML = vMessage
+        document.getElementById('output_items').appendChild(ul2)
+
+        var ul1 = document.createElement('li')
+        ul1.innerHTML = vMessage
+        document.getElementById('output_spells').appendChild(ul1)
+    } else {
+        // GENERATE ITEMS BASED ON QUANTITIES (STOCK DICE ROLLS)
+            // Loop through the 2 lists
+            for (idx = 0; idx < rarities.length; idx++) {
+                pickItems(rolls[idx] * stockMultiplier, rarities[idx], 'output_items', 'output_link_list_items')
+            }    
+        // GENERATE SPELL COMPONENTS BASED ON QUANTITIES
+            // Loop through the 2 lists
+            for (idx = 0; idx < rarities.length; idx++) {
+                pickSpells(rolls[idx] * stockMultiplier, rarities[idx], 'output_spells', 'output_link_list_spells')
+        }
+    }
+        
 }
