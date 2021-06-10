@@ -467,3 +467,21 @@ let tableNPCVoiceQuirk = [{"d99":1,"QUIRK":"Snorts every now and then"},
 {"d99":97,"QUIRK":"Begins every statement with "},
 {"d99":98,"QUIRK":"Pick a letter like "},
 {"d99":99,"QUIRK":"clergyman sing song"}]
+
+let tableLanguagesCommon = [{"d8":1,"LANGUAGE":"Common"},
+{"d8":2,"LANGUAGE":"Dwarvish"},
+{"d8":3,"LANGUAGE":"Elvish"},
+{"d8":4,"LANGUAGE":"Giant"},
+{"d8":5,"LANGUAGE":"Gnomish"},
+{"d8":6,"LANGUAGE":"Goblin"},
+{"d8":7,"LANGUAGE":"Halfling"},
+{"d8":8,"LANGUAGE":"Orc"}]
+
+let tableLanguagesExotic = [{"d8":1,"LANGUAGE":"Abyssal"},
+{"d8":2,"LANGUAGE":"Celestial"},
+{"d8":3,"LANGUAGE":"Draconic"},
+{"d8":4,"LANGUAGE":"Deep Speech"},
+{"d8":5,"LANGUAGE":"Infernal"},
+{"d8":6,"LANGUAGE":"Primordial"},
+{"d8":7,"LANGUAGE":"Sylvan"},
+{"d8":8,"LANGUAGE":"Undercommon"}]

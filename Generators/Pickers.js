@@ -968,38 +968,6 @@ function generateNPC(element){
             var eyeColor = rollTable(tableNPCEyeColor)
             // Voice Quirk
             var voiceQuirk = rollTable(tableNPCVoiceQuirk)
-            // BACKGROUND
-                // Pick a random background
-                let background = randomProperty(tableBackgrounds)
-                // Background Name
-                var bgName = background.NAME
-                // Background Languages
-                var bgLanguages = background.LANGUAGES
-                // Personality Trait
-                var traits = background.PERSONALITY_TRAIT
-                var traitList = traits.split("-----")
-                var trait = randomProperty(traitList)
-                // Ideal
-                var ideals = background.IDEAL
-                var idealList = ideals.split("-----")
-                var ideal = randomProperty(idealList)
-                // Flaw
-                var flaws = background.FLAW
-                var flawList = flaws.split("-----")
-                var flaw = randomProperty(flawList)
-                // Bond
-                var bonds = background.BOND
-                var bondList = bonds.split("-----")
-                var bond = randomProperty(bondList)
-            // PERSONALITY
-                // Roll a die
-                let rPersonality = getRndInteger(1, 16)
-                // Name
-                let personalityName = tableNPCPersonality.find(row => row.d16 == rPersonality).NAME
-                // Type
-                let personalityType = tableNPCPersonality.find(row => row.d16 == rPersonality).TYPE
-                // Description
-                let personalityDescription = tableNPCPersonality.find(row => row.d16 == rPersonality).DESCRIPTION
 
             // RACE
                 // Roll
@@ -1029,6 +997,102 @@ function generateNPC(element){
                 var languages = tableNPCRace.find(i => i.d100 == raceRoll).LANGUAGES
                 // Languages Extra
                 var languagesExtra = tableNPCRace.find(i => i.d100 == raceRoll).LANGUAGES_EXTRA
+                    // Get extra languages
+                    if (languagesExtra != null) {
+                        // Create an emtpy list to store the extra languages in
+                        var langList = []
+                        // Loop through the extra language number
+                        for (i = 0; i < languagesExtra; i++){
+                            // Exotic Languages or Common Language
+                            var langRoll = getRndInteger(1, 10)
+                            if (langRoll == 10) {
+                                var langExtra = rollTable(tableLanguagesExotic)
+                                // Check if it's already in the race's language
+                                while (languages.includes(langExtra) || langList.includes(langExtra)) {
+                                    langExtra = rollTable(tableLanguagesExotic)
+                                }
+                            } else {
+                                // Check if it's already in the race's language
+                                while (languages.includes(langExtra || langList.includes(langExtra)) ) {
+                                    langExtra = rollTable(tableLanguagesCommon)
+                                }
+                            }
+                            // Push to the list
+                            langList.push(langExtra)    
+                        }
+                        var extraLanguages = langList.join(", ")
+                        
+                    } else {
+                        var extraLanguages = ''
+                    }
+
+            // BACKGROUND
+                // Pick a random background
+                let background = randomProperty(tableBackgrounds)
+                // Background Name
+                var bgName = background.NAME
+                // Background Languages
+                var bgLanguages = background.LANGUAGES
+                // Personality Trait
+                var traits = background.PERSONALITY_TRAIT
+                var traitList = traits.split("-----")
+                var trait = randomProperty(traitList)
+                // Ideal
+                var ideals = background.IDEAL
+                var idealList = ideals.split("-----")
+                var ideal = randomProperty(idealList)
+                // Flaw
+                var flaws = background.FLAW
+                var flawList = flaws.split("-----")
+                var flaw = randomProperty(flawList)
+                // Bond
+                var bonds = background.BOND
+                var bondList = bonds.split("-----")
+                var bond = randomProperty(bondList)
+                // Language Count
+                var langCount = background.LANGUAGES_COUNT
+                // Languages
+                var bgLanguages = background.LANGUAGES
+                    // Update Languages
+                    if (langCount != null) {
+                        // Create an emtpy list to store the extra languages in
+                        var langList = []
+                        // Loop through the extra language number
+                        for (i = 0; i < langCount; i++){
+                            // Exotic Languages or Common Language
+                            var langRoll = getRndInteger(1, 10)
+                            if (langRoll == 10) {
+                                var langExtra = rollTable(tableLanguagesExotic)
+                                // Check if it's already in the race's language
+                                while (languages.includes(langExtra) || langList.includes(langExtra)) {
+                                    langExtra = rollTable(tableLanguagesExotic)
+                                }
+                            } else {
+                                // Check if it's already in the race's language
+                                while (languages.includes(langExtra || langList.includes(langExtra)) ) {
+                                    langExtra = rollTable(tableLanguagesCommon)
+                                }
+                            }
+                            // Push to the list
+                            langList.push(langExtra)    
+                        }
+                        var languagesMore = langList.join(", ")
+                        
+                    } else if (bgLanguages != "") {
+                        var languagesMore = bgLanguages
+                    } else {
+                        var languagesMore = ''
+                    }
+                
+            // PERSONALITY
+                // Roll a die
+                let rPersonality = getRndInteger(1, 16)
+                // Name
+                let personalityName = tableNPCPersonality.find(row => row.d16 == rPersonality).NAME
+                // Type
+                let personalityType = tableNPCPersonality.find(row => row.d16 == rPersonality).TYPE
+                // Description
+                let personalityDescription = tableNPCPersonality.find(row => row.d16 == rPersonality).DESCRIPTION
 
             // Weight
             var weightPounds = +baseWeight + (+heightMod * +weightMod)
@@ -1130,7 +1194,7 @@ function generateNPC(element){
                         <button onclick="rollTable('')">Reroll</button> <b>Pregnancy:</b> ${pregnantStatus} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Sexual Orientation:</b> ${sexualOrientation} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Relationship Orientation:</b> ${relationshipOrientation} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Languages:</b> Common, ${languages} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Languages:</b> Common, ${languages}, ${languagesMore}, ${extraLanguages} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Alignment:</b> ${alignment} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Voice Quirk:</b> ${voiceQuirk} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Personality:</b> ${personalityName} (${personalityType})  <br>
