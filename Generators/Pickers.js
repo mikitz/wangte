@@ -968,6 +968,29 @@ function generateNPC(element){
             var eyeColor = rollTable(tableNPCEyeColor)
             // Voice Quirk
             var voiceQuirk = rollTable(tableNPCVoiceQuirk)
+            // BACKGROUND
+                // Pick a random background
+                let background = randomProperty(tableBackgrounds)
+                // Background Name
+                var bgName = background.NAME
+                // Background Languages
+                var bgLanguages = background.LANGUAGES
+                // Personality Trait
+                var traits = background.PERSONALITY_TRAIT
+                var traitList = traits.split("-----")
+                var trait = randomProperty(traitList)
+                // Ideal
+                var ideals = background.IDEAL
+                var idealList = ideals.split("-----")
+                var ideal = randomProperty(idealList)
+                // Flaw
+                var flaws = background.FLAW
+                var flawList = flaws.split("-----")
+                var flaw = randomProperty(flawList)
+                // Bond
+                var bonds = background.BOND
+                var bondList = bonds.split("-----")
+                var bond = randomProperty(bondList)
             // PERSONALITY
                 // Roll a die
                 let rPersonality = getRndInteger(1, 16)
@@ -977,30 +1000,36 @@ function generateNPC(element){
                 let personalityType = tableNPCPersonality.find(row => row.d16 == rPersonality).TYPE
                 // Description
                 let personalityDescription = tableNPCPersonality.find(row => row.d16 == rPersonality).DESCRIPTION
+
             // RACE
                 // Roll
-                var raceRoll = getRndInteger(1, 96)
+                var raceRoll = getRndInteger(1, 100)
                 // Race
-                var race = tableNPCRace.find(i => i.d96 == raceRoll).RACE
+                var race = tableNPCRace.find(i => i.d100 == raceRoll).RACE
                     // SET RACE FOR TESTING
                     //var race = `Aarakocra`
                 console.log(`Race: ${race}`)
                 // Base Height
-                var baseHeight = parseInt(tableNPCRace.find(i => i.d96 == raceRoll).BASE_HEIGHT_IN)
+                var baseHeight = parseInt(tableNPCRace.find(i => i.d100 == raceRoll).BASE_HEIGHT_IN)
                 console.log(`Base Height: ${baseHeight}`)
                 // Height Mod
-                var heightMod = rollDice(tableNPCRace.find(i => i.d96 == raceRoll).HEIGHT_MOD)
+                var heightMod = rollDice(tableNPCRace.find(i => i.d100 == raceRoll).HEIGHT_MOD)
                 console.log(`Height Mod: ${heightMod}`)
                 // Base Weight
-                var baseWeight = parseInt(tableNPCRace.find(i => i.d96 == raceRoll).BASE_WEIGHT_LBS)
+                var baseWeight = parseInt(tableNPCRace.find(i => i.d100 == raceRoll).BASE_WEIGHT_LBS)
                 console.log(`Base Weight: ${baseWeight}`)
                 // Weight Mod
-                var weightMod = rollDice(tableNPCRace.find(i => i.d96 == raceRoll).WEIGHT_MOD)
+                var weightMod = rollDice(tableNPCRace.find(i => i.d100 == raceRoll).WEIGHT_MOD)
                 console.log(`Weight Mod: ${weightMod}`)
                 // Life Expectancy at Birth (LEB)
-                var LEB = tableNPCRace.find(i => i.d96 == raceRoll).AGE_LEB
+                var LEB = tableNPCRace.find(i => i.d100 == raceRoll).AGE_LEB
                 // Adult Age
-                var ageAdult = tableNPCRace.find(i => i.d96 == raceRoll).AGE_ADULT
+                var ageAdult = tableNPCRace.find(i => i.d100 == raceRoll).AGE_ADULT
+                // Languages
+                var languages = tableNPCRace.find(i => i.d100 == raceRoll).LANGUAGES
+                // Languages Extra
+                var languagesExtra = tableNPCRace.find(i => i.d100 == raceRoll).LANGUAGES_EXTRA
+
             // Weight
             var weightPounds = +baseWeight + (+heightMod * +weightMod)
             var weightKGS = +weightPounds / 2.205
@@ -1094,17 +1123,23 @@ function generateNPC(element){
             vMessage += `<button onclick="rollTable('')">Reroll</button> <b>Race:</b> ${race} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Height:</b> ${convertInches(heightInches)} (${Math.round(heightCM, 0)} cm) <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Weight:</b> ${weightPounds} lbs (${Math.round(weightKGS, 0)} kg) <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Age:</b> ${age} (LEB: ${LEB}) <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Age:</b> ${age} (LEB: ${LEB}) [Adulthood: ${ageAdult}]<br>
                         <button onclick="rollTable('')">Reroll</button> <b>Sex:</b> ${sex} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Gender Identity:</b> ${gender} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Pronouns:</b> ${pronouns} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Pregnancy:</b> ${pregnantStatus} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Sexual Orientation:</b> ${sexualOrientation} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Relationship Orientation:</b> ${relationshipOrientation} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Languages:</b> Common, ${languages} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Alignment:</b> ${alignment} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Voice Quirk:</b> ${voiceQuirk} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Personality:</b> ${personalityName} (${personalityType})  <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Personality Description:</b> ${personalityDescription}  <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Background:</b> ${bgName} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Trait:</b> ${trait} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Bond:</b> ${bond} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Flaw:</b> ${flaw} <br>
+                        <button onclick="rollTable('')">Reroll</button> <b>Ideal:</b> ${ideal} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Body Type:</b> ${bodyType} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Relationship Status:</b> ${relationshipStatus} <br>
                         <button onclick="rollTable('')">Reroll</button> <b>Body Shape:</b> ${bodyShape} <br>
