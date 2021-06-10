@@ -1012,15 +1012,20 @@ function generateNPC(element){
                                     langExtra = rollTable(tableLanguagesExotic)
                                 }
                             } else {
+                                var langExtra = rollTable(tableLanguagesCommon)
                                 // Check if it's already in the race's language
                                 while (languages.includes(langExtra || langList.includes(langExtra)) ) {
                                     langExtra = rollTable(tableLanguagesCommon)
                                 }
                             }
+                            console.log(`# of Extra Langs: ${languagesExtra}`)
+                            console.log(`LANG EXTRA: ${langExtra}`)
                             // Push to the list
                             langList.push(langExtra)    
                         }
+                        console.log(langList)
                         var extraLanguages = langList.join(", ")
+                        console.log(`Extra Langs: ${extraLanguages}`)
                         
                     } else {
                         var extraLanguages = ''
@@ -1068,22 +1073,25 @@ function generateNPC(element){
                                     langExtra = rollTable(tableLanguagesExotic)
                                 }
                             } else {
+                                var langExtra = rollTable(tableLanguagesCommon)
                                 // Check if it's already in the race's language
                                 while (languages.includes(langExtra || langList.includes(langExtra)) ) {
                                     langExtra = rollTable(tableLanguagesCommon)
                                 }
                             }
+                            console.log(`# of BG Langs: ${langCount}`)
+                            console.log(`LANG EXTRA BG: ${langExtra}`)
                             // Push to the list
                             langList.push(langExtra)    
                         }
-                        var languagesMore = langList.join(", ")
-                        
+                        console.log(langList)
+                        var languagesMore = langList.join(", ")                        
                     } else if (bgLanguages != "") {
                         var languagesMore = bgLanguages
                     } else {
                         var languagesMore = ''
                     }
-                
+                    console.log(`BG Langs: ${languagesMore}`)
             // PERSONALITY
                 // Roll a die
                 let rPersonality = getRndInteger(1, 16)
