@@ -18,6 +18,7 @@ main {
     flex: 1;
     margin-top: 50px;
     margin-left: 270px;
+    margin-right: 20px;
 }
 select {
     background-color: green;
