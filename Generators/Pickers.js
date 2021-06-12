@@ -1191,40 +1191,119 @@ function generateNPC(element){
         // OUTPUT
             // Set up the message
             var vMessage = `<H2>${name}</H2>`
-            // Assemble the message
-            vMessage += `<button onclick="rollTable('')">Reroll</button> <b>Race:</b> ${race} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Height:</b> ${convertInches(heightInches)} (${Math.round(heightCM, 0)} cm) <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Weight:</b> ${weightPounds} lbs (${Math.round(weightKGS, 0)} kg) <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Age:</b> ${age} (LEB: ${LEB}) [Adulthood: ${ageAdult}]<br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Sex:</b> ${sex} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Gender Identity:</b> ${gender} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Pronouns:</b> ${pronouns} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Pregnancy:</b> ${pregnantStatus} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Sexual Orientation:</b> ${sexualOrientation} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Relationship Orientation:</b> ${relationshipOrientation} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Languages:</b> Common, ${languages}, ${languagesMore}, ${extraLanguages} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Alignment:</b> ${alignment} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Voice Quirk:</b> ${voiceQuirk} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Personality:</b> ${personalityName} (${personalityType})  <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Personality Description:</b> ${personalityDescription}  <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Background:</b> ${bgName} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Trait:</b> ${trait} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Bond:</b> ${bond} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Flaw:</b> ${flaw} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Ideal:</b> ${ideal} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Body Type:</b> ${bodyType} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Relationship Status:</b> ${relationshipStatus} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Body Shape:</b> ${bodyShape} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Hair Length:</b> ${hairLength} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Hair Type:</b> ${hairType} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Hair Color:</b> ${hairColor} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Face Shape:</b> ${faceShape} <br>
-                        <button onclick="rollTable('')">Reroll</button> <b>Eye Color:</b> ${eyeColor} `
+            // Assemble the messages
+            mBiology = `<b>Race:</b> ${race} <br>
+                        <b>Height:</b> ${convertInches(heightInches)} (${Math.round(heightCM, 0)} cm) <br>
+                         <b>Weight:</b> ${weightPounds} lbs (${Math.round(weightKGS, 0)} kg) <br>
+                         <b>Age:</b> ${age} (LEB: ${LEB}) [Adulthood: ${ageAdult}]<br>
+                         <b>Sex:</b> ${sex} <br>
+                         <b>Pregnancy:</b> ${pregnantStatus} <br>`
+            mIdentity = `<b>Gender Identity:</b> ${gender} <br>
+                        <b>Pronouns:</b> ${pronouns} <br>
+                        <b>Sexual Orientation:</b> ${sexualOrientation} <br>
+                        <b>Relationship Orientation:</b> ${relationshipOrientation} <br>`
+            mPersonality = `<b>Alignment:</b> ${alignment} <br>
+                            <b>Voice Quirk:</b> ${voiceQuirk} <br>
+                            <b>Personality:</b> ${personalityName} (${personalityType})  <br>
+                            <b>Personality Description:</b> ${personalityDescription}  <br>`
+            mCharacter = `<b>Languages:</b> Common, ${languages}, ${languagesMore}, ${extraLanguages} <br>
+                        <b>Relationship Status:</b> ${relationshipStatus} <br>
+                        <b>Background:</b> ${bgName} <br>
+                        <b>Trait:</b> ${trait} <br>
+                        <b>Bond:</b> ${bond} <br>
+                        <b>Flaw:</b> ${flaw} <br>
+                        <b>Ideal:</b> ${ideal} <br>`
+            mPhysicalAppearace = `<b>Body Shape:</b> ${bodyShape} <br>
+                                <b>Body Type:</b> ${bodyType} <br>
+                                <b>Hair Length:</b> ${hairLength} <br>
+                                <b>Hair Type:</b> ${hairType} <br>
+                                <b>Hair Color:</b> ${hairColor} <br>
+                                <b>Face Shape:</b> ${faceShape} <br>
+                                <b>Eye Color:</b> ${eyeColor}`
+            //vMessage += `<button onclick="rollTable('')">Reroll</button> <b>Race:</b> ${race} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Height:</b> ${convertInches(heightInches)} (${Math.round(heightCM, 0)} cm) <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Weight:</b> ${weightPounds} lbs (${Math.round(weightKGS, 0)} kg) <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Age:</b> ${age} (LEB: ${LEB}) [Adulthood: ${ageAdult}]<br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Sex:</b> ${sex} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Gender Identity:</b> ${gender} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Pronouns:</b> ${pronouns} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Pregnancy:</b> ${pregnantStatus} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Sexual Orientation:</b> ${sexualOrientation} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Relationship Orientation:</b> ${relationshipOrientation} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Languages:</b> Common, ${languages}, ${languagesMore}, ${extraLanguages} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Alignment:</b> ${alignment} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Voice Quirk:</b> ${voiceQuirk} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Personality:</b> ${personalityName} (${personalityType})  <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Personality Description:</b> ${personalityDescription}  <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Background:</b> ${bgName} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Trait:</b> ${trait} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Bond:</b> ${bond} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Flaw:</b> ${flaw} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Ideal:</b> ${ideal} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Body Type:</b> ${bodyType} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Relationship Status:</b> ${relationshipStatus} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Body Shape:</b> ${bodyShape} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Hair Length:</b> ${hairLength} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Hair Type:</b> ${hairType} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Hair Color:</b> ${hairColor} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Face Shape:</b> ${faceShape} <br>
+            //            <button onclick="rollTable('')">Reroll</button> <b>Eye Color:</b> ${eyeColor} `
+        // END MESSAGE
 
+        // POPULATE TABLE ROW
+            // Create a new row
+            var row = document.createElement('tr')
+            row.setAttribute('id', `row${q}`)
+            document.getElementById('table_output').appendChild(row)
+                // Biology
+                var tBiology = document.createElement('td')
+                tBiology.setAttribute('id', `biology${q}`)
+                tBiology.setAttribute('style', 'text-align: left !important;')
+                document.getElementById(`row${q}`).appendChild(tBiology)
+                // Identity
+                var tIdentity = document.createElement('td')
+                tIdentity.setAttribute('id', `identity${q}`)
+                tIdentity.setAttribute('style', 'text-align: left !important;')
+                document.getElementById(`row${q}`).appendChild(tIdentity)
+                // Personality
+                var tAppearance = document.createElement('td')
+                tAppearance.setAttribute('id', `personality${q}`)
+                tAppearance.setAttribute('style', 'text-align: left !important;')
+                document.getElementById(`row${q}`).appendChild(tAppearance)
+                // Character
+                var tCharacter = document.createElement('td')
+                tCharacter.setAttribute('id', `character${q}`)
+                tCharacter.setAttribute('style', 'text-align: left !important;')
+                document.getElementById(`row${q}`).appendChild(tCharacter)
+                // Appearance
+                var tAppearance = document.createElement('td')
+                tAppearance.setAttribute('id', `physical_apperance${q}`)
+                tAppearance.setAttribute('style', 'text-align: left !important;')
+                document.getElementById(`row${q}`).appendChild(tAppearance)
         // PRINT THE RESULT
-            // Populate the element
-            var ul1 = document.createElement('p')
-            ul1.innerHTML = vMessage
-            document.getElementById(element).appendChild(ul1)
+            // Populate Biology
+            var pBiology = document.createElement('p')
+            pBiology.innerHTML = mBiology
+            document.getElementById(`biology${q}`).appendChild(pBiology)
+            // Populate Identity
+            var pIdentity = document.createElement('p')
+            pIdentity.innerHTML = mIdentity
+            document.getElementById(`identity${q}`).appendChild(pIdentity)
+            // Populate Personality
+            var pPersonality = document.createElement('p')
+            pPersonality.innerHTML = mPersonality
+            document.getElementById(`personality${q}`).appendChild(pPersonality)
+            // Populate Character
+            var pCharacter = document.createElement('p')
+            pCharacter.innerHTML = mCharacter
+            document.getElementById(`character${q}`).appendChild(pCharacter)
+            // Populate Physical Apperance
+            var pPhysicalApperance = document.createElement('p')
+            pPhysicalApperance.innerHTML = mPhysicalAppearace
+            document.getElementById(`physical_apperance${q}`).appendChild(pPhysicalApperance)
+            // // Populate the element
+            // var ul1 = document.createElement('p')
+            // ul1.innerHTML = vMessage
+            // document.getElementById(element).appendChild(ul1)
     }
 }

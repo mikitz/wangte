@@ -153,9 +153,9 @@ table.tableizer-table {
 } 
 .tableizer-table td {
     padding: 4px;
-    margin: 3px;
+    margin: 5px;
     border: 1px solid #CCC;
-    color: skyblue;
+    color: grey;
     text-align: center;
 }
 .tableizer-table th {
