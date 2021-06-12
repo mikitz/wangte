@@ -1307,3 +1307,10 @@ function generateNPC(element){
             // document.getElementById(element).appendChild(ul1)
     }
 }
+
+// Function to clear the NPC Gen. table
+function clearTable(tablename, quantity) {
+    for (id = 1; id < quantity + 1; id++) {
+        document.getElementById('table_output').deleteRow(id)
+    }
+}
