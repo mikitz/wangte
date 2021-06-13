@@ -1198,7 +1198,8 @@ function generateNPC(element){
                          <b>Age:</b> ${age} (LEB: ${LEB}) [Adulthood: ${ageAdult}]<br>
                          <b>Sex:</b> ${sex} <br>
                          <b>Pregnancy:</b> ${pregnantStatus} <br>`
-            mIdentity = `<b>Gender Identity:</b> ${gender} <br>
+            mIdentity = `<b>Name:</b> ${name} <br>
+                        <b>Gender Identity:</b> ${gender} <br>
                         <b>Pronouns:</b> ${pronouns} <br>
                         <b>Sexual Orientation:</b> ${sexualOrientation} <br>
                         <b>Relationship Orientation:</b> ${relationshipOrientation} <br>`
