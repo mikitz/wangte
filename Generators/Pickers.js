@@ -91,7 +91,7 @@ function pick_item(){ // TODO: #1 Bug: cannot enter a quantity equalt to table_l
         var uiRarity = a.options[a.selectedIndex].text
         console.log(`Rarity: ${uiRarity}`)
     // RUN THE FUNCTION
-        pickItems(quantity, uiRarity)
+        pickItems(quantity, uiRarity, 'output', 'output_link_list')
     
 }
 
