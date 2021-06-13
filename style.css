@@ -19,6 +19,7 @@ main {
     margin-top: 50px;
     margin-left: 270px;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 select {
     background-color: green;
@@ -55,7 +56,11 @@ main li:hover {
 main li {
     word-wrap: break-word;
 }
-
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: var(--justify-important);
+}
 
 /* Vertical Navigation */
 .navlocal {

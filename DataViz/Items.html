@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="../style.css"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src='DataViz.js'></script>
+        <script src='../Generators/Database_Items.js'></script>
+        <script src="../Global_Functions.js"></script>
+    </head>  
+    <body>
+        <!--Navigation Panel START-->   
+        <div id="nav_placeholder"></div>
+        <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+        <!--Navigation Local START-->   
+        <div id="nav_local"></div>
+        <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+        <!-- --Main-- -->
+        <main>
+            <h1>Items</h1>
+            <section>
+                <div style="padding: 10px;">
+                    <input type="checkbox" value="Armor">
+                    <label>Armor</label>
+                </div>
+            </section>
+            <button onclick="displayColumns(magic_items)">TEST</button>
+            <section id='output'></section>
+        </main>
+    </body>  
+</html>
