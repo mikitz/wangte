@@ -37,7 +37,7 @@ function displayColumns(tablename) {
             // Append the column names to the header row
             lKeys.forEach((element) => {
                 var td = document.createElement('th')
-                td.innerHTML = `<button>${element}</button>`
+                td.innerHTML = `<button class='table_button'>${element}</button>`
                 headerRow.appendChild(td)
             })
             // Append the table header to the table
