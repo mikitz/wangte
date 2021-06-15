@@ -215,3 +215,19 @@ button.table_button {
 table button:hover {
     color: white;
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            TABS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+tab2 {
+    tab-size: 2;
+}
+
+tab4 {
+    tab-size: 4;
+}
+
+tab5 {
+    tab-size: 8;
+}

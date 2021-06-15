@@ -1,3 +1,26 @@
+// Function to format gold value into all currencies
+// E.G. input 32.12 gp and output "3 pp, 2 gp, 1 sp, and 2 cp"
+function formatGold(goldPieces) {
+    goldPieces = goldPieces.toFixed(2)
+    // Get platinum pieces (pp)
+    let platinum = Math.floor(goldPieces * 0.1)
+    // Get gold pieces (gp)
+    let goldReg = goldPieces.toString().match(/\d\./gm)
+    // Replace the period in gold with nothing 
+    let gold = parseInt(goldReg[0].replace(".", ""))
+    // Get silver pieces (sp)
+    let silver = parseInt(goldPieces.toString().match(/\.\d/gm)[0].replace(".", ""))
+    // Get copper pieces (cp)
+    let copper = parseInt(goldPieces.toString().match(/\.\d+/gm)[0].replace(".", "").toString().slice(-1))
+    // Log it
+    console.log(`CURRENCIES CONVERTED
+        Platinum: ${platinum} pp
+        Gold: ${gold} gp
+        Silver: ${silver} sp
+        Copper: ${copper} cp`)
+    // Return
+    return `${platinum} pp, ${gold} gp, ${silver} sp, and ${copper} cp`
+}
 // Declare a function to select a random value from a dictionary
 // Source: https://stackoverflow.com/questions/2532218/pick-random-property-from-a-javascript-object
 var randomProperty = function (obj) {

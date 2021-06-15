@@ -1,0 +1,120 @@
+<!DOCTYPE html> 
+<html lang ="en">  
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="../style.css"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="Calculators.js"></script>
+        <script src="../Global_Functions.js"></script>
+    </head>  
+      
+    <body>
+        <!--Navigation Panel START-->   
+        <div id="nav_placeholder"></div>
+        <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+        <!--Navigation Local START-->   
+        <div id="nav_local"></div>
+        <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+        <main>
+            <h1>Business Income Calculator</h1>
+            <label for="working_shifts">Number of Working Shifts per Day: </label>
+                <select name="working_shifts" id="working_shifts">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+            </select>
+            <br><br>
+            <label for="days_employed">Number of Days per Week Open (Max: 10): </label>
+                <input type="number" id="days_employed" name="days_employed">
+            <!-- EMPLOYEE TYPE 1 -->
+            <h2>Employee Type 1</h2>
+            <label for="type1_quantity">Number of Employees (Type 1): </label>
+                <input type="number" id="type1_quantity" name="type1_quantity"><br><br>
+            </form>
+            <label for="type1_wage">Employees (Type 1) Wage per Hour: </label>
+                <input type="number" id="type1_wage" name="type1_wage"><br><br>
+            </form>
+            <label for="type1_currency">Employee (Type 1) Currency: </label>
+                <select name="type1_currency" id="type1_currency">
+                    <option value="copper">Copper</option>
+                    <option value="silver">Silver</option>
+                    <option value="electrum">Electrum</option>
+                    <option value="gold">Gold</option>
+                    <option value="platinum">Platinum</option>
+                </select>
+
+            <!-- EMPLOYEE TYPE 2 -->
+            <h2>Employee Type 2</h2>
+            <label for="type2_quantity">Number of Employees (Type 2): </label>
+                <input type="number" id="type2_quantity" name="type2_quantity"><br><br>
+            </form>
+            <label for="type2_wage">Employees (Type 2) Wage per Hour: </label>
+                <input type="number" id="type2_wage" name="type1_wage"><br><br>
+            </form>
+            <label for="type2_currency">Employee (Type 2) Currency: </label>
+                <select name="type2_currency" id="type2_currency">
+                    <option value="copper">Copper</option>
+                    <option value="silver">Silver</option>
+                    <option value="electrum">Electrum</option>
+                    <option value="gold">Gold</option>
+                    <option value="platinum">Platinum</option>
+                </select>
+
+            <!-- EMPLOYEE TYPE 3 -->
+            <h2>Employee Type 3</h2>
+            <label for="type3_quantity">Number of Employees (Type 3): </label>
+                <input type="number" id="type3_quantity" name="type3_quantity"><br><br>
+            </form>
+            <label for="type3_wage">Employees (Type 3) Wage per Hour: </label>
+                <input type="number" id="type3_wage" name="type3_wage"><br><br>
+            </form>
+            <label for="type1_currency">Employee (Type 3) Currency: </label>
+                <select name="type3_currency" id="type3_currency">
+                    <option value="copper">Copper</option>
+                    <option value="silver">Silver</option>
+                    <option value="electrum">Electrum</option>
+                    <option value="gold">Gold</option>
+                    <option value="platinum">Platinum</option>
+                </select>
+
+            <!-- GENERAL INFORMATION -->
+            <h2>General Info.</h2>
+                <label for="misc_costs">Other Costs: </label>
+                    <input type="number" id="misc_costs" name="misc_costs">
+                <label for="misc_currency">  </label>
+                    <select name="misc_currency" id="misc_currency">
+                        <option value="copper">Copper</option>
+                        <option value="silver">Silver</option>
+                        <option value="electrum">Electrum</option>
+                        <option value="gold">Gold</option>
+                        <option value="platinum">Platinum</option>
+                    </select>
+                <label for="misc_time_scale"> per: </label>
+                    <select name="misc_time_scale" id="misc_time_scale">
+                        <option value="hour">Hour</option>
+                        <option value="day">Day</option>
+                        <option value="week">Week</option>
+                        <option value="month">Month</option>
+                        <option value="year">Year</option>
+                    </select>
+                </form>
+                <br><br>
+                <label for="time_scale">Output Time Scale: </label>
+                    <select name="time_scale" id="time_scale">
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="annually">Annually</option>
+                    </select>
+            <br><br>
+
+            <!-- BUTTONS -->
+            <button onclick="businessIncome('output')">Calculate</button>
+            <button onclick="clear_sail()">Clear Output</button>
+            <p id = "output"></p>
+            
+    </main> 
+    </body>  
+</html>
