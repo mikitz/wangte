@@ -98,3 +98,15 @@ let tableWealth = [{"WEALTH":"wretched","MODIFIER":0.33},
 let tableMagicness = [{"MAGICNESS":"low-magic","MODIFIER":0.5},
 {"MAGICNESS":"medium-magic","MODIFIER":1},
 {"MAGICNESS":"high-magic","MODIFIER":2}]
+
+let tableEmployeeSkills = [{"SKILL_LEVEL":"Unskilled","WAGE":0.025},
+{"SKILL_LEVEL":"Modest","WAGE":0.125},
+{"SKILL_LEVEL":"Comfortable","WAGE":0.25},
+{"SKILL_LEVEL":"Wealthy","WAGE":0.50},
+{"SKILL_LEVEL":"Aristocratic","WAGE":1.0}]
+
+let tableBrewery = [{"QUALITY":"low","PRICE":6},
+{"QUALITY":"medium","PRICE":10},
+{"QUALITY":"high","PRICE":16},
+{"QUALITY":"very-high","PRICE":20},
+{"QUALITY":"undrinkable","PRICE":0}]
