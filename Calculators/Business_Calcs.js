@@ -449,7 +449,7 @@ function simpleBusinessIncome() {
             var outcome = getRndInteger(1, 6) * 5
         } else if (check <= 90) {
             var outcome = (getRndInteger(1, 8) + getRndInteger(1, 8)) * 5
-        } else if (check <= 100) {
+        } else if (check >= 91) {
             var outcome = (getRndInteger(1, 10) + getRndInteger(1, 10) + getRndInteger(1, 10)) * 5
         }
     } else {
