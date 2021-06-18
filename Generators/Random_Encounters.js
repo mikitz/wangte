@@ -149,30 +149,13 @@ function randomEncounter(){
             // Get the rolled encounter
             var encounter = eval(`${biome.toLowerCase()}_nc`)[ad100]
             // SET ENCOUNTER FOR TESTING
-            //encounter = 'Mysterious Island'
+            //encounter = 'Random Ship'
         }
         // Random Ship Encounter
         if (encounter == "Random Ship") {
-            // Roll on the Random Ship Tables
-                var purpose = rollTable(ship_purpose)
-                var type = rollTable(ship_type)
-                var adj = rollTable(ship_adjective)
-                var noun = rollTable(ship_noun)
-                var attitude = rollTable(ship_attitude)
-                var attitudeLower = attitude.toLowerCase()
-                var races = rollTable(eval(`ship_${attitudeLower}`))
-                var disposition = rollTable(ship_disposition)
-                if (disposition == 'Emergency') {
-                    var emergency = rollTable(ship_emergency)
-                } else {
-                    var emergency = 'Nothing Unique'
-                }
-            // Build the message
-            var vMessage = `The party and their ship come accross a <b>${attitude} ${purpose} ${type}</b> crewed by ${races}. <br>This <b>${races}</b> ship is called the <b>${adj} ${noun}</b>. <r>They are ${ED} ft. away from the party's ship and their disposition is <b>${disposition}</b>: ${emergency}.`
-            // Set the final encounter message
-            var encounterFinal = `<h2>NON-COMBAT ENCOUNTER</h2>${vMessage}`
-            // Generate weather
+            randomShipQuantity(1)
             generate_weather()
+            return
         // Mysterious Island Encounter
         } else if (encounter == "Mysterious Island") {
             mysteriousIsland()
