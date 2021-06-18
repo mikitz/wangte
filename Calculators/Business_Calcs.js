@@ -32,12 +32,8 @@ function skillLevelListener(){
             // Creator?
             const creator = `<input type="checkbox" value="creator${emp}" id="creator${emp}">
                                 <label>Creator: check if this employee type creates your product</label>`
-            // Production
-            const production = `<label for="production${emp}">Product Produced per Week per Employee: </label>
-                                    <input type="number" id="production${emp}" name="production${emp}">
-                                    <br><i>Only applicable if the 'Creator' checkbox is selected</i>`
             // Append it to the right element
-            document.getElementById(`employeeID${emp}div`).innerHTML = `${profBonus}<br>${expertise}<br>${creator}<br>${production}`
+            document.getElementById(`employeeID${emp}div`).innerHTML = `${profBonus}<br>${expertise}<br>${creator}`
         } else {
             // Clear the div
             document.getElementById(`employeeID${emp}div`).innerHTML = ``
@@ -239,8 +235,21 @@ function rollProductionDice() {
     // Get the quantity of employees
     let quantity = parseFloat(document.getElementById('emp_types').value)
     console.log(`Quantity ${quantity}`)
-    // Set up the roll list to log the rolls
+    // Get the number of open days
+    var openDays = parseFloat(document.getElementById('days_employed').value)
+    console.log(`Open Days: ${openDays}`)
+    // Get the time it takes to produce one good 
+    var options = parseFloat(document.getElementById('options').value)
+    console.log(`Production Duration: ${options}`)
+    // Calculate how many goods can be produced by one employee per week
+    var productionCount = Math.floor((openDays * 8) / options)
+    console.log(`Production Count: ${productionCount}`)
+    // Set up the list for just the die rolls
     var listRolls = []
+    // Set up the list for the dice rolls plus any modifiers
+    var listChecks = []
+    // Create a sale list for each of the product
+    var listSale = []
     // Set up a switch based on the business types 
     switch(business) {
         case 'Brewery':
@@ -258,8 +267,6 @@ function rollProductionDice() {
                     }
                     // Get the quantity for this employee ID
                     var empQuan = parseFloat(document.getElementById(`emp_quantity${q}`).value)
-                    // Get the amaount of goods this employee produces in a week
-                    var productionCount = parseFloat(document.getElementById(`production${q}`).value)
                     // Multiply the producitonCount according to the time scale
                     if (timeScale == 'Monthly') {
                         productionCount = productionCount * 3
@@ -271,16 +278,16 @@ function rollProductionDice() {
                     // Set up total sale price
                     var saleTotal = 0
                         // Loop through the quantity of this employee ID
-                        for (x = 1; x < (empQuan + 1) * productionCount; x++) {
+                        for (x = 0; x < (empQuan) * productionCount; x++) {
                             // Determine how long they spend per barrel of beer and roll
                             var workhours = document.getElementById('options').value
-                            if (workhours == 12) {
+                            if (workhours == 18) {
                                 // Roll one normal roll
-                                var roll = getRndInteger(1, 20) + profBonus
-                            } else if (workhours == 24) {
+                                var roll = getRndInteger(1, 20)
+                            } else if (workhours == 36) {
                                 // Roll with advantage and +5
-                                var roll1 = getRndInteger(1, 20) + profBonus
-                                var roll2 = getRndInteger(1, 20) + profBonus
+                                var roll1 = getRndInteger(1, 20)
+                                var roll2 = getRndInteger(1, 20)
                                 if (roll1 > roll2) {
                                     var roll = roll1
                                 } else {
@@ -289,28 +296,35 @@ function rollProductionDice() {
                             }
                             // Push the roll to the list
                             listRolls.push(roll)
+                        }
+                        // Loop through each roll
+                        listRolls.forEach((die) => {
+                            // Add the proficiency bonus to it
+                            var check = die + profBonus
+                            // Push it to the checks list
+                            listChecks.push(check)
                             // Determine the sale price of this roll
-                            if (roll == 20) {
-                                var sale = 30
-                            } else if (roll == 1) {
+                            if (die == 1) {
                                 var sale = 0
-                            } else if (roll >= 2 && roll <= 9) {
+                            } else if (check >= 2 && check <= 9) {
                                 var sale = 3
-                            } else if (roll >= 10 && roll <= 14) {
+                            } else if (check >= 10 && check <= 14) {
                                 var sale = 6
-                            } else if (roll >= 15 && roll <= 19) {
-                                var sale = 10
-                            } else if (roll >= 20 && roll <= 24) {
-                                var sale = 16
-                            } else if (roll >= 25 && roll <= 29) {
-                                var sale = 20
-                            } else if (roll >= 30) {
-                                var sale = 30
+                            } else if (check >= 15 && check <= 19) {
+                                var sale = 9
+                            } else if (check >= 20 && check <= 24) {
+                                var sale = 15
+                            } else if (check >= 25 && check <= 29) {
+                                var sale = 24
+                            } else if (check >= 30 && check <= 31) {
+                                var sale = 48
+                            } else if (check >= 32) {
+                                var sale = 96
                             }
+                            listSale.push(sale)
                             // Add it to the total
-                            saleTotal += sale
-                        }                    
-                    
+                            saleTotal += sale  
+                        })        
                     // Break out of the for loop b/c it's no longer needed
                     break
                 // Else alert the user that they must select at least one creator
@@ -332,7 +346,12 @@ function rollProductionDice() {
             alert('Not currently supported. Sorry :(')
             break
     }
+    console.log(`ROLLS`)
     console.log(listRolls)
+    console.log(`CHECKS`)
+    console.log(listChecks)
+    console.log(`SALE PRICES`)
+    console.log(listSale)
     return saleTotal
 }
 // FUnction to populate additional options based on the business
@@ -346,11 +365,11 @@ function populateOptions(){
         case 'Brewery':
             var options = `<label for="options">Workhours per Barrel: </label>
                             <select name="options" id="options">
-                                <option value="8">12 workhours</option>
-                                <option value="24">24 workhours</option>
+                                <option value="18">18 workhours</option>
+                                <option value="36">36 workhours</option>
                             </select>
                             <br>
-                            <i>12 workhours means it's a normal roll and 24 workhours means it's a roll with advantage</i>`
+                            <i>18 workhours means it's a normal roll and 36 workhours means it's a roll with advantage</i>`
             break
         case 'Restaurant':
             var options = ''
@@ -397,4 +416,44 @@ function expensesResult(){
     console.log(`Employees Total: ${empTotal}`)
     console.log(`Revenue: ${revenue}`)
     console.log(`PROFITS: ${profits}`)
+}
+// Function to calculate SIMPLE business income
+function simpleBusinessIncome() {
+    // Roll 1d100
+    var d100 = getRndInteger(1, 100)
+    console.log(`d100: ${d100}`)
+    // Get the amount of passionate employees
+    var employees = parseInt(document.getElementById('employees').value)
+    console.log(`Employees: ${employees}`)
+    // Get the number of days spent at the business running it
+    var days = parseInt(document.getElementById('days').value)
+    console.log(`Days: ${days}`)
+    // Add the modifiers to the roll
+    var check = d100 + employees + days
+    console.log(`Check: ${check}`)
+    // Determine the outcome
+    if (check <= 40) {
+        var rCost = getRndInteger(1, 6) * 5
+        console.log(`Cost: ${rCost}`)
+        // Granular outcomes
+        if (check <= 20) {
+            var outcome = -rCost * 1.5
+        } else if (check <= 30) {
+            var outcome = -rCost * 1
+        } else if (check <= 40) {
+            var outcome = -rCost * 0.5
+        }
+    } else if (check >= 61) { 
+        // Granular outcomes
+        if (check <= 80) {
+            var outcome = getRndInteger(1, 6) * 5
+        } else if (check <= 90) {
+            var outcome = (getRndInteger(1, 8) + getRndInteger(1, 8)) * 5
+        } else if (check <= 100) {
+            var outcome = (getRndInteger(1, 10) + getRndInteger(1, 10) + getRndInteger(1, 10)) * 5
+        }
+    } else {
+        var outcome = 0
+    }
+    document.getElementById('output').innerHTML = `This month, your business earned a profit of ${outcome} gp.`
 }
