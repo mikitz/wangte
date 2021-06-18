@@ -25,16 +25,22 @@
             <label for="days">Number of Days: </label>
                 <input type="number" id="days" name="days" min="0" max="30" value="0">
             <br><i>This is the number of days your PC spends running the business for the month.</i>
-            <br>
+            <br><br>
             <label for="employees">Number of Employees: </label>
                 <input type="number" id="employees" name="employees" min="0" max="10" value="0">
-            <br><i>This is the number of passionate emplyees you have. E.G. family members, founders, co-founders, etc.</i>
+            <br><i>This is the number of passionate emplyees you have. E.G. family members, founders, co-founders, profit-share employees, etc.</i>
+            <br><br>
+            <label for="profit_share">Number of Profit-share Employees: </label>
+                <input type="number" id="profit_share" name="profit_share" min="0" max="10" value="0" onchange="populateProfitShare()">
+            <br><i>This is the number employees you have that share in the profits of your business. Remember that each one should be added to the 'Number of Employees' input box as well.</i>
+            <br>
+            <div id="profit_share_employees"></div>
             <!---------------------- 
                 BUTTONS & OUTPUTS
             ------------------------>
             <p></p>
             <button onclick="simpleBusinessIncome()">Calculate</button>
-            <button onclick="clear_sail()">Clear Output</button>
+            <button onclick="document.getElementById('output').innerHTML = ''">Clear Output</button>
             <p id="output"></p>
         </main> 
         </body>  
