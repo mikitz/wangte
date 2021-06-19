@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <style>
+        input {
+            padding: 7px;
+            height: 10px;
+        }
+    </style>
+<!--HEAD START-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>GameMaster Website</title>  
+        <link rel="stylesheet" href="../style.css"/>
+        <script src="../Global_Functions.js"></script>
+        <script src="Spell_Helper.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="Character_Inventory.js"></script>
+        <script src="../DataViz/DataViz.js"></script>
+    </head>
+<!--BODY START-->
+    <body>
+        <!--Navigation Panel START-->   
+        <div id="nav_placeholder"></div>
+        <script>$(function(){$("#nav_placeholder").load("../nav_back_dir.html");});</script>
+        <!--Navigation Local START-->   
+        <div id="nav_local"></div>
+        <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
+        <main>
+            <h1>Character Inventory</h1>
+            <button id="create_character" onclick="createCharacter()">Create Character</button>
+            <button id="deleate_all" onclick="deleteEverything()">DELETE EVERYTHING</button>
+            <br><br>
+            <label for="characterList">Load Character: </label>
+                <select name="characterList" id="characterList" onchange="updateCurrency('copper_display'); updateCurrency('silver_display'); updateCurrency('electrum_display'); updateCurrency('gold_display'); updateCurrency('platinum_display'); totalCurrency('copperTotal'); totalCurrency('silverTotal'); totalCurrency('electrumTotal'); totalCurrency('goldTotal'); totalCurrency('platinumTotal'); updateTable()">
+                    
+                </select>
+            <br><br>
+            <fieldset>
+                <legend>Add Transaction</legend>
+                <label for="valueInputAdd">Copper:</label>
+                    <input id="addCopper" type="number" placeholder="Enter value..."><br>
+                <label for="valueInputAdd">Silver:</label>
+                    <input id="addSilver" type="number" placeholder="Enter value..."><br>
+                <label for="valueInputAdd">Electrum:</label>
+                    <input id="addElectrum" type="number" placeholder="Enter value..."><br>
+                <label for="valueInputAdd">Gold:</label>
+                    <input id="addGold" type="number" placeholder="Enter value..."><br>
+                <label for="valueInputAdd">Platinum:</label>
+                    <input id="addPlatinum" type="number" placeholder="Enter value..."><br>
+                <label for="valueInputNote">Note:</label>
+                    <textarea id="valueInputNote" placeholder="Sold the short sword to Bob the weaponsmith."></textarea>
+                <br><br>
+                <button class="special" type="button" id="addCurrency" onclick="saveCurrency()">Add Currency</button>
+                <button class="special" type="button" id="addPurchase" onclick="purchase()">Make a Purchase</button>
+                <button class="special" type="button" id="addSale" onclick="sell()">Make a Sale</button>
+            </fieldset>
+            <table class="currency">
+                <thead>
+                    <th>
+                        
+                    </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Copper: <div id="copper_display" class="copper"></div></td>
+                        <td>Silver: <div id="silver_display" class="silver"></div></td>
+                        <td>Electrum: <div id="electrum_display" class="electrum"></div></td>
+                        <td>Gold: <div id="gold_display" class="gold"></div></td>
+                        <td>Platinum: <div id="platinum_display" class="copper"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Total: <div id="copperTotal" class="copperTotal"></div></td>
+                        <td>Total: <div id="silverTotal" class="silverTotal"></div></td>
+                        <td>Total: <div id="electrumTotal" class="electrumTotal"></div></td>
+                        <td>Total: <div id="goldTotal" class="goldTotal"></div></td>
+                        <td>Total: <div id="platinumTotal" class="copperTotal"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="transactionTable" id="output"></p>
+        </main>
+        <script>
+            populateCharacterList()
+            updateCurrency('copper_display')
+            updateCurrency('silver_display')
+            updateCurrency('electrum_display')
+            updateCurrency('gold_display')
+            updateCurrency('platinum_display')
+            totalCurrency('copperTotal')
+            totalCurrency('silverTotal')
+            totalCurrency('electrumTotal')
+            totalCurrency('goldTotal')
+            totalCurrency('platinumTotal')
+            updateTable()
+        </script>
+    </body>
+</html>

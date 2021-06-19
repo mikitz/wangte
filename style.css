@@ -22,10 +22,15 @@ main {
     margin-bottom: 20px;
 }
 select {
-    background-color: green;
+    background-color: rgb(54, 72, 54);
 }
 input {
-    background-color: orange;
+    background-color: rgb(40, 40, 40);
+    color: rgb(104, 95, 118);
+}
+textarea {
+    background-color: rgb(40, 40, 40);
+    color: rgb(104, 95, 118);
 }
 body h1{
     color: red;
@@ -154,10 +159,10 @@ display: block;
 
 button {
     transition-duration: 0.4s;
-    background-color: black;
-    color: white;
+    background-color: rgb(19, 19, 19);
+    color: rgb(132, 132, 132);
     font-weight: bold;
-    border: 2px solid white;
+    /* border: 2px solid white; */
 }
 
 button:hover {
@@ -230,4 +235,42 @@ tab4 {
 
 tab5 {
     tab-size: 8;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            CURRENCY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+table.currency {
+    width: 45pc;
+    align-content: center;
+}
+
+table.currency td {
+    text-align: center;
+}
+p.transactionTable table{
+    font-size: 12px;
+    border: 1px solid #CCC; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    word-wrap: break-word;
+}
+p.transactionTable td {
+    padding: 4px;
+    margin: 5px;
+    border: 1px solid #CCC;
+    color: rgb(128, 128, 128);
+    text-align: center;
+}
+p.transactionTable th {
+    background-color: rgb(141, 7, 112); 
+    color: skyblue;
+    font-weight: bold;
+}
+p.transactionTable button.table_button {
+    border: none;
+    background-color: rgb(141, 7, 112);
+    transition-duration: 0.3s;
+    font-weight: bold;
 }

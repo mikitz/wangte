@@ -1,5 +1,7 @@
 // Function to build a table from a Dictionary
 function displayColumns(tablename) {
+    // Clear it
+    document.getElementById('output').innerHTML = ''
     // GET COL NAMES
         // Get the Keys of the table
         var vKeys = Object.keys(tablename[0])
@@ -13,6 +15,11 @@ function displayColumns(tablename) {
             var key = element.replace("_", " ")
             // Transform to title-case
             key = lowerCaseAllWordsExceptFirstLetters(key)
+            // Check if all letter are lowercase
+            if (key === key.toLowerCase()) {
+                // Convert to title case
+                key = key.toProperCase()
+            }
             // Push it to a new list
             lKeys.push(key)
         })
