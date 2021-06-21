@@ -274,3 +274,23 @@ p.transactionTable button.table_button {
     transition-duration: 0.3s;
     font-weight: bold;
 }
+
+.platinum-coin {
+    color: #e5e4e1;
+}
+  
+.gold-coin {
+    color: gold;
+}
+
+.electrum-coin {
+    color: #b99033;
+}
+
+.silver-coin {
+    color: silver;
+}
+
+.copper-coin {
+    color: #b87333;
+}

@@ -13,11 +13,18 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>GameMaster Website</title>  
         <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="Z:\fontawesome-free-5.15.3-web\css\all.css" type="text/css"> <!--load all styles -->
         <script src="../Global_Functions.js"></script>
         <script src="Spell_Helper.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="Character_Inventory.js"></script>
         <script src="../DataViz/DataViz.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous"
+        />
     </head>
 <!--BODY START-->
     <body>
@@ -56,29 +63,33 @@
                 <button class="special" type="button" id="addPurchase" onclick="purchase()">Make a Purchase</button>
                 <button class="special" type="button" id="addSale" onclick="sell()">Make a Sale</button>
             </fieldset>
-            <table class="currency">
-                <thead>
-                    <th>
-                        
-                    </th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Copper: <div id="copper_display" class="copper"></div></td>
-                        <td>Silver: <div id="silver_display" class="silver"></div></td>
-                        <td>Electrum: <div id="electrum_display" class="electrum"></div></td>
-                        <td>Gold: <div id="gold_display" class="gold"></div></td>
-                        <td>Platinum: <div id="platinum_display" class="copper"></div></td>
-                    </tr>
-                    <tr>
-                        <td>Total: <div id="copperTotal" class="copperTotal"></div></td>
-                        <td>Total: <div id="silverTotal" class="silverTotal"></div></td>
-                        <td>Total: <div id="electrumTotal" class="electrumTotal"></div></td>
-                        <td>Total: <div id="goldTotal" class="goldTotal"></div></td>
-                        <td>Total: <div id="platinumTotal" class="copperTotal"></div></td>
-                    </tr>
-                </tbody>
-            </table>
+            <br>      
+            <fieldset>
+                <table class="currency">
+                    <thead>
+                        <th>
+                            
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-coins copper-coin"></i> Copper: <div id="copper_display" class="copper"></div></td>
+                            <td><i class="fas fa-coins silver-coin"></i> Silver: <div id="silver_display" class="silver"></div></td>
+                            <td><i class="fas fa-coins electrum-coin"></i> Electrum: <div id="electrum_display" class="electrum"></div></td>
+                            <td><i class="fas fa-coins gold-coin"></i> Gold: <div id="gold_display" class="gold"></div></td>
+                            <td><i class="fas fa-coins platinum-coin"></i> Platinum: <div id="platinum_display" class="copper"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Total: <div id="copperTotal" class="copperTotal"></div></td>
+                            <td>Total: <div id="silverTotal" class="silverTotal"></div></td>
+                            <td>Total: <div id="electrumTotal" class="electrumTotal"></div></td>
+                            <td>Total: <div id="goldTotal" class="goldTotal"></div></td>
+                            <td>Total: <div id="platinumTotal" class="copperTotal"></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            
             <p class="transactionTable" id="output"></p>
         </main>
         <script>

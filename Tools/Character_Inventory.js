@@ -151,6 +151,11 @@ function saveCurrency(){
     updateCurrency('electrum_display')
     updateCurrency('gold_display')
     updateCurrency('platinum_display')
+    totalCurrency('copperTotal')
+    totalCurrency('silverTotal')
+    totalCurrency('electrumTotal')
+    totalCurrency('goldTotal')
+    totalCurrency('platinumTotal')
 }
 // Function to update currencies
 function updateCurrency(id){
