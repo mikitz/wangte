@@ -249,6 +249,26 @@ function purchase(){
             // Transaction Variables
             let transactionArray = {"ID": tranID, "type": "purchase", "copper": copper, "silver": silver, "electrum": electrum, "gold": gold, "platinum": platinum, "note": note}
     // NON-SUFFICIENT FUNDS
+        // Complex implemenatation
+        // Pulls the total for the currency(ies) used and check to make sure the purchase value is less than the stored value
+        // Then converts the purchase price to other denominations
+        // Convert the denominations to gold
+        let copperGold = copper / 100
+        let silverGold = silver / 10
+        let electrumGold = electrum / 2
+        let goldGold = gold * 1
+        let platinumGold = platinum * 10
+        // Sum them
+        let sumGold = copperGold + silverGold + electrumGold + goldGold + platinumGold
+        // Pull the Gold Total and compare
+        let goldTotal = parseFloat(document.getElementById('goldTotal').innerHTML)
+        // Compare
+        if (Math.abs(sumGold) > goldTotal) {
+            alert(`Can you really make a purchase that costs ${Math.abs(sumGold)} gp while only having ${goldTotal} gp? Cheeky ;)`)
+            return
+        }
+        // Simple implemenation
+        // Only on a per-denomination basis
         if (Math.abs(copper) > copperLocal) {
             alert(`Can you really make a purchase that costs ${Math.abs(copper)} cp while only having ${copperLocal} cp? Cheeky ;)`)
             return
@@ -269,6 +289,32 @@ function purchase(){
             alert(`Can you really make a purchase that costs ${Math.abs(platinum)} pp while only having ${platinumLocal} pp? Cheeky ;)`)
             return
         }
+    // NONSUFFICIENT DENOMINATION FUNDS
+        // E.G. If the user wants to spend 14 gp, but only has 12 gp, then convert the remainder from remaining denominations
+        // // Get remainders
+        //     // Copper
+        //     let remainderCopper = Math.abs(copper) - copperLocal
+        //     // Silver
+        //     let remainderSilver = Math.abs(silver) - silverLocal
+        //     // Electrum
+        //     let remainderElectrum = Math.abs(electrum) - electrumLocal
+        //     // Gold
+        //     let remainderGold = Math.abs(gold) - goldLocal
+        //     // Platinum
+        //     let remainderPlatinum = Math.abs(platinum) - platinumLocal
+        // // Tackle the remainders
+        // if (remainderCopper > 0) {
+
+        // } else if (remainderSilver > 0){
+
+        // } else if (remainderElectrum > 0){
+
+        // } else if (remainderGold > 0){
+
+        // } else if (remainderPlatinum > 0){
+
+        // }
+        // return
     // LOCAL PUSH
         // Set the correct values in the JSON by adding the pulled values to the user-input values
             // Copper
