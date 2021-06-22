@@ -6,6 +6,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>GameMaster Website</title>  
         <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="../Evo_Calendar/css/evo-calendar.css">
+        <link rel="stylesheet" href="../Evo_Calendar/css/evo-calendar.midnight-blue.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <script src="../Global_Functions.js"></script>
         <script src="./Calendar.js"></script>
         <script src="./Database_Calendars.js"></script>
@@ -42,7 +47,26 @@
         .content li {
             display: inline;
         }
+        .hero {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #6ac1c5, #bda5ff);
+            position: relative;
+            font-family: 'Roboto', sans-serif;
+        }
+        #caledar {
+            width: 100%;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        main {
+            margin-top: 70px;
+            /* display: inline-flex !important; */
+        }
         </style>
+    
     <body>
         <!--Navigation Panel START-->   
         <div id="nav_placeholder"></div>
@@ -51,6 +75,41 @@
         <div id="nav_local"></div>
         <script>$(function(){$("#nav_local").load("./nav_local.html");});</script>
         <script src="../Global_Functions.js"></script>
+        <!-- <main>
+            <div class="hero">
+                <div id="calendar"></div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+            <script src="../Evo_Calendar/js/evo-calendar.js"></script>
+            <script>
+                // Initialize evo-calendar in your script file or an inline <script> tag
+                $(document).ready(function() {
+                    $('#calendar').evoCalendar({
+                        // settingName: settingValue
+                        theme: "Midnight Blue",
+                        calendarEvents: [
+                                {
+                                    id: 'bHay68s', // Event's ID (required)
+                                    name: "New Year", // Event name (required)
+                                    date: "January/1/2020", // Event date (required)
+                                    type: "holiday", // Event type (required)
+                                    everyYear: true // Same event every year (optional)
+                                },
+                                {
+                                    name: "Vacation Leave",
+                                    badge: "02/13 - 02/15", // Event badge (optional)
+                                    date: ["February/13/2020", "February/15/2020"], // Date range
+                                    description: "Vacation leave for 3 days.", // Event description (optional)
+                                    type: "event",
+                                    color: "#63d867" // Event custom color (optional)
+                                }
+                                ]
+                    })
+                })
+            </script>
+        </main> -->
+        
+        
         <main>
             <h1>Calendar</h1>
             <label for="calendar">Most Wanted Status:</label>

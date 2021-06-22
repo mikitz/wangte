@@ -248,6 +248,27 @@ function purchase(){
             let tranID = JSON.parse(localStorage.getItem(`${name}.tranID`))
             // Transaction Variables
             let transactionArray = {"ID": tranID, "type": "purchase", "copper": copper, "silver": silver, "electrum": electrum, "gold": gold, "platinum": platinum, "note": note}
+    // NON-SUFFICIENT FUNDS
+        if (Math.abs(copper) > copperLocal) {
+            alert(`Can you really make a purchase that costs ${Math.abs(copper)} cp while only having ${copperLocal} cp? Cheeky ;)`)
+            return
+        }
+        if (Math.abs(silver) > silverLocal) {
+            alert(`Can you really make a purchase that costs ${Math.abs(silver)} sp while only having ${silverLocal} sp? Cheeky ;)`)
+            return
+        }
+        if (Math.abs(electrum) > electrumLocal) {
+            alert(`Can you really make a purchase that costs ${Math.abs(electrum)} ep while only having ${electrumLocal} ep? Cheeky ;)`)
+            return
+        }
+        if (Math.abs(gold) > goldLocal) {
+            alert(`Can you really make a purchase that costs ${Math.abs(gold)} gp while only having ${goldLocal} gp? Cheeky ;)`)
+            return
+        }
+        if (Math.abs(platinum) > platinumLocal) {
+            alert(`Can you really make a purchase that costs ${Math.abs(platinum)} pp while only having ${platinumLocal} pp? Cheeky ;)`)
+            return
+        }
     // LOCAL PUSH
         // Set the correct values in the JSON by adding the pulled values to the user-input values
             // Copper

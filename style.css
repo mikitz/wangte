@@ -12,15 +12,6 @@ html {
     font-family: sans-serif;
     box-sizing: border-box;
 }
-main {
-    margin-left: 2vh;
-    display: inline-block;
-    flex: 1;
-    margin-top: 50px;
-    margin-left: 270px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
 select {
     background-color: rgb(54, 72, 54);
 }
@@ -41,6 +32,16 @@ body {
     color: rgb(138, 138, 138);
     margin: 0;
     height: 100%;
+    width: 100%;
+}
+main {
+    margin-left: 2vh;
+    display: inline-block;
+    flex: 1;
+    margin-top: 70px;
+    margin-left: 270px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 main a {
     display: inline-flex;
