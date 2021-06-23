@@ -5,6 +5,12 @@
             padding: 7px;
             height: 10px;
         }
+        textarea {
+            width: 50%;
+        }
+        .note-currency {
+            color: white;
+        }
     </style>
 <!--HEAD START-->
     <head>
@@ -44,20 +50,28 @@
                     
                 </select>
             <br><br>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-p"></div>
+                </div>
+            </div>
             <fieldset>
                 <legend>Add Transaction</legend>
-                <label for="valueInputAdd">Copper:</label>
-                    <input id="addCopper" type="number" placeholder="Enter value..."><br>
-                <label for="valueInputAdd">Silver:</label>
-                    <input id="addSilver" type="number" placeholder="Enter value..."><br>
-                <label for="valueInputAdd">Electrum:</label>
-                    <input id="addElectrum" type="number" placeholder="Enter value..."><br>
-                <label for="valueInputAdd">Gold:</label>
-                    <input id="addGold" type="number" placeholder="Enter value..."><br>
-                <label for="valueInputAdd">Platinum:</label>
-                    <input id="addPlatinum" type="number" placeholder="Enter value..."><br>
-                <label for="valueInputNote">Note:</label>
-                    <textarea id="valueInputNote" placeholder="Sold the short sword to Bob the weaponsmith."></textarea>
+                <label for="valueInputAdd"><i class="fas fa-coins copper-coin"></i> Copper:</label>
+                    <input id="addCopper" type="number" step="1" placeholder="Enter value..."><br>
+                <label for="valueInputAdd"><i class="fas fa-coins silver-coin"></i> Silver:</label>
+                    <input id="addSilver" type="number" step="1" placeholder="Enter value..."><br>
+                <label for="valueInputAdd"><i class="fas fa-coins electrum-coin"></i> Electrum:</label>
+                    <input id="addElectrum" type="number" step="1" placeholder="Enter value..."><br>
+                <label for="valueInputAdd"><i class="fas fa-coins gold-coin"></i> Gold:</label>
+                    <input id="addGold" type="number" step="1" placeholder="Enter value..."><br>
+                <label for="valueInputAdd"><i class="fas fa-coins platinum-coin"></i> Platinum:</label>
+                    <input id="addPlatinum" type="number" step="1" placeholder="Enter value..."><br>
+                <label for="valueInputNote"><i class="fas fa-sticky-note note-currency"></i> Note:</label>
+                    <textarea id="valueInputNote" placeholder="Sold the short sword to Bob the weaponsmith at Bob's Weapon Depot in Neverwinter."></textarea>
                 <br><br>
                 <button class="special" type="button" id="addCurrency" onclick="saveCurrency()">Add Currency</button>
                 <button class="special" type="button" id="addPurchase" onclick="purchase()">Make a Purchase</button>
@@ -65,6 +79,7 @@
             </fieldset>
             <br>      
             <fieldset>
+                <legend>Denominations</legend>
                 <table class="currency">
                     <thead>
                         <th>
@@ -105,6 +120,8 @@
             totalCurrency('goldTotal')
             totalCurrency('platinumTotal')
             updateTable()
+        </script>
+        <script>
         </script>
     </body>
 </html>
