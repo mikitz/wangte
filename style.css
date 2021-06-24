@@ -366,6 +366,16 @@ p.transactionTable button.table_button {
     /* border-bottom: 2px solid #009879; */
     border-bottom: none;
 }
+.styled-table img {
+    transition: transform .2s;
+    width: 7.5pc;
+    margin: 0 auto;
+}
+.styled-table img:hover {
+    -ms-transform: scale(5); /* IE 9 */
+    -webkit-transform: scale(5); /* Safari 3-8 */
+    transform: scale(5); 
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             COINS
