@@ -1,5 +1,5 @@
 // Function to build a table from a Dictionary
-function displayColumns(tablename) {
+function displayColumns(tablename, tableclass) {
     // Clear it
     document.getElementById('output').innerHTML = ''
     // GET COL NAMES
@@ -30,16 +30,14 @@ function displayColumns(tablename) {
         // Table
         var table = document.createElement('table')
         table.setAttribute("id", "table")
-        table.setAttribute("class", "tableizer-table")
+        table.setAttribute("class", tableclass)
         // HEADER
             // Create the head element
             var tableHead = document.createElement('thead')
             tableHead.setAttribute("id", "header")
-            tableHead.setAttribute("class", "tableizer-firstrow")
             // Append row to the header
             var headerRow = document.createElement('tr')
             headerRow.setAttribute("id", 'header_row')
-            headerRow.setAttribute('class', "tableizer-firstrow")
             tableHead.appendChild(headerRow)
             // Append the column names to the header row
             lKeys.forEach((element) => {

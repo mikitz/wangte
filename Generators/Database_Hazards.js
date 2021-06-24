@@ -97,7 +97,7 @@ let hazardOpen_WaterCheckResultsFire = [{"Result":"Total Success","Effect":"The 
 {"Result":"Failure","Effect":"The hull and 1d3 other random components take 6d6 fire damage, and the fire continues. Make another set of checks."},
 {"Result":"Total Failure","Effect":"The crew's quality score decreases by 1 due to injuries, while the hull and 1d3 other random components take 6d6 fire damage. The fire continues. Make another set of checks."}]
 
-let hazardOpen_WaterCheckResultsFireHTML = `<table class="tableizer-table">
+let hazardOpen_WaterCheckResultsFireHTML = `<table class="styled-table">
 <thead><tr class="tableizer-firstrow"><th colspan="2">Fire Check Results</th></tr></thead><tbody>
  <tr><td style="width: 100px">Result</td><td style="width: 600px">Effect</td></tr>
  <tr><td>Total Success</td><td style="width: 600px">The fire is extinguished with nothing beyond cosmetic damage.</td></tr>
@@ -106,7 +106,7 @@ let hazardOpen_WaterCheckResultsFireHTML = `<table class="tableizer-table">
  <tr><td>Total Failure</td><td style="width: 600px">The crew's quality score decreases by 1 due to injuries, while the hull and 1d3 other random components take 6d6 fire damage. The fire continues. Make another set of checks.</td></tr>
 </tbody></table>`
 
-let hazardOpen_WaterCheckResultsCrew_ConflictHTML = `<table class="tableizer-table">
+let hazardOpen_WaterCheckResultsCrew_ConflictHTML = `<table class="styled-table">
 <thead><tr class="tableizer-firstrow"><th colspan="2">Crew Conflict Check Results</th></tr></thead><tbody>
  <tr><td style="width: 100px">Result</td><td style="width: 600px">Effect</td></tr>
  <tr><td>Total Success</td><td style="width: 600px">The crew's quality score increases by 1 for 1d4 days and the hazard ends.</td></tr>
@@ -115,7 +115,7 @@ let hazardOpen_WaterCheckResultsCrew_ConflictHTML = `<table class="tableizer-tab
  <tr><td>Total Failure</td><td style="width: 600px">The crew's quality score decreases by 1, and the crew immediately mutinies.</td></tr>
 </tbody></table>`
 
-let hazardOpen_WaterCheckResultsStormHTML = `<table class="tableizer-table">
+let hazardOpen_WaterCheckResultsStormHTML = `<table class="styled-table">
 <thead><tr class="tableizer-firstrow"><th colspan="2">Storm Check Results</th></tr></thead><tbody>
  <tr><td style="width: 100px">Result</td><td style="width: 600px">Effect</td></tr>
  <tr><td>Total Success</td><td style="width: 600px">The ship survives unscathed. The crew's quality score increases by 1 for 1d4 days.</td></tr>
@@ -124,7 +124,7 @@ let hazardOpen_WaterCheckResultsStormHTML = `<table class="tableizer-table">
  <tr><td>Total Failure</td><td style="width: 600px">The ship's components each take 10d10 bludgeoning damage. The crew's quality score decreases by 2, and 10 percent of the crew is washed overboard and lost. The ship is blown off course and struggles to recover its bearings, moving in a random direction.</td></tr>
 </tbody></table>`
 
-let hazardOpen_WaterCheckResultsWhirlpoolHTML = `<table class="tableizer-table">
+let hazardOpen_WaterCheckResultsWhirlpoolHTML = `<table class="styled-table">
 <thead><tr class="tableizer-firstrow"><th colspan="2">Whirlpool Check Results</th></tr></thead><tbody>
  <tr><td style="width: 100px">Result</td><td style="width: 600px">Effect</td></tr>
  <tr><td>Total Success</td><td style="width: 600px">The vessel uses the whirlpool to its advantage and increases its speed by 20 ft. during its current turn.</td></tr>
@@ -133,7 +133,7 @@ let hazardOpen_WaterCheckResultsWhirlpoolHTML = `<table class="tableizer-table">
  <tr><td>Total Failure</td><td style="width: 600px">As a failure. Additionally, if the vessel is in the whirlpool at the start of its next turn, all checks the vessel makes to determine the whirlpool's effects are made with disadvantage on that turn.</td></tr>
 </tbody></table>`
 
-let hazardOpen_WaterCheckResultsInfestationHTML = `<table class="tableizer-table">
+let hazardOpen_WaterCheckResultsInfestationHTML = `<table class="styled-table">
 <thead><tr class="tableizer-firstrow"><th colspan="2">Infestation Check Results</th></tr></thead><tbody>
  <tr><td style="width: 100px">Result</td><td style="width: 600px">Effect</td></tr>
  <tr><td>Total Success</td><td style="width: 600px">The crew's quality score increases by 1 for 1d4 days, and the hazard ends.</td></tr>
@@ -142,7 +142,7 @@ let hazardOpen_WaterCheckResultsInfestationHTML = `<table class="tableizer-table
  <tr><td>Total Failure</td><td style="width: 600px">The crew's quality score decreases by 1, and the distraction caused by the crisis forces the ship to move at half speed that day.</td></tr>
 </tbody></table>`
 
-let hazardOpen_WaterCheckResultsFogHTML = `<table class="tableizer-table">
+let hazardOpen_WaterCheckResultsFogHTML = `<table class="styled-table">
 <thead><tr class="tableizer-firstrow"><th colspan="2">Fog Check Results</th></tr></thead><tbody>
  <tr><td style="width: 100px">Result</td><td style="width: 600px">Effect</td></tr>
  <tr><td>Total Success</td><td style="width: 600px">The fog has no effect on navigation, and the crew's quality increases by 1 for 1d3 days.</td></tr>

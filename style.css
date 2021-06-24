@@ -24,11 +24,11 @@ textarea {
     color: rgb(104, 95, 118);
 }
 body h1{
-    color: red;
+    color: #726A95;
     text-transform: uppercase;
 }
 body {
-    background-color: rgb(29, 29, 29);
+    background-color: #121212;
     color: rgb(138, 138, 138);
     margin: 0;
     height: 100%;
@@ -38,8 +38,8 @@ main {
     margin-left: 2vh;
     display: inline-block;
     flex: 1;
-    margin-top: 70px;
-    margin-left: 270px;
+    margin-top: 40px;
+    margin-left: 220px;
     margin-right: 20px;
     margin-bottom: 20px;
 }
@@ -68,21 +68,26 @@ section {
     justify-content: var(--justify-important);
 }
 
-/* Vertical Navigation */
+/* =================================
+            VERTICAL NAV 
+==================================== */
+
 .navlocal {
     float: left;
     top: 0 !important;
     left: 0 !important;
-    width: 250px !important;
+    width: 200px !important;
     height: 100vh !important;
     overflow: auto !important;
     background: black !important;
+    background-color: rgba(255, 255, 255, 0.05) !important; 
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: top !important;
     position: fixed;
     margin-top: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .navlocal img {
     width: 70% !important;
@@ -94,8 +99,8 @@ section {
     display: inline-block !important;
     text-decoration: none !important;
     /* padding: 5px 15px !important; */
-    font-size: 0.7em !important;
-    color: red !important;
+    font-size: 0.75em !important;
+    color: #B4A5A5;
     font-weight: bold !important;
     /* text-transform: uppercase !important; */
     letter-spacing: 0.05em !important;
@@ -103,13 +108,52 @@ section {
     text-align: center !important;
 }
 .navlocal a:hover {
-    color: purple !important;
+    color: #726A95;
 }
 .navlocal h2 {
-    background-color: black !important;
     text-transform: uppercase;
+    color: #3C415C;
 }
 
+/* =================================
+            HORIZONTAL NAV 
+==================================== */
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background: black !important;
+    background-color: rgba(255, 255, 255, 0.09) !important; 
+    overflow: hidden;
+    /* display: inline-block; */
+    position: fixed;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 50px;
+    top: 0;
+}
+/* Style the links inside the navigation bar */
+.topnav a {
+    color: #B4A5A5;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    float: left;
+}
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #3C415C;
+    color: #B4A5A5;
+}
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+/* Right-side navigation links */
+.topnav-right {
+    float: right;
+}
 
 /* Dropdown Button */
 .dropbtn {
@@ -239,12 +283,15 @@ tab5 {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            CURRENCY
+      TABLE DENOMINATIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 table.currency {
     width: 45pc;
     align-content: center;
+    border-collapse: collapse;
+    /* margin: 25px; */
+    box-shadow: 0 0 20 px rgba(0,0,0,0.15);
 }
 
 table.currency td {
@@ -258,23 +305,71 @@ p.transactionTable table{
     word-wrap: break-word;
 }
 p.transactionTable td {
-    padding: 4px;
+    padding: 12px 15px;
     margin: 5px;
     border: 1px solid #CCC;
     color: rgb(128, 128, 128);
     text-align: center;
 }
 p.transactionTable th {
-    background-color: rgb(141, 7, 112); 
-    color: skyblue;
+    background-color: #009879;
+    color: #ffffff;
     font-weight: bold;
+    text-align: center;
 }
 p.transactionTable button.table_button {
     border: none;
-    background-color: rgb(141, 7, 112);
+    background-color: #009879;
     transition-duration: 0.3s;
     font-weight: bold;
+    color: #ffffff;
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        TABLE TRANSACTIONS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 45%;
+    box-shadow: 0 0 20px rgba(142, 142, 142, 0.15);
+    text-align: center;
+}
+.styled-table button.table_button {
+    border: none;
+    background-color: #009879;
+    transition-duration: 0.3s;
+    font-weight: bold;
+    color: #ffffff;
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #4d4d4d;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #4d4d4d;
+    color: black;
+}
+.styled-table tbody tr:last-of-type {
+    /* border-bottom: 2px solid #009879; */
+    border-bottom: none;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            COINS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .platinum-coin {
     color: #E5E4E2;

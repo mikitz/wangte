@@ -481,7 +481,7 @@ function printTable(table, element) {
         // Create the table element
         let tableFinal = document.createElement('table')
         // Set the class of the table
-        tableFinal.className = 'tableizer-table'
+        tableFinal.className = 'styled-table'
         // Create the table header group element
         let tableFinalHead = document.createElement('thead')
         // Create the row that contains headers

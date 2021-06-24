@@ -565,7 +565,7 @@ function purchase(){
     // DISPLAY THE CORRECT TRANSACTIONS TABLE
     updateTable()
     // DISPLAY THE TRANSACTIOSN TABLE
-    displayColumns(transactions)
+    displayColumns(transactions, 'styled-table')
 }
 // Function to convert all other currency into the specified currency
 function convertDenomination(cp, cpl, sp, spl, ep, epl, gp, gpl, pp, ppl){
@@ -741,7 +741,7 @@ function sell(){
     updateCurrency('gold_display')
     updateCurrency('platinum_display')
     // UPDATE THE TABLE
-    displayColumns(transactions)
+    displayColumns(transactions, 'styled-table')
 }
 // Function to delete everything
 function deleteEverything(){
@@ -832,5 +832,5 @@ function updateTable(){
     // Pull JSON from local storage
     let data = JSON.parse(localStorage.getItem(`${name}.transactions`))
     // Populate the table
-    displayColumns(data)
+    displayColumns(data, 'styled-table')
 }
