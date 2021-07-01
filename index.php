@@ -1,5 +1,8 @@
 <!DOCTYPE html> 
 <html lang ="en">  
+<?php
+    session_start();
+?>
 <head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +16,16 @@
 <body>
     <!--Navigation Panel START-->   
     <div id="nav_placeholder"></div>
-    <script>$(function(){$("#nav_placeholder").load("nav.html");});</script>
+    <script>$(function(){$("#nav_placeholder").load("nav.php");});</script>
     <main>
         <h1>Home</h1>
-        <p>Welcome to Mikitz' GM Resources Website!</p>
+        <?php
+            if (isset($_SESSION["userid"])) {
+                echo "<p>Hey there, ".$_SESSION["userun"]." and welcome to Mikitz' GM Resources Website!</p>";
+            } else {
+                echo "<p>Welcome to Mikitz' GM Resources Website!</p>";
+            }
+        ?>
         <p>I use this site to help me manage online and in-person games for D&D 5e. I hope you find it useful, too!</p>
         <h2>Known Issues</h2>
         <ol type="1">
