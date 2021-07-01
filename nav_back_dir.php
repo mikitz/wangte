@@ -4,7 +4,7 @@
 
 <div class="topnav">
     <!-- <img src="https://i.pinimg.com/originals/48/cb/53/48cb5349f515f6e59edc2a4de294f439.png" alt="Logo"> -->
-    <a href="../index.html">Home</a>
+    <a href="../index.php">Home</a>
     <a href="../Calculators/Calculator_Bounty_Reward.html">Calculators</a>
     <a href="../Generators/Random_Encounters.html">Generators</a>
     <a href="../Homebrew/Homebrew_Beer_Brewing.html">Homebrew</a>

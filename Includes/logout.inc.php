@@ -6,4 +6,4 @@ session_unset();
 // Delete session variables
 session_destroy();
 // Send the user back to the homepage
-header("location: ../index.html");
+header("location: ../index.php");
