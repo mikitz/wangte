@@ -85,7 +85,7 @@ function createUser($conn, $name, $email, $username, $pwd) {
     // Close the statement
     mysqli_stmt_close($stmt);
     // Send user to success page
-    header("location: ../index.php?error=none");
+    header("location: ../index.html?error=none");
         exit();
 }
 // Function to check if any inputs are empty
@@ -120,7 +120,7 @@ function loginUser($conn, $username, $pwd) {
         $_SESSION["userid"] = $uidExists["usersID"];
         $_SESSION["userun"] = $uidExists["usersUN"];
         // Send user back to the home page
-        header("location: ../index.php");
+        header("location: ../index.html");
         exit();
     }
 }
